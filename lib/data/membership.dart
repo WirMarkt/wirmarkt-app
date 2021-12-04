@@ -1,14 +1,14 @@
+import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'membership.g.dart';
 
 @JsonSerializable()
+@immutable
 class Membership {
-  Membership(this.id, this.name, this.email);
+  Membership(this.qr);
 
-  String id;
-  String name;
-  String email;
+  final String qr;
 
   /// A necessary factory constructor for creating a new User instance
   /// from a map. Pass the map to the generated `_$UserFromJson()` constructor.
@@ -19,6 +19,4 @@ class Membership {
   /// to JSON. The implementation simply calls the private, generated
   /// helper method `_$UserToJson`.
   Map<String, dynamic> toJson() => _$MembershipToJson(this);
-
-  toUriString() => "user://$id/$name";
 }

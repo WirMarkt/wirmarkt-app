@@ -29,17 +29,13 @@ class MembershipValidationPageState extends State<MembershipValidationPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 20),
-            Text(_membership.name, style: Theme.of(context).textTheme.headline6,),
-            SizedBox(height: 10),
-            Text(_membership.email, style: Theme.of(context).textTheme.bodyText2,),
-            SizedBox(height: 10),
             Container(
               color: Colors.white,
               padding: EdgeInsets.all(10),
               child: CustomPaint(
                 size: Size.square(size),
                 painter: QrPainter(
-                  data: _membership.toUriString(),
+                  data: _membership.qr,
                   color: Colors.black,
                   version: QrVersions.auto,
                 ),

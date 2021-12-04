@@ -7,14 +7,10 @@ part of 'membership.dart';
 // **************************************************************************
 
 Membership _$MembershipFromJson(Map<String, dynamic> json) => Membership(
-      json['id'] as String,
-      json['name'] as String,
-      json['email'] as String,
+      json['qr'] as String,
     );
 
 Map<String, dynamic> _$MembershipToJson(Membership instance) =>
     <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'email': instance.email,
+      'qr': instance.qr,
     };
