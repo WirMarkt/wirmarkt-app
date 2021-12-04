@@ -1,14 +1,13 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:wir_markt/generated/l10n.dart';
 import 'package:wir_markt/home/home_page.dart';
 import 'package:wir_markt/membership/membership_model.dart';
 import 'package:wir_markt/utils.dart';
 import 'package:wir_markt/wm_colors.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MultiProvider(
@@ -35,7 +34,7 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: [
-        //Locale('en', ''), // English, no country code
+        Locale('en', ''), // English, no country code
         Locale('de', ''), // German, no country code
       ],
       theme: buildThemeData(Brightness.light),

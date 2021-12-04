@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:wir_markt/generated/l10n.dart';
 
 class WMBottomAppBar extends StatefulWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
@@ -23,7 +23,7 @@ class _WMBottomAppBarState extends State<WMBottomAppBar> {
       child: Row(
         children: <Widget>[
           IconButton(
-            tooltip: 'Open navigation menu',
+            tooltip: S.of(context).settingsTitle,
             icon: const Icon(Icons.settings),
             onPressed: () {
               setState(() {

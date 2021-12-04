@@ -1,1 +1,22 @@
 # WirMarkt App
+
+# Requirements
+
+Set up Flutter development environment first.
+
+# Launch in browser (Google Chrome)
+
+```
+
+flutter clean
+flutter run
+
+```
+
+# Set up IntelliJ / Android Studio
+
+* install Flutter and Flutter Intl plugins
+* restart
+* open project
+* you should be able to start simulator/emulator for iOS (macOS only) and Android (requires Android SDK)
+

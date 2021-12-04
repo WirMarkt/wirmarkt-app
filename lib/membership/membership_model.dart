@@ -4,7 +4,6 @@ import 'package:wir_markt/data/membership.dart';
 class MembershipModel extends ChangeNotifier {
   Membership? _membership;
 
-  /// An unmodifiable view of the items in the cart.
   Membership? get membership => _membership;
 
   void updateMembership(Membership? membership) {

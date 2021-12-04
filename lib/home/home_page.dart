@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wir_markt/data/membership.dart';
+import 'package:wir_markt/generated/l10n.dart';
 import 'package:wir_markt/home/onboarding_card.dart';
 import 'package:wir_markt/home/wm_bottom_app_bar.dart';
 import 'package:wir_markt/membership/membership_model.dart';
@@ -22,8 +23,9 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     Future.delayed(Duration.zero, () async {
       setState(() {
-        Provider.of<MembershipModel>(context, listen: false).updateMembership(
-            Membership("qrcodestring"));
+        //TODO load membership from storage or backend
+        Provider.of<MembershipModel>(context, listen: false)
+            .updateMembership(Membership("qrcodestring"));
       });
     });
     super.initState();
@@ -31,13 +33,10 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    var paddingVertical = 16.0;
+    const paddingVertical = 16.0;
+    Membership? _membership =
+        Provider.of<MembershipModel>(context, listen: false).membership;
+
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -55,57 +54,67 @@ class _HomePageState extends State<HomePage> {
           children: [
             SizedBox(height: paddingVertical),
             OnboardingCard(
-              title: "Neuer Sortimentswunsch",
-              explanation: "Mehrere Produkte auf einmal vorschlagen.",
+              title: S.of(context).createAssortmentSuggestionTitle,
+              explanation: S.of(context).createAssortmentSuggestionExplanation,
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) => SuggestProductPage(
-                        title: "Sortimentswunsch fotografieren"),
+                        title: S.of(context).createAssortmentSuggestionTitle),
                   ),
                 );
               },
               iconImage: AssetImage("images/fridge.jpg"),
+              //TODO this should be dynamic
               done: true,
             ),
             OnboardingCard(
-              title: "Neuer Produktwunsch",
-              explanation: "Einzelnes Produkt vorschlagen.",
+              title: S.of(context).createProductSuggestionTitle,
+              explanation: S.of(context).createProductSuggestionExplanation,
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) => SuggestProductPage(
-                        title: "Produktwunsch fotografieren"),
+                        title: S.of(context).createProductSuggestionTitle),
                   ),
                 );
               },
               iconImage: AssetImage("images/produce.jpg"),
+              //TODO this should be dynamic
+              done: false,
             ),
-            OnboardingCard(
-              title: "Mitgliedsausweis einrichten",
-              explanation: "Ausweis im Smartphone.",
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute<void>(
-                    builder: (BuildContext context) => SuggestProductPage(
-                        title: "Mitgliedsausweis einrichten"),
-                  ),
-                );
-              },
-              iconImage: AssetImage("images/member-card.jpg"),
-            ),
-            OnboardingCard(
-              title: "Als Mitglied einkaufen",
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute<void>(
-                    builder: (BuildContext context) =>
-                        MembershipValidationPage(),
-                  ),
-                );
-              },
-              iconImage: AssetImage("images/orange-bag.jpg"),
-            ),
+            if (_membership == null)
+              OnboardingCard(
+                title: S.of(context).setupMembershipTitle,
+                explanation: S.of(context).setupMembershipExplanation,
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => SuggestProductPage(
+                          title: S.of(context).setupMembershipTitle),
+                    ),
+                  );
+                },
+                iconImage: AssetImage("images/member-card.jpg"),
+                //TODO this should be dynamic
+                done: false,
+              ),
+            if (_membership != null)
+              OnboardingCard(
+                title: S.of(context).shopAsMemberTitle,
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) =>
+                          MembershipValidationPage(
+                              title: S.of(context).shopAsMemberTitle),
+                    ),
+                  );
+                },
+                //TODO this should be dynamic
+                done: false,
+                iconImage: AssetImage("images/orange-bag.jpg"),
+              ),
             SizedBox(height: paddingVertical * 2),
           ],
         ),

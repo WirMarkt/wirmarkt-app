@@ -2,8 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-//use with 'https://wirmarkt.org/wp-content/uploads/2021/06/wirmarkt-intro-kurz.mp4'
-
+/// Displays video.
+///
+/// Use with
+/// ```dart
+/// RemoteVideo(uri: 'https://wirmarkt.org/wp-content/uploads/2021/06/wirmarkt-intro-kurz.mp4')
+/// ```
+/// for WirMarkt intro
 class RemoteVideo extends StatefulWidget {
   final String uri;
 
@@ -90,16 +95,16 @@ class _ControlsOverlay extends StatelessWidget {
           child: controller.value.isPlaying
               ? SizedBox.shrink()
               : Container(
-            color: Colors.black26,
-            child: Center(
-              child: Icon(
-                Icons.play_arrow,
-                color: Colors.white,
-                size: 100.0,
-                semanticLabel: 'Play',
-              ),
-            ),
-          ),
+                  color: Colors.black26,
+                  child: Center(
+                    child: Icon(
+                      Icons.play_arrow,
+                      color: Colors.white,
+                      size: 100.0,
+                      semanticLabel: 'Play',
+                    ),
+                  ),
+                ),
         ),
         GestureDetector(
           onTap: () {

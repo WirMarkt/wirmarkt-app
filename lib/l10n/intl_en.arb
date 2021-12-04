@@ -1,4 +1,15 @@
 {
   "introTitle": "Story",
-  "memberLabel": "Member"
+  "memberLabel": "Member",
+  "setupMembershipTitle": "Setup Membership",
+  "setupMembershipExplanation": "Store badge in smartphone.",
+  "shopAsMemberTitle": "Shop as a Member",
+  "createProductSuggestionTitle": "Create Product Suggestion",
+  "createProductSuggestionExplanation": "Suggest single product.",
+  "createAssortmentSuggestionTitle": "Create Assortment Suggestion",
+  "createAssortmentSuggestionExplanation": "Suggest multiple products at once.",
+  "settingsTitle": "Settings",
+  "scanResultTitle": "Scan Result",
+  "resultLabel": "Result",
+  "rawContentLabel": "Raw Content"
 }

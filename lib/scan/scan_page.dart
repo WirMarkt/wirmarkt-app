@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
-
 import 'dart:async';
 
 import 'package:barcode_scan2/barcode_scan2.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wir_markt/generated/l10n.dart';
 
 class ScanPage extends StatefulWidget {
   @override
@@ -27,32 +27,31 @@ class ScanPageState extends State<ScanPage> {
   Widget build(BuildContext context) {
     final scanResult = this.scanResult;
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Scan Resultat'),
-        ),
-        body: ListView(
-          scrollDirection: Axis.vertical,
-          shrinkWrap: true,
-          children: <Widget>[
-            if (scanResult != null)
-              Card(
-                child: Column(
-                  children: <Widget>[
-                    ListTile(
-                      title: const Text('Resultat'),
-                      subtitle: Text(scanResult.type.toString()),
-                    ),
-                    ListTile(
-                      title: const Text('Roher Inhalt'),
-                      subtitle: Text(scanResult.rawContent),
-                    ),
-                  ],
-                ),
+      appBar: AppBar(
+        title: Text(S.of(context).scanResultTitle),
+      ),
+      body: ListView(
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        children: <Widget>[
+          if (scanResult != null)
+            Card(
+              child: Column(
+                children: <Widget>[
+                  ListTile(
+                    title: Text(S.of(context).resultLabel),
+                    subtitle: Text(scanResult.type.toString()),
+                  ),
+                  ListTile(
+                    title: Text(S.of(context).rawContentLabel),
+                    subtitle: Text(scanResult.rawContent),
+                  ),
+                ],
               ),
-          ],
-        ),
-      );
-
+            ),
+        ],
+      ),
+    );
   }
 
   Future<void> _scan() async {

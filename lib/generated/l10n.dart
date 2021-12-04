@@ -69,6 +69,116 @@ class S {
       args: [],
     );
   }
+
+  /// `Setup Membership`
+  String get setupMembershipTitle {
+    return Intl.message(
+      'Setup Membership',
+      name: 'setupMembershipTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Store badge in smartphone.`
+  String get setupMembershipExplanation {
+    return Intl.message(
+      'Store badge in smartphone.',
+      name: 'setupMembershipExplanation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shop as a Member`
+  String get shopAsMemberTitle {
+    return Intl.message(
+      'Shop as a Member',
+      name: 'shopAsMemberTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Product Suggestion`
+  String get createProductSuggestionTitle {
+    return Intl.message(
+      'Create Product Suggestion',
+      name: 'createProductSuggestionTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Suggest single product.`
+  String get createProductSuggestionExplanation {
+    return Intl.message(
+      'Suggest single product.',
+      name: 'createProductSuggestionExplanation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Assortment Suggestion`
+  String get createAssortmentSuggestionTitle {
+    return Intl.message(
+      'Create Assortment Suggestion',
+      name: 'createAssortmentSuggestionTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Suggest multiple products at once.`
+  String get createAssortmentSuggestionExplanation {
+    return Intl.message(
+      'Suggest multiple products at once.',
+      name: 'createAssortmentSuggestionExplanation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settingsTitle {
+    return Intl.message(
+      'Settings',
+      name: 'settingsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scan Result`
+  String get scanResultTitle {
+    return Intl.message(
+      'Scan Result',
+      name: 'scanResultTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Result`
+  String get resultLabel {
+    return Intl.message(
+      'Result',
+      name: 'resultLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Raw Content`
+  String get rawContentLabel {
+    return Intl.message(
+      'Raw Content',
+      name: 'rawContentLabel',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

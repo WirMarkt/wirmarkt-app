@@ -1,4 +1,15 @@
 {
   "introTitle": "Story",
-  "memberLabel": "Mitgliedschaft"
+  "memberLabel": "Mitgliedschaft",
+  "setupMembershipTitle": "Mitgliedsausweis einrichten",
+  "setupMembershipExplanation": "Ausweis im Smartphone.",
+  "shopAsMemberTitle": "Als Mitglied einkaufen",
+  "createProductSuggestionTitle": "Neuer Produktwunsch",
+  "createProductSuggestionExplanation": "Einzelnes Produkt vorschlagen.",
+  "createAssortmentSuggestionTitle": "Neuer Sortimentswunsch",
+  "createAssortmentSuggestionExplanation": "Mehrere Produkte auf einmal vorschlagen.",
+  "settingsTitle": "Settings",
+  "scanResultTitle": "Scan Resultat",
+  "resultLabel": "Resultat",
+  "rawContentLabel": "Roher Inhalt"
 }

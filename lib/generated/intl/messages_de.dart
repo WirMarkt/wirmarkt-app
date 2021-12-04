@@ -22,7 +22,28 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "createAssortmentSuggestionExplanation":
+            MessageLookupByLibrary.simpleMessage(
+                "Mehrere Produkte auf einmal vorschlagen."),
+        "createAssortmentSuggestionTitle":
+            MessageLookupByLibrary.simpleMessage("Neuer Sortimentswunsch"),
+        "createProductSuggestionExplanation":
+            MessageLookupByLibrary.simpleMessage(
+                "Einzelnes Produkt vorschlagen."),
+        "createProductSuggestionTitle":
+            MessageLookupByLibrary.simpleMessage("Neuer Produktwunsch"),
         "introTitle": MessageLookupByLibrary.simpleMessage("Story"),
-        "memberLabel": MessageLookupByLibrary.simpleMessage("Mitgliedschaft")
+        "memberLabel": MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
+        "rawContentLabel": MessageLookupByLibrary.simpleMessage("Roher Inhalt"),
+        "resultLabel": MessageLookupByLibrary.simpleMessage("Resultat"),
+        "scanResultTitle":
+            MessageLookupByLibrary.simpleMessage("Scan Resultat"),
+        "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
+        "setupMembershipExplanation":
+            MessageLookupByLibrary.simpleMessage("Ausweis im Smartphone."),
+        "setupMembershipTitle":
+            MessageLookupByLibrary.simpleMessage("Mitgliedsausweis einrichten"),
+        "shopAsMemberTitle":
+            MessageLookupByLibrary.simpleMessage("Als Mitglied einkaufen")
       };
 }

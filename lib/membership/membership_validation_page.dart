@@ -8,6 +8,11 @@ import 'package:wir_markt/data/membership.dart';
 import 'package:wir_markt/membership/membership_model.dart';
 
 class MembershipValidationPage extends StatefulWidget {
+  final String title;
+
+  const MembershipValidationPage({Key? key, required this.title})
+      : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
     return MembershipValidationPageState();
@@ -17,12 +22,15 @@ class MembershipValidationPage extends StatefulWidget {
 class MembershipValidationPageState extends State<MembershipValidationPage> {
   @override
   Widget build(BuildContext context) {
-    Membership? _membership = Provider.of<MembershipModel>(context, listen: false).membership;
+    Membership? _membership =
+        Provider.of<MembershipModel>(context, listen: false).membership;
 
     var _body;
 
-    if(_membership!=null) {
-      var size = math.min(MediaQuery.of(context).size.width,MediaQuery.of(context).size.height) * 0.8;
+    if (_membership != null) {
+      var size = math.min(MediaQuery.of(context).size.width,
+              MediaQuery.of(context).size.height) *
+          0.8;
 
       _body = Center(
         child: Column(
@@ -45,15 +53,14 @@ class MembershipValidationPageState extends State<MembershipValidationPage> {
         ),
       );
     } else {
-      _body = Text("Sie sind nicht Mitglied vom WirMarkt");
+      _body = Text("Membership missing");
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Mitgliedschaft validieren"),
-      ),
-      //backgroundColor: WMColors.white,
-      body: _body
-    );
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        //backgroundColor: WMColors.white,
+        body: _body);
   }
 }

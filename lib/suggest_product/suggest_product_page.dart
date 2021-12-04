@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 
+//TODO create step-by-step UI to submit a product suggestion
 class SuggestProductPage extends StatelessWidget {
   final String title;
 
