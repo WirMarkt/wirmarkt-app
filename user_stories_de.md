@@ -1,18 +1,16 @@
 # User Stories
 
-## Wahrheit / Vertrauen
-
-
-## Selbstwirksamkeit
+## Proof-of-concept
 
 * Produktvorschlag machen - und angeben, wo ich das Produkt gesehen habe (wenn ich im Laden scanne)
   * EAN scannen
   * Foto machen
   * Ort angeben
 * Kühlschrank-Foto machen (das kaufe ich regelmäßig ein)
-* App-Idee vorschlagen
+* Mitgliedschaft in der App hinterlegen
+* Mit der App einkaufen gehen und Mitgliedsausweis vorzeigen
 
-# Basis
+## Basis
 
 * Als Betreiber der App möchte ich, dass der Datenschutz vernünftig geregelt ist
 * Intro kriegen: was ist der WirMarkt überhaupt
@@ -24,7 +22,7 @@
 * Als Product Owner möchte ich die Suchanfragen auswerten
 
 
-Info/Bildungs/Community-Use Cases
+## Info/Bildungs/Community-Use Cases
 
 * Wenn ich im Supermarkt bin, möchte ich Hintergrundinfos zu Aufstellern und Erklärtafeln vom WirMarkt erhalten
   z. B. Produzent:innen-Portraits, Klima- oder Fair Trade-Projekte, Fußabdruck-Darstellungen, Rezepte
@@ -38,7 +36,7 @@ Info/Bildungs/Community-Use Cases
 * Ich möchte den Fußabdruck vom Supermarkt (Anzahl Planeten des gesamten Konsums) einsehen und verstehen
 * Ich möchte andere Menschen einladen, Mitglied vom WirMarkt zu werden 
 
-Prozesse vereinfachen
+## Prozesse vereinfachen
 
 * Mitglied werden per App
 * Mitgliedsnachweis per App
