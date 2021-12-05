@@ -22,19 +22,27 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "alignWithBarcodeExplanation": MessageLookupByLibrary.simpleMessage(
+            "Hold the barcode in front of the camera so that it can be seen in its entirety."),
         "createAssortmentSuggestionExplanation":
             MessageLookupByLibrary.simpleMessage(
                 "Suggest multiple products at once."),
-        "createAssortmentSuggestionTitle": MessageLookupByLibrary.simpleMessage(
-            "Create Assortment Suggestion"),
+        "createAssortmentSuggestionTitle":
+            MessageLookupByLibrary.simpleMessage("Suggest Assortment"),
         "createProductSuggestionExplanation":
             MessageLookupByLibrary.simpleMessage("Suggest single product."),
         "createProductSuggestionTitle":
-            MessageLookupByLibrary.simpleMessage("Create Product Suggestion"),
+            MessageLookupByLibrary.simpleMessage("Suggest Product"),
         "introTitle": MessageLookupByLibrary.simpleMessage("Story"),
         "memberLabel": MessageLookupByLibrary.simpleMessage("Member"),
+        "membershipTitle": MessageLookupByLibrary.simpleMessage("Membership"),
         "rawContentLabel": MessageLookupByLibrary.simpleMessage("Raw Content"),
         "resultLabel": MessageLookupByLibrary.simpleMessage("Result"),
+        "scanBarCodeTitle":
+            MessageLookupByLibrary.simpleMessage("Scan barcode"),
+        "scanMembershipBarcodeExplanation":
+            MessageLookupByLibrary.simpleMessage(
+                "Hold the camera in front of the membership barcode."),
         "scanResultTitle": MessageLookupByLibrary.simpleMessage("Scan Result"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "setupMembershipExplanation":
@@ -42,6 +50,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "setupMembershipTitle":
             MessageLookupByLibrary.simpleMessage("Setup Membership"),
         "shopAsMemberTitle":
-            MessageLookupByLibrary.simpleMessage("Shop as a Member")
+            MessageLookupByLibrary.simpleMessage("Shop as a Member"),
+        "showBarcodeAtPOSLabel": MessageLookupByLibrary.simpleMessage(
+            "Show this barcode at the checkout in the store."),
+        "suggestAssortmentInstructionText": MessageLookupByLibrary.simpleMessage(
+            "Take a picture of your fridge or pantry showing all the products you want to suggest."),
+        "suggestProductInstructionText": MessageLookupByLibrary.simpleMessage(
+            "Take a photo of the product you want to suggest.")
       };
 }

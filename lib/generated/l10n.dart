@@ -100,10 +100,10 @@ class S {
     );
   }
 
-  /// `Create Product Suggestion`
+  /// `Suggest Product`
   String get createProductSuggestionTitle {
     return Intl.message(
-      'Create Product Suggestion',
+      'Suggest Product',
       name: 'createProductSuggestionTitle',
       desc: '',
       args: [],
@@ -120,10 +120,10 @@ class S {
     );
   }
 
-  /// `Create Assortment Suggestion`
+  /// `Suggest Assortment`
   String get createAssortmentSuggestionTitle {
     return Intl.message(
-      'Create Assortment Suggestion',
+      'Suggest Assortment',
       name: 'createAssortmentSuggestionTitle',
       desc: '',
       args: [],
@@ -175,6 +175,76 @@ class S {
     return Intl.message(
       'Raw Content',
       name: 'rawContentLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scan barcode`
+  String get scanBarCodeTitle {
+    return Intl.message(
+      'Scan barcode',
+      name: 'scanBarCodeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hold the barcode in front of the camera so that it can be seen in its entirety.`
+  String get alignWithBarcodeExplanation {
+    return Intl.message(
+      'Hold the barcode in front of the camera so that it can be seen in its entirety.',
+      name: 'alignWithBarcodeExplanation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Membership`
+  String get membershipTitle {
+    return Intl.message(
+      'Membership',
+      name: 'membershipTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show this barcode at the checkout in the store.`
+  String get showBarcodeAtPOSLabel {
+    return Intl.message(
+      'Show this barcode at the checkout in the store.',
+      name: 'showBarcodeAtPOSLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Take a photo of the product you want to suggest.`
+  String get suggestProductInstructionText {
+    return Intl.message(
+      'Take a photo of the product you want to suggest.',
+      name: 'suggestProductInstructionText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Take a picture of your fridge or pantry showing all the products you want to suggest.`
+  String get suggestAssortmentInstructionText {
+    return Intl.message(
+      'Take a picture of your fridge or pantry showing all the products you want to suggest.',
+      name: 'suggestAssortmentInstructionText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hold the camera in front of the membership barcode.`
+  String get scanMembershipBarcodeExplanation {
+    return Intl.message(
+      'Hold the camera in front of the membership barcode.',
+      name: 'scanMembershipBarcodeExplanation',
       desc: '',
       args: [],
     );

@@ -5,8 +5,8 @@ import 'package:wir_markt/generated/l10n.dart';
 import 'package:wir_markt/home/onboarding_card.dart';
 import 'package:wir_markt/home/wm_bottom_app_bar.dart';
 import 'package:wir_markt/membership/membership_model.dart';
-import 'package:wir_markt/membership/membership_validation_page.dart';
-import 'package:wir_markt/scan/scan_page.dart';
+import 'package:wir_markt/membership/validate_membership_page.dart';
+import 'package:wir_markt/scan/scan_code_page.dart';
 import 'package:wir_markt/suggest_product/suggest_product_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,9 +23,8 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     Future.delayed(Duration.zero, () async {
       setState(() {
-        //TODO load membership from storage or backend
-        Provider.of<MembershipModel>(context, listen: false)
-            .updateMembership(Membership("qrcodestring"));
+        // Provider.of<MembershipModel>(context, listen: false)
+        //     .updateMembership(Membership("qrcodestring"));
       });
     });
     super.initState();
@@ -34,8 +33,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     const paddingVertical = 16.0;
-    Membership? _membership =
-        Provider.of<MembershipModel>(context, listen: false).membership;
 
     return Scaffold(
       key: _scaffoldKey,
@@ -60,13 +57,15 @@ class _HomePageState extends State<HomePage> {
                 Navigator.of(context).push(
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) => SuggestProductPage(
+                        instructionsText:
+                            S.of(context).suggestAssortmentInstructionText,
                         title: S.of(context).createAssortmentSuggestionTitle),
                   ),
                 );
               },
               iconImage: AssetImage("images/fridge.jpg"),
               //TODO this should be dynamic
-              done: true,
+              done: false,
             ),
             OnboardingCard(
               title: S.of(context).createProductSuggestionTitle,
@@ -75,7 +74,10 @@ class _HomePageState extends State<HomePage> {
                 Navigator.of(context).push(
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) => SuggestProductPage(
-                        title: S.of(context).createProductSuggestionTitle),
+                      title: S.of(context).createProductSuggestionTitle,
+                      instructionsText:
+                          S.of(context).suggestProductInstructionText,
+                    ),
                   ),
                 );
               },
@@ -83,38 +85,52 @@ class _HomePageState extends State<HomePage> {
               //TODO this should be dynamic
               done: false,
             ),
-            if (_membership == null)
-              OnboardingCard(
-                title: S.of(context).setupMembershipTitle,
-                explanation: S.of(context).setupMembershipExplanation,
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute<void>(
-                      builder: (BuildContext context) => SuggestProductPage(
-                          title: S.of(context).setupMembershipTitle),
-                    ),
+            Consumer<MembershipModel>(
+              builder: (_, model, child) {
+                if (model.membership == null) {
+                  return OnboardingCard(
+                    title: S.of(context).setupMembershipTitle,
+                    explanation: S.of(context).setupMembershipExplanation,
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute<void>(
+                          builder: (BuildContext context) => ScanCodePage(
+                            title: S.of(context).setupMembershipTitle,
+                            explanation:
+                                S.of(context).scanMembershipBarcodeExplanation,
+                            onCapture: (data) {
+                              //TODO validate scanned code
+                              var membership = Membership(data);
+                              Provider.of<MembershipModel>(context,
+                                      listen: false)
+                                  .updateMembership(membership);
+                              Navigator.of(context).pop(membership);
+                            },
+                          ),
+                        ),
+                      );
+                    },
+                    iconImage: AssetImage("images/member-card.jpg"),
                   );
-                },
-                iconImage: AssetImage("images/member-card.jpg"),
-                //TODO this should be dynamic
-                done: false,
-              ),
-            if (_membership != null)
-              OnboardingCard(
-                title: S.of(context).shopAsMemberTitle,
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute<void>(
-                      builder: (BuildContext context) =>
-                          MembershipValidationPage(
-                              title: S.of(context).shopAsMemberTitle),
-                    ),
+                } else {
+                  return OnboardingCard(
+                    title: S.of(context).shopAsMemberTitle,
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute<void>(
+                          builder: (BuildContext context) =>
+                              ValidateMembershipPage(
+                                  title: S.of(context).shopAsMemberTitle),
+                        ),
+                      );
+                    },
+                    //TODO this should be dynamic
+                    done: false,
+                    iconImage: AssetImage("images/orange-bag.jpg"),
                   );
-                },
-                //TODO this should be dynamic
-                done: false,
-                iconImage: AssetImage("images/orange-bag.jpg"),
-              ),
+                }
+              },
+            ),
             SizedBox(height: paddingVertical * 2),
           ],
         ),
@@ -128,18 +144,32 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.qr_code_scanner),
         elevation: 2.0,
       ),
-      bottomNavigationBar: WMBottomAppBar(
-        scaffoldKey: _scaffoldKey,
+      bottomNavigationBar: WMBottomAppBar(),
+    );
+  }
+
+  void profileClicked() {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (BuildContext context) => ValidateMembershipPage(
+          title: S.of(context).membershipTitle,
+        ),
       ),
     );
   }
 
-  void profileClicked() {}
-
   void _navigateToScan() {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
-        builder: (BuildContext context) => ScanPage(),
+        builder: (BuildContext context) => ScanCodePage(
+          title: S.of(context).scanBarCodeTitle,
+          explanation: S.of(context).alignWithBarcodeExplanation,
+          onCapture: (code) {
+            setState(() {
+              Navigator.of(context).pop(code);
+            });
+          },
+        ),
       ),
     );
   }

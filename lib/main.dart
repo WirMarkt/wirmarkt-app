@@ -10,6 +10,10 @@ import 'package:wir_markt/utils.dart';
 import 'package:wir_markt/wm_colors.dart';
 
 void main() {
+  // Ensure that plugin services are initialized so that `availableCameras()`
+  // can be called before `runApp()`
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (context) => MembershipModel()),

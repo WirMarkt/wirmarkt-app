@@ -4,12 +4,19 @@
   "setupMembershipTitle": "Setup Membership",
   "setupMembershipExplanation": "Store badge in smartphone.",
   "shopAsMemberTitle": "Shop as a Member",
-  "createProductSuggestionTitle": "Create Product Suggestion",
+  "createProductSuggestionTitle": "Suggest Product",
   "createProductSuggestionExplanation": "Suggest single product.",
-  "createAssortmentSuggestionTitle": "Create Assortment Suggestion",
+  "createAssortmentSuggestionTitle": "Suggest Assortment",
   "createAssortmentSuggestionExplanation": "Suggest multiple products at once.",
   "settingsTitle": "Settings",
   "scanResultTitle": "Scan Result",
   "resultLabel": "Result",
-  "rawContentLabel": "Raw Content"
+  "rawContentLabel": "Raw Content",
+  "scanBarCodeTitle": "Scan barcode",
+  "alignWithBarcodeExplanation": "Hold the barcode in front of the camera so that it can be seen in its entirety.",
+  "membershipTitle": "Membership",
+  "showBarcodeAtPOSLabel": "Show this barcode at the checkout in the store.",
+  "suggestProductInstructionText": "Take a photo of the product you want to suggest.",
+  "suggestAssortmentInstructionText": "Take a picture of your fridge or pantry showing all the products you want to suggest.",
+  "scanMembershipBarcodeExplanation": "Hold the camera in front of the membership barcode."
 }

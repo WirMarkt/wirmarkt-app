@@ -9,6 +9,7 @@
 * Kühlschrank-Foto machen (das kaufe ich regelmäßig ein)
 * Mitgliedschaft in der App hinterlegen
 * Mit der App einkaufen gehen und Mitgliedsausweis vorzeigen
+* Freunde einladen zum WirMarkt (App-Link und Nachricht)
 
 ## Basis
 

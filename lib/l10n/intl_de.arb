@@ -11,5 +11,12 @@
   "settingsTitle": "Settings",
   "scanResultTitle": "Scan Resultat",
   "resultLabel": "Resultat",
-  "rawContentLabel": "Roher Inhalt"
+  "rawContentLabel": "Roher Inhalt",
+  "scanBarCodeTitle": "Barcode scannen",
+  "alignWithBarcodeExplanation": "Barcode so vor die Kamera halten, dass er komplett zu sehen ist.",
+  "membershipTitle": "Mitgliedschaft",
+  "showBarcodeAtPOSLabel": "Zeige diesen Barcode an der Kasse im Laden.",
+  "suggestProductInstructionText": "Mache ein Foto von dem Produkt, das du vorschlagen möchtest.",
+  "suggestAssortmentInstructionText": "Mache ein Foto von deinem Kühlschrank oder deiner Vorratskammer, auf dem alle Produkte zu sehen sind, die du vorschlagen möchtest.",
+  "scanMembershipBarcodeExplanation": "Halte die Kamera vor den Mitglieder-Barcode."
 }

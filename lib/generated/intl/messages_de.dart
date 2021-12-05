@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "alignWithBarcodeExplanation": MessageLookupByLibrary.simpleMessage(
+            "Barcode so vor die Kamera halten, dass er komplett zu sehen ist."),
         "createAssortmentSuggestionExplanation":
             MessageLookupByLibrary.simpleMessage(
                 "Mehrere Produkte auf einmal vorschlagen."),
@@ -34,8 +36,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Neuer Produktwunsch"),
         "introTitle": MessageLookupByLibrary.simpleMessage("Story"),
         "memberLabel": MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
+        "membershipTitle":
+            MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
         "rawContentLabel": MessageLookupByLibrary.simpleMessage("Roher Inhalt"),
         "resultLabel": MessageLookupByLibrary.simpleMessage("Resultat"),
+        "scanBarCodeTitle":
+            MessageLookupByLibrary.simpleMessage("Barcode scannen"),
+        "scanMembershipBarcodeExplanation":
+            MessageLookupByLibrary.simpleMessage(
+                "Halte die Kamera vor den Mitglieder-Barcode."),
         "scanResultTitle":
             MessageLookupByLibrary.simpleMessage("Scan Resultat"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
@@ -44,6 +53,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "setupMembershipTitle":
             MessageLookupByLibrary.simpleMessage("Mitgliedsausweis einrichten"),
         "shopAsMemberTitle":
-            MessageLookupByLibrary.simpleMessage("Als Mitglied einkaufen")
+            MessageLookupByLibrary.simpleMessage("Als Mitglied einkaufen"),
+        "showBarcodeAtPOSLabel": MessageLookupByLibrary.simpleMessage(
+            "Zeige diesen Barcode an der Kasse im Laden."),
+        "suggestAssortmentInstructionText": MessageLookupByLibrary.simpleMessage(
+            "Mache ein Foto von deinem Kühlschrank oder deiner Vorratskammer, auf dem alle Produkte zu sehen sind, die du vorschlagen möchtest."),
+        "suggestProductInstructionText": MessageLookupByLibrary.simpleMessage(
+            "Mache ein Foto von dem Produkt, das du vorschlagen möchtest.")
       };
 }

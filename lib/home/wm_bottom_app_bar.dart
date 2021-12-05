@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:wir_markt/generated/l10n.dart';
+import 'package:wir_markt/preferences/preferences_page.dart';
 
 class WMBottomAppBar extends StatefulWidget {
-  final GlobalKey<ScaffoldState> scaffoldKey;
-
   const WMBottomAppBar({
     this.shape = const CircularNotchedRectangle(),
-    required this.scaffoldKey,
   });
 
   final NotchedShape? shape;
@@ -27,7 +25,9 @@ class _WMBottomAppBarState extends State<WMBottomAppBar> {
             icon: const Icon(Icons.settings),
             onPressed: () {
               setState(() {
-                widget.scaffoldKey.currentState!.openDrawer();
+                Navigator.of(context).push(MaterialPageRoute<void>(
+                  builder: (BuildContext context) => PreferencesPage(),
+                ));
               });
             },
           ),
