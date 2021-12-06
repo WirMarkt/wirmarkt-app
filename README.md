@@ -4,7 +4,7 @@
 
 Set up Flutter development environment first.
 
-# Launch in browser (Google Chrome)
+# Launch on development machine
 
 ```
 
