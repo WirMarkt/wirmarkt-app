@@ -249,6 +249,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Setup contribution/fee`
+  String get planContributionTitle {
+    return Intl.message(
+      'Setup contribution/fee',
+      name: 'planContributionTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Schedule your next shift or configure the bank account for your membership fee.`
+  String get planContributionExplanation {
+    return Intl.message(
+      'Schedule your next shift or configure the bank account for your membership fee.',
+      name: 'planContributionExplanation',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -38,6 +38,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "memberLabel": MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
         "membershipTitle":
             MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
+        "planContributionExplanation": MessageLookupByLibrary.simpleMessage(
+            "Plane deine nächste Schicht oder konfiguriere das Bankkonto für deinen Beitrag"),
+        "planContributionTitle":
+            MessageLookupByLibrary.simpleMessage("Mitarbeit/Beitrag planen"),
         "rawContentLabel": MessageLookupByLibrary.simpleMessage("Roher Inhalt"),
         "resultLabel": MessageLookupByLibrary.simpleMessage("Resultat"),
         "scanBarCodeTitle":

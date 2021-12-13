@@ -37,6 +37,8 @@ class SuggestProductPageState extends State<SuggestProductPage> {
     final cameras = await availableCameras();
 
     // Get a specific camera from the list of available cameras.
+
+    //TODO this might be empty, deal with that in UI!
     final firstCamera = cameras.first;
 
     // To display the current output from the Camera,

@@ -22,6 +22,7 @@ void main() {
   ));
 }
 
+// ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: [
+      supportedLocales: const [
         Locale('en', ''), // English, no country code
         Locale('de', ''), // German, no country code
       ],

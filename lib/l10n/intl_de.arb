@@ -18,5 +18,7 @@
   "showBarcodeAtPOSLabel": "Zeige diesen Barcode an der Kasse im Laden.",
   "suggestProductInstructionText": "Mache ein Foto von dem Produkt, das du vorschlagen möchtest.",
   "suggestAssortmentInstructionText": "Mache ein Foto von deinem Kühlschrank oder deiner Vorratskammer, auf dem alle Produkte zu sehen sind, die du vorschlagen möchtest.",
-  "scanMembershipBarcodeExplanation": "Halte die Kamera vor den Mitglieder-Barcode."
+  "scanMembershipBarcodeExplanation": "Halte die Kamera vor den Mitglieder-Barcode.",
+  "planContributionTitle": "Mitarbeit/Beitrag planen",
+  "planContributionExplanation": "Plane deine nächste Schicht oder konfiguriere das Bankkonto für deinen Beitrag"
 }
