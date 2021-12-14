@@ -1,4 +1,3 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wir_markt/data/membership.dart';
@@ -9,7 +8,6 @@ import 'package:wir_markt/membership/membership_model.dart';
 import 'package:wir_markt/membership/validate_membership_page.dart';
 import 'package:wir_markt/scan/scan_code_page.dart';
 import 'package:wir_markt/suggest_product/suggest_product_page.dart';
-import 'package:wir_markt/wm_colors.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -33,7 +31,6 @@ class _HomePageState extends State<HomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(getTitleOf(page: _page)),
-        backgroundColor: Colors.transparent,
         // leading: IconButton(
         //   icon: const Icon(Icons.person),
         //   onPressed: profileClicked,
@@ -49,12 +46,14 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Theme.of(context).backgroundColor,
-        animationDuration: const Duration(milliseconds: 100),
-        items: const [
-          Icon(Icons.shopping_cart, color: WMColors.orange),
-          Icon(Icons.insights, color: WMColors.orange),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _page,
+        items: [
+          BottomNavigationBarItem(
+              label: getTitleOf(page: 0),
+              icon: const Icon(Icons.shopping_cart)),
+          BottomNavigationBarItem(
+              label: getTitleOf(page: 1), icon: const Icon(Icons.insights)),
         ],
         onTap: (index) {
           setState(() {

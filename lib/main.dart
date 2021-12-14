@@ -9,7 +9,6 @@ import 'package:wir_markt/membership/membership_model.dart';
 import 'package:wir_markt/utils.dart';
 import 'package:wir_markt/wm_colors.dart';
 
-
 void main({String? env = 'dev'}) async {
   // Ensure that plugin services are initialized so that `availableCameras()`
   // can be called before `runApp()`
@@ -67,7 +66,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: createMaterialColor(WMColors.darkBlue),
           brightness: brightness,
-          accentColor: WMColors.orange,
+          accentColor: WMColors.lightGreen,
         ),
       );
 }

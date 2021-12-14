@@ -42,7 +42,6 @@ dependencies:
   google_fonts:
   shared_preferences:
   scan:
-  curved_navigation_bar:
 
 dev_dependencies:
   flutter_test:
