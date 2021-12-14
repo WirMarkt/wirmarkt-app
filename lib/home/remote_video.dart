@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -90,13 +89,13 @@ class _ControlsOverlay extends StatelessWidget {
     return Stack(
       children: <Widget>[
         AnimatedSwitcher(
-          duration: Duration(milliseconds: 50),
-          reverseDuration: Duration(milliseconds: 200),
+          duration: const Duration(milliseconds: 50),
+          reverseDuration: const Duration(milliseconds: 200),
           child: controller.value.isPlaying
-              ? SizedBox.shrink()
+              ? const SizedBox.shrink()
               : Container(
                   color: Colors.black26,
-                  child: Center(
+                  child: const Center(
                     child: Icon(
                       Icons.play_arrow,
                       color: Colors.white,

@@ -20,5 +20,9 @@
   "suggestAssortmentInstructionText": "Mache ein Foto von deinem Kühlschrank oder deiner Vorratskammer, auf dem alle Produkte zu sehen sind, die du vorschlagen möchtest.",
   "scanMembershipBarcodeExplanation": "Halte die Kamera vor den Mitglieder-Barcode.",
   "planContributionTitle": "Mitarbeit/Beitrag planen",
-  "planContributionExplanation": "Plane deine nächste Schicht oder konfiguriere das Bankkonto für deinen Beitrag"
+  "planContributionExplanation": "Plane deine nächste Schicht oder konfiguriere das Bankkonto für deinen Beitrag",
+  "propertiesTitle": "Einstellungen",
+  "resetAppLabel": "App zurücksetzen",
+  "membershipSectionTitle": "Mitgliedschaft",
+  "impactSectionTitle": "Impact"
 }

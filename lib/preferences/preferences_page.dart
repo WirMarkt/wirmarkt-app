@@ -1,10 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wir_markt/generated/l10n.dart';
 import 'package:wir_markt/membership/membership_model.dart';
 
 class PreferencesPage extends StatefulWidget {
+  const PreferencesPage({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
     return PreferencesPageState();
@@ -21,14 +23,14 @@ class PreferencesPageState extends State<PreferencesPage> {
         var hasSettings =
             hasSettingsSnap.hasData && hasSettingsSnap.data == true;
         return Scaffold(
-          appBar: AppBar(title: Text("Einstellungen")),
+          appBar: AppBar(title: Text(S.of(context).propertiesTitle)),
           body: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.all(24.0),
                 child: Center(
                   child: ElevatedButton(
-                    child: Text("App zurücksetzen"),
+                    child: Text(S.of(context).resetAppLabel),
                     onPressed: !hasSettings
                         ? null
                         : () async {

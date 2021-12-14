@@ -1,6 +1,5 @@
 import 'dart:math' as math;
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
@@ -27,7 +26,7 @@ class ValidateMembershipPageState extends State<ValidateMembershipPage> {
     Membership? _membership =
         Provider.of<MembershipModel>(context, listen: true).membership;
 
-    var _body;
+    Widget _body;
 
     if (_membership != null) {
       var qrSize = math.min(MediaQuery.of(context).size.width,
@@ -38,7 +37,7 @@ class ValidateMembershipPageState extends State<ValidateMembershipPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Spacer(),
+            const Spacer(),
             Center(
               child: Container(
                 color: Colors.white,
@@ -63,12 +62,12 @@ class ValidateMembershipPageState extends State<ValidateMembershipPage> {
                     style: Theme.of(context).textTheme.bodyText2),
               ),
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       );
     } else {
-      _body = Text("Membership missing");
+      _body = const Text("Membership missing");
     }
 
     return Scaffold(

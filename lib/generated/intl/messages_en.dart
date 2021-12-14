@@ -33,14 +33,19 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Suggest single product."),
         "createProductSuggestionTitle":
             MessageLookupByLibrary.simpleMessage("Suggest Product"),
+        "impactSectionTitle": MessageLookupByLibrary.simpleMessage("Impact"),
         "introTitle": MessageLookupByLibrary.simpleMessage("Story"),
         "memberLabel": MessageLookupByLibrary.simpleMessage("Member"),
+        "membershipSectionTitle":
+            MessageLookupByLibrary.simpleMessage("Membership"),
         "membershipTitle": MessageLookupByLibrary.simpleMessage("Membership"),
         "planContributionExplanation": MessageLookupByLibrary.simpleMessage(
             "Schedule your next shift or configure the bank account for your membership fee."),
         "planContributionTitle":
             MessageLookupByLibrary.simpleMessage("Setup contribution/fee"),
+        "propertiesTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "rawContentLabel": MessageLookupByLibrary.simpleMessage("Raw Content"),
+        "resetAppLabel": MessageLookupByLibrary.simpleMessage("Reset app"),
         "resultLabel": MessageLookupByLibrary.simpleMessage("Result"),
         "scanBarCodeTitle":
             MessageLookupByLibrary.simpleMessage("Scan barcode"),

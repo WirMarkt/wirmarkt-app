@@ -1,29 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:wir_markt/data/app_config.dart';
 import 'package:wir_markt/generated/l10n.dart';
 import 'package:wir_markt/home/home_page.dart';
 import 'package:wir_markt/membership/membership_model.dart';
 import 'package:wir_markt/utils.dart';
 import 'package:wir_markt/wm_colors.dart';
 
-void main() {
+
+void main({String? env = 'dev'}) async {
   // Ensure that plugin services are initialized so that `availableCameras()`
   // can be called before `runApp()`
   WidgetsFlutterBinding.ensureInitialized();
+
+  // load our config
+  final config = await AppConfig.forEnvironment(env: env);
 
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (context) => MembershipModel()),
     ],
-    child: MyApp(),
+    child: MyApp(config),
   ));
 }
 
 // ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
+  final AppConfig config;
+
+  const MyApp(this.config, {Key? key}) : super(key: key);
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -44,7 +52,7 @@ class MyApp extends StatelessWidget {
       ],
       theme: buildThemeData(Brightness.light),
       darkTheme: buildThemeData(Brightness.dark),
-      home: HomePage(),
+      home: const HomePage(),
       // routes: {
       //   '/home': (BuildContext context) => HomeScreen(),
       //   '/intro': (BuildContext context) => IntroScreen()

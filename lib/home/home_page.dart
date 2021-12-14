@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: const Text("WirMarkt"),
+        title: Text(getTitleOf(page: _page)),
         backgroundColor: Colors.transparent,
         // leading: IconButton(
         //   icon: const Icon(Icons.person),
@@ -193,5 +193,16 @@ class _HomePageState extends State<HomePage> {
         image: const AssetImage("images/cashier.jpg"),
       ),
     ];
+  }
+
+  String getTitleOf({required int page}) {
+    switch (page) {
+      case 0:
+        return S.of(context).membershipSectionTitle;
+      case 1:
+        return S.of(context).impactSectionTitle;
+      default:
+        return "WirMarkt";
+    }
   }
 }

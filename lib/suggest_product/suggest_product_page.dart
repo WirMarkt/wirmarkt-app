@@ -105,8 +105,7 @@ class SuggestProductPageState extends State<SuggestProductPage> {
               ),
             );
           } catch (e) {
-            // If an error occurs, log the error to the console.
-            print(e);
+            // TODO handle error
           }
         },
         child: const Icon(Icons.camera_alt),
@@ -124,7 +123,7 @@ class ReviewProductSuggestionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Vorschlag absenden?")),
+      appBar: AppBar(title: const Text("Vorschlag absenden?")),
       body: Column(
         children: [
           Image(image: FileImage(File(imagePath))),
@@ -132,7 +131,7 @@ class ReviewProductSuggestionPage extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pushReplacementNamed("/");
               },
-              child: Text("Absenden"))
+              child: const Text("Absenden"))
         ],
       ),
     );

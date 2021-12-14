@@ -20,5 +20,9 @@
   "suggestAssortmentInstructionText": "Take a picture of your fridge or pantry showing all the products you want to suggest.",
   "scanMembershipBarcodeExplanation": "Hold the camera in front of the membership barcode.",
   "planContributionTitle": "Setup contribution/fee",
-  "planContributionExplanation": "Schedule your next shift or configure the bank account for your membership fee."
+  "planContributionExplanation": "Schedule your next shift or configure the bank account for your membership fee.",
+  "propertiesTitle": "Settings",
+  "resetAppLabel": "Reset app",
+  "membershipSectionTitle": "Membership",
+  "impactSectionTitle": "Impact"
 }

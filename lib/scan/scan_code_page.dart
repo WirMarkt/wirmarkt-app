@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scan/scan.dart';
 import 'package:wir_markt/wm_colors.dart';

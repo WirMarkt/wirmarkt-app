@@ -6,7 +6,7 @@ part 'membership.g.dart';
 @JsonSerializable()
 @immutable
 class Membership {
-  Membership(this.qr);
+  const Membership(this.qr);
 
   final String qr;
 
