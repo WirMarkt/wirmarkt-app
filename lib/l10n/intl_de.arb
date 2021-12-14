@@ -24,5 +24,9 @@
   "propertiesTitle": "Einstellungen",
   "resetAppLabel": "App zurücksetzen",
   "membershipSectionTitle": "Mitgliedschaft",
-  "impactSectionTitle": "Impact"
+  "impactSectionTitle": "Impact",
+  "membershipCountTitle": "Wir sind {membershipCount} Mitglieder",
+  "membershipCountExplanation": "Hilf mit und lade deine Freunde ein",
+  "storeCountTitle": "Wir haben {shopCount,plural, =0{kein Geschäft}=1{ein Geschäft}other{{shopCount} Geschäfte}}",
+  "storeCountExplanation": "Sagt der Welt, sie soll mehr genossenschaftliche Supermärkte eröffnen!"
 }

@@ -180,16 +180,16 @@ class _HomePageState extends State<HomePage> {
   List<Widget> generateImpactUI() {
     //TODO make this dynamic
     var _membershipCount = 63;
-    var _shopCount = 1;
+    var _storeCount = 1;
     return [
       ImpactCard(
-        title: "We are $_membershipCount members",
-        explanation: "Help grow our community by inviting your friends",
+        title: S.of(context).membershipCountTitle(_membershipCount),
+        explanation: S.of(context).membershipCountExplanation,
         image: const AssetImage("images/member-card.jpg"),
       ),
       ImpactCard(
-        title: "We have $_shopCount stores",
-        explanation: "Tell the world to open more cooperative supermarkets!",
+        title: S.of(context).storeCountTitle(_storeCount),
+        explanation: S.of(context).storeCountExplanation,
         image: const AssetImage("images/cashier.jpg"),
       ),
     ];

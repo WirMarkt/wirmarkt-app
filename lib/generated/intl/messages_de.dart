@@ -20,6 +20,11 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'de';
 
+  static String m0(membershipCount) => "Wir sind ${membershipCount} Mitglieder";
+
+  static String m1(shopCount) =>
+      "Wir haben ${Intl.plural(shopCount, zero: 'kein Geschäft', one: 'ein Geschäft', other: '${shopCount} Geschäfte')}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "alignWithBarcodeExplanation": MessageLookupByLibrary.simpleMessage(
@@ -37,6 +42,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "impactSectionTitle": MessageLookupByLibrary.simpleMessage("Impact"),
         "introTitle": MessageLookupByLibrary.simpleMessage("Story"),
         "memberLabel": MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
+        "membershipCountExplanation": MessageLookupByLibrary.simpleMessage(
+            "Hilf mit und lade deine Freunde ein"),
+        "membershipCountTitle": m0,
         "membershipSectionTitle":
             MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
         "membershipTitle":
@@ -67,6 +75,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Als Mitglied einkaufen"),
         "showBarcodeAtPOSLabel": MessageLookupByLibrary.simpleMessage(
             "Zeige diesen Barcode an der Kasse im Laden."),
+        "storeCountExplanation": MessageLookupByLibrary.simpleMessage(
+            "Sagt der Welt, sie soll mehr genossenschaftliche Supermärkte eröffnen!"),
+        "storeCountTitle": m1,
         "suggestAssortmentInstructionText": MessageLookupByLibrary.simpleMessage(
             "Mache ein Foto von deinem Kühlschrank oder deiner Vorratskammer, auf dem alle Produkte zu sehen sind, die du vorschlagen möchtest."),
         "suggestProductInstructionText": MessageLookupByLibrary.simpleMessage(

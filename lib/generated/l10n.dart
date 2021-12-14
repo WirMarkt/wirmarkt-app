@@ -309,6 +309,46 @@ class S {
       args: [],
     );
   }
+
+  /// `We are {membershipCount} members`
+  String membershipCountTitle(Object membershipCount) {
+    return Intl.message(
+      'We are $membershipCount members',
+      name: 'membershipCountTitle',
+      desc: '',
+      args: [membershipCount],
+    );
+  }
+
+  /// `Help grow our community by inviting your friends`
+  String get membershipCountExplanation {
+    return Intl.message(
+      'Help grow our community by inviting your friends',
+      name: 'membershipCountExplanation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We have {shopCount,plural, =0{no store}=1{one store}other{{shopCount} stores}}`
+  String storeCountTitle(num shopCount) {
+    return Intl.message(
+      'We have ${Intl.plural(shopCount, zero: 'no store', one: 'one store', other: '$shopCount stores')}',
+      name: 'storeCountTitle',
+      desc: '',
+      args: [shopCount],
+    );
+  }
+
+  /// `Tell the world to open more cooperative supermarkets!`
+  String get storeCountExplanation {
+    return Intl.message(
+      'Tell the world to open more cooperative supermarkets!',
+      name: 'storeCountExplanation',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
