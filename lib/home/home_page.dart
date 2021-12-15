@@ -4,6 +4,7 @@ import 'package:wir_markt/data/membership.dart';
 import 'package:wir_markt/generated/l10n.dart';
 import 'package:wir_markt/home/impact_card.dart';
 import 'package:wir_markt/home/onboarding_card.dart';
+import 'package:wir_markt/impact/impact_metrics_model.dart';
 import 'package:wir_markt/membership/membership_model.dart';
 import 'package:wir_markt/membership/validate_membership_page.dart';
 import 'package:wir_markt/scan/scan_code_page.dart';
@@ -23,8 +24,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    const paddingVertical = 16.0;
-
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -37,14 +36,7 @@ class _HomePageState extends State<HomePage> {
         // ),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(height: paddingVertical),
-            if (_page == 0) ...generateShoppingCartUI(),
-            if (_page == 1) ...generateImpactUI(),
-            const SizedBox(height: paddingVertical * 2),
-          ],
-        ),
+        child: buildPageUi(_page),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _page,
@@ -74,7 +66,12 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  List<Widget> generateShoppingCartUI() => [
+  Widget generateShoppingCartUI() {
+    const paddingVertical = 16.0;
+
+    return Column(
+      children: [
+        const SizedBox(height: paddingVertical),
         OnboardingCard(
           title: S.of(context).createAssortmentSuggestionTitle,
           explanation: S.of(context).createAssortmentSuggestionExplanation,
@@ -174,24 +171,36 @@ class _HomePageState extends State<HomePage> {
             }
           },
         ),
-      ];
+      ],
+    );
+  }
 
-  List<Widget> generateImpactUI() {
-    //TODO make this dynamic
-    var _membershipCount = 63;
-    var _storeCount = 1;
-    return [
-      ImpactCard(
-        title: S.of(context).membershipCountTitle(_membershipCount),
-        explanation: S.of(context).membershipCountExplanation,
-        image: const AssetImage("images/member-card.jpg"),
-      ),
-      ImpactCard(
-        title: S.of(context).storeCountTitle(_storeCount),
-        explanation: S.of(context).storeCountExplanation,
-        image: const AssetImage("images/cashier.jpg"),
-      ),
-    ];
+  Widget generateImpactUI() {
+    const paddingVertical = 16.0;
+
+    return Consumer<ImpactMetricsModel>(builder: (_, impactMetrics, child) {
+      return Column(
+        children: [
+          const SizedBox(height: paddingVertical),
+          if (impactMetrics.impactMetrics != null)
+            ImpactCard(
+              title: S.of(context).membershipCountTitle(
+                  impactMetrics.impactMetrics!.memberCount),
+              explanation: S.of(context).membershipCountExplanation,
+              image: const AssetImage("images/member-card.jpg"),
+            ),
+          if (impactMetrics.impactMetrics != null)
+            ImpactCard(
+              title: S
+                  .of(context)
+                  .storeCountTitle(impactMetrics.impactMetrics!.storeCount),
+              explanation: S.of(context).storeCountExplanation,
+              image: const AssetImage("images/cashier.jpg"),
+            ),
+          const SizedBox(height: paddingVertical * 2),
+        ],
+      );
+    });
   }
 
   String getTitleOf({required int page}) {
@@ -202,6 +211,17 @@ class _HomePageState extends State<HomePage> {
         return S.of(context).impactSectionTitle;
       default:
         return "WirMarkt";
+    }
+  }
+
+  Widget buildPageUi(int page) {
+    switch (page) {
+      case 0:
+        return generateShoppingCartUI();
+      case 1:
+        return generateImpactUI();
+      default:
+        return Container();
     }
   }
 }

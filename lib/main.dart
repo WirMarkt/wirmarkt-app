@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:wir_markt/data/app_config.dart';
 import 'package:wir_markt/generated/l10n.dart';
 import 'package:wir_markt/home/home_page.dart';
+import 'package:wir_markt/impact/impact_metrics_model.dart';
 import 'package:wir_markt/membership/membership_model.dart';
 import 'package:wir_markt/utils.dart';
 import 'package:wir_markt/wm_colors.dart';
@@ -20,6 +21,7 @@ void main({String? env = 'dev'}) async {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (context) => MembershipModel()),
+      ChangeNotifierProvider(create: (context) => ImpactMetricsModel(config)),
     ],
     child: MyApp(config),
   ));
