@@ -12,7 +12,7 @@ class ImpactMetricsModel extends ChangeNotifier {
   final AppConfig appConfig;
 
   Future<ImpactMetrics> fetchImpactMetrics() async {
-    final response = await http.get(Uri.parse(appConfig.apiUrl + "/impact"));
+    final response = await http.get(Uri.parse(appConfig.apiUrl + "/impactmetrics"));
 
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
