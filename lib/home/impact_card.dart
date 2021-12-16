@@ -15,6 +15,7 @@ class ImpactCard extends StatelessWidget {
         var height = boxConstraints.maxWidth * 0.7;
         var padding = 32.0;
         return Card(
+          elevation: 4,
           semanticContainer: true,
           clipBehavior: Clip.antiAliasWithSaveLayer,
           child: Stack(
