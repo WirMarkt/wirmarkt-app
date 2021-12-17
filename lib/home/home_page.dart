@@ -197,6 +197,12 @@ class _HomePageState extends State<HomePage> {
               explanation: S.of(context).storeCountExplanation,
               image: const AssetImage("images/cashier.jpg"),
             ),
+          ImpactCard(
+            title: S.of(context).regionalwertPartnerTitle,
+            explanation: S.of(context).regionalwertPartnerExplanation,
+            fit: BoxFit.contain,
+            image: const AssetImage("images/regionalwert-partner.webp"),
+          ),
           const SizedBox(height: paddingVertical * 2),
         ],
       );

@@ -28,5 +28,7 @@
   "membershipCountTitle": "Wir sind {membershipCount} Mitglieder",
   "membershipCountExplanation": "Hilf mit und lade deine Freunde ein",
   "storeCountTitle": "Wir haben {shopCount,plural, =0{kein Geschäft}=1{ein Geschäft}other{{shopCount} Geschäfte}}",
-  "storeCountExplanation": "Sagt der Welt, sie soll mehr genossenschaftliche Supermärkte eröffnen!"
+  "storeCountExplanation": "Sagt der Welt, sie soll mehr genossenschaftliche Supermärkte eröffnen!",
+  "regionalwertPartnerTitle": "Regionalwert-Partner",
+  "regionalwertPartnerExplanation": "Wir setzen uns gemeinsam ein für ökologische, regionale und soziale Lebensmittel."
 }

@@ -5,8 +5,10 @@ class ImpactCard extends StatelessWidget {
   final String title;
   final String? explanation;
 
+  final BoxFit? fit;
+
   const ImpactCard(
-      {Key? key, required this.title, required this.image, this.explanation})
+      {Key? key, required this.title, required this.image, this.explanation, this.fit})
       : super(key: key);
 
   @override
@@ -27,7 +29,7 @@ class ImpactCard extends StatelessWidget {
                 height: height * 0.6,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    fit: BoxFit.cover,
+                    fit: fit ?? BoxFit.cover,
                     image: image,
                   ),
                 ),

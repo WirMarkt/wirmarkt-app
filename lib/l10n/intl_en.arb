@@ -28,5 +28,7 @@
   "membershipCountTitle": "We are {membershipCount} members",
   "membershipCountExplanation": "Help grow our community by inviting your friends",
   "storeCountTitle": "We have {shopCount,plural, =0{no store}=1{one store}other{{shopCount} stores}}",
-  "storeCountExplanation": "Tell the world to open more cooperative supermarkets!"
+  "storeCountExplanation": "Tell the world to open more cooperative supermarkets!",
+  "regionalwertPartnerTitle": "Regionalwert-Partner",
+  "regionalwertPartnerExplanation": "We are committed to ecological, regional and social food."
 }

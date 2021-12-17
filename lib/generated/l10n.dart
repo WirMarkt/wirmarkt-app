@@ -349,6 +349,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Regionalwert-Partner`
+  String get regionalwertPartnerTitle {
+    return Intl.message(
+      'Regionalwert-Partner',
+      name: 'regionalwertPartnerTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We are committed to ecological, regional and social food.`
+  String get regionalwertPartnerExplanation {
+    return Intl.message(
+      'We are committed to ecological, regional and social food.',
+      name: 'regionalwertPartnerExplanation',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
