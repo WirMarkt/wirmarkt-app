@@ -2,21 +2,27 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wir_markt/data/app_config.dart';
 import 'package:wir_markt/data/membership.dart';
 
 class MembershipModel extends ChangeNotifier {
   static const String membershipPrefKey = "membership";
   Membership? _membership;
 
-  MembershipModel() {
-    SharedPreferences.getInstance().then((prefs) {
-      var membershipJsonString = prefs.getString(membershipPrefKey);
-      if (membershipJsonString != null) {
-        updateMembership(Membership.fromJson(jsonDecode(membershipJsonString)));
-      } else {
-        updateMembership(null);
-      }
-    });
+  MembershipModel(AppConfig config) {
+    if (config.staticMembershipID != null) {
+      updateMembership(Membership(config.staticMembershipID!));
+    } else {
+      SharedPreferences.getInstance().then((prefs) {
+        var membershipJsonString = prefs.getString(membershipPrefKey);
+        if (membershipJsonString != null) {
+          updateMembership(
+              Membership.fromJson(jsonDecode(membershipJsonString)));
+        } else {
+          updateMembership(null);
+        }
+      });
+    }
   }
 
   Membership? get membership => _membership;

@@ -9,9 +9,10 @@ part 'app_config.g.dart';
 @JsonSerializable()
 @immutable
 class AppConfig {
-  const AppConfig(this.apiUrl);
+  const AppConfig(this.apiUrl, this.staticMembershipID);
 
   final String apiUrl;
+  final String? staticMembershipID;
 
   factory AppConfig.fromJson(Map<String, dynamic> json) =>
       _$AppConfigFromJson(json);

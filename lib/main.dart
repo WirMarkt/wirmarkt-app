@@ -20,7 +20,7 @@ void main({String? env = 'dev'}) async {
 
   runApp(MultiProvider(
     providers: [
-      ChangeNotifierProvider(create: (context) => MembershipModel()),
+      ChangeNotifierProvider(create: (context) => MembershipModel(config)),
       ChangeNotifierProvider(create: (context) => ImpactMetricsModel(config)),
     ],
     child: MyApp(config),
