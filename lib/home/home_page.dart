@@ -7,6 +7,7 @@ import 'package:wir_markt/home/onboarding_card.dart';
 import 'package:wir_markt/impact/impact_metrics_model.dart';
 import 'package:wir_markt/membership/membership_model.dart';
 import 'package:wir_markt/membership/validate_membership_page.dart';
+import 'package:wir_markt/preferences/preferences_page.dart';
 import 'package:wir_markt/scan/scan_code_page.dart';
 import 'package:wir_markt/suggest_product/suggest_product_page.dart';
 
@@ -30,10 +31,10 @@ class _HomePageState extends State<HomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(getTitleOf(page: _page)),
-        // leading: IconButton(
-        //   icon: const Icon(Icons.person),
-        //   onPressed: profileClicked,
-        // ),
+        leading: IconButton(
+          icon: const Icon(Icons.settings),
+          onPressed: showPreferences,
+        ),
       ),
       body: SingleChildScrollView(
         child: buildPageUi(_page),
@@ -56,12 +57,10 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void profileClicked() {
+  void showPreferences() {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
-        builder: (BuildContext context) => ValidateMembershipPage(
-          title: S.of(context).membershipTitle,
-        ),
+        builder: (BuildContext context) => const PreferencesPage(),
       ),
     );
   }
@@ -164,7 +163,7 @@ class _HomePageState extends State<HomePage> {
                     },
                     //TODO this should be dynamic
                     done: false,
-                    iconImage: const AssetImage("images/cashier.jpg"),
+                    iconImage: const AssetImage("images/member-card.jpg"),
                   ),
                 ],
               );
@@ -188,6 +187,8 @@ class _HomePageState extends State<HomePage> {
                   impactMetrics.impactMetrics!.memberCount),
               explanation: S.of(context).membershipCountExplanation,
               image: const AssetImage("images/member-card.jpg"),
+              backgroundColor: const Color.fromRGBO(189, 231, 221, 1),
+              textColor: Colors.black,
             ),
           if (impactMetrics.impactMetrics != null)
             ImpactCard(
@@ -195,13 +196,16 @@ class _HomePageState extends State<HomePage> {
                   .of(context)
                   .storeCountTitle(impactMetrics.impactMetrics!.storeCount),
               explanation: S.of(context).storeCountExplanation,
-              image: const AssetImage("images/cashier.jpg"),
+              image: const AssetImage("images/orange-bag.jpg"),
+              backgroundColor: const Color.fromRGBO(250, 231, 214, 1),
+              textColor: Colors.black,
             ),
           ImpactCard(
             title: S.of(context).regionalwertPartnerTitle,
             explanation: S.of(context).regionalwertPartnerExplanation,
-            fit: BoxFit.contain,
             image: const AssetImage("images/regionalwert-partner.webp"),
+            backgroundColor: const Color.fromRGBO(167, 223, 210, 1),
+            textColor: Colors.black,
           ),
           const SizedBox(height: paddingVertical * 2),
         ],

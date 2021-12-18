@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:wir_markt/wm_design.dart';
 
 class OnboardingCard extends StatefulWidget {
   final ImageProvider iconImage;
@@ -65,6 +66,7 @@ class OnboardingCardState extends State<OnboardingCard> {
                       top: 0,
                       bottom: 0,
                       child: Card(
+                        elevation: WMDesign.defaultElevation,
                         margin: EdgeInsets.zero,
                         shape:
                             RoundedRectangleBorder(borderRadius: borderRadius),

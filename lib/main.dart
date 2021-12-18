@@ -8,7 +8,7 @@ import 'package:wir_markt/home/home_page.dart';
 import 'package:wir_markt/impact/impact_metrics_model.dart';
 import 'package:wir_markt/membership/membership_model.dart';
 import 'package:wir_markt/utils.dart';
-import 'package:wir_markt/wm_colors.dart';
+import 'package:wir_markt/wm_design.dart';
 
 void main({String? env = 'dev'}) async {
   // Ensure that plugin services are initialized so that `availableCameras()`
@@ -66,9 +66,9 @@ class MyApp extends StatelessWidget {
           ThemeData(brightness: brightness).textTheme,
         ),
         colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: createMaterialColor(WMColors.darkBlue),
+          primarySwatch: createMaterialColor(WMDesign.turquoise),
           brightness: brightness,
-          accentColor: WMColors.lightGreen,
+          accentColor: WMDesign.lightGreen,
         ),
       );
 }

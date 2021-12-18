@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.wirmarkt.wir_markt">
    <application
-        android:label="wir_markt"
+        android:label="WirMarkt"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

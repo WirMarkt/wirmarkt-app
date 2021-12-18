@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scan/scan.dart';
-import 'package:wir_markt/wm_colors.dart';
+import 'package:wir_markt/wm_design.dart';
 
 class ScanCodePage extends StatefulWidget {
   final Function(String)? onCapture;
@@ -42,7 +42,7 @@ class ScanCodePageState extends State<ScanCodePage> {
             child: ScanView(
               controller: controller,
               scanAreaScale: .9,
-              scanLineColor: WMColors.orange,
+              scanLineColor: WMDesign.orange,
               onCapture: widget.onCapture,
             ),
           ),

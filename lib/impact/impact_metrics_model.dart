@@ -11,13 +11,17 @@ class ImpactMetricsModel extends ChangeNotifier {
 
   final AppConfig appConfig;
 
-  Future<ImpactMetrics> fetchImpactMetrics() async {
-    final response = await http.get(Uri.parse(appConfig.apiUrl + "/impactmetrics"));
+  void fetchImpactMetrics() async {
+    final response =
+        await http.get(Uri.parse(appConfig.apiUrl + "/impact-metrics"));
 
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
       // then parse the JSON.
-      return ImpactMetrics.fromJson(jsonDecode(response.body));
+      _impactMetrics = ImpactMetrics.fromJson(jsonDecode(response.body));
+      if (_impactMetrics != null) {
+        notifyListeners();
+      }
     } else {
       // If the server did not return a 200 OK response,
       // then throw an exception.
@@ -26,11 +30,14 @@ class ImpactMetricsModel extends ChangeNotifier {
   }
 
   ImpactMetricsModel(this.appConfig) {
-    fetchImpactMetrics().then((value) {
-      _impactMetrics = value;
-      notifyListeners();
-    });
+    fetchImpactMetrics();
   }
 
-  ImpactMetrics? get impactMetrics => _impactMetrics;
+  ImpactMetrics? get impactMetrics {
+    if (_impactMetrics == null) {
+      //async fetch metrics - will notify listeners if successful and subscribers will fetch updated results
+      fetchImpactMetrics();
+    }
+    return _impactMetrics;
+  }
 }
