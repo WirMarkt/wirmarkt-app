@@ -71,40 +71,6 @@ class _HomePageState extends State<HomePage> {
     return Column(
       children: [
         const SizedBox(height: paddingVertical),
-        OnboardingCard(
-          title: S.of(context).createAssortmentSuggestionTitle,
-          explanation: S.of(context).createAssortmentSuggestionExplanation,
-          onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute<void>(
-                builder: (BuildContext context) => SuggestProductPage(
-                    instructionsText:
-                        S.of(context).suggestAssortmentInstructionText,
-                    title: S.of(context).createAssortmentSuggestionTitle),
-              ),
-            );
-          },
-          iconImage: const AssetImage("images/fridge.jpg"),
-          //TODO this should be dynamic
-          done: false,
-        ),
-        OnboardingCard(
-          title: S.of(context).createProductSuggestionTitle,
-          explanation: S.of(context).createProductSuggestionExplanation,
-          onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute<void>(
-                builder: (BuildContext context) => SuggestProductPage(
-                  title: S.of(context).createProductSuggestionTitle,
-                  instructionsText: S.of(context).suggestProductInstructionText,
-                ),
-              ),
-            );
-          },
-          iconImage: const AssetImage("images/produce.jpg"),
-          //TODO this should be dynamic
-          done: false,
-        ),
         Consumer<MembershipModel>(
           builder: (_, model, child) {
             if (model.membership == null) {
@@ -129,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   );
                 },
-                iconImage: const AssetImage("images/member-card.jpg"),
+                iconImage: const AssetImage("images/bird.jpg"),
               );
             } else {
               return Column(
@@ -147,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                     },
                     //TODO this should be dynamic
                     done: false,
-                    iconImage: const AssetImage("images/orange-bag.jpg"),
+                    iconImage: const AssetImage("images/peas.jpg"),
                   ),
                   OnboardingCard(
                     title: S.of(context).planContributionTitle,
@@ -163,13 +129,48 @@ class _HomePageState extends State<HomePage> {
                     },
                     //TODO this should be dynamic
                     done: false,
-                    iconImage: const AssetImage("images/member-card.jpg"),
+                    iconImage: const AssetImage("images/bird.jpg"),
                   ),
                 ],
               );
             }
           },
         ),
+        OnboardingCard(
+          title: S.of(context).createAssortmentSuggestionTitle,
+          explanation: S.of(context).createAssortmentSuggestionExplanation,
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder: (BuildContext context) => SuggestProductPage(
+                    instructionsText:
+                        S.of(context).suggestAssortmentInstructionText,
+                    title: S.of(context).createAssortmentSuggestionTitle),
+              ),
+            );
+          },
+          iconImage: const AssetImage("images/apples.jpg"),
+          //TODO this should be dynamic
+          done: false,
+        ),
+        OnboardingCard(
+          title: S.of(context).createProductSuggestionTitle,
+          explanation: S.of(context).createProductSuggestionExplanation,
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder: (BuildContext context) => SuggestProductPage(
+                  title: S.of(context).createProductSuggestionTitle,
+                  instructionsText: S.of(context).suggestProductInstructionText,
+                ),
+              ),
+            );
+          },
+          iconImage: const AssetImage("images/oranges.jpg"),
+          //TODO this should be dynamic
+          done: false,
+        ),
+        const SizedBox(height: paddingVertical * 2),
       ],
     );
   }
@@ -186,7 +187,7 @@ class _HomePageState extends State<HomePage> {
               title: S.of(context).membershipCountTitle(
                   impactMetrics.impactMetrics!.memberCount),
               explanation: S.of(context).membershipCountExplanation,
-              image: const AssetImage("images/member-card.jpg"),
+              image: const AssetImage("images/bird.jpg"),
               backgroundColor: const Color.fromRGBO(189, 231, 221, 1),
               textColor: Colors.black,
             ),
@@ -196,7 +197,7 @@ class _HomePageState extends State<HomePage> {
                   .of(context)
                   .storeCountTitle(impactMetrics.impactMetrics!.storeCount),
               explanation: S.of(context).storeCountExplanation,
-              image: const AssetImage("images/orange-bag.jpg"),
+              image: const AssetImage("images/peas.jpg"),
               backgroundColor: const Color.fromRGBO(250, 231, 214, 1),
               textColor: Colors.black,
             ),

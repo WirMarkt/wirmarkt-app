@@ -10,7 +10,7 @@ import 'package:wir_markt/membership/membership_model.dart';
 import 'package:wir_markt/utils.dart';
 import 'package:wir_markt/wm_design.dart';
 
-void main({String? env = 'dev'}) async {
+void main({String? env = 'prod'}) async {
   // Ensure that plugin services are initialized so that `availableCameras()`
   // can be called before `runApp()`
   WidgetsFlutterBinding.ensureInitialized();
