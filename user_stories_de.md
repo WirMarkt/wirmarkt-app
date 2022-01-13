@@ -19,8 +19,8 @@
 ## Impact Tab
 
 * Freunde einladen zum Supermarkt
-* Aktuelle Story aus dem Laden (z. B. Arpshof oder Augustin)
-* Infos zur Fairness des Sortiments
+* Aktuelle Story aus dem Laden (z. B. zu einer Lieferantin oder einem Produkt)
+* Infos zur Fairness des Sortiments (z. B. Anteil fair gehandelter exotischer Produkte)
 * Wie viel Geld ging bereits an Höfe, die wir direkt kennen
 * CO2 gespart gegenüber konventioneller Landwirtschaft
 * Bessere Löhne gegenüber nicht-fairer Landwirtschaft
