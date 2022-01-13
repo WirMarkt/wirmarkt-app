@@ -57,7 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Einstellungen"),
         "rawContentLabel": MessageLookupByLibrary.simpleMessage("Roher Inhalt"),
         "regionalwertPartnerExplanation": MessageLookupByLibrary.simpleMessage(
-            "Wir setzen uns gemeinsam ein für ökologische, regionale und soziale Lebensmittel."),
+            "Wir setzen uns gemeinsam ein für ökologische, regionale und fair produzierte Lebensmittel."),
         "regionalwertPartnerTitle":
             MessageLookupByLibrary.simpleMessage("Regionalwert-Partner"),
         "resetAppLabel":

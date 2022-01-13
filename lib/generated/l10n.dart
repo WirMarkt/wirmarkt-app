@@ -360,10 +360,10 @@ class S {
     );
   }
 
-  /// `We are committed to ecological, regional and social food.`
+  /// `We are committed to ecological, regional and socially produced food.`
   String get regionalwertPartnerExplanation {
     return Intl.message(
-      'We are committed to ecological, regional and social food.',
+      'We are committed to ecological, regional and socially produced food.',
       name: 'regionalwertPartnerExplanation',
       desc: '',
       args: [],
