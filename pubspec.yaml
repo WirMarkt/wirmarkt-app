@@ -43,6 +43,8 @@ dependencies:
   shared_preferences:
   scan:
   http:
+  flutter_secure_storage:
+  url_launcher:
 
 dev_dependencies:
   flutter_test:

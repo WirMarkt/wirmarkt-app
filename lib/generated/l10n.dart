@@ -369,6 +369,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log out`
+  String get logOut {
+    return Intl.message(
+      'Log out',
+      name: 'logOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot password?`
+  String get forgotPasswordLabel {
+    return Intl.message(
+      'Forgot password?',
+      name: 'forgotPasswordLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please log in to continue`
+  String get pleaseLogInToContinue {
+    return Intl.message(
+      'Please log in to continue',
+      name: 'pleaseLogInToContinue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An Error Occurred`
+  String get anErrorOccurred {
+    return Intl.message(
+      'An Error Occurred',
+      name: 'anErrorOccurred',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No account was found matching that email and password`
+  String get noAccountWasFoundMatchingThatEmailAndPassword {
+    return Intl.message(
+      'No account was found matching that email and password',
+      name: 'noAccountWasFoundMatchingThatEmailAndPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log In`
+  String get logIn {
+    return Intl.message(
+      'Log In',
+      name: 'logIn',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

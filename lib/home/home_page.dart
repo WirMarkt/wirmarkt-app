@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:wir_markt/data/app_config.dart';
 import 'package:wir_markt/data/membership.dart';
 import 'package:wir_markt/generated/l10n.dart';
+import 'package:wir_markt/base_screen.dart';
 import 'package:wir_markt/home/impact_card.dart';
 import 'package:wir_markt/home/onboarding_card.dart';
 import 'package:wir_markt/impact/impact_metrics_model.dart';
@@ -11,6 +13,8 @@ import 'package:wir_markt/preferences/preferences_page.dart';
 import 'package:wir_markt/scan/scan_code_page.dart';
 import 'package:wir_markt/suggest_product/suggest_product_page.dart';
 
+/// Home page accessible if logged in
+/// See [BaseScreen]
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -221,7 +225,7 @@ class _HomePageState extends State<HomePage> {
       case 1:
         return S.of(context).impactSectionTitle;
       default:
-        return "WirMarkt";
+        return AppConfig.get().orgName;
     }
   }
 

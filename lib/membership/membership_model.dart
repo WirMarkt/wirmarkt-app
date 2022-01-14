@@ -9,9 +9,9 @@ class MembershipModel extends ChangeNotifier {
   static const String membershipPrefKey = "membership";
   Membership? _membership;
 
-  MembershipModel(AppConfig config) {
-    if (config.staticMembershipID != null) {
-      updateMembership(Membership(config.staticMembershipID!));
+  MembershipModel() {
+    if (AppConfig.get().staticMembershipID != null) {
+      updateMembership(Membership(AppConfig.get().staticMembershipID!));
     } else {
       SharedPreferences.getInstance().then((prefs) {
         var membershipJsonString = prefs.getString(membershipPrefKey);

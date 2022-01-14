@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wir_markt/auth/auth_model.dart';
 import 'package:wir_markt/generated/l10n.dart';
 import 'package:wir_markt/membership/membership_model.dart';
 
@@ -27,7 +28,7 @@ class PreferencesPageState extends State<PreferencesPage> {
           body: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(24.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Center(
                   child: ElevatedButton(
                     child: Text(S.of(context).resetAppLabel),
@@ -44,7 +45,20 @@ class PreferencesPageState extends State<PreferencesPage> {
                           },
                   ),
                 ),
-              )
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Center(
+                  child: ElevatedButton(
+                    child: Text(S.of(context).logOut),
+                    onPressed: () async {
+                      Provider.of<AuthModel>(context, listen: false).logout();
+
+                      Navigator.popUntil(context, ModalRoute.withName('/'));
+                    },
+                  ),
+                ),
+              ),
             ],
           ),
         );

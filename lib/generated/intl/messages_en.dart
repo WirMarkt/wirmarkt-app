@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "alignWithBarcodeExplanation": MessageLookupByLibrary.simpleMessage(
             "Hold the barcode in front of the camera so that it can be seen in its entirety."),
+        "anErrorOccurred":
+            MessageLookupByLibrary.simpleMessage("An Error Occurred"),
         "createAssortmentSuggestionExplanation":
             MessageLookupByLibrary.simpleMessage(
                 "Suggest multiple products at once."),
@@ -38,8 +40,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Suggest single product."),
         "createProductSuggestionTitle":
             MessageLookupByLibrary.simpleMessage("Suggest Product"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "forgotPasswordLabel":
+            MessageLookupByLibrary.simpleMessage("Forgot password?"),
         "impactSectionTitle": MessageLookupByLibrary.simpleMessage("Impact"),
         "introTitle": MessageLookupByLibrary.simpleMessage("Story"),
+        "logIn": MessageLookupByLibrary.simpleMessage("Log In"),
+        "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
         "memberLabel": MessageLookupByLibrary.simpleMessage("Member"),
         "membershipCountExplanation": MessageLookupByLibrary.simpleMessage(
             "Help grow our community by inviting your friends"),
@@ -47,14 +54,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "membershipSectionTitle":
             MessageLookupByLibrary.simpleMessage("Membership"),
         "membershipTitle": MessageLookupByLibrary.simpleMessage("Membership"),
+        "noAccountWasFoundMatchingThatEmailAndPassword":
+            MessageLookupByLibrary.simpleMessage(
+                "No account was found matching that email and password"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
         "planContributionExplanation": MessageLookupByLibrary.simpleMessage(
             "Schedule your next shift or configure the bank account for your membership fee."),
         "planContributionTitle":
             MessageLookupByLibrary.simpleMessage("Setup contribution/fee"),
+        "pleaseLogInToContinue":
+            MessageLookupByLibrary.simpleMessage("Please log in to continue"),
         "propertiesTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "rawContentLabel": MessageLookupByLibrary.simpleMessage("Raw Content"),
         "regionalwertPartnerExplanation": MessageLookupByLibrary.simpleMessage(
-            "We are committed to ecological, regional and fairly produced food."),
+            "We are committed to ecological, regional and socially produced food."),
         "regionalwertPartnerTitle":
             MessageLookupByLibrary.simpleMessage("Regionalwert-Partner"),
         "resetAppLabel": MessageLookupByLibrary.simpleMessage("Reset app"),

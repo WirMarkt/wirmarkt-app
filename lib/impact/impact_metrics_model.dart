@@ -9,11 +9,9 @@ class ImpactMetricsModel extends ChangeNotifier {
   static const String impactMetricsPrefKey = "impactMetrics";
   ImpactMetrics? _impactMetrics;
 
-  final AppConfig appConfig;
-
   void fetchImpactMetrics() async {
     final response =
-        await http.get(Uri.parse(appConfig.apiUrl + "/impact-metrics"));
+        await http.get(Uri.parse(AppConfig.get().apiUrl + "/impact-metrics"));
 
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
@@ -29,7 +27,7 @@ class ImpactMetricsModel extends ChangeNotifier {
     }
   }
 
-  ImpactMetricsModel(this.appConfig) {
+  ImpactMetricsModel() {
     fetchImpactMetrics();
   }
 

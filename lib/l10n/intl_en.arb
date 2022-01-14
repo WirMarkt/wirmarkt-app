@@ -30,5 +30,13 @@
   "storeCountTitle": "We have {shopCount,plural, =0{no store}=1{one store}other{{shopCount} stores}}",
   "storeCountExplanation": "Tell the world to open more cooperative supermarkets!",
   "regionalwertPartnerTitle": "Regionalwert-Partner",
-  "regionalwertPartnerExplanation": "We are committed to ecological, regional and socially produced food."
+  "regionalwertPartnerExplanation": "We are committed to ecological, regional and socially produced food.",
+  "email": "Email",
+  "password": "Password",
+  "logOut": "Log out",
+  "forgotPasswordLabel": "Forgot password?",
+  "pleaseLogInToContinue": "Please log in to continue",
+  "anErrorOccurred": "An Error Occurred",
+  "noAccountWasFoundMatchingThatEmailAndPassword": "No account was found matching that email and password",
+  "logIn": "Log In"
 }

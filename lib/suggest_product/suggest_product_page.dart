@@ -129,7 +129,7 @@ class ReviewProductSuggestionPage extends StatelessWidget {
           Image(image: FileImage(File(imagePath))),
           ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushReplacementNamed("/");
+                Navigator.popUntil(context, ModalRoute.withName('/home'));
               },
               child: const Text("Absenden"))
         ],

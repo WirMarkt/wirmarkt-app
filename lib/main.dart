@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:wir_markt/auth/auth_model.dart';
 import 'package:wir_markt/data/app_config.dart';
 import 'package:wir_markt/generated/l10n.dart';
-import 'package:wir_markt/home/home_page.dart';
+import 'package:wir_markt/base_screen.dart';
 import 'package:wir_markt/impact/impact_metrics_model.dart';
 import 'package:wir_markt/membership/membership_model.dart';
 import 'package:wir_markt/utils.dart';
@@ -16,28 +17,27 @@ void main({String? env = 'prod'}) async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // load our config
-  final config = await AppConfig.forEnvironment(env: env);
+  await AppConfig.initFromEnvironment(env: env);
 
   runApp(MultiProvider(
     providers: [
-      ChangeNotifierProvider(create: (context) => MembershipModel(config)),
-      ChangeNotifierProvider(create: (context) => ImpactMetricsModel(config)),
+      ChangeNotifierProvider(create: (context) => MembershipModel()),
+      ChangeNotifierProvider(create: (context) => AuthModel()),
+      ChangeNotifierProvider(create: (context) => ImpactMetricsModel()),
     ],
-    child: MyApp(config),
+    child: const MyApp(),
   ));
 }
 
 // ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
-  final AppConfig config;
-
-  const MyApp(this.config, {Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      onGenerateTitle: (context) => "WirMarkt",
+      onGenerateTitle: (context) => AppConfig.get().orgName,
       localizationsDelegates: const <LocalizationsDelegate>[
         S.delegate,
         // You need to add them if you are using the material library.
@@ -53,11 +53,7 @@ class MyApp extends StatelessWidget {
       ],
       theme: buildThemeData(Brightness.light),
       darkTheme: buildThemeData(Brightness.dark),
-      home: const HomePage(),
-      // routes: {
-      //   '/home': (BuildContext context) => HomeScreen(),
-      //   '/intro': (BuildContext context) => IntroScreen()
-      // },
+      home: const BaseScreen(),
     );
   }
 

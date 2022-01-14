@@ -1,4 +1,7 @@
 {
-  "apiUrl": "http://localhost:8080",
-  "staticMembershipID": "Fabius-Maximus"
+  "orgName": "WirMarkt",
+  "apiUrl": "http://localhost:8000/api",
+  "staticMembershipID": "Sample Member",
+  "staticJWT": "abab.1212.3434",
+  "passwordResetUrl": "http://localhost:8000/account/user/pw"
 }
