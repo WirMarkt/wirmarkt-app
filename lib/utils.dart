@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 MaterialColor createMaterialColor(Color color) {
+  //apply 50% lightness (so we get whole spectrum of lightness)
+  Color baseColor = HSLColor.fromColor(color).withLightness(0.50).toColor();
+
   List strengths = <double>[.05];
   final swatch = <int, Color>{};
-  final int r = color.red, g = color.green, b = color.blue;
+  final int r = baseColor.red, g = baseColor.green, b = baseColor.blue;
 
   for (int i = 1; i < 10; i++) {
     strengths.add(0.1 * i);
@@ -17,5 +20,5 @@ MaterialColor createMaterialColor(Color color) {
       1,
     );
   }
-  return MaterialColor(color.value, swatch);
+  return MaterialColor(baseColor.value, swatch);
 }
