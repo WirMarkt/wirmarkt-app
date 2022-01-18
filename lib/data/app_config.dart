@@ -13,13 +13,10 @@ class AppConfig {
 
   static AppConfig get() => _appConfig;
 
-  const AppConfig(this.orgName, this.apiUrl, this.staticMembershipID,
-      this.staticJWT, this.passwordResetUrl);
+  const AppConfig(this.orgName, this.apiUrl, this.passwordResetUrl);
 
   final String orgName;
   final String apiUrl;
-  final String? staticMembershipID;
-  final String? staticJWT;
   final String? passwordResetUrl;
 
   factory AppConfig.fromJson(Map<String, dynamic> json) =>

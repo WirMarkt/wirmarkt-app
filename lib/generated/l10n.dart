@@ -449,6 +449,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Retry`
+  String get retry {
+    return Intl.message(
+      'Retry',
+      name: 'retry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading membership info`
+  String get loadingMembershipInfo {
+    return Intl.message(
+      'Loading membership info',
+      name: 'loadingMembershipInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Authentication Failure`
+  String get authenticationFailure {
+    return Intl.message(
+      'Authentication Failure',
+      name: 'authenticationFailure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load membership info.`
+  String get failedToLoadMembershipInfo {
+    return Intl.message(
+      'Failed to load membership info.',
+      name: 'failedToLoadMembershipInfo',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wir_markt/wm_design.dart';
 
+//TODO move to impact package
 class ImpactCard extends StatelessWidget {
   final ImageProvider image;
   final String title;

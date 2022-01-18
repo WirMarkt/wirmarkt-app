@@ -31,6 +31,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Barcode so vor die Kamera halten, dass er komplett zu sehen ist."),
         "anErrorOccurred":
             MessageLookupByLibrary.simpleMessage("Ein Fehler ist aufgetreten"),
+        "authenticationFailure":
+            MessageLookupByLibrary.simpleMessage("Authentication Failure"),
         "createAssortmentSuggestionExplanation":
             MessageLookupByLibrary.simpleMessage(
                 "Mehrere Produkte auf einmal vorschlagen."),
@@ -42,10 +44,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "createProductSuggestionTitle":
             MessageLookupByLibrary.simpleMessage("Neuer Produktwunsch"),
         "email": MessageLookupByLibrary.simpleMessage("E-Mail"),
+        "failedToLoadMembershipInfo": MessageLookupByLibrary.simpleMessage(
+            "Failed to load membership info."),
         "forgotPasswordLabel":
             MessageLookupByLibrary.simpleMessage("Passwort vergessen?"),
         "impactSectionTitle": MessageLookupByLibrary.simpleMessage("Impact"),
         "introTitle": MessageLookupByLibrary.simpleMessage("Story"),
+        "loadingMembershipInfo":
+            MessageLookupByLibrary.simpleMessage("Loading membership info"),
         "logIn": MessageLookupByLibrary.simpleMessage("Anmelden"),
         "logOut": MessageLookupByLibrary.simpleMessage("Abmelden"),
         "memberLabel": MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
@@ -76,6 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "resetAppLabel":
             MessageLookupByLibrary.simpleMessage("App zurücksetzen"),
         "resultLabel": MessageLookupByLibrary.simpleMessage("Resultat"),
+        "retry": MessageLookupByLibrary.simpleMessage("Retry"),
         "scanBarCodeTitle":
             MessageLookupByLibrary.simpleMessage("Barcode scannen"),
         "scanMembershipBarcodeExplanation":

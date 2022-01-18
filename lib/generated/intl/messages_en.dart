@@ -31,6 +31,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Hold the barcode in front of the camera so that it can be seen in its entirety."),
         "anErrorOccurred":
             MessageLookupByLibrary.simpleMessage("An Error Occurred"),
+        "authenticationFailure":
+            MessageLookupByLibrary.simpleMessage("Authentication Failure"),
         "createAssortmentSuggestionExplanation":
             MessageLookupByLibrary.simpleMessage(
                 "Suggest multiple products at once."),
@@ -41,10 +43,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "createProductSuggestionTitle":
             MessageLookupByLibrary.simpleMessage("Suggest Product"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "failedToLoadMembershipInfo": MessageLookupByLibrary.simpleMessage(
+            "Failed to load membership info."),
         "forgotPasswordLabel":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
         "impactSectionTitle": MessageLookupByLibrary.simpleMessage("Impact"),
         "introTitle": MessageLookupByLibrary.simpleMessage("Story"),
+        "loadingMembershipInfo":
+            MessageLookupByLibrary.simpleMessage("Loading membership info"),
         "logIn": MessageLookupByLibrary.simpleMessage("Log In"),
         "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
         "memberLabel": MessageLookupByLibrary.simpleMessage("Member"),
@@ -72,6 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Regionalwert-Partner"),
         "resetAppLabel": MessageLookupByLibrary.simpleMessage("Reset app"),
         "resultLabel": MessageLookupByLibrary.simpleMessage("Result"),
+        "retry": MessageLookupByLibrary.simpleMessage("Retry"),
         "scanBarCodeTitle":
             MessageLookupByLibrary.simpleMessage("Scan barcode"),
         "scanMembershipBarcodeExplanation":

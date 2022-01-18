@@ -38,5 +38,9 @@
   "pleaseLogInToContinue": "Bitte melde dich an um fortzufahren",
   "anErrorOccurred": "Ein Fehler ist aufgetreten",
   "noAccountWasFoundMatchingThatEmailAndPassword": "Kein Konto wurde gefunden mit der E-Mail-Adresse und dem Passwort",
-  "logIn": "Anmelden"
+  "logIn": "Anmelden",
+  "retry": "Retry",
+  "loadingMembershipInfo": "Loading membership info",
+  "authenticationFailure": "Authentication Failure",
+  "failedToLoadMembershipInfo": "Failed to load membership info."
 }

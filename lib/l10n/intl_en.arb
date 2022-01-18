@@ -38,5 +38,9 @@
   "pleaseLogInToContinue": "Please log in to continue",
   "anErrorOccurred": "An Error Occurred",
   "noAccountWasFoundMatchingThatEmailAndPassword": "No account was found matching that email and password",
-  "logIn": "Log In"
+  "logIn": "Log In",
+  "retry": "Retry",
+  "loadingMembershipInfo": "Loading membership info",
+  "authenticationFailure": "Authentication Failure",
+  "failedToLoadMembershipInfo": "Failed to load membership info."
 }
