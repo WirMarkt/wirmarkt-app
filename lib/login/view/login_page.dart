@@ -28,9 +28,8 @@ class LoginPage extends StatelessWidget {
               RepositoryProvider.of<AuthenticationRepository>(context),
         );
       }, child: SafeArea(
-        child: OrientationBuilder(
-            builder: (BuildContext context, Orientation orientation) {
-          if (orientation == Orientation.portrait) {
+        child: LayoutBuilder(builder: (BuildContext context, _) {
+          if (MediaQuery.of(context).orientation == Orientation.portrait) {
             return SingleChildScrollView(
                 clipBehavior: Clip.none,
                 child: Column(children: [
