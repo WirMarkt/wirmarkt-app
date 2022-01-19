@@ -1,33 +1,20 @@
 
-class StatusCodeException implements Exception {
-  final int statusCode;
-  final String? _message;
-  final String? _prefix;
+import 'package:equatable/equatable.dart';
 
-  StatusCodeException(this.statusCode, [this._message, this._prefix]);
+class ApiException implements Exception, Equatable {
+  final ApiExceptionType statusCode;
+  final String? message;
+
+  ApiException({required this.statusCode, this.message});
 
   @override
-  String toString() {
-    return "$_prefix$_message, Status Code = $statusCode";
-  }
+  List<Object?> get props => [message, statusCode];
+
+  @override
+  bool? get stringify => true;
+
 }
 
-class FetchDataException extends StatusCodeException {
-  FetchDataException(statusCode, [String? message])
-      : super(statusCode, message, "Error During Communication: ");
-}
-
-class BadRequestException extends StatusCodeException {
-  BadRequestException(statusCode, [message])
-      : super(statusCode, message, "Invalid Request: ");
-}
-
-class UnauthorisedException extends StatusCodeException {
-  UnauthorisedException(statusCode, [message])
-      : super(statusCode, message, "Unauthorised: ");
-}
-
-class InvalidInputException extends StatusCodeException {
-  InvalidInputException(statusCode, [String? message])
-      : super(statusCode, message, "Invalid Input: ");
+enum ApiExceptionType {
+  none, connectionFailed, serverError, unauthenticated, badRequest
 }

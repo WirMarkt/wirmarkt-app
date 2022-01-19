@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
+import 'package:wir_markt/api/api.dart';
 import 'package:wir_markt/authentication/authentication.dart';
 import 'package:wir_markt/login/model/models.dart';
 
@@ -55,6 +56,10 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           password: state.password.value,
         );
         emit(state.copyWith(status: FormzStatus.submissionSuccess));
+      } on ApiException catch (e) {
+        emit(state.copyWith(
+            status: FormzStatus.submissionFailure,
+            apiExceptionType: e.statusCode));
       } catch (_) {
         emit(state.copyWith(status: FormzStatus.submissionFailure));
       }

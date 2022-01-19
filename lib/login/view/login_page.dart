@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wir_markt/authentication/authentication.dart';
 import 'package:wir_markt/generated/l10n.dart';
 import 'package:wir_markt/login/login.dart';
+import 'package:wir_markt/widgets/widgets.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -33,8 +34,7 @@ class LoginPage extends StatelessWidget {
                   RepositoryProvider.of<AuthenticationRepository>(context),
             );
           },
-          child: Flex(
-            direction: isScreenWide ? Axis.horizontal : Axis.vertical,
+          child: OrientationBasedFlex(
             children: [
               Flexible(
                 child: Padding(

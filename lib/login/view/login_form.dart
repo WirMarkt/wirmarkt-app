@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:wir_markt/api/api.dart';
 import 'package:wir_markt/data/app_config.dart';
 import 'package:wir_markt/generated/l10n.dart';
 import 'package:wir_markt/login/login.dart';
@@ -16,12 +17,18 @@ class LoginForm extends StatelessWidget {
     return BlocListener<LoginBloc, LoginState>(
       listener: (context, state) {
         if (state.status.isSubmissionFailure) {
+          String reasonFailed;
+          if (state.apiExceptionType == ApiExceptionType.connectionFailed) {
+            reasonFailed = S.of(context).connectionFailed;
+          } else {
+            reasonFailed = S.of(context).authenticationFailure;
+          }
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
               SnackBar(
                   content: Text(
-                S.of(context).authenticationFailure,
+                reasonFailed,
                 textAlign: TextAlign.center,
               )),
             );

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:http/http.dart' as http;
 import 'package:wir_markt/authentication/models/jwt_token.dart';
@@ -13,8 +14,12 @@ class ApiRepository {
       {JwtToken? jwtToken}) async {
     var uri = Uri.parse(AppConfig.get().apiUrl + path);
     Map<String, String> headers = await _prepareHeaders(jwtToken);
-    var res = await http.get(uri, headers: headers);
-    return _handleResponse(res);
+    try {
+      var res = await http.get(uri, headers: headers);
+      return _handleResponse(res);
+    } on SocketException {
+      throw ApiException(statusCode: ApiExceptionType.connectionFailed);
+    }
   }
 
   Future<Map<String, dynamic>> post(String path,
@@ -22,12 +27,15 @@ class ApiRepository {
     var uri = Uri.parse(AppConfig.get().apiUrl + path);
     Map<String, String> headers = await _prepareHeaders(jwtToken);
     headers['Content-Type'] = "application/json";
-    var res = await http.post(uri, body: jsonEncode(body), headers: headers);
-    return _handleResponse(res);
+    try {
+      var res = await http.post(uri, body: jsonEncode(body), headers: headers);
+      return _handleResponse(res);
+    } on SocketException {
+      throw ApiException(statusCode: ApiExceptionType.connectionFailed);
+    }
   }
 
-  Future<Map<String, String>> _prepareHeaders(
-      JwtToken? jwtToken) async {
+  Future<Map<String, String>> _prepareHeaders(JwtToken? jwtToken) async {
     Map<String, String> headers = {};
     if (jwtToken != null) {
       headers["Authorization"] = "Bearer ${jwtToken.accessToken}";
@@ -35,20 +43,27 @@ class ApiRepository {
     return headers;
   }
 
-  //TODO rework this
+  /// Throws [ApiException] on failure
+  /// Returns JSON-parsed result (either Map, List or other JSON-supported type)
   dynamic _handleResponse(http.Response res) {
     switch (res.statusCode) {
       case 200:
         return jsonDecode(res.body);
       case 400:
-        throw BadRequestException(res.statusCode);
+        throw ApiException(
+            statusCode: ApiExceptionType.badRequest,
+            message: "Server response status code: ${res.statusCode}");
+
       case 401:
       case 403:
-        throw UnauthorisedException(res.statusCode);
+        throw ApiException(
+            statusCode: ApiExceptionType.unauthenticated,
+            message: "Server response status code: ${res.statusCode}");
       case 500:
       default:
-        throw FetchDataException(
-            res.statusCode, "Error occurred while communicating with server.");
+        throw ApiException(
+            statusCode: ApiExceptionType.serverError,
+            message: "Server response status code: ${res.statusCode}");
     }
   }
 }

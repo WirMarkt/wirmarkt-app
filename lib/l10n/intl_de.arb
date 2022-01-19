@@ -42,5 +42,6 @@
   "retry": "Retry",
   "loadingMembershipInfo": "Loading membership info",
   "authenticationFailure": "Authentication Failure",
-  "failedToLoadMembershipInfo": "Failed to load membership info."
+  "failedToLoadMembershipInfo": "Failed to load membership info.",
+  "connectionFailed": "Connection failed"
 }

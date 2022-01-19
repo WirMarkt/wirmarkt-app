@@ -1,17 +1,17 @@
 
-import '../utils/status.dart';
+import '../utils/fetch_status.dart';
 
 class ApiResponse<T> {
-  Status status;
+  FetchStatus status;
   int? statusCode;
   T? data;
 
-  ApiResponse.loading() : status = Status.loading;
+  ApiResponse.loading() : status = FetchStatus.loading;
 
   ApiResponse.completed(this.data, [this.statusCode = 200])
-      : status = Status.completed;
+      : status = FetchStatus.completed;
 
-  ApiResponse.error(this.statusCode) : status = Status.error;
+  ApiResponse.error(this.statusCode) : status = FetchStatus.error;
 
   @override
   String toString() {

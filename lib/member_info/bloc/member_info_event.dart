@@ -1,7 +1,5 @@
 
-
-import 'package:equatable/equatable.dart';
-import 'package:wir_markt/authentication/models/jwt_token.dart';
+part of 'member_info_bloc.dart';
 
 class MemberInfoEvent extends Equatable {
   const MemberInfoEvent();

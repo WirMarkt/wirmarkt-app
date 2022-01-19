@@ -33,6 +33,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ein Fehler ist aufgetreten"),
         "authenticationFailure":
             MessageLookupByLibrary.simpleMessage("Authentication Failure"),
+        "connectionFailed":
+            MessageLookupByLibrary.simpleMessage("Connection failed"),
         "createAssortmentSuggestionExplanation":
             MessageLookupByLibrary.simpleMessage(
                 "Mehrere Produkte auf einmal vorschlagen."),
