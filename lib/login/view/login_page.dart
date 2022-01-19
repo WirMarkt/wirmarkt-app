@@ -14,15 +14,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Orientation orientation = MediaQuery.of(context).orientation;
-    bool isScreenWide = orientation == Orientation.landscape;
-
-    double? wideWidth =
-    isScreenWide ? MediaQuery.of(context).size.width * 0.6 : null;
-
     const outerPadding = EdgeInsets.all(24.0);
-
-    var imagePadding = EdgeInsets.all(isScreenWide ? 0.0 : 24.0);
 
     return Scaffold(
       appBar: AppBar(title: Text(S.of(context).logIn)),
@@ -36,21 +28,16 @@ class LoginPage extends StatelessWidget {
           },
           child: OrientationBasedFlex(
             children: [
-              Flexible(
+              Expanded(
                 child: Padding(
                   padding: outerPadding,
-                  child: Padding(
-                    padding: imagePadding,
-                    child: Image.asset(
-                      "images/logo_${Theme.of(context).brightness.name}.png",
-                      fit: BoxFit.cover,
-                    ),
+                  child: Image.asset(
+                    "images/logo_${Theme.of(context).brightness.name}.png",
                   ),
                 ),
               ),
-              SizedBox(
-                width: wideWidth,
-                child: const Padding(
+              const Expanded(
+                child: Padding(
                   padding: outerPadding,
                   child: LoginForm(),
                 ),

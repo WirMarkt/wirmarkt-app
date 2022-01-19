@@ -35,7 +35,6 @@ class MemberInfoColumn extends StatelessWidget {
       child: OrientationBasedFlex(
         children: [
           Expanded(
-            flex: 1,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -55,7 +54,6 @@ class MemberInfoColumn extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 1,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
