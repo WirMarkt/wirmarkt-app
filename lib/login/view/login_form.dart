@@ -35,17 +35,21 @@ class LoginForm extends StatelessWidget {
         }
       },
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _UsernameInput(),
           const Padding(padding: formPadding),
           _PasswordInput(),
           const Padding(padding: formPadding),
-          Row(
-            children: [
-              _LoginButton(),
-              const Padding(padding: formPadding),
-              _ResetPasswordButton(),
-            ],
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                _LoginButton(),
+                const Padding(padding: formPadding),
+                _ResetPasswordButton(),
+              ],
+            ),
           ),
         ],
       ),

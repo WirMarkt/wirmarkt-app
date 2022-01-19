@@ -39,8 +39,10 @@ class _HomePageState extends State<HomePage> {
           onPressed: showPreferences,
         ),
       ),
-      body: SingleChildScrollView(
-        child: buildPageUi(_page),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: buildPageUi(_page),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _page,
