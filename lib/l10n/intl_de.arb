@@ -39,9 +39,12 @@
   "anErrorOccurred": "Ein Fehler ist aufgetreten",
   "noAccountWasFoundMatchingThatEmailAndPassword": "Kein Konto wurde gefunden mit der E-Mail-Adresse und dem Passwort",
   "logIn": "Anmelden",
-  "retry": "Retry",
-  "loadingMembershipInfo": "Loading membership info",
-  "authenticationFailure": "Authentication Failure",
-  "failedToLoadMembershipInfo": "Failed to load membership info.",
-  "connectionFailed": "Connection failed"
+  "retry": "Erneut versuchen",
+  "loadingMembershipInfo": "Lade Mitgliedschaft-Info",
+  "authenticationFailure": "Nutzername oder Passwort falsch",
+  "failedToLoadMembershipInfo": "Konnte Mitgliedschaft nicht laden",
+  "connectionFailed": "Verbindung fehlgeschlagen",
+  "invalidUsername": "Ungültiger Benutzername",
+  "invalidPassword": "Ungültiges Passwort",
+  "username": "Benutzername"
 }

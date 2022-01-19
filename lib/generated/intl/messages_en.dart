@@ -46,11 +46,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Suggest Product"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "failedToLoadMembershipInfo": MessageLookupByLibrary.simpleMessage(
-            "Failed to load membership info."),
+            "Failed to load membership info"),
         "forgotPasswordLabel":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
         "impactSectionTitle": MessageLookupByLibrary.simpleMessage("Impact"),
         "introTitle": MessageLookupByLibrary.simpleMessage("Story"),
+        "invalidPassword":
+            MessageLookupByLibrary.simpleMessage("invalid password"),
+        "invalidUsername":
+            MessageLookupByLibrary.simpleMessage("invalid username"),
         "loadingMembershipInfo":
             MessageLookupByLibrary.simpleMessage("Loading membership info"),
         "logIn": MessageLookupByLibrary.simpleMessage("Log In"),
@@ -102,6 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "suggestAssortmentInstructionText": MessageLookupByLibrary.simpleMessage(
             "Take a picture of your fridge or pantry showing all the products you want to suggest."),
         "suggestProductInstructionText": MessageLookupByLibrary.simpleMessage(
-            "Take a photo of the product you want to suggest.")
+            "Take a photo of the product you want to suggest."),
+        "username": MessageLookupByLibrary.simpleMessage("Username")
       };
 }

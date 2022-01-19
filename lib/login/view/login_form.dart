@@ -66,8 +66,9 @@ class _UsernameInput extends StatelessWidget {
               context.read<LoginBloc>().add(LoginUsernameChanged(username)),
           decoration: InputDecoration(
             //border: const OutlineInputBorder(),
-            labelText: S.of(context).email,
-            errorText: state.username.invalid ? 'invalid username' : null,
+            labelText: S.of(context).username,
+            errorText:
+                state.username.invalid ? S.of(context).invalidUsername : null,
           ),
         );
       },
@@ -89,7 +90,8 @@ class _PasswordInput extends StatelessWidget {
           decoration: InputDecoration(
             //border: const OutlineInputBorder(),
             labelText: S.of(context).password,
-            errorText: state.password.invalid ? 'invalid password' : null,
+            errorText:
+                state.password.invalid ? S.of(context).invalidPassword : null,
           ),
         );
       },
@@ -123,15 +125,15 @@ class _ResetPasswordButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<LoginBloc, LoginState>(
-      buildWhen: (previous, current) => previous.status != current.status,
+      buildWhen: (previous, current) => previous.username != current.username,
       builder: (context, state) {
         var username = state.username;
         return TextButton(
           key: const Key('loginForm_forgot_password_raisedButton'),
           child: Text(S.of(context).forgotPasswordLabel),
-          onPressed: username.invalid
-              ? null
-              : () => _launchResetPasswordInBrowser(username.value),
+          onPressed: username.valid
+              ? () => _launchResetPasswordInBrowser(username.value)
+              : null,
         );
       },
     );

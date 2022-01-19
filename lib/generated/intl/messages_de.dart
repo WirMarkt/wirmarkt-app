@@ -31,10 +31,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Barcode so vor die Kamera halten, dass er komplett zu sehen ist."),
         "anErrorOccurred":
             MessageLookupByLibrary.simpleMessage("Ein Fehler ist aufgetreten"),
-        "authenticationFailure":
-            MessageLookupByLibrary.simpleMessage("Authentication Failure"),
+        "authenticationFailure": MessageLookupByLibrary.simpleMessage(
+            "Nutzername oder Passwort falsch"),
         "connectionFailed":
-            MessageLookupByLibrary.simpleMessage("Connection failed"),
+            MessageLookupByLibrary.simpleMessage("Verbindung fehlgeschlagen"),
         "createAssortmentSuggestionExplanation":
             MessageLookupByLibrary.simpleMessage(
                 "Mehrere Produkte auf einmal vorschlagen."),
@@ -47,13 +47,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Neuer Produktwunsch"),
         "email": MessageLookupByLibrary.simpleMessage("E-Mail"),
         "failedToLoadMembershipInfo": MessageLookupByLibrary.simpleMessage(
-            "Failed to load membership info."),
+            "Konnte Mitgliedschaft nicht laden"),
         "forgotPasswordLabel":
             MessageLookupByLibrary.simpleMessage("Passwort vergessen?"),
         "impactSectionTitle": MessageLookupByLibrary.simpleMessage("Impact"),
         "introTitle": MessageLookupByLibrary.simpleMessage("Story"),
+        "invalidPassword":
+            MessageLookupByLibrary.simpleMessage("Ungültiges Passwort"),
+        "invalidUsername":
+            MessageLookupByLibrary.simpleMessage("Ungültiger Benutzername"),
         "loadingMembershipInfo":
-            MessageLookupByLibrary.simpleMessage("Loading membership info"),
+            MessageLookupByLibrary.simpleMessage("Lade Mitgliedschaft-Info"),
         "logIn": MessageLookupByLibrary.simpleMessage("Anmelden"),
         "logOut": MessageLookupByLibrary.simpleMessage("Abmelden"),
         "memberLabel": MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
@@ -84,7 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "resetAppLabel":
             MessageLookupByLibrary.simpleMessage("App zurücksetzen"),
         "resultLabel": MessageLookupByLibrary.simpleMessage("Resultat"),
-        "retry": MessageLookupByLibrary.simpleMessage("Retry"),
+        "retry": MessageLookupByLibrary.simpleMessage("Erneut versuchen"),
         "scanBarCodeTitle":
             MessageLookupByLibrary.simpleMessage("Barcode scannen"),
         "scanMembershipBarcodeExplanation":
@@ -107,6 +111,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "suggestAssortmentInstructionText": MessageLookupByLibrary.simpleMessage(
             "Mache ein Foto von deinem Kühlschrank oder deiner Vorratskammer, auf dem alle Produkte zu sehen sind, die du vorschlagen möchtest."),
         "suggestProductInstructionText": MessageLookupByLibrary.simpleMessage(
-            "Mache ein Foto von dem Produkt, das du vorschlagen möchtest.")
+            "Mache ein Foto von dem Produkt, das du vorschlagen möchtest."),
+        "username": MessageLookupByLibrary.simpleMessage("Benutzername")
       };
 }

@@ -480,10 +480,10 @@ class S {
     );
   }
 
-  /// `Failed to load membership info.`
+  /// `Failed to load membership info`
   String get failedToLoadMembershipInfo {
     return Intl.message(
-      'Failed to load membership info.',
+      'Failed to load membership info',
       name: 'failedToLoadMembershipInfo',
       desc: '',
       args: [],
@@ -495,6 +495,36 @@ class S {
     return Intl.message(
       'Connection failed',
       name: 'connectionFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `invalid username`
+  String get invalidUsername {
+    return Intl.message(
+      'invalid username',
+      name: 'invalidUsername',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `invalid password`
+  String get invalidPassword {
+    return Intl.message(
+      'invalid password',
+      name: 'invalidPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Username`
+  String get username {
+    return Intl.message(
+      'Username',
+      name: 'username',
       desc: '',
       args: [],
     );
