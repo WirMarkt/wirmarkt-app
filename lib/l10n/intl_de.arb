@@ -30,5 +30,21 @@
   "storeCountTitle": "Wir haben {shopCount,plural, =0{kein Geschäft}=1{ein Geschäft}other{{shopCount} Geschäfte}}",
   "storeCountExplanation": "Sagt der Welt, sie soll mehr genossenschaftliche Supermärkte eröffnen!",
   "regionalwertPartnerTitle": "Regionalwert-Partner",
-  "regionalwertPartnerExplanation": "Wir setzen uns gemeinsam ein für ökologische, regionale und sozial produzierte Lebensmittel."
+  "regionalwertPartnerExplanation": "Wir setzen uns gemeinsam ein für ökologische, regionale und sozial produzierte Lebensmittel.",
+  "email": "E-Mail",
+  "password": "Passwort",
+  "logOut": "Abmelden",
+  "forgotPasswordLabel": "Passwort vergessen?",
+  "pleaseLogInToContinue": "Bitte melde dich an um fortzufahren",
+  "anErrorOccurred": "Ein Fehler ist aufgetreten",
+  "noAccountWasFoundMatchingThatEmailAndPassword": "Kein Konto wurde gefunden mit der E-Mail-Adresse und dem Passwort",
+  "logIn": "Anmelden",
+  "retry": "Erneut versuchen",
+  "loadingMembershipInfo": "Lade Mitgliedschaft-Info",
+  "authenticationFailure": "Nutzername oder Passwort falsch",
+  "failedToLoadMembershipInfo": "Konnte Mitgliedschaft nicht laden",
+  "connectionFailed": "Verbindung fehlgeschlagen",
+  "invalidUsername": "Ungültiger Benutzername",
+  "invalidPassword": "Ungültiges Passwort",
+  "username": "Benutzername"
 }

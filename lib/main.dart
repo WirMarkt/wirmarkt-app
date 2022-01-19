@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
+import 'package:wir_markt/api/api.dart';
+import 'package:wir_markt/authentication/authentication.dart';
 import 'package:wir_markt/data/app_config.dart';
 import 'package:wir_markt/generated/l10n.dart';
 import 'package:wir_markt/home/home_page.dart';
-import 'package:wir_markt/impact/impact_metrics_model.dart';
-import 'package:wir_markt/membership/membership_model.dart';
+import 'package:wir_markt/login/login.dart';
+import 'package:wir_markt/member_info/repository/member_info_repository.dart';
+import 'package:wir_markt/splash/splash.dart';
 import 'package:wir_markt/utils.dart';
 import 'package:wir_markt/wm_design.dart';
 
@@ -16,28 +19,61 @@ void main({String? env = 'prod'}) async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // load our config
-  final config = await AppConfig.forEnvironment(env: env);
+  await AppConfig.initFromEnvironment(env: env);
 
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider(create: (context) => MembershipModel(config)),
-      ChangeNotifierProvider(create: (context) => ImpactMetricsModel(config)),
-    ],
-    child: MyApp(config),
+  var _apiRepository = ApiRepository();
+
+  runApp(App(
+    authenticationRepository: AuthenticationRepository(_apiRepository),
+    memberInfoRepository: MemberInfoRepository(_apiRepository),
   ));
 }
 
-// ignore: use_key_in_widget_constructors
-class MyApp extends StatelessWidget {
-  final AppConfig config;
+class App extends StatelessWidget {
+  const App({
+    Key? key,
+    required this.authenticationRepository,
+    required this.memberInfoRepository,
+  }) : super(key: key);
 
-  const MyApp(this.config, {Key? key}) : super(key: key);
+  final AuthenticationRepository authenticationRepository;
+  final MemberInfoRepository memberInfoRepository;
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiRepositoryProvider(
+      providers: [
+        RepositoryProvider.value(value: authenticationRepository),
+        RepositoryProvider.value(value: memberInfoRepository),
+      ],
+      child: BlocProvider(
+        create: (_) => AuthenticationBloc(
+          authenticationRepository: authenticationRepository,
+        ),
+        child: const AppView(),
+      ),
+    );
+  }
+}
+
+class AppView extends StatefulWidget {
+  const AppView({Key? key}) : super(key: key);
+
+  @override
+  State<AppView> createState() => _AppViewState();
+}
+
+class _AppViewState extends State<AppView> {
+  final _navigatorKey = GlobalKey<NavigatorState>();
+
+  NavigatorState get _navigator => _navigatorKey.currentState!;
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      onGenerateTitle: (context) => "WirMarkt",
+      navigatorKey: _navigatorKey,
+      onGenerateTitle: (context) => AppConfig.get().orgName,
       localizationsDelegates: const <LocalizationsDelegate>[
         S.delegate,
         // You need to add them if you are using the material library.
@@ -53,11 +89,33 @@ class MyApp extends StatelessWidget {
       ],
       theme: buildThemeData(Brightness.light),
       darkTheme: buildThemeData(Brightness.dark),
-      home: const HomePage(),
-      // routes: {
-      //   '/home': (BuildContext context) => HomeScreen(),
-      //   '/intro': (BuildContext context) => IntroScreen()
-      // },
+      builder: (context, child) {
+        return BlocListener<AuthenticationBloc, AuthenticationState>(
+          listenWhen: (state, previousState) {
+            return state.status != previousState.status;
+          },
+          listener: (context, state) {
+            switch (state.status) {
+              case AuthenticationStatus.authenticated:
+                _navigator.pushAndRemoveUntil<void>(
+                  HomePage.route(),
+                  (route) => false,
+                );
+                break;
+              case AuthenticationStatus.unauthenticated:
+                _navigator.pushAndRemoveUntil<void>(
+                  LoginPage.route(),
+                  (route) => false,
+                );
+                break;
+              default:
+                break;
+            }
+          },
+          child: child,
+        );
+      },
+      onGenerateRoute: (_) => SplashPage.route(),
     );
   }
 

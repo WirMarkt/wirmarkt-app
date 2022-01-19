@@ -29,6 +29,12 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "alignWithBarcodeExplanation": MessageLookupByLibrary.simpleMessage(
             "Barcode so vor die Kamera halten, dass er komplett zu sehen ist."),
+        "anErrorOccurred":
+            MessageLookupByLibrary.simpleMessage("Ein Fehler ist aufgetreten"),
+        "authenticationFailure": MessageLookupByLibrary.simpleMessage(
+            "Nutzername oder Passwort falsch"),
+        "connectionFailed":
+            MessageLookupByLibrary.simpleMessage("Verbindung fehlgeschlagen"),
         "createAssortmentSuggestionExplanation":
             MessageLookupByLibrary.simpleMessage(
                 "Mehrere Produkte auf einmal vorschlagen."),
@@ -39,8 +45,21 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Einzelnes Produkt vorschlagen."),
         "createProductSuggestionTitle":
             MessageLookupByLibrary.simpleMessage("Neuer Produktwunsch"),
+        "email": MessageLookupByLibrary.simpleMessage("E-Mail"),
+        "failedToLoadMembershipInfo": MessageLookupByLibrary.simpleMessage(
+            "Konnte Mitgliedschaft nicht laden"),
+        "forgotPasswordLabel":
+            MessageLookupByLibrary.simpleMessage("Passwort vergessen?"),
         "impactSectionTitle": MessageLookupByLibrary.simpleMessage("Impact"),
         "introTitle": MessageLookupByLibrary.simpleMessage("Story"),
+        "invalidPassword":
+            MessageLookupByLibrary.simpleMessage("Ungültiges Passwort"),
+        "invalidUsername":
+            MessageLookupByLibrary.simpleMessage("Ungültiger Benutzername"),
+        "loadingMembershipInfo":
+            MessageLookupByLibrary.simpleMessage("Lade Mitgliedschaft-Info"),
+        "logIn": MessageLookupByLibrary.simpleMessage("Anmelden"),
+        "logOut": MessageLookupByLibrary.simpleMessage("Abmelden"),
         "memberLabel": MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
         "membershipCountExplanation": MessageLookupByLibrary.simpleMessage(
             "Hilf mit und lade deine Freunde ein"),
@@ -49,20 +68,27 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
         "membershipTitle":
             MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
+        "noAccountWasFoundMatchingThatEmailAndPassword":
+            MessageLookupByLibrary.simpleMessage(
+                "Kein Konto wurde gefunden mit der E-Mail-Adresse und dem Passwort"),
+        "password": MessageLookupByLibrary.simpleMessage("Passwort"),
         "planContributionExplanation": MessageLookupByLibrary.simpleMessage(
             "Plane deine nächste Schicht oder konfiguriere das Bankkonto für deinen Beitrag"),
         "planContributionTitle":
             MessageLookupByLibrary.simpleMessage("Mitarbeit/Beitrag planen"),
+        "pleaseLogInToContinue": MessageLookupByLibrary.simpleMessage(
+            "Bitte melde dich an um fortzufahren"),
         "propertiesTitle":
             MessageLookupByLibrary.simpleMessage("Einstellungen"),
         "rawContentLabel": MessageLookupByLibrary.simpleMessage("Roher Inhalt"),
         "regionalwertPartnerExplanation": MessageLookupByLibrary.simpleMessage(
-            "Wir setzen uns gemeinsam ein für ökologische, regionale und fair produzierte Lebensmittel."),
+            "Wir setzen uns gemeinsam ein für ökologische, regionale und sozial produzierte Lebensmittel."),
         "regionalwertPartnerTitle":
             MessageLookupByLibrary.simpleMessage("Regionalwert-Partner"),
         "resetAppLabel":
             MessageLookupByLibrary.simpleMessage("App zurücksetzen"),
         "resultLabel": MessageLookupByLibrary.simpleMessage("Resultat"),
+        "retry": MessageLookupByLibrary.simpleMessage("Erneut versuchen"),
         "scanBarCodeTitle":
             MessageLookupByLibrary.simpleMessage("Barcode scannen"),
         "scanMembershipBarcodeExplanation":
@@ -85,6 +111,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "suggestAssortmentInstructionText": MessageLookupByLibrary.simpleMessage(
             "Mache ein Foto von deinem Kühlschrank oder deiner Vorratskammer, auf dem alle Produkte zu sehen sind, die du vorschlagen möchtest."),
         "suggestProductInstructionText": MessageLookupByLibrary.simpleMessage(
-            "Mache ein Foto von dem Produkt, das du vorschlagen möchtest.")
+            "Mache ein Foto von dem Produkt, das du vorschlagen möchtest."),
+        "username": MessageLookupByLibrary.simpleMessage("Benutzername")
       };
 }

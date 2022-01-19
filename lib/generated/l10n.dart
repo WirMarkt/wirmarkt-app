@@ -369,6 +369,166 @@ class S {
       args: [],
     );
   }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log out`
+  String get logOut {
+    return Intl.message(
+      'Log out',
+      name: 'logOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot password?`
+  String get forgotPasswordLabel {
+    return Intl.message(
+      'Forgot password?',
+      name: 'forgotPasswordLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please log in to continue`
+  String get pleaseLogInToContinue {
+    return Intl.message(
+      'Please log in to continue',
+      name: 'pleaseLogInToContinue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An Error Occurred`
+  String get anErrorOccurred {
+    return Intl.message(
+      'An Error Occurred',
+      name: 'anErrorOccurred',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No account was found matching that email and password`
+  String get noAccountWasFoundMatchingThatEmailAndPassword {
+    return Intl.message(
+      'No account was found matching that email and password',
+      name: 'noAccountWasFoundMatchingThatEmailAndPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log In`
+  String get logIn {
+    return Intl.message(
+      'Log In',
+      name: 'logIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retry`
+  String get retry {
+    return Intl.message(
+      'Retry',
+      name: 'retry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading membership info`
+  String get loadingMembershipInfo {
+    return Intl.message(
+      'Loading membership info',
+      name: 'loadingMembershipInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Authentication Failure`
+  String get authenticationFailure {
+    return Intl.message(
+      'Authentication Failure',
+      name: 'authenticationFailure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load membership info`
+  String get failedToLoadMembershipInfo {
+    return Intl.message(
+      'Failed to load membership info',
+      name: 'failedToLoadMembershipInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connection failed`
+  String get connectionFailed {
+    return Intl.message(
+      'Connection failed',
+      name: 'connectionFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `invalid username`
+  String get invalidUsername {
+    return Intl.message(
+      'invalid username',
+      name: 'invalidUsername',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `invalid password`
+  String get invalidPassword {
+    return Intl.message(
+      'invalid password',
+      name: 'invalidPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Username`
+  String get username {
+    return Intl.message(
+      'Username',
+      name: 'username',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

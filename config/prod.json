@@ -1,3 +1,5 @@
 {
-  "apiUrl": "https://backend.wirmarkt.org"
+  "orgName": "WirMarkt",
+  "apiUrl": "https://mitglieder.wirmarkt.org/api/v1",
+  "passwordResetUrl": "https://mitglieder.wirmarkt.org/accounts/password_reset/"
 }
