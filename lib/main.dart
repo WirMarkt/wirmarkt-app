@@ -6,8 +6,9 @@ import 'package:wir_markt/api/api.dart';
 import 'package:wir_markt/authentication/authentication.dart';
 import 'package:wir_markt/data/app_config.dart';
 import 'package:wir_markt/generated/l10n.dart';
-import 'package:wir_markt/home/home_page.dart';
+import 'package:wir_markt/home/view/home_page.dart';
 import 'package:wir_markt/login/login.dart';
+import 'package:wir_markt/member_contribution/repository/member_contribution_repository.dart';
 import 'package:wir_markt/member_info/repository/member_info_repository.dart';
 import 'package:wir_markt/splash/splash.dart';
 import 'package:wir_markt/utils.dart';
@@ -26,6 +27,7 @@ void main({String? env = 'prod'}) async {
   runApp(App(
     authenticationRepository: AuthenticationRepository(_apiRepository),
     memberInfoRepository: MemberInfoRepository(_apiRepository),
+    memberContributionRepository: MemberContributionRepository(_apiRepository),
   ));
 }
 
@@ -34,10 +36,12 @@ class App extends StatelessWidget {
     Key? key,
     required this.authenticationRepository,
     required this.memberInfoRepository,
+    required this.memberContributionRepository,
   }) : super(key: key);
 
   final AuthenticationRepository authenticationRepository;
   final MemberInfoRepository memberInfoRepository;
+  final MemberContributionRepository memberContributionRepository;
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +49,7 @@ class App extends StatelessWidget {
       providers: [
         RepositoryProvider.value(value: authenticationRepository),
         RepositoryProvider.value(value: memberInfoRepository),
+        RepositoryProvider.value(value: memberContributionRepository),
       ],
       child: BlocProvider(
         create: (_) => AuthenticationBloc(

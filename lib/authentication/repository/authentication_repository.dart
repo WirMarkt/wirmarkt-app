@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:wir_markt/api/repository/api_repository.dart';
+import 'package:wir_markt/api/api.dart';
 import 'package:wir_markt/authentication/authentication.dart';
 import 'package:wir_markt/authentication/models/jwt_token.dart';
 
@@ -26,19 +26,27 @@ class AuthenticationRepository {
     required String username,
     required String password,
   }) async {
-    var jsonResponse = await _apiRepository.post("/token/",
-        body: {"username": username, "password": password});
-    var responseToken = JwtToken.fromJson(jsonResponse);
-    _controller.add(AuthenticationState.authenticated(responseToken));
+    try {
+      var jsonResponse = await _apiRepository
+          .post("/token/", body: {"username": username, "password": password});
+      var responseToken = JwtToken.fromJson(jsonResponse);
+      _controller.add(AuthenticationState.authenticated(responseToken));
+    } on ApiException {
+      _controller.add(const AuthenticationState.unauthenticated());
+    }
   }
 
   Future<void> refreshToken(JwtToken jwtToken) async {
-    var jsonResponse =
-        await _apiRepository.post("/token/refresh/", body: jwtToken.toJson());
-    var responseToken = JwtToken.fromJson(jsonResponse);
-    var refreshedToken = JwtToken(responseToken.accessToken,
-        responseToken.refreshToken ?? jwtToken.refreshToken);
-    _controller.add(AuthenticationState.authenticated(refreshedToken));
+    try {
+      var jsonResponse =
+          await _apiRepository.post("/token/refresh/", body: jwtToken.toJson());
+      var responseToken = JwtToken.fromJson(jsonResponse);
+      var refreshedToken = JwtToken(responseToken.accessToken,
+          responseToken.refreshToken ?? jwtToken.refreshToken);
+      _controller.add(AuthenticationState.authenticated(refreshedToken));
+    } on ApiException {
+      _controller.add(const AuthenticationState.unauthenticated());
+    }
   }
 
   void logOut() {

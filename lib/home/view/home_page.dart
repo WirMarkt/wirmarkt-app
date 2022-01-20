@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wir_markt/data/app_config.dart';
 import 'package:wir_markt/generated/l10n.dart';
-import 'package:wir_markt/home/onboarding_card.dart';
+import 'package:wir_markt/home/widget/onboarding_card.dart';
 import 'package:wir_markt/impact/widget/impact_column.dart';
+import 'package:wir_markt/member_contribution/view/manage_contribution_page.dart';
 import 'package:wir_markt/member_info/view/member_info_page.dart';
 import 'package:wir_markt/preferences/preferences_page.dart';
 import 'package:wir_markt/suggest_product/view/suggest_product_page.dart';
@@ -85,25 +86,15 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 Navigator.of(context).push(MemberInfoPage.route());
               },
-              //TODO this should be dynamic
-              done: false,
-              iconImage: const AssetImage("images/peas.jpg"),
+              iconImage: const AssetImage("images/shop_as_member.jpg"),
             ),
             OnboardingCard(
               title: S.of(context).planContributionTitle,
               explanation: S.of(context).planContributionExplanation,
               onTap: () {
-                // Navigator.of(context).push(
-                //   MaterialPageRoute<void>(
-                //     builder: (BuildContext context) =>
-                //         ValidateMembershipPage(
-                //             title: S.of(context).shopAsMemberTitle),
-                //   ),
-                // );
+                Navigator.of(context).push(ManageContributionPage.route());
               },
-              //TODO this should be dynamic
-              done: false,
-              iconImage: const AssetImage("images/bird.jpg"),
+              iconImage: const AssetImage("images/plan_member_contribution.jpg"),
             ),
           ],
         ),
@@ -120,7 +111,7 @@ class _HomePageState extends State<HomePage> {
               ),
             );
           },
-          iconImage: const AssetImage("images/apples.jpg"),
+          iconImage: const AssetImage("images/add_assortment_wish.jpg"),
           //TODO this should be dynamic
           done: false,
         ),
@@ -137,7 +128,7 @@ class _HomePageState extends State<HomePage> {
               ),
             );
           },
-          iconImage: const AssetImage("images/oranges.jpg"),
+          iconImage: const AssetImage("images/add_product_wish.jpg"),
           //TODO this should be dynamic
           done: false,
         ),

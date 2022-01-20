@@ -30,7 +30,7 @@ class MemberInfoBloc extends Bloc<MemberInfoEvent, MemberInfoState> {
           await _memberInfoRepository.getMemberInfo(event.jwtToken);
       emit(state.copyWith(status: FetchStatus.completed, memberInfo: details));
     } on ApiException {
-      emit(state.copyWith(status: FetchStatus.error, memberInfo: null));
+      emit(state.copyWith(status: FetchStatus.error));
     }
   }
 }
