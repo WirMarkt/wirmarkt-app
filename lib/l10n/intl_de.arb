@@ -64,5 +64,7 @@
   "done": "Erledigt",
   "pending": "Ausstehend",
   "today": "Heute",
-  "tomorrow": "Morgen"
+  "tomorrow": "Morgen",
+  "allowedToShopAsMember": "Du kannst als Mitglied im Laden einkaufen",
+  "notAllowedToShop": "Derzeit kannst du nicht im Laden einkaufen."
 }

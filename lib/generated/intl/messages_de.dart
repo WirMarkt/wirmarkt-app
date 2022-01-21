@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "alignWithBarcodeExplanation": MessageLookupByLibrary.simpleMessage(
             "Barcode so vor die Kamera halten, dass er komplett zu sehen ist."),
+        "allowedToShopAsMember": MessageLookupByLibrary.simpleMessage(
+            "Du kannst als Mitglied im Laden einkaufen"),
         "anErrorOccurred":
             MessageLookupByLibrary.simpleMessage("Ein Fehler ist aufgetreten"),
         "authenticationFailure": MessageLookupByLibrary.simpleMessage(
@@ -85,6 +87,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Kein Konto wurde gefunden mit der E-Mail-Adresse und dem Passwort"),
         "noMembership":
             MessageLookupByLibrary.simpleMessage("Keine Mitgliedschaft"),
+        "notAllowedToShop": MessageLookupByLibrary.simpleMessage(
+            "Derzeit kannst du nicht im Laden einkaufen."),
         "password": MessageLookupByLibrary.simpleMessage("Passwort"),
         "payingModeExplanation": MessageLookupByLibrary.simpleMessage(
             "Du zahlst einen monatlichen Beitrag."),

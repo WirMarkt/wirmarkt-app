@@ -9,7 +9,7 @@ class MemberInfo {
   static const MemberInfo empty = MemberInfo(email: "", preferredLanguage: "");
 
   const MemberInfo(
-      {this.canShop,
+      {this.allowedToShop,
       this.isPaying,
       required this.email,
       required this.preferredLanguage});
@@ -18,7 +18,7 @@ class MemberInfo {
   @JsonKey(name: "preferred_language")
   final String preferredLanguage;
   @JsonKey(name: "can_shop")
-  final bool? canShop;
+  final bool? allowedToShop;
   @JsonKey(name: "is_paying")
   final bool? isPaying;
 

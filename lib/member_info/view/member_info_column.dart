@@ -18,7 +18,7 @@ class MemberInfoColumn extends StatelessWidget {
       child: Center(
         child: OrientationBuilder(
           builder: (BuildContext context, Orientation orientation) {
-            var canShop = memberInfo.canShop == true;
+            var allowedToShop = memberInfo.allowedToShop == true;
 
             return Flex(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -28,11 +28,11 @@ class MemberInfoColumn extends StatelessWidget {
                   : Axis.horizontal,
               children: [
                 Expanded(
-                  child: _CanShopDetails(canShop: canShop),
+                  child: _MemberIDDetails(
+                      allowedToShop: allowedToShop, qrCode: memberInfo.idQrCode),
                 ),
                 Expanded(
-                  child: _MemberIDDetails(
-                      canShop: canShop, qrCode: memberInfo.idQrCode),
+                  child: _AllowedToShopDetails(allowedToShop: allowedToShop),
                 ),
               ],
             );
@@ -46,11 +46,11 @@ class MemberInfoColumn extends StatelessWidget {
 class _MemberIDDetails extends StatelessWidget {
   const _MemberIDDetails({
     Key? key,
-    required this.canShop,
+    required this.allowedToShop,
     required this.qrCode,
   }) : super(key: key);
 
-  final bool canShop;
+  final bool allowedToShop;
   final String qrCode;
 
   @override
@@ -64,7 +64,7 @@ class _MemberIDDetails extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(24),
             child: Container(
-              color: canShop ? Colors.white : Colors.redAccent,
+              color: allowedToShop ? Colors.white : Colors.redAccent,
               child: Padding(
                 padding: const EdgeInsets.all(24),
                 child: FittedBox(
@@ -91,31 +91,31 @@ class _MemberIDDetails extends StatelessWidget {
   }
 }
 
-class _CanShopDetails extends StatelessWidget {
-  const _CanShopDetails({
+class _AllowedToShopDetails extends StatelessWidget {
+  const _AllowedToShopDetails({
     Key? key,
-    required this.canShop,
+    required this.allowedToShop,
   }) : super(key: key);
 
-  final bool canShop;
+  final bool allowedToShop;
 
   @override
   Widget build(BuildContext context) {
     Icon icon;
-    String canShopDetails;
+    String allowedToShopDetails;
 
-    if (canShop) {
+    if (allowedToShop) {
       icon = const Icon(
         Icons.check_circle,
         color: WMDesign.lightGreen,
       );
-      canShopDetails = "Du kannst als Mitglied im Laden einkaufen";
+      allowedToShopDetails = S.of(context).allowedToShopAsMember;
     } else {
       icon = const Icon(
         Icons.report_problem,
         color: WMDesign.orange,
       );
-      canShopDetails = "Derzeit kannst du nicht im Laden einkaufen.";
+      allowedToShopDetails = S.of(context).notAllowedToShop;
     }
 
     return Column(
@@ -129,7 +129,7 @@ class _CanShopDetails extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: Text(canShopDetails,
+          child: Text(allowedToShopDetails,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyText2),
         ),

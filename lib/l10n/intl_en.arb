@@ -64,5 +64,7 @@
   "done": "Done",
   "pending": "Pending",
   "today": "Today",
-  "tomorrow": "Tomorrow"
+  "tomorrow": "Tomorrow",
+  "allowedToShopAsMember": "You're allowed to shop as a member.",
+  "notAllowedToShop": "You aren't allowed to shop as a member."
 }

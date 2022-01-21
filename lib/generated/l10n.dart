@@ -709,6 +709,26 @@ class S {
       args: [],
     );
   }
+
+  /// `You're allowed to shop as a member.`
+  String get allowedToShopAsMember {
+    return Intl.message(
+      'You\'re allowed to shop as a member.',
+      name: 'allowedToShopAsMember',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You aren't allowed to shop as a member.`
+  String get notAllowedToShop {
+    return Intl.message(
+      'You aren\'t allowed to shop as a member.',
+      name: 'notAllowedToShop',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
