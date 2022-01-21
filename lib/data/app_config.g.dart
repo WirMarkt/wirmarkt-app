@@ -7,13 +7,15 @@ part of 'app_config.dart';
 // **************************************************************************
 
 AppConfig _$AppConfigFromJson(Map<String, dynamic> json) => AppConfig(
-      json['orgName'] as String,
-      json['apiUrl'] as String,
-      json['passwordResetUrl'] as String?,
+      orgName: json['orgName'] as String,
+      apiUrl: json['apiUrl'] as String,
+      passwordResetUrl: json['passwordResetUrl'] as String?,
+      memberManagementUri: json['memberManagementUri'] as String,
     );
 
 Map<String, dynamic> _$AppConfigToJson(AppConfig instance) => <String, dynamic>{
       'orgName': instance.orgName,
       'apiUrl': instance.apiUrl,
       'passwordResetUrl': instance.passwordResetUrl,
+      'memberManagementUri': instance.memberManagementUri,
     };

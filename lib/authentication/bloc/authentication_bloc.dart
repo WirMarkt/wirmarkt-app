@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:wir_markt/api/api.dart';
 import 'package:wir_markt/authentication/authentication.dart';
 import 'package:wir_markt/authentication/models/jwt_token.dart';
 
@@ -23,6 +24,8 @@ class AuthenticationBloc
     _authenticationStatusSubscription = _authenticationRepository.status.listen(
       (state) => add(AuthenticationStateChanged(state)),
     );
+    //init auth from storage
+    _authenticationRepository.refreshFromStorage();
   }
 
   final AuthenticationRepository _authenticationRepository;
@@ -67,7 +70,11 @@ class AuthenticationBloc
     Emitter<AuthenticationState> emit,
   ) {
     if (state.status == AuthenticationStatus.authenticated) {
-      _authenticationRepository.refreshToken(state.jwtToken);
+      try {
+        _authenticationRepository.refreshToken(state.jwtToken);
+      } on ApiException {
+        emit(const AuthenticationState.unauthenticated());
+      }
     }
   }
 }

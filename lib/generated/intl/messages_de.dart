@@ -33,8 +33,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ein Fehler ist aufgetreten"),
         "authenticationFailure": MessageLookupByLibrary.simpleMessage(
             "Nutzername oder Passwort falsch"),
+        "cancelled": MessageLookupByLibrary.simpleMessage("Abgesagt"),
         "connectionFailed":
             MessageLookupByLibrary.simpleMessage("Verbindung fehlgeschlagen"),
+        "cooperation": MessageLookupByLibrary.simpleMessage("Mitarbeit"),
         "createAssortmentSuggestionExplanation":
             MessageLookupByLibrary.simpleMessage(
                 "Mehrere Produkte auf einmal vorschlagen."),
@@ -45,11 +47,14 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Einzelnes Produkt vorschlagen."),
         "createProductSuggestionTitle":
             MessageLookupByLibrary.simpleMessage("Neuer Produktwunsch"),
+        "done": MessageLookupByLibrary.simpleMessage("Erledigt"),
         "email": MessageLookupByLibrary.simpleMessage("E-Mail"),
         "failedToLoadMembershipInfo": MessageLookupByLibrary.simpleMessage(
             "Konnte Mitgliedschaft nicht laden"),
+        "fee": MessageLookupByLibrary.simpleMessage("Beitrag"),
         "forgotPasswordLabel":
             MessageLookupByLibrary.simpleMessage("Passwort vergessen?"),
+        "iban": MessageLookupByLibrary.simpleMessage("IBAN"),
         "impactSectionTitle": MessageLookupByLibrary.simpleMessage("Impact"),
         "introTitle": MessageLookupByLibrary.simpleMessage("Story"),
         "invalidPassword":
@@ -60,6 +65,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Lade Mitgliedschaft-Info"),
         "logIn": MessageLookupByLibrary.simpleMessage("Anmelden"),
         "logOut": MessageLookupByLibrary.simpleMessage("Abmelden"),
+        "lookingForStandIn":
+            MessageLookupByLibrary.simpleMessage("Sucht Vertretung"),
+        "manage": MessageLookupByLibrary.simpleMessage("Manage"),
+        "manageMembership":
+            MessageLookupByLibrary.simpleMessage("Mitgliedschaft verwalten"),
         "memberLabel": MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
         "membershipCountExplanation": MessageLookupByLibrary.simpleMessage(
             "Hilf mit und lade deine Freunde ein"),
@@ -68,10 +78,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
         "membershipTitle":
             MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
+        "missed": MessageLookupByLibrary.simpleMessage("Nicht erschienen"),
+        "missedExcused": MessageLookupByLibrary.simpleMessage("Entschuldigt"),
         "noAccountWasFoundMatchingThatEmailAndPassword":
             MessageLookupByLibrary.simpleMessage(
                 "Kein Konto wurde gefunden mit der E-Mail-Adresse und dem Passwort"),
+        "noMembership":
+            MessageLookupByLibrary.simpleMessage("Keine Mitgliedschaft"),
         "password": MessageLookupByLibrary.simpleMessage("Passwort"),
+        "payingModeExplanation": MessageLookupByLibrary.simpleMessage(
+            "Du zahlst einen monatlichen Beitrag."),
+        "pending": MessageLookupByLibrary.simpleMessage("Ausstehend"),
         "planContributionExplanation": MessageLookupByLibrary.simpleMessage(
             "Plane deine nächste Schicht oder konfiguriere das Bankkonto für deinen Beitrag"),
         "planContributionTitle":
@@ -112,6 +129,14 @@ class MessageLookup extends MessageLookupByLibrary {
             "Mache ein Foto von deinem Kühlschrank oder deiner Vorratskammer, auf dem alle Produkte zu sehen sind, die du vorschlagen möchtest."),
         "suggestProductInstructionText": MessageLookupByLibrary.simpleMessage(
             "Mache ein Foto von dem Produkt, das du vorschlagen möchtest."),
-        "username": MessageLookupByLibrary.simpleMessage("Benutzername")
+        "today": MessageLookupByLibrary.simpleMessage("Heute"),
+        "tomorrow": MessageLookupByLibrary.simpleMessage("Morgen"),
+        "upcomingShift":
+            MessageLookupByLibrary.simpleMessage("Nächste Schicht:"),
+        "username": MessageLookupByLibrary.simpleMessage("Benutzername"),
+        "workingModeExplanation": MessageLookupByLibrary.simpleMessage(
+            "Du arbeitest regelmäßig mit."),
+        "yourAccountDetails":
+            MessageLookupByLibrary.simpleMessage("Deine Kontodaten:")
       };
 }

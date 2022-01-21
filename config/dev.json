@@ -1,5 +1,6 @@
 {
   "orgName": "WirMarkt",
   "apiUrl": "http://localhost:8000/api/v1",
+  "memberManagementUri": "http://localhost:8000",
   "passwordResetUrl": "http://127.0.0.1:8000/accounts/password_reset/"
 }

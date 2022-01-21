@@ -11,7 +11,11 @@ MemberContribution _$MemberContributionFromJson(Map<String, dynamic> json) =>
       status: json['status'] as String?,
       attendedWelcomeSession: json['attended_welcome_session'] as bool?,
       isPaying: json['is_paying'] as bool?,
+      nextShiftAttendanceStateValue:
+          json['next_shift_attendance_state'] as int?,
       nextShiftName: json['next_shift_name'] as String?,
+      nextShiftID: json['next_shift_id'] as String?,
+      nextShiftUrl: json['next_shift_url'] as String?,
       nextShiftStartTimeEpochMillis:
           json['next_shift_start_time_epoch_ms'] as int?,
       nextShiftEndTimeEpochMillis: json['next_shift_end_time_epoch_ms'] as int?,
@@ -25,7 +29,10 @@ Map<String, dynamic> _$MemberContributionToJson(MemberContribution instance) =>
       'status': instance.status,
       'attended_welcome_session': instance.attendedWelcomeSession,
       'is_paying': instance.isPaying,
+      'next_shift_attendance_state': instance.nextShiftAttendanceStateValue,
       'next_shift_name': instance.nextShiftName,
+      'next_shift_id': instance.nextShiftID,
+      'next_shift_url': instance.nextShiftUrl,
       'next_shift_start_time_epoch_ms': instance.nextShiftStartTimeEpochMillis,
       'next_shift_end_time_epoch_ms': instance.nextShiftEndTimeEpochMillis,
       'sepa_account_holder': instance.sepaAccountHolder,

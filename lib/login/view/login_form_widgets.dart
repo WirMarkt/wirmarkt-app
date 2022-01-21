@@ -14,6 +14,7 @@ class _UsernameInputState extends State<_UsernameInput> {
       buildWhen: (previous, current) => previous.username != current.username,
       builder: (context, state) {
         return TextField(
+          autocorrect: false,
           controller: textController,
           key: const Key('loginForm_usernameInput_textField'),
           onChanged: (username) =>
@@ -52,6 +53,7 @@ class _PasswordInputState extends State<_PasswordInput> {
       buildWhen: (previous, current) => previous.password != current.password,
       builder: (context, state) {
         return TextField(
+          autocorrect: false,
           controller: textController,
           key: const Key('loginForm_passwordInput_textField'),
           onChanged: (password) =>

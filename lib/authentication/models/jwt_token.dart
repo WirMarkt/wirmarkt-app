@@ -26,6 +26,8 @@ class JwtToken extends Equatable {
 
   bool get isExpired => JwtDecoder.isExpired(accessToken);
 
+  bool get hasValidRefreshToken => refreshToken != null ? !JwtDecoder.isExpired(refreshToken!) : false;
+
   Duration get remainingTime => JwtDecoder.getRemainingTime(accessToken);
 
   Map<String, dynamic> get userInfo => JwtDecoder.tryDecode(accessToken) ?? {};

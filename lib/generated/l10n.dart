@@ -529,6 +529,186 @@ class S {
       args: [],
     );
   }
+
+  /// `Manage`
+  String get manage {
+    return Intl.message(
+      'Manage',
+      name: 'manage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You pay a monthly contribution.`
+  String get payingModeExplanation {
+    return Intl.message(
+      'You pay a monthly contribution.',
+      name: 'payingModeExplanation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You work regularly.`
+  String get workingModeExplanation {
+    return Intl.message(
+      'You work regularly.',
+      name: 'workingModeExplanation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Membership`
+  String get noMembership {
+    return Intl.message(
+      'No Membership',
+      name: 'noMembership',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Manage membership`
+  String get manageMembership {
+    return Intl.message(
+      'Manage membership',
+      name: 'manageMembership',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fee`
+  String get fee {
+    return Intl.message(
+      'Fee',
+      name: 'fee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your account details:`
+  String get yourAccountDetails {
+    return Intl.message(
+      'Your account details:',
+      name: 'yourAccountDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next Shift:`
+  String get upcomingShift {
+    return Intl.message(
+      'Next Shift:',
+      name: 'upcomingShift',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cooperation`
+  String get cooperation {
+    return Intl.message(
+      'Cooperation',
+      name: 'cooperation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `IBAN`
+  String get iban {
+    return Intl.message(
+      'IBAN',
+      name: 'iban',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Looking for stand-in`
+  String get lookingForStandIn {
+    return Intl.message(
+      'Looking for stand-in',
+      name: 'lookingForStandIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Excused`
+  String get missedExcused {
+    return Intl.message(
+      'Excused',
+      name: 'missedExcused',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Missed`
+  String get missed {
+    return Intl.message(
+      'Missed',
+      name: 'missed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancelled`
+  String get cancelled {
+    return Intl.message(
+      'Cancelled',
+      name: 'cancelled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Done`
+  String get done {
+    return Intl.message(
+      'Done',
+      name: 'done',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pending`
+  String get pending {
+    return Intl.message(
+      'Pending',
+      name: 'pending',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Today`
+  String get today {
+    return Intl.message(
+      'Today',
+      name: 'today',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tomorrow`
+  String get tomorrow {
+    return Intl.message(
+      'Tomorrow',
+      name: 'tomorrow',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

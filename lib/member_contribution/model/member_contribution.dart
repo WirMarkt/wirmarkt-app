@@ -10,9 +10,12 @@ class MemberContribution {
     status: "",
     attendedWelcomeSession: false,
     isPaying: false,
+    nextShiftAttendanceStateValue: 1,
     nextShiftName: "",
     nextShiftStartTimeEpochMillis: 0,
     nextShiftEndTimeEpochMillis: 0,
+    nextShiftID: "",
+    nextShiftUrl: "",
     sepaAccountHolder: "",
     sepaIban: "",
     signedSepaMandate: false,
@@ -24,8 +27,21 @@ class MemberContribution {
   final bool? attendedWelcomeSession;
   @JsonKey(name: "is_paying")
   final bool? isPaying;
+  @JsonKey(name: "next_shift_attendance_state")
+  final int? nextShiftAttendanceStateValue;
+
+  ShiftAttendanceState? get nextShiftAttendanceState =>
+      nextShiftAttendanceStateValue != null
+          ? ShiftAttendanceStateTranslator.fromStateValue(
+              nextShiftAttendanceStateValue!)
+          : null;
+
   @JsonKey(name: "next_shift_name")
   final String? nextShiftName;
+  @JsonKey(name: "next_shift_id")
+  final String? nextShiftID;
+  @JsonKey(name: "next_shift_url")
+  final String? nextShiftUrl;
   @JsonKey(name: "next_shift_start_time_epoch_ms")
   final int? nextShiftStartTimeEpochMillis;
 
@@ -54,7 +70,10 @@ class MemberContribution {
       {required this.status,
       required this.attendedWelcomeSession,
       required this.isPaying,
+      required this.nextShiftAttendanceStateValue,
       required this.nextShiftName,
+      required this.nextShiftID,
+      required this.nextShiftUrl,
       required this.nextShiftStartTimeEpochMillis,
       required this.nextShiftEndTimeEpochMillis,
       required this.sepaAccountHolder,
@@ -62,4 +81,28 @@ class MemberContribution {
       required this.signedSepaMandate});
 
   Map<String, dynamic> toJson() => _$MemberContributionToJson(this);
+}
+
+enum ShiftAttendanceState {
+  pending,
+  done,
+  cancelled,
+  missed,
+  missedExcused,
+  lookingForStandIn,
+}
+
+class ShiftAttendanceStateTranslator {
+  static const stateValueToState = {
+    1: ShiftAttendanceState.pending,
+    2: ShiftAttendanceState.done,
+    3: ShiftAttendanceState.cancelled,
+    4: ShiftAttendanceState.missed,
+    5: ShiftAttendanceState.missedExcused,
+    6: ShiftAttendanceState.lookingForStandIn,
+  };
+
+  static ShiftAttendanceState fromStateValue(int stateValue) {
+    return stateValueToState[stateValue] ?? ShiftAttendanceState.pending;
+  }
 }

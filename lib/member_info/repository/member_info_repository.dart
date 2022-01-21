@@ -9,6 +9,7 @@ class MemberInfoRepository {
 
   const MemberInfoRepository(this._apiRepository);
 
+  /// @throws [ApiException]
   Future<MemberInfo?> getMemberInfo(JwtToken jwtToken) async {
     var jsonResponse =
         await _apiRepository.get("/member_info", jwtToken: jwtToken);

@@ -10,7 +10,6 @@ import 'package:wir_markt/preferences/preferences_page.dart';
 import 'package:wir_markt/suggest_product/view/suggest_product_page.dart';
 
 /// Home page accessible if logged in
-/// See [BaseScreen]
 class HomePage extends StatefulWidget {
   static Route route() {
     return MaterialPageRoute<void>(builder: (_) => const HomePage());

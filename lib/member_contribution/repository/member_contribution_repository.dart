@@ -9,6 +9,7 @@ class MemberContributionRepository {
 
   const MemberContributionRepository(this._apiRepository);
 
+  /// @throws [ApiException]
   Future<MemberContribution> getMemberContribution(JwtToken jwtToken) async {
     var jsonResponse =
         await _apiRepository.get("/member_contribution", jwtToken: jwtToken);
