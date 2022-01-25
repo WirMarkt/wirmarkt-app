@@ -729,6 +729,16 @@ class S {
       args: [],
     );
   }
+
+  /// `No upcoming shift`
+  String get noUpcomingShift {
+    return Intl.message(
+      'No upcoming shift',
+      name: 'noUpcomingShift',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

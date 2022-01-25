@@ -8,7 +8,7 @@ part of 'member_contribution.dart';
 
 MemberContribution _$MemberContributionFromJson(Map<String, dynamic> json) =>
     MemberContribution(
-      status: json['status'] as String?,
+      statusString: json['status'] as String?,
       attendedWelcomeSession: json['attended_welcome_session'] as bool?,
       isPaying: json['is_paying'] as bool?,
       nextShiftAttendanceStateValue:
@@ -26,7 +26,7 @@ MemberContribution _$MemberContributionFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$MemberContributionToJson(MemberContribution instance) =>
     <String, dynamic>{
-      'status': instance.status,
+      'status': instance.statusString,
       'attended_welcome_session': instance.attendedWelcomeSession,
       'is_paying': instance.isPaying,
       'next_shift_attendance_state': instance.nextShiftAttendanceStateValue,

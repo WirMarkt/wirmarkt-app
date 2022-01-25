@@ -66,5 +66,6 @@
   "today": "Heute",
   "tomorrow": "Morgen",
   "allowedToShopAsMember": "Du kannst als Mitglied im Laden einkaufen",
-  "notAllowedToShop": "Derzeit kannst du nicht im Laden einkaufen."
+  "notAllowedToShop": "Derzeit kannst du nicht im Laden einkaufen.",
+  "noUpcomingShift": "Keine Schicht geplant"
 }

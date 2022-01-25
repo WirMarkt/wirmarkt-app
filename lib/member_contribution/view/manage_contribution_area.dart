@@ -6,7 +6,7 @@ import 'package:wir_markt/authentication/widget/authenticated.dart';
 import 'package:wir_markt/generated/l10n.dart';
 import 'package:wir_markt/member_contribution/bloc/member_contribution_bloc.dart';
 import 'package:wir_markt/member_contribution/model/member_contribution.dart';
-import 'package:wir_markt/member_contribution/widget/no_member_ship_card.dart';
+import 'package:wir_markt/member_contribution/widget/member_ship_state_info_card.dart';
 import 'package:wir_markt/member_contribution/widget/payment_info_card.dart';
 import 'package:wir_markt/member_contribution/widget/shift_card.dart';
 import 'package:wir_markt/widgets/widgets.dart';
@@ -28,10 +28,15 @@ class ManageContributionArea extends StatelessWidget {
             case FetchStatus.completed:
               if (state.memberContribution.isPaying == true) {
                 return _PaymentInfoPanel(state.memberContribution);
-              } else if (state.memberContribution.nextShiftName != null) {
-                return _NextShiftPanel(state.memberContribution);
+              } else
+              if (state.memberContribution.status == MemberStatus.active) {
+                if (state.memberContribution.nextShiftName != null) {
+                  return _NextShiftPanel(state.memberContribution);
+                } else {
+                  return _ManageMemberShipPanel(S.of(context).noUpcomingShift);
+                }
               } else {
-                return const _ManageInfoPanel();
+                return _ManageMemberShipPanel(S.of(context).noMembership);
               }
             case FetchStatus.error:
               return ErrorDisplay(
@@ -155,8 +160,10 @@ class _PaymentInfoPanel extends StatelessWidget {
 }
 
 @immutable
-class _ManageInfoPanel extends StatelessWidget {
-  const _ManageInfoPanel({
+class _ManageMemberShipPanel extends StatelessWidget {
+  final String memberShipStateMessage;
+
+  const _ManageMemberShipPanel(this.memberShipStateMessage, {
     Key? key,
   }) : super(key: key);
 
@@ -168,13 +175,18 @@ class _ManageInfoPanel extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            S.of(context).manageMembership,
-            style: Theme.of(context).textTheme.headline6,
+            S
+                .of(context)
+                .manageMembership,
+            style: Theme
+                .of(context)
+                .textTheme
+                .headline6,
           ),
           const Padding(
             padding: EdgeInsets.all(8.0),
           ),
-          const NoMemberShipCard(),
+          MemberShipStateInfoCard(memberShipStateMessage),
         ],
       ),
     );

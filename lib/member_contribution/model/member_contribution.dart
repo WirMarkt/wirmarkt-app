@@ -6,23 +6,20 @@ part 'member_contribution.g.dart';
 @JsonSerializable()
 @immutable
 class MemberContribution {
-  static const MemberContribution empty = MemberContribution(
-    status: "",
-    attendedWelcomeSession: false,
-    isPaying: false,
-    nextShiftAttendanceStateValue: 1,
-    nextShiftName: "",
-    nextShiftStartTimeEpochMillis: 0,
-    nextShiftEndTimeEpochMillis: 0,
-    nextShiftID: "",
-    nextShiftUrl: "",
-    sepaAccountHolder: "",
-    sepaIban: "",
-    signedSepaMandate: false,
-  );
+  static const MemberContribution empty = MemberContribution();
 
   @JsonKey(name: "status")
-  final String? status;
+  final String? statusString;
+
+  MemberStatus? get status {
+    try {
+      return MemberStatus.values
+          .firstWhere((element) => element.name == statusString);
+    } on StateError {
+      return null;
+    }
+  }
+
   @JsonKey(name: "attended_welcome_session")
   final bool? attendedWelcomeSession;
   @JsonKey(name: "is_paying")
@@ -67,21 +64,23 @@ class MemberContribution {
       _$MemberContributionFromJson(json);
 
   const MemberContribution(
-      {required this.status,
-      required this.attendedWelcomeSession,
-      required this.isPaying,
-      required this.nextShiftAttendanceStateValue,
-      required this.nextShiftName,
-      required this.nextShiftID,
-      required this.nextShiftUrl,
-      required this.nextShiftStartTimeEpochMillis,
-      required this.nextShiftEndTimeEpochMillis,
-      required this.sepaAccountHolder,
-      required this.sepaIban,
-      required this.signedSepaMandate});
+      {this.statusString,
+      this.attendedWelcomeSession,
+      this.isPaying,
+      this.nextShiftAttendanceStateValue,
+      this.nextShiftName,
+      this.nextShiftID,
+      this.nextShiftUrl,
+      this.nextShiftStartTimeEpochMillis,
+      this.nextShiftEndTimeEpochMillis,
+      this.sepaAccountHolder,
+      this.sepaIban,
+      this.signedSepaMandate});
 
   Map<String, dynamic> toJson() => _$MemberContributionToJson(this);
 }
+
+enum MemberStatus { sold, investing, active, paying }
 
 enum ShiftAttendanceState {
   pending,

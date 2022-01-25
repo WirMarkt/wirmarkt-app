@@ -84,6 +84,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "No account was found matching that email and password"),
         "noMembership": MessageLookupByLibrary.simpleMessage("No Membership"),
+        "noUpcomingShift":
+            MessageLookupByLibrary.simpleMessage("No upcoming shift"),
         "notAllowedToShop": MessageLookupByLibrary.simpleMessage(
             "You aren\'t allowed to shop as a member."),
         "password": MessageLookupByLibrary.simpleMessage("Password"),

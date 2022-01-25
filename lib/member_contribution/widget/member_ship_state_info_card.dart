@@ -5,9 +5,11 @@ import 'package:wir_markt/generated/l10n.dart';
 
 import '../../wm_design.dart';
 
-class NoMemberShipCard extends StatelessWidget {
+class MemberShipStateInfoCard extends StatelessWidget {
+  final String memberShipStateMessage;
 
-  const NoMemberShipCard({
+  const MemberShipStateInfoCard(
+    this.memberShipStateMessage, {
     Key? key,
   }) : super(key: key);
 
@@ -19,8 +21,8 @@ class NoMemberShipCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             ListTile(
-              leading: const Icon(Icons.money),
-              title: Text(S.of(context).noMembership),
+              leading: const Icon(Icons.info),
+              title: Text(memberShipStateMessage),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
