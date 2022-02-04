@@ -11,7 +11,6 @@ import 'package:wir_markt/login/login.dart';
 import 'package:wir_markt/member_contribution/repository/member_contribution_repository.dart';
 import 'package:wir_markt/member_info/repository/member_info_repository.dart';
 import 'package:wir_markt/splash/splash.dart';
-import 'package:wir_markt/utils.dart';
 import 'package:wir_markt/wm_design.dart';
 
 void main({String? env = 'prod'}) async {
@@ -128,10 +127,9 @@ class _AppViewState extends State<AppView> {
         textTheme: GoogleFonts.ibmPlexSansTextTheme(
           ThemeData(brightness: brightness).textTheme,
         ),
-        colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: createMaterialColor(WMDesign.turquoise),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: WMDesign.turquoise,
           brightness: brightness,
-          accentColor: WMDesign.lightGreen,
         ),
       );
 }
