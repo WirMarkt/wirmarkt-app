@@ -2,12 +2,12 @@
 
 Yay, we've built ourselves an app. It makes shopping, decision-making and collaboration much easier. And we make our impact visible!
 
-Some of the features:
+Some features:
 
-* Shopping: Membership card, shopping list (planned), digital and anonymous receipt (planned).
-* Collaborative decision-making: Assortment suggestions, decision-making processes (planned)
-* Collaborate: Training materials (planned), shift planning
-* Community: events (planned), impact, presentation of the suppliers (planned)
+* Shopping: membership card, shopping list (planned), digital and anonymous receipt (planned).
+* Decision-making: assortment suggestions, decision-making processes (planned).
+* Collaboration: shift planning, training material (planned).
+* Community: impact, events (planned), presentation of the suppliers (planned).
 
 # Requirements
 
