@@ -55,7 +55,7 @@
   "fee": "Beitrag",
   "yourAccountDetails": "Deine Kontodaten:",
   "upcomingShift": "Nächste Schicht:",
-  "cooperation": "Mitarbeit",
+  "contribution": "Mitarbeit",
   "iban": "IBAN",
   "lookingForStandIn": "Sucht Vertretung",
   "missedExcused": "Entschuldigt",
@@ -67,5 +67,9 @@
   "tomorrow": "Morgen",
   "allowedToShopAsMember": "Du kannst als Mitglied im Laden einkaufen",
   "notAllowedToShop": "Derzeit kannst du nicht im Laden einkaufen.",
-  "noUpcomingShift": "Keine Schicht geplant"
+  "noUpcomingShift": "Keine Schicht geplant",
+  "shareCountInfo": "Du hast {shareCount,plural, =0{keine Anteile}=1{einen Anteil}other{{shareCount} Anteile}} übernommen.",
+  "takeOverMoreSharesMessage": "Um die Genossenschaft zu unterstützen, kannst du weitere Anteile zeichnen oder der Genossenschaft ein Darlehen geben.",
+  "cooperativeSharesHeadline": "Anteile an der Genossenschaft",
+  "applyForMembershipLabel": "Als Mitglied bewerben"
 }

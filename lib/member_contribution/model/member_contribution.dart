@@ -60,22 +60,30 @@ class MemberContribution {
   @JsonKey(name: "signed_sepa_mandate")
   final bool? signedSepaMandate;
 
+  @JsonKey(name: "is_investing")
+  final bool? isInvesting;
+  @JsonKey(name: "share_count")
+  final int shareCount;
+
   factory MemberContribution.fromJson(Map<String, dynamic> json) =>
       _$MemberContributionFromJson(json);
 
-  const MemberContribution(
-      {this.statusString,
-      this.attendedWelcomeSession,
-      this.isPaying,
-      this.nextShiftAttendanceStateValue,
-      this.nextShiftName,
-      this.nextShiftID,
-      this.nextShiftUrl,
-      this.nextShiftStartTimeEpochMillis,
-      this.nextShiftEndTimeEpochMillis,
-      this.sepaAccountHolder,
-      this.sepaIban,
-      this.signedSepaMandate});
+  const MemberContribution({
+    this.statusString,
+    this.attendedWelcomeSession,
+    this.isPaying,
+    this.nextShiftAttendanceStateValue,
+    this.nextShiftName,
+    this.nextShiftID,
+    this.nextShiftUrl,
+    this.nextShiftStartTimeEpochMillis,
+    this.nextShiftEndTimeEpochMillis,
+    this.sepaAccountHolder,
+    this.sepaIban,
+    this.signedSepaMandate,
+    this.isInvesting,
+    this.shareCount = 0,
+  });
 
   Map<String, dynamic> toJson() => _$MemberContributionToJson(this);
 }

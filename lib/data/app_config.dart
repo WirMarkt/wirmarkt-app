@@ -16,20 +16,21 @@ class AppConfig {
   const AppConfig({
     required this.orgName,
     required this.apiUrl,
-    this.passwordResetUrl,
+    this.passwordResetUrl = "",
+    this.applyForMembershipUrl = "",
     required this.memberManagementUri,
   });
 
   final String orgName;
   final String apiUrl;
-  final String? passwordResetUrl;
+  final String passwordResetUrl;
+  final String applyForMembershipUrl;
   final String memberManagementUri;
 
   factory AppConfig.fromJson(Map<String, dynamic> json) =>
       _$AppConfigFromJson(json);
 
-  Uri? get passwordResetUri =>
-      passwordResetUrl != null ? Uri.parse(passwordResetUrl!) : null;
+  Uri? get passwordResetUri => Uri.parse(passwordResetUrl);
 
   Map<String, dynamic> toJson() => _$AppConfigToJson(this);
 

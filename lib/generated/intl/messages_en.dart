@@ -22,7 +22,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(membershipCount) => "We are ${membershipCount} members";
 
-  static String m1(shopCount) =>
+  static String m1(shareCount) =>
+      "You\'ve taken over ${Intl.plural(shareCount, zero: 'no shares', one: 'one share', other: '${shareCount} shares')}.";
+
+  static String m2(shopCount) =>
       "We have ${Intl.plural(shopCount, zero: 'no store', one: 'one store', other: '${shopCount} stores')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -33,12 +36,16 @@ class MessageLookup extends MessageLookupByLibrary {
             "You\'re allowed to shop as a member."),
         "anErrorOccurred":
             MessageLookupByLibrary.simpleMessage("An Error Occurred"),
+        "applyForMembershipLabel":
+            MessageLookupByLibrary.simpleMessage("Apply for membership"),
         "authenticationFailure":
             MessageLookupByLibrary.simpleMessage("Authentication Failure"),
         "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
         "connectionFailed":
             MessageLookupByLibrary.simpleMessage("Connection failed"),
-        "cooperation": MessageLookupByLibrary.simpleMessage("Cooperation"),
+        "contribution": MessageLookupByLibrary.simpleMessage("Contribution"),
+        "cooperativeSharesHeadline":
+            MessageLookupByLibrary.simpleMessage("Cooperative shares"),
         "createAssortmentSuggestionExplanation":
             MessageLookupByLibrary.simpleMessage(
                 "Suggest multiple products at once."),
@@ -118,17 +125,20 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Store badge in smartphone."),
         "setupMembershipTitle":
             MessageLookupByLibrary.simpleMessage("Setup Membership"),
+        "shareCountInfo": m1,
         "shopAsMemberTitle":
             MessageLookupByLibrary.simpleMessage("Shop as a Member"),
         "showBarcodeAtPOSLabel": MessageLookupByLibrary.simpleMessage(
             "Show this barcode at the checkout in the store."),
         "storeCountExplanation": MessageLookupByLibrary.simpleMessage(
             "Tell the world to open more cooperative supermarkets!"),
-        "storeCountTitle": m1,
+        "storeCountTitle": m2,
         "suggestAssortmentInstructionText": MessageLookupByLibrary.simpleMessage(
             "Take a picture of your fridge or pantry showing all the products you want to suggest."),
         "suggestProductInstructionText": MessageLookupByLibrary.simpleMessage(
             "Take a photo of the product you want to suggest."),
+        "takeOverMoreSharesMessage": MessageLookupByLibrary.simpleMessage(
+            "In order to support the cooperative, you may take over more shares or grant the cooperative a loan."),
         "today": MessageLookupByLibrary.simpleMessage("Today"),
         "tomorrow": MessageLookupByLibrary.simpleMessage("Tomorrow"),
         "upcomingShift": MessageLookupByLibrary.simpleMessage("Next Shift:"),

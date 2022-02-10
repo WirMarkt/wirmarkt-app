@@ -53,6 +53,7 @@ class LoginForm extends StatelessWidget {
               ],
             ),
           ),
+          _ApplyForMembershipButton(),
         ],
       ),
     );

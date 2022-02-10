@@ -610,11 +610,11 @@ class S {
     );
   }
 
-  /// `Cooperation`
-  String get cooperation {
+  /// `Contribution`
+  String get contribution {
     return Intl.message(
-      'Cooperation',
-      name: 'cooperation',
+      'Contribution',
+      name: 'contribution',
       desc: '',
       args: [],
     );
@@ -735,6 +735,46 @@ class S {
     return Intl.message(
       'No upcoming shift',
       name: 'noUpcomingShift',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You've taken over {shareCount,plural, =0{no shares}=1{one share}other{{shareCount} shares}}.`
+  String shareCountInfo(num shareCount) {
+    return Intl.message(
+      'You\'ve taken over ${Intl.plural(shareCount, zero: 'no shares', one: 'one share', other: '$shareCount shares')}.',
+      name: 'shareCountInfo',
+      desc: '',
+      args: [shareCount],
+    );
+  }
+
+  /// `In order to support the cooperative, you may take over more shares or grant the cooperative a loan.`
+  String get takeOverMoreSharesMessage {
+    return Intl.message(
+      'In order to support the cooperative, you may take over more shares or grant the cooperative a loan.',
+      name: 'takeOverMoreSharesMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cooperative shares`
+  String get cooperativeSharesHeadline {
+    return Intl.message(
+      'Cooperative shares',
+      name: 'cooperativeSharesHeadline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apply for membership`
+  String get applyForMembershipLabel {
+    return Intl.message(
+      'Apply for membership',
+      name: 'applyForMembershipLabel',
       desc: '',
       args: [],
     );

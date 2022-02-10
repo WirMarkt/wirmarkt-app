@@ -11,6 +11,8 @@ import 'package:wir_markt/member_contribution/widget/payment_info_card.dart';
 import 'package:wir_markt/member_contribution/widget/shift_card.dart';
 import 'package:wir_markt/widgets/widgets.dart';
 
+import '../widget/cooperative_share_info_card.dart';
+
 class ManageContributionArea extends StatelessWidget {
   const ManageContributionArea({Key? key}) : super(key: key);
 
@@ -26,18 +28,10 @@ class ManageContributionArea extends StatelessWidget {
               return Loading(
                   loadingMessage: S.of(context).loadingMembershipInfo);
             case FetchStatus.completed:
-              if (state.memberContribution.isPaying == true) {
-                return _PaymentInfoPanel(state.memberContribution);
-              } else
-              if (state.memberContribution.status == MemberStatus.active) {
-                if (state.memberContribution.nextShiftName != null) {
-                  return _NextShiftPanel(state.memberContribution);
-                } else {
-                  return _ManageMemberShipPanel(S.of(context).noUpcomingShift);
-                }
-              } else {
-                return _ManageMemberShipPanel(S.of(context).noMembership);
-              }
+              return Column(children: [
+                _createShiftOrPaymentInfo(state, context),
+                _ShareOwnershipInfo(state.memberContribution.shareCount),
+              ]);
             case FetchStatus.error:
               return ErrorDisplay(
                 errorMessage: S.of(context).failedToLoadMembershipInfo,
@@ -56,6 +50,21 @@ class ManageContributionArea extends StatelessWidget {
           .read<MemberContributionBloc>()
           .add(RefreshMemberContribution(state.jwtToken)),
     );
+  }
+
+  Widget _createShiftOrPaymentInfo(
+      MemberContributionState state, BuildContext context) {
+    if (state.memberContribution.isPaying == true) {
+      return _PaymentInfoPanel(state.memberContribution);
+    } else if (state.memberContribution.status == MemberStatus.active) {
+      if (state.memberContribution.nextShiftName != null) {
+        return _NextShiftPanel(state.memberContribution);
+      } else {
+        return _ManageMemberShipPanel(S.of(context).noUpcomingShift);
+      }
+    } else {
+      return _ManageMemberShipPanel(S.of(context).noMembership);
+    }
   }
 }
 
@@ -77,7 +86,7 @@ class _NextShiftPanel extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            S.of(context).cooperation,
+            S.of(context).contribution,
             style: textTheme.headline6,
           ),
           const Padding(
@@ -187,6 +196,33 @@ class _ManageMemberShipPanel extends StatelessWidget {
             padding: EdgeInsets.all(8.0),
           ),
           MemberShipStateInfoCard(memberShipStateMessage),
+        ],
+      ),
+    );
+  }
+}
+
+@immutable
+class _ShareOwnershipInfo extends StatelessWidget {
+  final int shareCount;
+
+  const _ShareOwnershipInfo(this.shareCount);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(24.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            S.of(context).cooperativeSharesHeadline,
+            style: Theme.of(context).textTheme.headline6,
+          ),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+          ),
+          CooperativeShareInfoCard(shareCount: shareCount),
         ],
       ),
     );

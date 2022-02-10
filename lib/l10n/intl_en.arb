@@ -55,7 +55,7 @@
   "fee": "Fee",
   "yourAccountDetails": "Your account details:",
   "upcomingShift": "Next Shift:",
-  "cooperation": "Cooperation",
+  "contribution": "Contribution",
   "iban": "IBAN",
   "lookingForStandIn": "Looking for stand-in",
   "missedExcused": "Excused",
@@ -67,5 +67,9 @@
   "tomorrow": "Tomorrow",
   "allowedToShopAsMember": "You're allowed to shop as a member.",
   "notAllowedToShop": "You aren't allowed to shop as a member.",
-  "noUpcomingShift": "No upcoming shift"
+  "noUpcomingShift": "No upcoming shift",
+  "shareCountInfo": "You've taken over {shareCount,plural, =0{no shares}=1{one share}other{{shareCount} shares}}.",
+  "takeOverMoreSharesMessage": "In order to support the cooperative, you may take over more shares or grant the cooperative a loan.",
+  "cooperativeSharesHeadline": "Cooperative shares",
+  "applyForMembershipLabel": "Apply for membership"
 }

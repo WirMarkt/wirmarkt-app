@@ -22,6 +22,8 @@ MemberContribution _$MemberContributionFromJson(Map<String, dynamic> json) =>
       sepaAccountHolder: json['sepa_account_holder'] as String?,
       sepaIban: json['sepa_iban'] as String?,
       signedSepaMandate: json['signed_sepa_mandate'] as bool?,
+      isInvesting: json['is_investing'] as bool?,
+      shareCount: json['share_count'] as int? ?? 0,
     );
 
 Map<String, dynamic> _$MemberContributionToJson(MemberContribution instance) =>
@@ -38,4 +40,6 @@ Map<String, dynamic> _$MemberContributionToJson(MemberContribution instance) =>
       'sepa_account_holder': instance.sepaAccountHolder,
       'sepa_iban': instance.sepaIban,
       'signed_sepa_mandate': instance.signedSepaMandate,
+      'is_investing': instance.isInvesting,
+      'share_count': instance.shareCount,
     };

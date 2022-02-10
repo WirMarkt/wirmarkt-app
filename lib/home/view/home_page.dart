@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wir_markt/data/app_config.dart';
 import 'package:wir_markt/generated/l10n.dart';
@@ -49,10 +48,10 @@ class _HomePageState extends State<HomePage> {
         items: [
           BottomNavigationBarItem(
               label: getTitleOf(page: 0),
-              icon: const Icon(CupertinoIcons.shopping_cart)),
+              icon: const Icon(Icons.shopping_cart)),
           BottomNavigationBarItem(
               label: getTitleOf(page: 1),
-              icon: const Icon(CupertinoIcons.tree)),
+              icon: const Icon(Icons.bar_chart)),
         ],
         onTap: (index) {
           setState(() {

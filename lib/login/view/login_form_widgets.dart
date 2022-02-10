@@ -128,3 +128,22 @@ class _ResetPasswordButton extends StatelessWidget {
     );
   }
 }
+
+class _ApplyForMembershipButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      key: const Key('loginForm_apply_for_membership_raisedButton'),
+      child: Text(S.of(context).applyForMembershipLabel),
+      onPressed: _launchApplyForMembershipInBrowser,
+    );
+  }
+
+  void _launchApplyForMembershipInBrowser() {
+    String _url = AppConfig.get().applyForMembershipUrl.toString();
+    launch(
+      _url,
+      forceSafariVC: false,
+    );
+  }
+}

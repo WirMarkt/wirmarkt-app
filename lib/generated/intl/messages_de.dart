@@ -22,7 +22,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(membershipCount) => "Wir sind ${membershipCount} Mitglieder";
 
-  static String m1(shopCount) =>
+  static String m1(shareCount) =>
+      "Du hast ${Intl.plural(shareCount, zero: 'keine Anteile', one: 'einen Anteil', other: '${shareCount} Anteile')} übernommen.";
+
+  static String m2(shopCount) =>
       "Wir haben ${Intl.plural(shopCount, zero: 'kein Geschäft', one: 'ein Geschäft', other: '${shopCount} Geschäfte')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -33,12 +36,16 @@ class MessageLookup extends MessageLookupByLibrary {
             "Du kannst als Mitglied im Laden einkaufen"),
         "anErrorOccurred":
             MessageLookupByLibrary.simpleMessage("Ein Fehler ist aufgetreten"),
+        "applyForMembershipLabel":
+            MessageLookupByLibrary.simpleMessage("Als Mitglied bewerben"),
         "authenticationFailure": MessageLookupByLibrary.simpleMessage(
             "Nutzername oder Passwort falsch"),
         "cancelled": MessageLookupByLibrary.simpleMessage("Abgesagt"),
         "connectionFailed":
             MessageLookupByLibrary.simpleMessage("Verbindung fehlgeschlagen"),
-        "cooperation": MessageLookupByLibrary.simpleMessage("Mitarbeit"),
+        "contribution": MessageLookupByLibrary.simpleMessage("Mitarbeit"),
+        "cooperativeSharesHeadline": MessageLookupByLibrary.simpleMessage(
+            "Anteile an der Genossenschaft"),
         "createAssortmentSuggestionExplanation":
             MessageLookupByLibrary.simpleMessage(
                 "Mehrere Produkte auf einmal vorschlagen."),
@@ -124,17 +131,20 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ausweis im Smartphone."),
         "setupMembershipTitle":
             MessageLookupByLibrary.simpleMessage("Mitgliedsausweis einrichten"),
+        "shareCountInfo": m1,
         "shopAsMemberTitle":
             MessageLookupByLibrary.simpleMessage("Als Mitglied einkaufen"),
         "showBarcodeAtPOSLabel": MessageLookupByLibrary.simpleMessage(
             "Zeige diesen Barcode an der Kasse im Laden."),
         "storeCountExplanation": MessageLookupByLibrary.simpleMessage(
             "Sagt der Welt, sie soll mehr genossenschaftliche Supermärkte eröffnen!"),
-        "storeCountTitle": m1,
+        "storeCountTitle": m2,
         "suggestAssortmentInstructionText": MessageLookupByLibrary.simpleMessage(
             "Mache ein Foto von deinem Kühlschrank oder deiner Vorratskammer, auf dem alle Produkte zu sehen sind, die du vorschlagen möchtest."),
         "suggestProductInstructionText": MessageLookupByLibrary.simpleMessage(
             "Mache ein Foto von dem Produkt, das du vorschlagen möchtest."),
+        "takeOverMoreSharesMessage": MessageLookupByLibrary.simpleMessage(
+            "Um die Genossenschaft zu unterstützen, kannst du weitere Anteile zeichnen oder der Genossenschaft ein Darlehen geben."),
         "today": MessageLookupByLibrary.simpleMessage("Heute"),
         "tomorrow": MessageLookupByLibrary.simpleMessage("Morgen"),
         "upcomingShift":

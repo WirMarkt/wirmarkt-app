@@ -12,7 +12,7 @@ class MemberInfoRepository {
   /// @throws [ApiException]
   Future<MemberInfo?> getMemberInfo(JwtToken jwtToken) async {
     var jsonResponse =
-        await _apiRepository.get("/member_info", jwtToken: jwtToken);
+        await _apiRepository.get("/member_info/", jwtToken: jwtToken);
     return MemberInfo.fromJson(jsonResponse);
   }
 }
