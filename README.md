@@ -5,7 +5,7 @@ Yay, we've built ourselves an app. It makes shopping, decision-making and collab
 Some features:
 
 * Shopping: membership card, shopping list (planned), digital and anonymous receipt (planned).
-* Decision-making: assortment suggestions, decision-making processes (planned).
+* Decision-making: product suggestions, decision-making processes (planned).
 * Collaboration: shift planning, training material (planned).
 * Community: impact, events (planned), presentation of the suppliers (planned).
 

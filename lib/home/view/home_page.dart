@@ -70,7 +70,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget generateShoppingCartUI() {
+  //TODO this should be a separate widget
+  Widget generateMembershipUI() {
     const paddingVertical = 16.0;
 
     //TODO put in separate widget
@@ -80,7 +81,7 @@ class _HomePageState extends State<HomePage> {
         Column(
           children: [
             OnboardingCard(
-              title: S.of(context).shopAsMemberTitle,
+              title: S.of(context).showMembershipID,
               onTap: () {
                 Navigator.of(context).push(MemberInfoPage.route());
               },
@@ -95,23 +96,6 @@ class _HomePageState extends State<HomePage> {
               iconImage: const AssetImage("images/plan_member_contribution.jpg"),
             ),
           ],
-        ),
-        OnboardingCard(
-          title: S.of(context).createAssortmentSuggestionTitle,
-          explanation: S.of(context).createAssortmentSuggestionExplanation,
-          onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute<void>(
-                builder: (BuildContext context) => SuggestProductPage(
-                    instructionsText:
-                    S.of(context).suggestAssortmentInstructionText,
-                    title: S.of(context).createAssortmentSuggestionTitle),
-              ),
-            );
-          },
-          iconImage: const AssetImage("images/add_assortment_wish.jpg"),
-          //TODO this should be dynamic
-          done: false,
         ),
         OnboardingCard(
           title: S.of(context).createProductSuggestionTitle,
@@ -149,7 +133,7 @@ class _HomePageState extends State<HomePage> {
   Widget buildPageUi(int page) {
     switch (page) {
       case 0:
-        return generateShoppingCartUI();
+        return generateMembershipUI();
       case 1:
         return const ImpactColumn();
       default:

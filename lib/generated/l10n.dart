@@ -90,11 +90,11 @@ class S {
     );
   }
 
-  /// `Shop as a Member`
-  String get shopAsMemberTitle {
+  /// `Membership ID`
+  String get showMembershipID {
     return Intl.message(
-      'Shop as a Member',
-      name: 'shopAsMemberTitle',
+      'Membership ID',
+      name: 'showMembershipID',
       desc: '',
       args: [],
     );
@@ -110,31 +110,11 @@ class S {
     );
   }
 
-  /// `Suggest single product.`
+  /// `Takes a picture of a product and forwards it to the assortment team.`
   String get createProductSuggestionExplanation {
     return Intl.message(
-      'Suggest single product.',
+      'Takes a picture of a product and forwards it to the assortment team.',
       name: 'createProductSuggestionExplanation',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Suggest Assortment`
-  String get createAssortmentSuggestionTitle {
-    return Intl.message(
-      'Suggest Assortment',
-      name: 'createAssortmentSuggestionTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Suggest multiple products at once.`
-  String get createAssortmentSuggestionExplanation {
-    return Intl.message(
-      'Suggest multiple products at once.',
-      name: 'createAssortmentSuggestionExplanation',
       desc: '',
       args: [],
     );
@@ -225,16 +205,6 @@ class S {
     return Intl.message(
       'Take a photo of the product you want to suggest.',
       name: 'suggestProductInstructionText',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Take a picture of your fridge or pantry showing all the products you want to suggest.`
-  String get suggestAssortmentInstructionText {
-    return Intl.message(
-      'Take a picture of your fridge or pantry showing all the products you want to suggest.',
-      name: 'suggestAssortmentInstructionText',
       desc: '',
       args: [],
     );
