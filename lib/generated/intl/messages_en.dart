@@ -46,13 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "contribution": MessageLookupByLibrary.simpleMessage("Contribution"),
         "cooperativeSharesHeadline":
             MessageLookupByLibrary.simpleMessage("Cooperative shares"),
-        "createAssortmentSuggestionExplanation":
-            MessageLookupByLibrary.simpleMessage(
-                "Suggest multiple products at once."),
-        "createAssortmentSuggestionTitle":
-            MessageLookupByLibrary.simpleMessage("Suggest Assortment"),
-        "createProductSuggestionExplanation":
-            MessageLookupByLibrary.simpleMessage("Suggest single product."),
+        "createProductSuggestionExplanation": MessageLookupByLibrary.simpleMessage(
+            "Takes a picture of a product and forwards it to the assortment team."),
         "createProductSuggestionTitle":
             MessageLookupByLibrary.simpleMessage("Suggest Product"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
@@ -126,15 +121,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "setupMembershipTitle":
             MessageLookupByLibrary.simpleMessage("Setup Membership"),
         "shareCountInfo": m1,
-        "shopAsMemberTitle":
-            MessageLookupByLibrary.simpleMessage("Shop as a Member"),
         "showBarcodeAtPOSLabel": MessageLookupByLibrary.simpleMessage(
             "Show this barcode at the checkout in the store."),
+        "showMembershipID":
+            MessageLookupByLibrary.simpleMessage("Membership ID"),
         "storeCountExplanation": MessageLookupByLibrary.simpleMessage(
             "Tell the world to open more cooperative supermarkets!"),
         "storeCountTitle": m2,
-        "suggestAssortmentInstructionText": MessageLookupByLibrary.simpleMessage(
-            "Take a picture of your fridge or pantry showing all the products you want to suggest."),
         "suggestProductInstructionText": MessageLookupByLibrary.simpleMessage(
             "Take a photo of the product you want to suggest."),
         "takeOverMoreSharesMessage": MessageLookupByLibrary.simpleMessage(

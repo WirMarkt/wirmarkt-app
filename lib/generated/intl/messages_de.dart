@@ -46,16 +46,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "contribution": MessageLookupByLibrary.simpleMessage("Mitarbeit"),
         "cooperativeSharesHeadline": MessageLookupByLibrary.simpleMessage(
             "Anteile an der Genossenschaft"),
-        "createAssortmentSuggestionExplanation":
-            MessageLookupByLibrary.simpleMessage(
-                "Mehrere Produkte auf einmal vorschlagen."),
-        "createAssortmentSuggestionTitle":
-            MessageLookupByLibrary.simpleMessage("Neuer Sortimentswunsch"),
-        "createProductSuggestionExplanation":
-            MessageLookupByLibrary.simpleMessage(
-                "Einzelnes Produkt vorschlagen."),
+        "createProductSuggestionExplanation": MessageLookupByLibrary.simpleMessage(
+            "Nimmt ein Foto von einem Produkt auf und leitet es zum Sortiments-Team weiter."),
         "createProductSuggestionTitle":
-            MessageLookupByLibrary.simpleMessage("Neuer Produktwunsch"),
+            MessageLookupByLibrary.simpleMessage("Produkt vorschlagen"),
         "done": MessageLookupByLibrary.simpleMessage("Erledigt"),
         "email": MessageLookupByLibrary.simpleMessage("E-Mail"),
         "failedToLoadMembershipInfo": MessageLookupByLibrary.simpleMessage(
@@ -132,15 +126,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "setupMembershipTitle":
             MessageLookupByLibrary.simpleMessage("Mitgliedsausweis einrichten"),
         "shareCountInfo": m1,
-        "shopAsMemberTitle":
-            MessageLookupByLibrary.simpleMessage("Als Mitglied einkaufen"),
         "showBarcodeAtPOSLabel": MessageLookupByLibrary.simpleMessage(
             "Zeige diesen Barcode an der Kasse im Laden."),
+        "showMembershipID":
+            MessageLookupByLibrary.simpleMessage("Mitgliedsausweis"),
         "storeCountExplanation": MessageLookupByLibrary.simpleMessage(
             "Sagt der Welt, sie soll mehr genossenschaftliche Supermärkte eröffnen!"),
         "storeCountTitle": m2,
-        "suggestAssortmentInstructionText": MessageLookupByLibrary.simpleMessage(
-            "Mache ein Foto von deinem Kühlschrank oder deiner Vorratskammer, auf dem alle Produkte zu sehen sind, die du vorschlagen möchtest."),
         "suggestProductInstructionText": MessageLookupByLibrary.simpleMessage(
             "Mache ein Foto von dem Produkt, das du vorschlagen möchtest."),
         "takeOverMoreSharesMessage": MessageLookupByLibrary.simpleMessage(
