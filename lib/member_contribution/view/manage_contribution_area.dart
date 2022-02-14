@@ -54,9 +54,9 @@ class ManageContributionArea extends StatelessWidget {
 
   Widget _createShiftOrPaymentInfo(
       MemberContributionState state, BuildContext context) {
-    if (state.memberContribution.isPaying == true) {
+    /*TODO if (state.memberContribution.isPaying == true) {
       return _PaymentInfoPanel(state.memberContribution);
-    } else if (state.memberContribution.status == MemberStatus.active) {
+    } else*/ if (state.memberContribution.status == MemberStatus.active) {
       if (state.memberContribution.nextShiftName != null) {
         return _NextShiftPanel(state.memberContribution);
       } else {

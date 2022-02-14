@@ -16,13 +16,16 @@ class AppConfig {
   const AppConfig({
     required this.orgName,
     required this.apiUrl,
+    this.contentApiUrl = "",
     this.passwordResetUrl = "",
     this.applyForMembershipUrl = "",
     required this.memberManagementUri,
   });
 
   final String orgName;
+
   final String apiUrl;
+  final String contentApiUrl;
   final String passwordResetUrl;
   final String applyForMembershipUrl;
   final String memberManagementUri;

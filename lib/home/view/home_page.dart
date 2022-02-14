@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:wir_markt/data/app_config.dart';
 import 'package:wir_markt/generated/l10n.dart';
-import 'package:wir_markt/home/widget/onboarding_card.dart';
-import 'package:wir_markt/impact/widget/impact_column.dart';
-import 'package:wir_markt/member_contribution/view/manage_contribution_page.dart';
-import 'package:wir_markt/member_info/view/member_info_page.dart';
+import 'package:wir_markt/home/widget/membership_actions_view.dart';
 import 'package:wir_markt/preferences/preferences_page.dart';
-import 'package:wir_markt/suggest_product/view/suggest_product_page.dart';
+
+import '../../impact_info/view/impact_content_view.dart';
 
 /// Home page accessible if logged in
 class HomePage extends StatefulWidget {
@@ -70,55 +68,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  //TODO this should be a separate widget
-  Widget generateMembershipUI() {
-    const paddingVertical = 16.0;
-
-    //TODO put in separate widget
-    return Column(
-      children: [
-        const SizedBox(height: paddingVertical),
-        Column(
-          children: [
-            OnboardingCard(
-              title: S.of(context).showMembershipID,
-              onTap: () {
-                Navigator.of(context).push(MemberInfoPage.route());
-              },
-              iconImage: const AssetImage("images/shop_as_member.jpg"),
-            ),
-            OnboardingCard(
-              title: S.of(context).planContributionTitle,
-              explanation: S.of(context).planContributionExplanation,
-              onTap: () {
-                Navigator.of(context).push(ManageContributionPage.route());
-              },
-              iconImage: const AssetImage("images/plan_member_contribution.jpg"),
-            ),
-          ],
-        ),
-        OnboardingCard(
-          title: S.of(context).createProductSuggestionTitle,
-          explanation: S.of(context).createProductSuggestionExplanation,
-          onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute<void>(
-                builder: (BuildContext context) => SuggestProductPage(
-                  title: S.of(context).createProductSuggestionTitle,
-                  instructionsText: S.of(context).suggestProductInstructionText,
-                ),
-              ),
-            );
-          },
-          iconImage: const AssetImage("images/add_product_wish.jpg"),
-          //TODO this should be dynamic
-          done: false,
-        ),
-        const SizedBox(height: paddingVertical * 2),
-      ],
-    );
-  }
-
   String getTitleOf({required int page}) {
     switch (page) {
       case 0:
@@ -133,9 +82,9 @@ class _HomePageState extends State<HomePage> {
   Widget buildPageUi(int page) {
     switch (page) {
       case 0:
-        return generateMembershipUI();
+        return const MembershipActionsView();
       case 1:
-        return const ImpactColumn();
+        return const ImpactContentView();
       default:
         return Container();
     }

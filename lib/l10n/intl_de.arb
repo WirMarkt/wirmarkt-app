@@ -5,7 +5,7 @@
   "setupMembershipExplanation": "Ausweis im Smartphone.",
   "showMembershipID": "Mitgliedsausweis",
   "createProductSuggestionTitle": "Produkt vorschlagen",
-  "createProductSuggestionExplanation": "Nimmt ein Foto von einem Produkt auf und leitet es zum Sortiments-Team weiter.",
+  "createProductSuggestionExplanation": "Nimm ein Foto von einem Produkt auf und leite es zum Sortiments-Team weiter.",
   "settingsTitle": "Settings",
   "scanResultTitle": "Scan Resultat",
   "resultLabel": "Resultat",
@@ -68,5 +68,12 @@
   "shareCountInfo": "Du hast {shareCount,plural, =0{keine Anteile}=1{einen Anteil}other{{shareCount} Anteile}} übernommen.",
   "takeOverMoreSharesMessage": "Um die Genossenschaft zu unterstützen, kannst du weitere Anteile zeichnen oder der Genossenschaft ein Darlehen geben.",
   "cooperativeSharesHeadline": "Anteile an der Genossenschaft",
-  "applyForMembershipLabel": "Als Mitglied bewerben"
+  "applyForMembershipLabel": "Als Mitglied bewerben",
+  "training": "Schulung",
+  "prepareForFirstShift": "Bereite dich auf deinen ersten Einsatz im Laden vor",
+  "takeTraining": "Schulung machen",
+  "loadingImpactMessage": "Lade Impact-Infos",
+  "failedToLoadImpactInfoMessage": "Impact-Infos konnten nicht geladen werden",
+  "failedToLoadTrainingContentMessage": "Schulungsinhalte konnten nicht geladen werden",
+  "loadingTrainingMessage": "Lade Schulung"
 }

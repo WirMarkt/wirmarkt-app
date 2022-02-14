@@ -47,13 +47,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "cooperativeSharesHeadline": MessageLookupByLibrary.simpleMessage(
             "Anteile an der Genossenschaft"),
         "createProductSuggestionExplanation": MessageLookupByLibrary.simpleMessage(
-            "Nimmt ein Foto von einem Produkt auf und leitet es zum Sortiments-Team weiter."),
+            "Nimm ein Foto von einem Produkt auf und leite es zum Sortiments-Team weiter."),
         "createProductSuggestionTitle":
             MessageLookupByLibrary.simpleMessage("Produkt vorschlagen"),
         "done": MessageLookupByLibrary.simpleMessage("Erledigt"),
         "email": MessageLookupByLibrary.simpleMessage("E-Mail"),
+        "failedToLoadImpactInfoMessage": MessageLookupByLibrary.simpleMessage(
+            "Impact-Infos konnten nicht geladen werden"),
         "failedToLoadMembershipInfo": MessageLookupByLibrary.simpleMessage(
             "Konnte Mitgliedschaft nicht laden"),
+        "failedToLoadTrainingContentMessage":
+            MessageLookupByLibrary.simpleMessage(
+                "Schulungsinhalte konnten nicht geladen werden"),
         "fee": MessageLookupByLibrary.simpleMessage("Beitrag"),
         "forgotPasswordLabel":
             MessageLookupByLibrary.simpleMessage("Passwort vergessen?"),
@@ -64,8 +69,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ungültiges Passwort"),
         "invalidUsername":
             MessageLookupByLibrary.simpleMessage("Ungültiger Benutzername"),
+        "loadingImpactMessage":
+            MessageLookupByLibrary.simpleMessage("Lade Impact-Infos"),
         "loadingMembershipInfo":
             MessageLookupByLibrary.simpleMessage("Lade Mitgliedschaft-Info"),
+        "loadingTrainingMessage":
+            MessageLookupByLibrary.simpleMessage("Lade Schulung"),
         "logIn": MessageLookupByLibrary.simpleMessage("Anmelden"),
         "logOut": MessageLookupByLibrary.simpleMessage("Abmelden"),
         "lookingForStandIn":
@@ -102,6 +111,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Mitarbeit/Beitrag planen"),
         "pleaseLogInToContinue": MessageLookupByLibrary.simpleMessage(
             "Bitte melde dich an um fortzufahren"),
+        "prepareForFirstShift": MessageLookupByLibrary.simpleMessage(
+            "Bereite dich auf deinen ersten Einsatz im Laden vor"),
         "propertiesTitle":
             MessageLookupByLibrary.simpleMessage("Einstellungen"),
         "rawContentLabel": MessageLookupByLibrary.simpleMessage("Roher Inhalt"),
@@ -137,8 +148,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Mache ein Foto von dem Produkt, das du vorschlagen möchtest."),
         "takeOverMoreSharesMessage": MessageLookupByLibrary.simpleMessage(
             "Um die Genossenschaft zu unterstützen, kannst du weitere Anteile zeichnen oder der Genossenschaft ein Darlehen geben."),
+        "takeTraining": MessageLookupByLibrary.simpleMessage("Schulung machen"),
         "today": MessageLookupByLibrary.simpleMessage("Heute"),
         "tomorrow": MessageLookupByLibrary.simpleMessage("Morgen"),
+        "training": MessageLookupByLibrary.simpleMessage("Schulung"),
         "upcomingShift":
             MessageLookupByLibrary.simpleMessage("Nächste Schicht:"),
         "username": MessageLookupByLibrary.simpleMessage("Benutzername"),
