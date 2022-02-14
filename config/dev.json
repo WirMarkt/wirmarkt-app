@@ -1,6 +1,7 @@
 {
   "orgName": "WirMarkt",
-  "apiUrl": "http://localhost:8000/api/v1",
+  "apiUrl": "https://members.wirmarkt.de/api/v1",
+  "contentApiUrl": "http://localhost:8055",
   "memberManagementUri": "http://localhost:8000",
   "passwordResetUrl": "http://localhost:8000/accounts/password_reset/",
   "applyForMembershipUrl": "http://localhost:8000/coop/user/draft/register"

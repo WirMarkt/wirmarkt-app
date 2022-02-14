@@ -3,16 +3,17 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 import 'package:wir_markt/authentication/models/jwt_token.dart';
-import 'package:wir_markt/data/app_config.dart';
 
 import 'status_code_exception.dart';
 
 class ApiRepository {
+  final String apiUrl;
 
+  ApiRepository(this.apiUrl);
 
   Future<Map<String, dynamic>> get(String path,
       {JwtToken? jwtToken}) async {
-    var uri = Uri.parse(AppConfig.get().apiUrl + path);
+    var uri = Uri.parse(apiUrl + path);
     Map<String, String> headers = await _prepareHeaders(jwtToken);
     try {
       var res = await http.get(uri, headers: headers);
@@ -24,7 +25,7 @@ class ApiRepository {
 
   Future<Map<String, dynamic>> post(String path,
       {JwtToken? jwtToken, Map<String, dynamic>? body}) async {
-    var uri = Uri.parse(AppConfig.get().apiUrl + path);
+    var uri = Uri.parse(apiUrl  + path);
     Map<String, String> headers = await _prepareHeaders(jwtToken);
     headers['Content-Type'] = "application/json";
     try {

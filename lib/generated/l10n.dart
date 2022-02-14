@@ -110,10 +110,10 @@ class S {
     );
   }
 
-  /// `Takes a picture of a product and forwards it to the assortment team.`
+  /// `Take a picture of a product and forward it to the assortment team.`
   String get createProductSuggestionExplanation {
     return Intl.message(
-      'Takes a picture of a product and forwards it to the assortment team.',
+      'Take a picture of a product and forward it to the assortment team.',
       name: 'createProductSuggestionExplanation',
       desc: '',
       args: [],
@@ -745,6 +745,76 @@ class S {
     return Intl.message(
       'Apply for membership',
       name: 'applyForMembershipLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Training`
+  String get training {
+    return Intl.message(
+      'Training',
+      name: 'training',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Prepare for your first shift in the supermarket`
+  String get prepareForFirstShift {
+    return Intl.message(
+      'Prepare for your first shift in the supermarket',
+      name: 'prepareForFirstShift',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Take Training`
+  String get takeTraining {
+    return Intl.message(
+      'Take Training',
+      name: 'takeTraining',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading impact`
+  String get loadingImpactMessage {
+    return Intl.message(
+      'Loading impact',
+      name: 'loadingImpactMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load impact info`
+  String get failedToLoadImpactInfoMessage {
+    return Intl.message(
+      'Failed to load impact info',
+      name: 'failedToLoadImpactInfoMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load training content`
+  String get failedToLoadTrainingContentMessage {
+    return Intl.message(
+      'Failed to load training content',
+      name: 'failedToLoadTrainingContentMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading training`
+  String get loadingTrainingMessage {
+    return Intl.message(
+      'Loading training',
+      name: 'loadingTrainingMessage',
       desc: '',
       args: [],
     );

@@ -3,17 +3,15 @@ import 'dart:io';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
+import '../../generated/l10n.dart';
+
 //TODO create step-by-step UI to submit a product suggestion
 class SuggestProductPage extends StatefulWidget {
-  final String title;
+  const SuggestProductPage({Key? key}) : super(key: key);
 
-  final String instructionsText;
-
-  const SuggestProductPage({
-    Key? key,
-    required this.title,
-    required this.instructionsText,
-  }) : super(key: key);
+  static Route route() {
+    return MaterialPageRoute<void>(builder: (_) => const SuggestProductPage());
+  }
 
   @override
   State<StatefulWidget> createState() {
@@ -57,7 +55,7 @@ class SuggestProductPageState extends State<SuggestProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
+      appBar: AppBar(title: Text(S.of(context).createProductSuggestionTitle)),
       body: FutureBuilder<void>(
         future: _initializeControllerFuture,
         builder: (context, snapshot) {
@@ -68,7 +66,7 @@ class SuggestProductPageState extends State<SuggestProductPage> {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  widget.instructionsText,
+                  S.of(context).suggestProductInstructionText,
                   style: Theme.of(context).textTheme.bodyText2,
                   textAlign: TextAlign.center,
                 ),

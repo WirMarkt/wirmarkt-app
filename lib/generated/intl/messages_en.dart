@@ -47,13 +47,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "cooperativeSharesHeadline":
             MessageLookupByLibrary.simpleMessage("Cooperative shares"),
         "createProductSuggestionExplanation": MessageLookupByLibrary.simpleMessage(
-            "Takes a picture of a product and forwards it to the assortment team."),
+            "Take a picture of a product and forward it to the assortment team."),
         "createProductSuggestionTitle":
             MessageLookupByLibrary.simpleMessage("Suggest Product"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "failedToLoadImpactInfoMessage":
+            MessageLookupByLibrary.simpleMessage("Failed to load impact info"),
         "failedToLoadMembershipInfo": MessageLookupByLibrary.simpleMessage(
             "Failed to load membership info"),
+        "failedToLoadTrainingContentMessage":
+            MessageLookupByLibrary.simpleMessage(
+                "Failed to load training content"),
         "fee": MessageLookupByLibrary.simpleMessage("Fee"),
         "forgotPasswordLabel":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
@@ -64,8 +69,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("invalid password"),
         "invalidUsername":
             MessageLookupByLibrary.simpleMessage("invalid username"),
+        "loadingImpactMessage":
+            MessageLookupByLibrary.simpleMessage("Loading impact"),
         "loadingMembershipInfo":
             MessageLookupByLibrary.simpleMessage("Loading membership info"),
+        "loadingTrainingMessage":
+            MessageLookupByLibrary.simpleMessage("Loading training"),
         "logIn": MessageLookupByLibrary.simpleMessage("Log In"),
         "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
         "lookingForStandIn":
@@ -100,6 +109,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Setup contribution/fee"),
         "pleaseLogInToContinue":
             MessageLookupByLibrary.simpleMessage("Please log in to continue"),
+        "prepareForFirstShift": MessageLookupByLibrary.simpleMessage(
+            "Prepare for your first shift in the supermarket"),
         "propertiesTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "rawContentLabel": MessageLookupByLibrary.simpleMessage("Raw Content"),
         "regionalwertPartnerExplanation": MessageLookupByLibrary.simpleMessage(
@@ -132,8 +143,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Take a photo of the product you want to suggest."),
         "takeOverMoreSharesMessage": MessageLookupByLibrary.simpleMessage(
             "In order to support the cooperative, you may take over more shares or grant the cooperative a loan."),
+        "takeTraining": MessageLookupByLibrary.simpleMessage("Take Training"),
         "today": MessageLookupByLibrary.simpleMessage("Today"),
         "tomorrow": MessageLookupByLibrary.simpleMessage("Tomorrow"),
+        "training": MessageLookupByLibrary.simpleMessage("Training"),
         "upcomingShift": MessageLookupByLibrary.simpleMessage("Next Shift:"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "workingModeExplanation":

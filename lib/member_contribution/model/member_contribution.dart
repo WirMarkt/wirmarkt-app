@@ -22,8 +22,6 @@ class MemberContribution {
 
   @JsonKey(name: "attended_welcome_session")
   final bool? attendedWelcomeSession;
-  @JsonKey(name: "is_paying")
-  final bool? isPaying;
   @JsonKey(name: "next_shift_attendance_state")
   final int? nextShiftAttendanceStateValue;
 
@@ -71,7 +69,6 @@ class MemberContribution {
   const MemberContribution({
     this.statusString,
     this.attendedWelcomeSession,
-    this.isPaying,
     this.nextShiftAttendanceStateValue,
     this.nextShiftName,
     this.nextShiftID,
@@ -88,7 +85,7 @@ class MemberContribution {
   Map<String, dynamic> toJson() => _$MemberContributionToJson(this);
 }
 
-enum MemberStatus { sold, investing, active, paying }
+enum MemberStatus { sold, investing, active }
 
 enum ShiftAttendanceState {
   pending,

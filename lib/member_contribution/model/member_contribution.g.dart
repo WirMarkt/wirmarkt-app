@@ -10,7 +10,6 @@ MemberContribution _$MemberContributionFromJson(Map<String, dynamic> json) =>
     MemberContribution(
       statusString: json['status'] as String?,
       attendedWelcomeSession: json['attended_welcome_session'] as bool?,
-      isPaying: json['is_paying'] as bool?,
       nextShiftAttendanceStateValue:
           json['next_shift_attendance_state'] as int?,
       nextShiftName: json['next_shift_name'] as String?,
@@ -30,7 +29,6 @@ Map<String, dynamic> _$MemberContributionToJson(MemberContribution instance) =>
     <String, dynamic>{
       'status': instance.statusString,
       'attended_welcome_session': instance.attendedWelcomeSession,
-      'is_paying': instance.isPaying,
       'next_shift_attendance_state': instance.nextShiftAttendanceStateValue,
       'next_shift_name': instance.nextShiftName,
       'next_shift_id': instance.nextShiftID,

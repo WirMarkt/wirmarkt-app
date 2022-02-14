@@ -1,6 +1,7 @@
 {
   "orgName": "WirMarkt",
   "apiUrl": "https://members.wirmarkt.de/api/v1",
+  "contentApiUrl": "https://members.wirmarkt.de/api/v1",
   "memberManagementUri": "https://members.wirmarkt.de",
   "passwordResetUrl": "https://members.wirmarkt.de/accounts/password_reset/",
   "applyForMembershipUrl": "https://members.wirmarkt.de/coop/user/draft/register"
