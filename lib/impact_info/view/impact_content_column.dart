@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../training/widget/impact_card.dart';
 import '../model/impact_content.dart';
 import '../repository/impact_content_repository.dart';
+import '../widget/impact_card.dart';
 
 class ImpactContentColumn extends StatelessWidget {
   final List<ImpactContent> impactContents;

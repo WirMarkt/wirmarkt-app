@@ -37,7 +37,6 @@ void main({String? env = 'prod'}) async {
 }
 
 class App extends StatelessWidget {
-
   const App({
     Key? key,
     required this.authenticationRepository,
@@ -137,7 +136,7 @@ class _AppViewState extends State<AppView> {
   }
 
   ThemeData buildThemeData(Brightness brightness) => ThemeData.from(
-        textTheme: GoogleFonts.ibmPlexSansTextTheme(
+        textTheme: GoogleFonts.interTextTheme(
           ThemeData(brightness: brightness).textTheme,
         ),
         colorScheme: ColorScheme.fromSeed(
