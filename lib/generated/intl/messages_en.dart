@@ -56,6 +56,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Failed to load impact info"),
         "failedToLoadMembershipInfo": MessageLookupByLibrary.simpleMessage(
             "Failed to load membership info"),
+        "failedToLoadRecipesMessage":
+            MessageLookupByLibrary.simpleMessage("Failed to load recipes"),
         "failedToLoadTrainingContentMessage":
             MessageLookupByLibrary.simpleMessage(
                 "Failed to load training content"),
@@ -73,6 +75,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Loading impact"),
         "loadingMembershipInfo":
             MessageLookupByLibrary.simpleMessage("Loading membership info"),
+        "loadingRecipesMessage":
+            MessageLookupByLibrary.simpleMessage("Loading recipes"),
         "loadingTrainingMessage":
             MessageLookupByLibrary.simpleMessage("Loading training"),
         "logIn": MessageLookupByLibrary.simpleMessage("Log In"),
@@ -95,6 +99,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "No account was found matching that email and password"),
         "noMembership": MessageLookupByLibrary.simpleMessage("No Membership"),
+        "noRecipesInYourLanguageFound": MessageLookupByLibrary.simpleMessage(
+            "No recipes in your language found."),
         "noUpcomingShift":
             MessageLookupByLibrary.simpleMessage("No upcoming shift"),
         "notAllowedToShop": MessageLookupByLibrary.simpleMessage(
@@ -113,6 +119,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Prepare for your first shift in the supermarket"),
         "propertiesTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "rawContentLabel": MessageLookupByLibrary.simpleMessage("Raw Content"),
+        "recipes": MessageLookupByLibrary.simpleMessage("Recipes"),
         "regionalwertPartnerExplanation": MessageLookupByLibrary.simpleMessage(
             "We are committed to ecological, regional and socially produced food."),
         "regionalwertPartnerTitle":

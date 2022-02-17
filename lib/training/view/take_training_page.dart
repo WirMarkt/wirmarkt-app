@@ -4,7 +4,7 @@ import 'package:wir_markt/training/bloc/training_bloc.dart';
 
 import '../../generated/l10n.dart';
 import '../repository/training_repository.dart';
-import 'training_area.dart';
+import 'training_loader.dart';
 
 class TakeTrainingPage extends StatelessWidget {
   final String trainingName;

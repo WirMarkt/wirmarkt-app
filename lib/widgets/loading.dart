@@ -9,15 +9,14 @@ class Loading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
+
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
             loadingMessage,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 24,
-            ),
+            style: Theme.of(context).textTheme.headline6,
           ),
           const SizedBox(height: 24),
           const CircularProgressIndicator(

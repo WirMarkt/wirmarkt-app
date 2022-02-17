@@ -800,6 +800,26 @@ class S {
     );
   }
 
+  /// `Loading recipes`
+  String get loadingRecipesMessage {
+    return Intl.message(
+      'Loading recipes',
+      name: 'loadingRecipesMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load recipes`
+  String get failedToLoadRecipesMessage {
+    return Intl.message(
+      'Failed to load recipes',
+      name: 'failedToLoadRecipesMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Failed to load training content`
   String get failedToLoadTrainingContentMessage {
     return Intl.message(
@@ -815,6 +835,26 @@ class S {
     return Intl.message(
       'Loading training',
       name: 'loadingTrainingMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recipes`
+  String get recipes {
+    return Intl.message(
+      'Recipes',
+      name: 'recipes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No recipes in your language found.`
+  String get noRecipesInYourLanguageFound {
+    return Intl.message(
+      'No recipes in your language found.',
+      name: 'noRecipesInYourLanguageFound',
       desc: '',
       args: [],
     );

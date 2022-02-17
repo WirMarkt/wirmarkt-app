@@ -74,6 +74,10 @@
   "takeTraining": "Take Training",
   "loadingImpactMessage": "Loading impact",
   "failedToLoadImpactInfoMessage": "Failed to load impact info",
+  "loadingRecipesMessage": "Loading recipes",
+  "failedToLoadRecipesMessage": "Failed to load recipes",
   "failedToLoadTrainingContentMessage": "Failed to load training content",
-  "loadingTrainingMessage": "Loading training"
+  "loadingTrainingMessage": "Loading training",
+  "recipes": "Recipes",
+  "noRecipesInYourLanguageFound": "No recipes in your language found."
 }
