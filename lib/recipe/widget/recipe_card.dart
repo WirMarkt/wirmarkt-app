@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wir_markt/wm_design.dart';
 
-class ImpactCard extends StatelessWidget {
+//TODO quite identical to ImpactCard
+class RecipeCard extends StatelessWidget {
   final ImageProvider image;
   final String title;
   final String? explanation;
@@ -10,7 +11,7 @@ class ImpactCard extends StatelessWidget {
 
   final BoxFit? fit;
 
-  const ImpactCard({
+  const RecipeCard({
     Key? key,
     required this.title,
     required this.image,
@@ -36,13 +37,25 @@ class ImpactCard extends StatelessWidget {
                 color: backgroundColor,
               ),
               Container(
-                height: height * 0.6,
+                height: height,
                 decoration: BoxDecoration(
                   color: backgroundColor,
                   image: DecorationImage(
-                    fit: fit ?? BoxFit.contain,
+                    fit: fit ?? BoxFit.fitWidth,
                     image: image,
                     alignment: Alignment.center,
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 0,
+                right: 0,
+                top: height * 0.6,
+                child: Opacity(
+                  opacity: 0.6,
+                  child: Container(
+                    height: height * 0.4,
+                    color: backgroundColor ?? WMDesign.darkGrey,
                   ),
                 ),
               ),
@@ -56,10 +69,8 @@ class ImpactCard extends StatelessWidget {
                       title,
                       textAlign: TextAlign.center,
                       maxLines: 1,
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline5
-                          ?.copyWith(color: textColor, fontSize: 24),
+                      style: Theme.of(context).textTheme.headline5?.copyWith(
+                          color: textColor ?? WMDesign.white, fontSize: 24),
                     ),
                   )),
               if (explanation != null)
@@ -72,10 +83,8 @@ class ImpactCard extends StatelessWidget {
                     textAlign: TextAlign.center,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText1
-                        ?.copyWith(color: textColor, fontSize: 14),
+                    style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                        color: textColor ?? WMDesign.white, fontSize: 14),
                   ),
                 ),
             ],

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wir_markt/training/repository/training_repository.dart';
 
 import 'api/api.dart';
 import 'authentication/authentication.dart';
@@ -13,7 +12,9 @@ import 'impact_info/repository/impact_content_repository.dart';
 import 'login/login.dart';
 import 'member_contribution/repository/member_contribution_repository.dart';
 import 'member_info/repository/member_info_repository.dart';
+import 'recipe/repository/recipe_repository.dart';
 import 'splash/splash.dart';
+import 'training/repository/training_repository.dart';
 import 'wm_design.dart';
 
 void main({String? env = 'prod'}) async {
@@ -24,47 +25,41 @@ void main({String? env = 'prod'}) async {
   // load our config
   await AppConfig.initFromEnvironment(env: env);
 
-  var _apiRepository = ApiRepository(AppConfig.get().apiUrl);
-  var _contentApiRepository = ApiRepository(AppConfig.get().contentApiUrl);
-
-  runApp(App(
-    authenticationRepository: AuthenticationRepository(_apiRepository),
-    memberInfoRepository: MemberInfoRepository(_apiRepository),
-    memberContributionRepository: MemberContributionRepository(_apiRepository),
-    impactContentRepository: ImpactContentRepository(_contentApiRepository),
-    trainingRepository: TrainingRepository(_contentApiRepository),
-  ));
+  runApp(App());
 }
 
 class App extends StatelessWidget {
-  const App({
+  App({
     Key? key,
-    required this.authenticationRepository,
-    required this.memberInfoRepository,
-    required this.memberContributionRepository,
-    required this.impactContentRepository,
-    required this.trainingRepository,
   }) : super(key: key);
-  final AuthenticationRepository authenticationRepository;
 
-  final MemberInfoRepository memberInfoRepository;
-  final MemberContributionRepository memberContributionRepository;
-  final ImpactContentRepository impactContentRepository;
-  final TrainingRepository trainingRepository;
+  late final _apiRepository = ApiRepository(AppConfig.get().apiUrl);
+  late final _contentApiRepository =
+      ApiRepository(AppConfig.get().contentApiUrl);
+  late final _authenticationRepository =
+      AuthenticationRepository(_apiRepository);
+  late final _memberInfoRepository = MemberInfoRepository(_apiRepository);
+  late final _memberContributionRepository =
+      MemberContributionRepository(_apiRepository);
+  late final _impactContentRepository =
+      ImpactContentRepository(_contentApiRepository);
+  late final _trainingRepository = TrainingRepository(_contentApiRepository);
+  late final _recipeRepository = RecipeRepository(_contentApiRepository);
 
   @override
   Widget build(BuildContext context) {
     return MultiRepositoryProvider(
       providers: [
-        RepositoryProvider.value(value: authenticationRepository),
-        RepositoryProvider.value(value: impactContentRepository),
-        RepositoryProvider.value(value: memberInfoRepository),
-        RepositoryProvider.value(value: memberContributionRepository),
-        RepositoryProvider.value(value: trainingRepository),
+        RepositoryProvider.value(value: _authenticationRepository),
+        RepositoryProvider.value(value: _impactContentRepository),
+        RepositoryProvider.value(value: _memberInfoRepository),
+        RepositoryProvider.value(value: _memberContributionRepository),
+        RepositoryProvider.value(value: _trainingRepository),
+        RepositoryProvider.value(value: _recipeRepository),
       ],
       child: BlocProvider(
         create: (_) => AuthenticationBloc(
-          authenticationRepository: authenticationRepository,
+          authenticationRepository: _authenticationRepository,
         ),
         child: const AppView(),
       ),

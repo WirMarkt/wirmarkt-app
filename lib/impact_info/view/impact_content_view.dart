@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/impact_content_bloc.dart';
 import '../repository/impact_content_repository.dart';
-import 'impact_content_area.dart';
+import 'impact_content_loader.dart';
 
 class ImpactContentView extends StatelessWidget {
   const ImpactContentView({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class ImpactContentView extends StatelessWidget {
               RepositoryProvider.of<ImpactContentRepository>(context),
         );
       },
-      child: const ImpactContentArea(),
+      child: const ImpactContentLoader(),
     );
   }
 }

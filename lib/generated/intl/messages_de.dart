@@ -56,6 +56,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Impact-Infos konnten nicht geladen werden"),
         "failedToLoadMembershipInfo": MessageLookupByLibrary.simpleMessage(
             "Konnte Mitgliedschaft nicht laden"),
+        "failedToLoadRecipesMessage": MessageLookupByLibrary.simpleMessage(
+            "Rezepte konnten nicht geladen werden"),
         "failedToLoadTrainingContentMessage":
             MessageLookupByLibrary.simpleMessage(
                 "Schulungsinhalte konnten nicht geladen werden"),
@@ -73,6 +75,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Lade Impact-Infos"),
         "loadingMembershipInfo":
             MessageLookupByLibrary.simpleMessage("Lade Mitgliedschaft-Info"),
+        "loadingRecipesMessage":
+            MessageLookupByLibrary.simpleMessage("Lade Rezepte"),
         "loadingTrainingMessage":
             MessageLookupByLibrary.simpleMessage("Lade Schulung"),
         "logIn": MessageLookupByLibrary.simpleMessage("Anmelden"),
@@ -97,6 +101,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Kein Konto wurde gefunden mit der E-Mail-Adresse und dem Passwort"),
         "noMembership":
             MessageLookupByLibrary.simpleMessage("Keine Mitgliedschaft"),
+        "noRecipesInYourLanguageFound": MessageLookupByLibrary.simpleMessage(
+            "Keine Rezepte in deiner Sprache gefunden."),
         "noUpcomingShift":
             MessageLookupByLibrary.simpleMessage("Keine Schicht geplant"),
         "notAllowedToShop": MessageLookupByLibrary.simpleMessage(
@@ -116,6 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "propertiesTitle":
             MessageLookupByLibrary.simpleMessage("Einstellungen"),
         "rawContentLabel": MessageLookupByLibrary.simpleMessage("Roher Inhalt"),
+        "recipes": MessageLookupByLibrary.simpleMessage("Rezepte"),
         "regionalwertPartnerExplanation": MessageLookupByLibrary.simpleMessage(
             "Wir setzen uns gemeinsam ein für ökologische, regionale und sozial produzierte Lebensmittel."),
         "regionalwertPartnerTitle":

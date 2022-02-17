@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:wir_markt/data/app_config.dart';
 import 'package:wir_markt/generated/l10n.dart';
 import 'package:wir_markt/home/widget/membership_actions_view.dart';
 import 'package:wir_markt/preferences/preferences_page.dart';
 
 import '../../impact_info/view/impact_content_view.dart';
+import '../../recipe/view/recipes_page.dart';
 
 /// Home page accessible if logged in
 class HomePage extends StatefulWidget {
@@ -18,10 +18,12 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
+enum Pages { membership, recipes, impact }
+
 class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
 
-  int _page = 0;
+  Pages _page = Pages.membership;
 
   @override
   Widget build(BuildContext context) {
@@ -30,30 +32,52 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(getTitleOf(page: _page)),
+        title: Builder(
+          builder: (context) {
+            switch (_page) {
+              case Pages.membership:
+                return Text(S.of(context).membershipSectionTitle);
+              case Pages.recipes:
+                return Text(S.of(context).recipes);
+              case Pages.impact:
+                return Text(S.of(context).impactSectionTitle);
+            }
+          },
+        ),
         leading: IconButton(
           icon: const Icon(Icons.settings),
           onPressed: showPreferences,
         ),
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: buildPageUi(_page),
-        ),
-      ),
+      body: Builder(builder: (context) {
+        switch (_page) {
+          case Pages.membership:
+            return const MembershipActionsView();
+          case Pages.recipes:
+            return const RecipesView();
+          case Pages.impact:
+            return const ImpactContentView();
+        }
+      }),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _page,
+        currentIndex: _page.index,
         items: [
           BottomNavigationBarItem(
-              label: getTitleOf(page: 0),
-              icon: const Icon(Icons.shopping_cart)),
+            label: S.of(context).membershipSectionTitle,
+            icon: const Icon(Icons.shopping_cart),
+          ),
           BottomNavigationBarItem(
-              label: getTitleOf(page: 1),
-              icon: const Icon(Icons.bar_chart)),
+            label: S.of(context).recipes,
+            icon: const Icon(Icons.list),
+          ),
+          BottomNavigationBarItem(
+            label: S.of(context).impactSectionTitle,
+            icon: const Icon(Icons.bar_chart),
+          ),
         ],
         onTap: (index) {
           setState(() {
-            _page = index;
+            _page = Pages.values[index];
           });
         },
       ),
@@ -67,27 +91,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-  String getTitleOf({required int page}) {
-    switch (page) {
-      case 0:
-        return S.of(context).membershipSectionTitle;
-      case 1:
-        return S.of(context).impactSectionTitle;
-      default:
-        return AppConfig.get().orgName;
-    }
-  }
-
-  Widget buildPageUi(int page) {
-    switch (page) {
-      case 0:
-        return const MembershipActionsView();
-      case 1:
-        return const ImpactContentView();
-      default:
-        return Container();
-    }
-  }
 }
-

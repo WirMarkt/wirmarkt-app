@@ -74,6 +74,10 @@
   "takeTraining": "Schulung machen",
   "loadingImpactMessage": "Lade Impact-Infos",
   "failedToLoadImpactInfoMessage": "Impact-Infos konnten nicht geladen werden",
+  "loadingRecipesMessage": "Lade Rezepte",
+  "failedToLoadRecipesMessage": "Rezepte konnten nicht geladen werden",
   "failedToLoadTrainingContentMessage": "Schulungsinhalte konnten nicht geladen werden",
-  "loadingTrainingMessage": "Lade Schulung"
+  "loadingTrainingMessage": "Lade Schulung",
+  "recipes": "Rezepte",
+  "noRecipesInYourLanguageFound": "Keine Rezepte in deiner Sprache gefunden."
 }
