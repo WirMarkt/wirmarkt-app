@@ -1,6 +1,6 @@
 {
   "orgName": "WirMarkt",
-  "apiUrl": "https://members.wirmarkt.de/api/v1",
+  "apiUrl": "http://localhost:8000/api/v1",
   "contentApiUrl": "https://content.wirmarkt.de",
   "memberManagementUri": "http://localhost:8000",
   "passwordResetUrl": "http://localhost:8000/accounts/password_reset/",
