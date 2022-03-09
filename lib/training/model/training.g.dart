@@ -79,6 +79,7 @@ TrainingSection _$TrainingSectionFromJson(Map<String, dynamic> json) =>
       id: json['id'] as int,
       name: json['name'] as String,
       status: json['status'] as String,
+      coverImage: json['cover_image'] as String?,
       translations: (json['translations'] as List<dynamic>?)
               ?.map((e) => TrainingSectionTranslation.fromJson(
                   e as Map<String, dynamic>))
@@ -91,6 +92,7 @@ Map<String, dynamic> _$TrainingSectionToJson(TrainingSection instance) =>
       'id': instance.id,
       'name': instance.name,
       'status': instance.status,
+      'cover_image': instance.coverImage,
       'translations': instance.translations,
     };
 

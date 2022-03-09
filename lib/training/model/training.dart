@@ -118,6 +118,8 @@ class TrainingSection extends TrainingContent
   final int id;
   final String name;
   final String status;
+  @JsonKey(name: "cover_image")
+  final String? coverImage;
   @override
   final List<TrainingSectionTranslation> translations;
 
@@ -125,6 +127,7 @@ class TrainingSection extends TrainingContent
       {required this.id,
       required this.name,
       required this.status,
+      this.coverImage,
       this.translations = const []});
 
   factory TrainingSection.fromJson(Map<String, dynamic> json) =>

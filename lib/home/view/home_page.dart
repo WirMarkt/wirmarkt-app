@@ -4,7 +4,6 @@ import 'package:wir_markt/home/widget/membership_actions_view.dart';
 import 'package:wir_markt/preferences/preferences_page.dart';
 
 import '../../impact_info/view/impact_content_view.dart';
-import '../../recipe/view/recipes_page.dart';
 
 /// Home page accessible if logged in
 class HomePage extends StatefulWidget {
@@ -18,7 +17,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-enum Pages { membership, recipes, impact }
+enum Pages { membership, impact }
 
 class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
@@ -37,24 +36,20 @@ class _HomePageState extends State<HomePage> {
             switch (_page) {
               case Pages.membership:
                 return Text(S.of(context).membershipSectionTitle);
-              case Pages.recipes:
-                return Text(S.of(context).recipes);
               case Pages.impact:
                 return Text(S.of(context).impactSectionTitle);
             }
           },
         ),
-        leading: IconButton(
+        actions: [IconButton(
           icon: const Icon(Icons.settings),
           onPressed: showPreferences,
-        ),
+        )],
       ),
       body: Builder(builder: (context) {
         switch (_page) {
           case Pages.membership:
             return const MembershipActionsView();
-          case Pages.recipes:
-            return const RecipesView();
           case Pages.impact:
             return const ImpactContentView();
         }
@@ -65,10 +60,6 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             label: S.of(context).membershipSectionTitle,
             icon: const Icon(Icons.shopping_cart),
-          ),
-          BottomNavigationBarItem(
-            label: S.of(context).recipes,
-            icon: const Icon(Icons.list),
           ),
           BottomNavigationBarItem(
             label: S.of(context).impactSectionTitle,

@@ -13,7 +13,8 @@ class ImpactContentRepository {
   /// @throws [ApiException]
   Future<List<ImpactContent>?> getImpactContents() async {
     var jsonResponse = await _apiRepository.get(
-        "/items/impact_items/?fields=name,translations.*,cover_image&filter[status]=published");
+        "/items/impact_items/?fields=name,translations.*,cover_image,"
+            "background_color&filter[status]=published");
     var contentList =
         (jsonResponse['data'] as List).map((x) => x as Map<String, dynamic>);
 

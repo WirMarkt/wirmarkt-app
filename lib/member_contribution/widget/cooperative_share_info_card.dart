@@ -3,7 +3,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:wir_markt/data/app_config.dart';
 import 'package:wir_markt/generated/l10n.dart';
 
-import '../../wm_design.dart';
 
 class CooperativeShareInfoCard extends StatelessWidget {
   final int shareCount;
@@ -15,7 +14,6 @@ class CooperativeShareInfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Card(
-      elevation: WMDesign.defaultElevation,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[

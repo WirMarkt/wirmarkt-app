@@ -26,10 +26,11 @@ class RecipeListView extends StatelessWidget {
               ...recipes.map((recipe) {
                 var repo = RepositoryProvider.of<RecipeRepository>(context);
                 return RecipeCard(
+                  //TODO onTap: ...,
                   title: recipe.title,
                   explanation: recipe.summary ?? "",
-                  image: NetworkImage(
-                      repo.getAssetUrl(recipe.coverImage, presetKey: "cover")),
+                  imageUrl:
+                      repo.getAssetUrl(recipe.coverImage, presetKey: "cover"),
                 );
               }),
               const SizedBox(height: paddingVertical * 2),

@@ -120,6 +120,8 @@ class _NextShiftPanel extends StatelessWidget {
 }
 
 @immutable
+//TODO: add support for this
+// ignore: unused_element
 class _PaymentInfoPanel extends StatelessWidget {
   final MemberContribution memberContribution;
 
