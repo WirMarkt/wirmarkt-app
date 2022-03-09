@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wir_markt/recipe/view/recipe_list_loader.dart';
 
+import '../../generated/l10n.dart';
 import '../bloc/recipe_bloc.dart';
 import '../repository/recipe_repository.dart';
 
@@ -16,14 +17,21 @@ class RecipesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-        create: (context) {
-          return RecipeBloc(
-            recipeRepository:
-            RepositoryProvider.of<RecipeRepository>(context),
-          );
-        },
-        child: const RecipeListLoader(),
-      );
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(S.of(context).recipes),
+      ),
+      body: SafeArea(
+        child: BlocProvider(
+            create: (context) {
+              return RecipeBloc(
+                recipeRepository:
+                RepositoryProvider.of<RecipeRepository>(context),
+              );
+            },
+            child: const RecipeListLoader(),
+          ),
+      ),
+    );
   }
 }

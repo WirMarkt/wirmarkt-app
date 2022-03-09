@@ -3,8 +3,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:wir_markt/data/app_config.dart';
 import 'package:wir_markt/generated/l10n.dart';
 
-import '../../wm_design.dart';
-
 class PaymentInfoCard extends StatelessWidget {
   final String sepaIban;
   final String sepaAccountHolder;
@@ -21,7 +19,6 @@ class PaymentInfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     var textTheme = Theme.of(context).textTheme;
     return Card(
-        elevation: WMDesign.defaultElevation,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
@@ -55,6 +52,7 @@ class PaymentInfoCard extends StatelessWidget {
                 const SizedBox(width: 8),
               ],
             ),
+            const SizedBox(height: 8),
           ],
         ));
   }

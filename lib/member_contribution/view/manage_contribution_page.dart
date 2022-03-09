@@ -16,7 +16,7 @@ class ManageContributionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(S.of(context).planContributionTitle)),
+      appBar: AppBar(title: Text(S.of(context).nextShift)),
       body: SafeArea(
         child: BlocProvider(
           create: (context) {

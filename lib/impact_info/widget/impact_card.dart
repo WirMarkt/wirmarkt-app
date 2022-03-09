@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:wir_markt/wm_design.dart';
+import 'package:wir_markt/widgets/icon_placeholder_image.dart';
 
 class ImpactCard extends StatelessWidget {
-  final ImageProvider image;
+  final String imageUrl;
   final String title;
   final String? explanation;
-  final Color? textColor;
   final Color? backgroundColor;
 
   final BoxFit? fit;
@@ -13,10 +12,9 @@ class ImpactCard extends StatelessWidget {
   const ImpactCard({
     Key? key,
     required this.title,
-    required this.image,
+    required this.imageUrl,
     this.explanation,
     this.fit,
-    this.textColor,
     this.backgroundColor,
   }) : super(key: key);
 
@@ -26,25 +24,20 @@ class ImpactCard extends StatelessWidget {
         var height = boxConstraints.maxWidth * 0.7;
         var padding = 32.0;
         return Card(
-          elevation: WMDesign.defaultElevation,
           semanticContainer: true,
-          clipBehavior: Clip.antiAliasWithSaveLayer,
           child: Stack(
             children: [
               Container(
                 height: height,
                 color: backgroundColor,
               ),
-              Container(
-                height: height * 0.6,
-                decoration: BoxDecoration(
-                  color: backgroundColor,
-                  image: DecorationImage(
-                    fit: fit ?? BoxFit.contain,
-                    image: image,
-                    alignment: Alignment.center,
-                  ),
-                ),
+              Positioned(
+                top: padding / 2,
+                left: padding,
+                right: padding,
+                height: height * 0.65 - padding,
+                child:
+                    IconPlaceholderImage.network(imageUrl, fit: BoxFit.contain),
               ),
               Positioned(
                   top: height * 0.65,
@@ -56,10 +49,8 @@ class ImpactCard extends StatelessWidget {
                       title,
                       textAlign: TextAlign.center,
                       maxLines: 1,
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline5
-                          ?.copyWith(color: textColor, fontSize: 24),
+                      style:
+                          Theme.of(context).textTheme.headlineSmall?.copyWith(),
                     ),
                   )),
               if (explanation != null)
@@ -72,16 +63,10 @@ class ImpactCard extends StatelessWidget {
                     textAlign: TextAlign.center,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText1
-                        ?.copyWith(color: textColor, fontSize: 14),
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(),
                   ),
                 ),
             ],
-          ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8.0),
           ),
           margin: const EdgeInsets.symmetric(
             horizontal: 16,

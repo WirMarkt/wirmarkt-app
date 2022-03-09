@@ -3,7 +3,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:wir_markt/data/app_config.dart';
 import 'package:wir_markt/generated/l10n.dart';
 
-import '../../wm_design.dart';
 
 class MemberShipStateInfoCard extends StatelessWidget {
   final String memberShipStateMessage;
@@ -16,7 +15,6 @@ class MemberShipStateInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        elevation: WMDesign.defaultElevation,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
@@ -35,6 +33,7 @@ class MemberShipStateInfoCard extends StatelessWidget {
                 const SizedBox(width: 8),
               ],
             ),
+            const SizedBox(height: 8),
           ],
         ));
   }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:wir_markt/generated/l10n.dart';
-import 'package:wir_markt/member_contribution/model/member_contribution.dart';
-import 'package:wir_markt/wm_design.dart';
+
+import '../../generated/l10n.dart';
+import '../model/member_contribution.dart';
 
 @immutable
 class ShiftCard extends StatelessWidget {
@@ -51,7 +51,6 @@ class ShiftCard extends StatelessWidget {
     var shiftStateLabel = _getShiftLabel(S.of(context), shiftState);
 
     return Card(
-        elevation: WMDesign.defaultElevation,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
@@ -83,6 +82,7 @@ class ShiftCard extends StatelessWidget {
                 const SizedBox(width: 8),
               ],
             ),
+            const SizedBox(height: 8),
           ],
         ));
   }

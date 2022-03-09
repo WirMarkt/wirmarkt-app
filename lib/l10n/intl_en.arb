@@ -1,11 +1,8 @@
 {
   "introTitle": "Story",
   "memberLabel": "Member",
-  "setupMembershipTitle": "Setup Membership",
-  "setupMembershipExplanation": "Store badge in smartphone.",
   "showMembershipID": "Membership ID",
   "createProductSuggestionTitle": "Suggest Product",
-  "createProductSuggestionExplanation": "Take a picture of a product and forward it to the assortment team.",
   "settingsTitle": "Settings",
   "scanResultTitle": "Scan Result",
   "resultLabel": "Result",
@@ -16,8 +13,7 @@
   "showBarcodeAtPOSLabel": "Show this barcode at the checkout in the store.",
   "suggestProductInstructionText": "Take a photo of the product you want to suggest.",
   "scanMembershipBarcodeExplanation": "Hold the camera in front of the membership barcode.",
-  "planContributionTitle": "Setup contribution/fee",
-  "planContributionExplanation": "Schedule your next shift or configure the bank account for your membership fee.",
+  "nextShift": "Next shift",
   "propertiesTitle": "Settings",
   "resetAppLabel": "Reset app",
   "membershipSectionTitle": "Membership",
@@ -26,8 +22,6 @@
   "membershipCountExplanation": "Help grow our community by inviting your friends",
   "storeCountTitle": "We have {shopCount,plural, =0{no store}=1{one store}other{{shopCount} stores}}",
   "storeCountExplanation": "Tell the world to open more cooperative supermarkets!",
-  "regionalwertPartnerTitle": "Regionalwert-Partner",
-  "regionalwertPartnerExplanation": "We are committed to ecological, regional and socially produced food.",
   "email": "Email",
   "password": "Password",
   "logOut": "Log out",
@@ -70,7 +64,6 @@
   "cooperativeSharesHeadline": "Cooperative shares",
   "applyForMembershipLabel": "Apply for membership",
   "training": "Training",
-  "prepareForFirstShift": "Prepare for your first shift in the supermarket",
   "takeTraining": "Take Training",
   "loadingImpactMessage": "Loading impact",
   "failedToLoadImpactInfoMessage": "Failed to load impact info",
@@ -79,5 +72,6 @@
   "failedToLoadTrainingContentMessage": "Failed to load training content",
   "loadingTrainingMessage": "Loading training",
   "recipes": "Recipes",
-  "noRecipesInYourLanguageFound": "No recipes in your language found."
+  "noRecipesInYourLanguageFound": "No recipes in your language found.",
+  "continueLabel": "Continue"
 }

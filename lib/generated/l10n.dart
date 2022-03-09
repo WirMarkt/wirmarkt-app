@@ -70,26 +70,6 @@ class S {
     );
   }
 
-  /// `Setup Membership`
-  String get setupMembershipTitle {
-    return Intl.message(
-      'Setup Membership',
-      name: 'setupMembershipTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Store badge in smartphone.`
-  String get setupMembershipExplanation {
-    return Intl.message(
-      'Store badge in smartphone.',
-      name: 'setupMembershipExplanation',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Membership ID`
   String get showMembershipID {
     return Intl.message(
@@ -105,16 +85,6 @@ class S {
     return Intl.message(
       'Suggest Product',
       name: 'createProductSuggestionTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Take a picture of a product and forward it to the assortment team.`
-  String get createProductSuggestionExplanation {
-    return Intl.message(
-      'Take a picture of a product and forward it to the assortment team.',
-      name: 'createProductSuggestionExplanation',
       desc: '',
       args: [],
     );
@@ -220,21 +190,11 @@ class S {
     );
   }
 
-  /// `Setup contribution/fee`
-  String get planContributionTitle {
+  /// `Next shift`
+  String get nextShift {
     return Intl.message(
-      'Setup contribution/fee',
-      name: 'planContributionTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Schedule your next shift or configure the bank account for your membership fee.`
-  String get planContributionExplanation {
-    return Intl.message(
-      'Schedule your next shift or configure the bank account for your membership fee.',
-      name: 'planContributionExplanation',
+      'Next shift',
+      name: 'nextShift',
       desc: '',
       args: [],
     );
@@ -315,26 +275,6 @@ class S {
     return Intl.message(
       'Tell the world to open more cooperative supermarkets!',
       name: 'storeCountExplanation',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Regionalwert-Partner`
-  String get regionalwertPartnerTitle {
-    return Intl.message(
-      'Regionalwert-Partner',
-      name: 'regionalwertPartnerTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `We are committed to ecological, regional and socially produced food.`
-  String get regionalwertPartnerExplanation {
-    return Intl.message(
-      'We are committed to ecological, regional and socially produced food.',
-      name: 'regionalwertPartnerExplanation',
       desc: '',
       args: [],
     );
@@ -760,16 +700,6 @@ class S {
     );
   }
 
-  /// `Prepare for your first shift in the supermarket`
-  String get prepareForFirstShift {
-    return Intl.message(
-      'Prepare for your first shift in the supermarket',
-      name: 'prepareForFirstShift',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Take Training`
   String get takeTraining {
     return Intl.message(
@@ -855,6 +785,16 @@ class S {
     return Intl.message(
       'No recipes in your language found.',
       name: 'noRecipesInYourLanguageFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continueLabel {
+    return Intl.message(
+      'Continue',
+      name: 'continueLabel',
       desc: '',
       args: [],
     );

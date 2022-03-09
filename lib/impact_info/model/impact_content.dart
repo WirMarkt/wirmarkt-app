@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:wir_markt/utils/color_utils.dart';
 
 import '../../utils/translation.dart';
 
@@ -14,9 +15,13 @@ class ImpactContent with HasTranslations<ImpactContentTranslation> {
   const ImpactContent(
       {required this.name,
       required this.coverImage,
+        this.backgroundColor,
       this.translations = const []});
 
   final String name;
+  @JsonKey(name: "background_color")
+  @ColorSerializer()
+  final Color? backgroundColor;
   @JsonKey(name: "cover_image")
   final String coverImage;
   @override

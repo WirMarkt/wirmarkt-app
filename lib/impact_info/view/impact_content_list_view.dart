@@ -27,13 +27,14 @@ class ImpactContentListView extends StatelessWidget {
                   impactContent.getTranslationForLocale();
               var repo =
                   RepositoryProvider.of<ImpactContentRepository>(context);
+              var cardColor = impactContent.backgroundColor ??
+                  const Color.fromRGBO(167, 223, 210, 1);
               return ImpactCard(
                 title: translation.title,
                 explanation: translation.subtext,
-                image: NetworkImage(repo.getAssetUrl(impactContent.coverImage,
-                    presetKey: "cover")),
-                backgroundColor: const Color.fromRGBO(167, 223, 210, 1),
-                textColor: Colors.black,
+                imageUrl: repo.getAssetUrl(impactContent.coverImage,
+                    presetKey: "cover"),
+                backgroundColor: cardColor.withAlpha(50),
                 fit: BoxFit.contain,
               );
             }),

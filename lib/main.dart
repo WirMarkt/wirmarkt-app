@@ -33,16 +33,20 @@ class App extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  late final _apiRepository = ApiRepository(AppConfig.get().apiUrl);
+  late final _apiRepository = ApiRepository(AppConfig
+      .get()
+      .apiUrl);
   late final _contentApiRepository =
-      ApiRepository(AppConfig.get().contentApiUrl);
+  ApiRepository(AppConfig
+      .get()
+      .contentApiUrl);
   late final _authenticationRepository =
-      AuthenticationRepository(_apiRepository);
+  AuthenticationRepository(_apiRepository);
   late final _memberInfoRepository = MemberInfoRepository(_apiRepository);
   late final _memberContributionRepository =
-      MemberContributionRepository(_apiRepository);
+  MemberContributionRepository(_apiRepository);
   late final _impactContentRepository =
-      ImpactContentRepository(_contentApiRepository);
+  ImpactContentRepository(_contentApiRepository);
   late final _trainingRepository = TrainingRepository(_contentApiRepository);
   late final _recipeRepository = RecipeRepository(_contentApiRepository);
 
@@ -58,9 +62,10 @@ class App extends StatelessWidget {
         RepositoryProvider.value(value: _recipeRepository),
       ],
       child: BlocProvider(
-        create: (_) => AuthenticationBloc(
-          authenticationRepository: _authenticationRepository,
-        ),
+        create: (_) =>
+            AuthenticationBloc(
+              authenticationRepository: _authenticationRepository,
+            ),
         child: const AppView(),
       ),
     );
@@ -84,7 +89,10 @@ class _AppViewState extends State<AppView> {
   Widget build(BuildContext context) {
     return MaterialApp(
       navigatorKey: _navigatorKey,
-      onGenerateTitle: (context) => AppConfig.get().orgName,
+      onGenerateTitle: (context) =>
+      AppConfig
+          .get()
+          .orgName,
       localizationsDelegates: const <LocalizationsDelegate>[
         S.delegate,
         // You need to add them if you are using the material library.
@@ -110,13 +118,13 @@ class _AppViewState extends State<AppView> {
               case AuthenticationStatus.authenticated:
                 _navigator.pushAndRemoveUntil<void>(
                   HomePage.route(),
-                  (route) => false,
+                      (route) => false,
                 );
                 break;
               case AuthenticationStatus.unauthenticated:
                 _navigator.pushAndRemoveUntil<void>(
                   LoginPage.route(),
-                  (route) => false,
+                      (route) => false,
                 );
                 break;
               default:
@@ -130,13 +138,34 @@ class _AppViewState extends State<AppView> {
     );
   }
 
-  ThemeData buildThemeData(Brightness brightness) => ThemeData.from(
-        textTheme: GoogleFonts.interTextTheme(
-          ThemeData(brightness: brightness).textTheme,
+  ThemeData buildThemeData(Brightness brightness) {
+    var colorScheme = ColorScheme.fromSeed(
+      seedColor: WMDesign.turquoise,
+      brightness: brightness,
+    );
+    var theme = ThemeData.from(
+      textTheme: GoogleFonts.interTextTheme(
+        ThemeData(brightness: brightness).textTheme,
+      ),
+      colorScheme: colorScheme,
+    );
+    return theme.copyWith(
+        appBarTheme: theme.appBarTheme.copyWith(
+          backgroundColor: colorScheme.background,
+          foregroundColor: colorScheme.primary,
+          elevation: 0, // This removes the shadow from all App Bars.
         ),
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: WMDesign.turquoise,
-          brightness: brightness,
+        cardColor: theme.secondaryHeaderColor,
+        cardTheme: theme.cardTheme.copyWith(
+          color: theme.secondaryHeaderColor,
+          elevation: 0,
+          clipBehavior: Clip.antiAlias,
+          shape:
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         ),
-      );
+        bottomNavigationBarTheme: theme.bottomNavigationBarTheme.copyWith(
+          elevation: 0,
+          enableFeedback: false,
+        ));
+  }
 }

@@ -9,6 +9,4 @@ class WMDesign {
   static const Color lightGreen = Color.fromRGBO(178, 211, 86, 1.0);
   static const Color yellow = Color.fromRGBO(242, 229, 3, 1.0);
   static const Color white = Color.fromRGBO(246, 228, 218, 1.0);
-
-  static const double defaultElevation = 4.0;
 }

@@ -10,6 +10,8 @@ ImpactContent _$ImpactContentFromJson(Map<String, dynamic> json) =>
     ImpactContent(
       name: json['name'] as String,
       coverImage: json['cover_image'] as String,
+      backgroundColor:
+          const ColorSerializer().fromJson(json['background_color'] as String?),
       translations: (json['translations'] as List<dynamic>?)
               ?.map((e) =>
                   ImpactContentTranslation.fromJson(e as Map<String, dynamic>))
@@ -20,6 +22,8 @@ ImpactContent _$ImpactContentFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$ImpactContentToJson(ImpactContent instance) =>
     <String, dynamic>{
       'name': instance.name,
+      'background_color':
+          const ColorSerializer().toJson(instance.backgroundColor),
       'cover_image': instance.coverImage,
       'translations': instance.translations,
     };

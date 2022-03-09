@@ -43,11 +43,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
         "connectionFailed":
             MessageLookupByLibrary.simpleMessage("Connection failed"),
+        "continueLabel": MessageLookupByLibrary.simpleMessage("Continue"),
         "contribution": MessageLookupByLibrary.simpleMessage("Contribution"),
         "cooperativeSharesHeadline":
             MessageLookupByLibrary.simpleMessage("Cooperative shares"),
-        "createProductSuggestionExplanation": MessageLookupByLibrary.simpleMessage(
-            "Take a picture of a product and forward it to the assortment team."),
         "createProductSuggestionTitle":
             MessageLookupByLibrary.simpleMessage("Suggest Product"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
@@ -95,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "membershipTitle": MessageLookupByLibrary.simpleMessage("Membership"),
         "missed": MessageLookupByLibrary.simpleMessage("Missed"),
         "missedExcused": MessageLookupByLibrary.simpleMessage("Excused"),
+        "nextShift": MessageLookupByLibrary.simpleMessage("Next shift"),
         "noAccountWasFoundMatchingThatEmailAndPassword":
             MessageLookupByLibrary.simpleMessage(
                 "No account was found matching that email and password"),
@@ -109,21 +109,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "payingModeExplanation": MessageLookupByLibrary.simpleMessage(
             "You pay a monthly contribution."),
         "pending": MessageLookupByLibrary.simpleMessage("Pending"),
-        "planContributionExplanation": MessageLookupByLibrary.simpleMessage(
-            "Schedule your next shift or configure the bank account for your membership fee."),
-        "planContributionTitle":
-            MessageLookupByLibrary.simpleMessage("Setup contribution/fee"),
         "pleaseLogInToContinue":
             MessageLookupByLibrary.simpleMessage("Please log in to continue"),
-        "prepareForFirstShift": MessageLookupByLibrary.simpleMessage(
-            "Prepare for your first shift in the supermarket"),
         "propertiesTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "rawContentLabel": MessageLookupByLibrary.simpleMessage("Raw Content"),
         "recipes": MessageLookupByLibrary.simpleMessage("Recipes"),
-        "regionalwertPartnerExplanation": MessageLookupByLibrary.simpleMessage(
-            "We are committed to ecological, regional and socially produced food."),
-        "regionalwertPartnerTitle":
-            MessageLookupByLibrary.simpleMessage("Regionalwert-Partner"),
         "resetAppLabel": MessageLookupByLibrary.simpleMessage("Reset app"),
         "resultLabel": MessageLookupByLibrary.simpleMessage("Result"),
         "retry": MessageLookupByLibrary.simpleMessage("Retry"),
@@ -134,10 +124,6 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Hold the camera in front of the membership barcode."),
         "scanResultTitle": MessageLookupByLibrary.simpleMessage("Scan Result"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
-        "setupMembershipExplanation":
-            MessageLookupByLibrary.simpleMessage("Store badge in smartphone."),
-        "setupMembershipTitle":
-            MessageLookupByLibrary.simpleMessage("Setup Membership"),
         "shareCountInfo": m1,
         "showBarcodeAtPOSLabel": MessageLookupByLibrary.simpleMessage(
             "Show this barcode at the checkout in the store."),

@@ -1,11 +1,8 @@
 {
   "introTitle": "Story",
   "memberLabel": "Mitgliedschaft",
-  "setupMembershipTitle": "Mitgliedsausweis einrichten",
-  "setupMembershipExplanation": "Ausweis im Smartphone.",
   "showMembershipID": "Mitgliedsausweis",
   "createProductSuggestionTitle": "Produkt vorschlagen",
-  "createProductSuggestionExplanation": "Nimm ein Foto von einem Produkt auf und leite es zum Sortiments-Team weiter.",
   "settingsTitle": "Settings",
   "scanResultTitle": "Scan Resultat",
   "resultLabel": "Resultat",
@@ -16,8 +13,7 @@
   "showBarcodeAtPOSLabel": "Zeige diesen Barcode an der Kasse im Laden.",
   "suggestProductInstructionText": "Mache ein Foto von dem Produkt, das du vorschlagen möchtest.",
   "scanMembershipBarcodeExplanation": "Halte die Kamera vor den Mitglieder-Barcode.",
-  "planContributionTitle": "Mitarbeit/Beitrag planen",
-  "planContributionExplanation": "Plane deine nächste Schicht oder konfiguriere das Bankkonto für deinen Beitrag",
+  "nextShift": "Nächste Schicht",
   "propertiesTitle": "Einstellungen",
   "resetAppLabel": "App zurücksetzen",
   "membershipSectionTitle": "Mitgliedschaft",
@@ -26,8 +22,6 @@
   "membershipCountExplanation": "Hilf mit und lade deine Freunde ein",
   "storeCountTitle": "Wir haben {shopCount,plural, =0{kein Geschäft}=1{ein Geschäft}other{{shopCount} Geschäfte}}",
   "storeCountExplanation": "Sagt der Welt, sie soll mehr genossenschaftliche Supermärkte eröffnen!",
-  "regionalwertPartnerTitle": "Regionalwert-Partner",
-  "regionalwertPartnerExplanation": "Wir setzen uns gemeinsam ein für ökologische, regionale und sozial produzierte Lebensmittel.",
   "email": "E-Mail",
   "password": "Passwort",
   "logOut": "Abmelden",
@@ -70,7 +64,6 @@
   "cooperativeSharesHeadline": "Anteile an der Genossenschaft",
   "applyForMembershipLabel": "Als Mitglied bewerben",
   "training": "Schulung",
-  "prepareForFirstShift": "Bereite dich auf deinen ersten Einsatz im Laden vor",
   "takeTraining": "Schulung machen",
   "loadingImpactMessage": "Lade Impact-Infos",
   "failedToLoadImpactInfoMessage": "Impact-Infos konnten nicht geladen werden",
@@ -79,5 +72,6 @@
   "failedToLoadTrainingContentMessage": "Schulungsinhalte konnten nicht geladen werden",
   "loadingTrainingMessage": "Lade Schulung",
   "recipes": "Rezepte",
-  "noRecipesInYourLanguageFound": "Keine Rezepte in deiner Sprache gefunden."
+  "noRecipesInYourLanguageFound": "Keine Rezepte in deiner Sprache gefunden.",
+  "continueLabel": "Continue"
 }
