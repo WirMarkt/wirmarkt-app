@@ -19,8 +19,8 @@ class TrainingRepository {
             "translations.*,"
             "contents.*,"
             "contents.item.*,"
-            "contents.item.translations.*"
-            "contents.item.answers.*"
+            "contents.item.translations.*,"
+            "contents.item.answers.*,"
             "contents.item.answers.translations.*"
             "&filter[status]=published&filter[name]=$name"
     );

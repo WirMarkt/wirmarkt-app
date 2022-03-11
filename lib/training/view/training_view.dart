@@ -3,8 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_html/flutter_html.dart';
 
 import '../../widgets/icon_placeholder_image.dart';
-import '../../wm_design.dart';
+import '../model/answer.dart';
+import '../model/question.dart';
 import '../model/training.dart';
+import '../model/training_section.dart';
 import '../repository/training_repository.dart';
 
 const paddingVertical = 16.0;
@@ -34,21 +36,17 @@ class _TrainingViewState extends State<TrainingView> {
           padding: const EdgeInsets.all(8.0),
           child: Card(
             child: _TrainingIntro(
-                key: const ValueKey(-1),
-                training: widget.training,
-                translation: widget.translation),
+                training: widget.training, translation: widget.translation),
           ),
         ),
-        ...widget.training.contents.asMap().entries.map((entry) {
-          var index = entry.key;
-          var content = entry.value;
-          return _generateWidget(content, ValueKey(index));
+        ...widget.training.contents.map((content) {
+          return _generateWidget(content);
         }),
       ],
     );
   }
 
-  Widget _generateWidget(TrainingContent content, Key? key) {
+  Widget _generateWidget(TrainingContent content, [Key? key]) {
     var repo = RepositoryProvider.of<TrainingRepository>(context);
 
     var textTheme = Theme.of(context).textTheme;
@@ -58,16 +56,34 @@ class _TrainingViewState extends State<TrainingView> {
         key: key,
         padding: const EdgeInsets.all(8.0),
         child: Card(
-          color: WMDesign.lightGreen,
-          child: ListTile(
-            leading: const Icon(Icons.question_answer_outlined),
-            title: Text(
-              translatedQuestion.text,
-              style: textTheme.headline6,
-            ),
-            subtitle: const Text(
-                //TODO add question/answers
-                ""),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Row(
+                  children: [
+                    const Icon(Icons.question_answer_outlined, size: 32),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Text(
+                        translatedQuestion.text,
+                        style: textTheme.titleLarge,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 24,
+                  right: 16,
+                ),
+                child: _AnswerSelectionColumn(
+                  question: content,
+                ),
+              ),
+            ],
           ),
         ),
       );
@@ -77,7 +93,6 @@ class _TrainingViewState extends State<TrainingView> {
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
           child: Card(
-            color: WMDesign.white,
             child: Wrap(
               key: key,
               children: [
@@ -92,11 +107,13 @@ class _TrainingViewState extends State<TrainingView> {
                     ),
                     if (content.coverImage != null)
                       IconPlaceholderImage.network(
-                        repo.getAssetUrl(content.coverImage!, presetKey: "cover"),
+                        repo.getAssetUrl(content.coverImage!,
+                            presetKey: "cover"),
                         aspectRatio: 2,
                         icon: Icons.image,
                       ),
                     Html(data: translatedTrainingSection?.introduction),
+                    const SizedBox(height: 16),
                   ],
                 ),
               ],
@@ -107,6 +124,70 @@ class _TrainingViewState extends State<TrainingView> {
     } else {
       return Container();
     }
+  }
+}
+
+class _AnswerSelectionColumn extends StatefulWidget {
+  final Question question;
+
+  const _AnswerSelectionColumn({
+    required this.question,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<_AnswerSelectionColumn> createState() => _AnswerSelectionColumnState();
+}
+
+class _AnswerSelectionColumnState extends State<_AnswerSelectionColumn> {
+  Answer? _selectedAnswer;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ...widget.question.answers.map((answer) {
+          var translatedAnswer = answer.getTranslationForLocale();
+
+          return Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: 32,
+                height: 32,
+                child: Radio(
+                  value: answer,
+                  groupValue: _selectedAnswer,
+                  onChanged: (_) {
+                    setState(() {
+                      _selectedAnswer = answer;
+                    });
+                  },
+                ),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      _selectedAnswer = answer;
+                    });
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Text(
+                      translatedAnswer.text,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          );
+        }),
+      ],
+    );
   }
 }
 
@@ -145,23 +226,6 @@ class _TrainingIntro extends StatelessWidget {
           ),
         ],
         const SizedBox(height: paddingVertical),
-        // ...training.contents.map((content) {
-        //   if (content is TrainingSection) {
-        //     return OnboardingCard(
-        //       iconImage: NetworkImage(
-        //           repo.getAssetUrl(content.coverImage!, presetKey: "cover")),
-        //       title: content.getTranslationForLocale().title,
-        //     );
-        //   } else if (content is Question) {
-        //     return OnboardingCard(
-        //       iconImage: NetworkImage(
-        //           repo.getAssetUrl(training.coverImage!, presetKey: "cover")),
-        //       title: content.getTranslationForLocale().text,
-        //     );
-        //   } else {
-        //     return Container();
-        //   }
-        // }),
       ],
     );
   }
