@@ -74,6 +74,8 @@ class _TrainingContentConverter
 
 abstract class TrainingContent {
   Map<String, dynamic> toJson();
+
+  const TrainingContent();
 }
 
 @immutable
@@ -85,8 +87,14 @@ class Question extends TrainingContent
   @override
   final List<QuestionTranslation> translations;
 
-  Question(
-      {required this.id, required this.name, this.translations = const []});
+  final List<Answer> answers;
+
+  const Question({
+    required this.id,
+    required this.name,
+    this.translations = const [],
+    this.answers = const [],
+  });
 
   factory Question.fromJson(Map<String, dynamic> json) =>
       _$QuestionFromJson(json);
@@ -103,12 +111,54 @@ class QuestionTranslation with HasTranslation {
   final String languageName;
   final String text;
 
-  QuestionTranslation({required this.languageName, this.text = ""});
+  const QuestionTranslation({required this.languageName, this.text = ""});
 
   factory QuestionTranslation.fromJson(Map<String, dynamic> json) =>
       _$QuestionTranslationFromJson(json);
 
   Map<String, dynamic> toJson() => _$QuestionTranslationToJson(this);
+}
+
+@immutable
+@JsonSerializable()
+class Answer extends TrainingContent with HasTranslations<AnswerTranslation> {
+  final int id;
+  final String name;
+  @JsonKey(name:"is_correct")
+  final bool isCorrect;
+  @override
+  final List<AnswerTranslation> translations;
+
+  factory Answer.fromJson(Map<String, dynamic> json) => _$AnswerFromJson(json);
+
+  const Answer({
+    required this.id,
+    required this.name,
+    required this.isCorrect,
+    required this.translations,
+  });
+
+  @override
+  Map<String, dynamic> toJson() => _$AnswerToJson(this);
+}
+
+@immutable
+@JsonSerializable()
+class AnswerTranslation with HasTranslation {
+  @override
+  @JsonKey(name: "languages_code")
+  final String languageName;
+  final String text;
+
+  factory AnswerTranslation.fromJson(Map<String, dynamic> json) =>
+      _$AnswerTranslationFromJson(json);
+
+  const AnswerTranslation({
+    required this.languageName,
+    required this.text,
+  });
+
+  Map<String, dynamic> toJson() => _$AnswerTranslationToJson(this);
 }
 
 @immutable

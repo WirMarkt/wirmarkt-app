@@ -44,7 +44,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "connectionFailed":
             MessageLookupByLibrary.simpleMessage("Connection failed"),
         "continueLabel": MessageLookupByLibrary.simpleMessage("Continue"),
-        "contribution": MessageLookupByLibrary.simpleMessage("Contribution"),
         "cooperativeSharesHeadline":
             MessageLookupByLibrary.simpleMessage("Cooperative shares"),
         "createProductSuggestionTitle":
@@ -60,7 +59,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "failedToLoadTrainingContentMessage":
             MessageLookupByLibrary.simpleMessage(
                 "Failed to load training content"),
-        "fee": MessageLookupByLibrary.simpleMessage("Fee"),
         "forgotPasswordLabel":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
         "iban": MessageLookupByLibrary.simpleMessage("IBAN"),
@@ -73,7 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "loadingImpactMessage":
             MessageLookupByLibrary.simpleMessage("Loading impact"),
         "loadingMembershipInfo":
-            MessageLookupByLibrary.simpleMessage("Loading membership info"),
+            MessageLookupByLibrary.simpleMessage("Loading membership..."),
         "loadingRecipesMessage":
             MessageLookupByLibrary.simpleMessage("Loading recipes"),
         "loadingTrainingMessage":
@@ -94,7 +92,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "membershipTitle": MessageLookupByLibrary.simpleMessage("Membership"),
         "missed": MessageLookupByLibrary.simpleMessage("Missed"),
         "missedExcused": MessageLookupByLibrary.simpleMessage("Excused"),
-        "nextShift": MessageLookupByLibrary.simpleMessage("Next shift"),
         "noAccountWasFoundMatchingThatEmailAndPassword":
             MessageLookupByLibrary.simpleMessage(
                 "No account was found matching that email and password"),
@@ -106,8 +103,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "notAllowedToShop": MessageLookupByLibrary.simpleMessage(
             "You aren\'t allowed to shop as a member."),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
-        "payingModeExplanation": MessageLookupByLibrary.simpleMessage(
-            "You pay a monthly contribution."),
         "pending": MessageLookupByLibrary.simpleMessage("Pending"),
         "pleaseLogInToContinue":
             MessageLookupByLibrary.simpleMessage("Please log in to continue"),
@@ -123,6 +118,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Hold the camera in front of the membership barcode."),
         "scanResultTitle": MessageLookupByLibrary.simpleMessage("Scan Result"),
+        "sepaAccountMissing":
+            MessageLookupByLibrary.simpleMessage("No bank account set up"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "shareCountInfo": m1,
         "showBarcodeAtPOSLabel": MessageLookupByLibrary.simpleMessage(
@@ -140,11 +137,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "today": MessageLookupByLibrary.simpleMessage("Today"),
         "tomorrow": MessageLookupByLibrary.simpleMessage("Tomorrow"),
         "training": MessageLookupByLibrary.simpleMessage("Training"),
-        "upcomingShift": MessageLookupByLibrary.simpleMessage("Next Shift:"),
+        "upcomingShift": MessageLookupByLibrary.simpleMessage("Upcoming shift"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),
-        "workingModeExplanation":
-            MessageLookupByLibrary.simpleMessage("You work regularly."),
         "yourAccountDetails":
-            MessageLookupByLibrary.simpleMessage("Your account details:")
+            MessageLookupByLibrary.simpleMessage("Your account details")
       };
 }

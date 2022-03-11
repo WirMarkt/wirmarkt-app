@@ -10,10 +10,11 @@ import 'generated/l10n.dart';
 import 'home/view/home_page.dart';
 import 'impact_info/repository/impact_content_repository.dart';
 import 'login/login.dart';
-import 'member_contribution/repository/member_contribution_repository.dart';
-import 'member_info/repository/member_info_repository.dart';
 import 'recipe/repository/recipe_repository.dart';
+import 'shift_attendance/repository/shift_attendance_repository.dart';
 import 'splash/splash.dart';
+import 'tapir_user/bloc/tapir_user_bloc.dart';
+import 'tapir_user/repository/tapir_user_repository.dart';
 import 'training/repository/training_repository.dart';
 import 'wm_design.dart';
 
@@ -33,20 +34,16 @@ class App extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  late final _apiRepository = ApiRepository(AppConfig
-      .get()
-      .apiUrl);
+  late final _apiRepository = ApiRepository(AppConfig.get().apiUrl);
   late final _contentApiRepository =
-  ApiRepository(AppConfig
-      .get()
-      .contentApiUrl);
+      ApiRepository(AppConfig.get().contentApiUrl);
   late final _authenticationRepository =
-  AuthenticationRepository(_apiRepository);
-  late final _memberInfoRepository = MemberInfoRepository(_apiRepository);
-  late final _memberContributionRepository =
-  MemberContributionRepository(_apiRepository);
+      AuthenticationRepository(_apiRepository);
+  late final _tapirUserRepository = TapirUserRepository(_apiRepository);
+  late final _shiftAttendanceRepository =
+      ShiftAttendanceRepository(_apiRepository);
   late final _impactContentRepository =
-  ImpactContentRepository(_contentApiRepository);
+      ImpactContentRepository(_contentApiRepository);
   late final _trainingRepository = TrainingRepository(_contentApiRepository);
   late final _recipeRepository = RecipeRepository(_contentApiRepository);
 
@@ -56,16 +53,24 @@ class App extends StatelessWidget {
       providers: [
         RepositoryProvider.value(value: _authenticationRepository),
         RepositoryProvider.value(value: _impactContentRepository),
-        RepositoryProvider.value(value: _memberInfoRepository),
-        RepositoryProvider.value(value: _memberContributionRepository),
+        RepositoryProvider.value(value: _tapirUserRepository),
+        RepositoryProvider.value(value: _shiftAttendanceRepository),
         RepositoryProvider.value(value: _trainingRepository),
         RepositoryProvider.value(value: _recipeRepository),
       ],
-      child: BlocProvider(
-        create: (_) =>
-            AuthenticationBloc(
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider<AuthenticationBloc>(
+            create: (_) => AuthenticationBloc(
               authenticationRepository: _authenticationRepository,
             ),
+          ),
+          BlocProvider<TapirUserBloc>(
+            create: (_) => TapirUserBloc(
+              tapirUserRepository: _tapirUserRepository,
+            ),
+          ),
+        ],
         child: const AppView(),
       ),
     );
@@ -89,10 +94,7 @@ class _AppViewState extends State<AppView> {
   Widget build(BuildContext context) {
     return MaterialApp(
       navigatorKey: _navigatorKey,
-      onGenerateTitle: (context) =>
-      AppConfig
-          .get()
-          .orgName,
+      onGenerateTitle: (context) => AppConfig.get().orgName,
       localizationsDelegates: const <LocalizationsDelegate>[
         S.delegate,
         // You need to add them if you are using the material library.
@@ -118,13 +120,13 @@ class _AppViewState extends State<AppView> {
               case AuthenticationStatus.authenticated:
                 _navigator.pushAndRemoveUntil<void>(
                   HomePage.route(),
-                      (route) => false,
+                  (route) => false,
                 );
                 break;
               case AuthenticationStatus.unauthenticated:
                 _navigator.pushAndRemoveUntil<void>(
                   LoginPage.route(),
-                      (route) => false,
+                  (route) => false,
                 );
                 break;
               default:
@@ -161,7 +163,7 @@ class _AppViewState extends State<AppView> {
           elevation: 0,
           clipBehavior: Clip.antiAlias,
           shape:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         ),
         bottomNavigationBarTheme: theme.bottomNavigationBarTheme.copyWith(
           elevation: 0,

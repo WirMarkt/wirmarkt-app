@@ -5,6 +5,7 @@ import 'package:wir_markt/recipe/widget/recipe_card.dart';
 import '../../generated/l10n.dart';
 import '../model/recipe.dart';
 import '../repository/recipe_repository.dart';
+import 'recipe_detail_page.dart';
 
 class RecipeListView extends StatelessWidget {
   final List<Recipe> recipes;
@@ -26,7 +27,15 @@ class RecipeListView extends StatelessWidget {
               ...recipes.map((recipe) {
                 var repo = RepositoryProvider.of<RecipeRepository>(context);
                 return RecipeCard(
-                  //TODO onTap: ...,
+                  onTap: () {
+                    Navigator.of(context).push<void>(
+                      MaterialPageRoute<void>(
+                        builder: (BuildContext context) => RecipeDetailPage(
+                          recipe: recipe,
+                        ),
+                      ),
+                    );
+                  },
                   title: recipe.title,
                   explanation: recipe.summary ?? "",
                   imageUrl:

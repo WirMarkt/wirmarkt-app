@@ -1,10 +1,7 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_html/flutter_html.dart';
 
-import '../../generated/l10n.dart';
 import '../../widgets/icon_placeholder_image.dart';
 import '../../wm_design.dart';
 import '../model/training.dart';
@@ -29,41 +26,25 @@ class TrainingView extends StatefulWidget {
 }
 
 class _TrainingViewState extends State<TrainingView> {
-  late Widget _widget;
-  int _index = -1;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _widget = _TrainingIntro(
-        key: const ValueKey(-1),
-        training: widget.training,
-        translation: widget.translation);
-  }
-
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          AnimatedSwitcher(
-            duration: const Duration(seconds: 1),
-            child: _widget,
+    return PageView(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Card(
+            child: _TrainingIntro(
+                key: const ValueKey(-1),
+                training: widget.training,
+                translation: widget.translation),
           ),
-          ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _index =
-                      math.min(_index + 1, widget.training.contents.length - 1);
-                  _widget = _generateWidget(
-                      widget.training.contents[_index], ValueKey(_index));
-                });
-              },
-              child: Text(S.of(context).continueLabel)),
-          const SizedBox(height: paddingVertical * 2),
-        ],
-      ),
+        ),
+        ...widget.training.contents.asMap().entries.map((entry) {
+          var index = entry.key;
+          var content = entry.value;
+          return _generateWidget(content, ValueKey(index));
+        }),
+      ],
     );
   }
 
@@ -77,41 +58,51 @@ class _TrainingViewState extends State<TrainingView> {
         key: key,
         padding: const EdgeInsets.all(8.0),
         child: Card(
-            color: WMDesign.lightGreen,
+          color: WMDesign.lightGreen,
           child: ListTile(
             leading: const Icon(Icons.question_answer_outlined),
             title: Text(
               translatedQuestion.text,
               style: textTheme.headline6,
             ),
+            subtitle: const Text(
+                //TODO add question/answers
+                ""),
           ),
         ),
       );
     } else if (content is TrainingSection) {
       var translatedTrainingSection = content.getTranslationForLocaleOrNull();
-      return Wrap(
-        key: key,
-        children: [
-          Wrap(
-            children: [
-              const Divider(thickness: 3),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(
-                  translatedTrainingSection?.title ?? "Untitled",
-                  style: textTheme.headline6,
+      return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView(
+          child: Card(
+            color: WMDesign.white,
+            child: Wrap(
+              key: key,
+              children: [
+                Wrap(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(
+                        translatedTrainingSection?.title ?? "Untitled",
+                        style: textTheme.headline6,
+                      ),
+                    ),
+                    if (content.coverImage != null)
+                      IconPlaceholderImage.network(
+                        repo.getAssetUrl(content.coverImage!, presetKey: "cover"),
+                        aspectRatio: 2,
+                        icon: Icons.image,
+                      ),
+                    Html(data: translatedTrainingSection?.introduction),
+                  ],
                 ),
-              ),
-              if (content.coverImage != null)
-                IconPlaceholderImage.network(
-                  repo.getAssetUrl(content.coverImage!, presetKey: "cover"),
-                  aspectRatio: 2,
-                  icon: Icons.image,
-                ),
-              Html(data: translatedTrainingSection?.introduction),
-            ],
+              ],
+            ),
           ),
-        ],
+        ),
       );
     } else {
       return Container();

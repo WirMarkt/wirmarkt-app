@@ -190,11 +190,11 @@ class S {
     );
   }
 
-  /// `Next shift`
-  String get nextShift {
+  /// `Upcoming shift`
+  String get upcomingShift {
     return Intl.message(
-      'Next shift',
-      name: 'nextShift',
+      'Upcoming shift',
+      name: 'upcomingShift',
       desc: '',
       args: [],
     );
@@ -370,10 +370,10 @@ class S {
     );
   }
 
-  /// `Loading membership info`
+  /// `Loading membership...`
   String get loadingMembershipInfo {
     return Intl.message(
-      'Loading membership info',
+      'Loading membership...',
       name: 'loadingMembershipInfo',
       desc: '',
       args: [],
@@ -450,26 +450,6 @@ class S {
     );
   }
 
-  /// `You pay a monthly contribution.`
-  String get payingModeExplanation {
-    return Intl.message(
-      'You pay a monthly contribution.',
-      name: 'payingModeExplanation',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `You work regularly.`
-  String get workingModeExplanation {
-    return Intl.message(
-      'You work regularly.',
-      name: 'workingModeExplanation',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `No Membership`
   String get noMembership {
     return Intl.message(
@@ -490,41 +470,11 @@ class S {
     );
   }
 
-  /// `Fee`
-  String get fee {
-    return Intl.message(
-      'Fee',
-      name: 'fee',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Your account details:`
+  /// `Your account details`
   String get yourAccountDetails {
     return Intl.message(
-      'Your account details:',
+      'Your account details',
       name: 'yourAccountDetails',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Next Shift:`
-  String get upcomingShift {
-    return Intl.message(
-      'Next Shift:',
-      name: 'upcomingShift',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Contribution`
-  String get contribution {
-    return Intl.message(
-      'Contribution',
-      name: 'contribution',
       desc: '',
       args: [],
     );
@@ -795,6 +745,16 @@ class S {
     return Intl.message(
       'Continue',
       name: 'continueLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No bank account set up`
+  String get sepaAccountMissing {
+    return Intl.message(
+      'No bank account set up',
+      name: 'sepaAccountMissing',
       desc: '',
       args: [],
     );

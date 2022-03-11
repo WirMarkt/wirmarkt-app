@@ -33,12 +33,10 @@ class IconPlaceholderImage extends StatelessWidget {
           if (frame != null) {
             return child;
           }
-          return Container(
-            child: FittedBox(
-              child: Icon(
-                icon,
-                color: Theme.of(context).colorScheme.primary,
-              ),
+          return FittedBox(
+            child: Icon(
+              icon,
+              color: Theme.of(context).colorScheme.primary,
             ),
           );
         },
