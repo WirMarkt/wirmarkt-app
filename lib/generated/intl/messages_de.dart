@@ -63,6 +63,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Passwort vergessen?"),
         "iban": MessageLookupByLibrary.simpleMessage("IBAN"),
         "impactSectionTitle": MessageLookupByLibrary.simpleMessage("Impact"),
+        "ingredients": MessageLookupByLibrary.simpleMessage("Zutaten"),
+        "instructions": MessageLookupByLibrary.simpleMessage("Anleitung"),
         "introTitle": MessageLookupByLibrary.simpleMessage("Story"),
         "invalidPassword":
             MessageLookupByLibrary.simpleMessage("Ungültiges Passwort"),
@@ -104,6 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Keine Schicht geplant"),
         "notAllowedToShop": MessageLookupByLibrary.simpleMessage(
             "Derzeit kannst du nicht im Laden einkaufen."),
+        "notes": MessageLookupByLibrary.simpleMessage("Notizen"),
         "password": MessageLookupByLibrary.simpleMessage("Passwort"),
         "pending": MessageLookupByLibrary.simpleMessage("Ausstehend"),
         "pleaseLogInToContinue": MessageLookupByLibrary.simpleMessage(

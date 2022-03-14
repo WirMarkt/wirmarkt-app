@@ -69,5 +69,8 @@
   "recipes": "Rezepte",
   "noRecipesInYourLanguageFound": "Keine Rezepte in deiner Sprache gefunden.",
   "continueLabel": "Continue",
-  "sepaAccountMissing": "Keine Kontodaten hinterlegt"
+  "sepaAccountMissing": "Keine Kontodaten hinterlegt",
+  "instructions": "Anleitung",
+  "notes": "Notizen",
+  "ingredients": "Zutaten"
 }

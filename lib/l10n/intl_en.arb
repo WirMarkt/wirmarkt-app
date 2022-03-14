@@ -69,5 +69,8 @@
   "recipes": "Recipes",
   "noRecipesInYourLanguageFound": "No recipes in your language found.",
   "continueLabel": "Continue",
-  "sepaAccountMissing": "No bank account set up"
+  "sepaAccountMissing": "No bank account set up",
+  "instructions": "Instructions",
+  "notes": "Notes",
+  "ingredients": "Ingredients"
 }

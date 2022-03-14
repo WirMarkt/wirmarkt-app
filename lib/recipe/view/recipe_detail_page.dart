@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:wir_markt/widgets/icon_placeholder_image.dart';
 
+import '../../generated/l10n.dart';
 import '../model/recipe.dart';
 import '../repository/recipe_repository.dart';
 
@@ -16,6 +17,8 @@ class RecipeDetailPage extends StatelessWidget {
     var repo = RepositoryProvider.of<RecipeRepository>(context);
     var imageUrl = repo.getAssetUrl(recipe.coverImage, presetKey: "cover");
 
+    const titlePadding = EdgeInsets.only(top: 24.0, bottom: 16.0);
+    var textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
         title: Text(recipe.title),
@@ -32,10 +35,10 @@ class RecipeDetailPage extends StatelessWidget {
                   children: [
                     _TagBar(recipe: recipe),
                     Padding(
-                      padding: const EdgeInsets.only(top: 16.0, bottom: 8.0),
+                      padding: titlePadding,
                       child: Text(
-                        "Ingredients",
-                        style: Theme.of(context).textTheme.headlineMedium,
+                        S.of(context).ingredients,
+                        style: textTheme.headlineSmall,
                       ),
                     ),
                     ClipRRect(
@@ -43,18 +46,18 @@ class RecipeDetailPage extends StatelessWidget {
                       child: _IngredientsTable(recipe: recipe),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 16.0, bottom: 8.0),
+                      padding: titlePadding,
                       child: Text(
-                        "Instructions",
-                        style: Theme.of(context).textTheme.headlineMedium,
+                        S.of(context).instructions,
+                        style: textTheme.headlineSmall,
                       ),
                     ),
                     Html(data: recipe.instructions ?? "No instructions given"),
                     Padding(
-                      padding: const EdgeInsets.only(top: 16.0, bottom: 8.0),
+                      padding: titlePadding,
                       child: Text(
-                        "Notes",
-                        style: Theme.of(context).textTheme.headlineMedium,
+                        S.of(context).notes,
+                        style: textTheme.headlineSmall,
                       ),
                     ),
                     Html(data: recipe.notes ?? "No notes given"),

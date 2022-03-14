@@ -25,6 +25,13 @@ class Recipe {
   final String? notes;
   final List<String> tags;
 
+  @JsonKey(name: "credits_url")
+  final String? creditsUrl;
+  @JsonKey(name: "preparation_time")
+  final int? preparationTime;
+  @JsonKey(name: "working_time")
+  final int? workingTime;
+
   const Recipe({
     required this.id,
     required this.status,
@@ -38,6 +45,9 @@ class Recipe {
     this.instructions,
     this.notes,
     this.tags = const [],
+    this.creditsUrl,
+    this.preparationTime,
+    this.workingTime,
   });
 
   factory Recipe.fromJson(Map<String, dynamic> json) => _$RecipeFromJson(json);

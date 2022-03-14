@@ -1,4 +1,3 @@
-
 import 'package:flutter/foundation.dart';
 
 import '../../api/repository/api_repository.dart';
@@ -13,8 +12,12 @@ class ShiftAttendanceRepository {
 
   /// @throws [ApiException]
   Future<ShiftAttendance?> getUpcomingShiftAttendance(JwtToken jwtToken) async {
-    var jsonResponse =
-    await _apiRepository.get("/upcoming_shift_attendance/", jwtToken: jwtToken);
-    return ShiftAttendance.fromJson(jsonResponse);
+    var jsonResponse = await _apiRepository.get("/upcoming_shift_attendance/",
+        jwtToken: jwtToken);
+    if (jsonResponse['id'] == null) {
+      return null;
+    } else {
+      return ShiftAttendance.fromJson(jsonResponse);
+    }
   }
 }
