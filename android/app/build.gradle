@@ -33,7 +33,6 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "org.wirmarkt.wir_markt"
         minSdkVersion 26
         targetSdkVersion 31

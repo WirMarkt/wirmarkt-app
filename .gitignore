@@ -9,6 +9,7 @@
 .history
 .svn/
 .local/
+.gradle/
 
 # IntelliJ related
 *.iml
@@ -45,5 +46,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Other
 /ios/Podfile.lock
 /pubspec.lock
+/local.properties
