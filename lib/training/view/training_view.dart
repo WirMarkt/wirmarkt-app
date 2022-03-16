@@ -89,6 +89,7 @@ class _TrainingViewState extends State<TrainingView> {
       );
     } else if (content is TrainingSection) {
       var translatedTrainingSection = content.getTranslationForLocaleOrNull();
+      String? introHtml = translatedTrainingSection?.introduction;
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
@@ -112,7 +113,8 @@ class _TrainingViewState extends State<TrainingView> {
                         aspectRatio: 2,
                         icon: Icons.image,
                       ),
-                    Html(data: translatedTrainingSection?.introduction),
+                    if (introHtml != null)
+                      Html(data: introHtml),
                     const SizedBox(height: 16),
                   ],
                 ),
