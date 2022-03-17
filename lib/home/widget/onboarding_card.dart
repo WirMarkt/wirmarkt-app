@@ -65,10 +65,6 @@ class OnboardingCard extends StatelessWidget {
           ],
         ),
       ),
-      margin: const EdgeInsets.symmetric(
-        horizontal: 8,
-        vertical: 8,
-      ),
     );
   }
 }

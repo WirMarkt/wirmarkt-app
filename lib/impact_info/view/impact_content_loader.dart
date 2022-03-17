@@ -23,10 +23,16 @@ class _ImpactContentLoaderState extends State<ImpactContentLoader> {
         switch (state.status) {
           case FetchStatus.uninitialized:
           case FetchStatus.loading:
-            return Loading(
-                loadingMessage: S.of(context).loadingImpactMessage);
+            return Loading(loadingMessage: S.of(context).loadingImpactMessage);
           case FetchStatus.completed:
-            return ImpactContentListView(impactContents: state.impactContents);
+            return SafeArea(
+              child: SingleChildScrollView(
+                child: Align(
+                    alignment: Alignment.center,
+                    child: ImpactContentListView(
+                        impactContents: state.impactContents)),
+              ),
+            );
           case FetchStatus.error:
             return ErrorDisplay(
               errorMessage: S.of(context).failedToLoadImpactInfoMessage,

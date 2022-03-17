@@ -172,6 +172,7 @@ class _AppViewState extends State<AppView> {
           clipBehavior: Clip.antiAlias,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          margin: EdgeInsets.all(0),
         ),
         bottomNavigationBarTheme: theme.bottomNavigationBarTheme.copyWith(
           elevation: 0,

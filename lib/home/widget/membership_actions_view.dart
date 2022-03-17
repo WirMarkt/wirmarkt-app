@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wir_markt/upcoming_shift/view/upcoming_shift_page.dart';
+import 'package:wir_markt/utils/logical_size_utils.dart';
 
 import '../../generated/l10n.dart';
 import '../../member_id/view/member_id_page.dart';
@@ -7,6 +8,7 @@ import '../../recipe/view/recipes_page.dart';
 import '../../share_owner_info/view/share_owner_info_page.dart';
 import '../../suggest_product/view/suggest_product_page.dart';
 import '../../training/view/take_training_page.dart';
+import '../../widgets/responsive_sized_wrap.dart';
 import 'onboarding_card.dart';
 
 class MembershipActionsView extends StatelessWidget {
@@ -68,22 +70,21 @@ class MembershipActionsView extends StatelessWidget {
 
     return SafeArea(
       child: SingleChildScrollView(
-        child: LayoutBuilder(builder: (context, constraints) {
-          const outerPadding = 8.0;
-          var size = constraints.maxWidth / 2 - outerPadding;
-          return Padding(
-            padding: const EdgeInsets.all(outerPadding),
-            child: Wrap(
-              children: cards.map((card) {
-                return SizedBox(
-                  width: size,
-                  height: size,
-                  child: card,
-                );
-              }).toList(),
-            ),
-          );
-        }),
+        child: Align(
+          alignment: Alignment.center,
+          child: ResponsiveSizedWrap(
+            cards: cards,
+            columnCount: {
+              LogicalWidth.xs: 2,
+              LogicalWidth.sm: 3,
+            },
+            wrapWidth: {
+              LogicalWidth.sm: 0.8,
+              LogicalWidth.md: 0.7,
+              LogicalWidth.lg: 0.6,
+            },
+          ),
+        ),
       ),
     );
   }

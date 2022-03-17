@@ -27,6 +27,7 @@ class IconPlaceholderImage extends StatelessWidget {
       aspectRatio: 2,
       child: Image.network(
         url,
+        isAntiAlias: true,
         fit: fit ?? BoxFit.fitWidth,
         frameBuilder: (BuildContext context, Widget child, int? frame,
             bool wasSynchronouslyLoaded) {
