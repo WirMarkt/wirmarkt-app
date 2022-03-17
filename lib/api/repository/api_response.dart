@@ -1,4 +1,3 @@
-
 import '../utils/fetch_status.dart';
 
 class ApiResponse<T> {

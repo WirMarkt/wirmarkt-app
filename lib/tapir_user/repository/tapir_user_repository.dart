@@ -17,4 +17,3 @@ class TapirUserRepository {
     return TapirUser.fromJson(jsonResponse);
   }
 }
-

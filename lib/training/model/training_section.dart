@@ -32,7 +32,6 @@ class TrainingSection extends TrainingContent
   @override
   Map<String, dynamic> toJson() => _$TrainingSectionToJson(this);
 
-
   @override
   String get typeName => "training_section";
 }

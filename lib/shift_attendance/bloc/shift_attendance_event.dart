@@ -1,4 +1,3 @@
-
 part of 'shift_attendance_bloc.dart';
 
 class ShiftAttendanceEvent extends Equatable {
@@ -7,7 +6,6 @@ class ShiftAttendanceEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
-
 
 class RefreshShiftAttendance extends ShiftAttendanceEvent {
   final JwtToken jwtToken;

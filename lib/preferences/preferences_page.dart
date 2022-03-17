@@ -16,22 +16,24 @@ class PreferencesPageState extends State<PreferencesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          appBar: AppBar(title: Text(S.of(context).propertiesTitle)),
-          body: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Center(
-                  child: ElevatedButton(
-                    child: Text(S.of(context).logOut),
-                    onPressed: () async {
-                      context.read<AuthenticationBloc>().add(AuthenticationLogoutRequested());
-                    },
-                  ),
-                ),
+      appBar: AppBar(title: Text(S.of(context).propertiesTitle)),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Center(
+              child: ElevatedButton(
+                child: Text(S.of(context).logOut),
+                onPressed: () async {
+                  context
+                      .read<AuthenticationBloc>()
+                      .add(AuthenticationLogoutRequested());
+                },
               ),
-            ],
+            ),
           ),
-        );
+        ],
+      ),
+    );
   }
 }

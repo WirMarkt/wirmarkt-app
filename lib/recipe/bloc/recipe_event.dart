@@ -1,4 +1,3 @@
-
 part of 'recipe_bloc.dart';
 
 class RecipeEvent extends Equatable {
@@ -7,7 +6,6 @@ class RecipeEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
-
 
 class RefreshRecipe extends RecipeEvent {
   final String languageCode;

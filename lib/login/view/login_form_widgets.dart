@@ -23,7 +23,7 @@ class _UsernameInputState extends State<_UsernameInput> {
             //border: const OutlineInputBorder(),
             labelText: S.of(context).username,
             errorText:
-            state.username.invalid ? S.of(context).invalidUsername : null,
+                state.username.invalid ? S.of(context).invalidUsername : null,
           ),
         );
       },
@@ -44,7 +44,6 @@ class _PasswordInput extends StatefulWidget {
 }
 
 class _PasswordInputState extends State<_PasswordInput> {
-
   TextEditingController textController = TextEditingController();
 
   @override
@@ -63,7 +62,7 @@ class _PasswordInputState extends State<_PasswordInput> {
             //border: const OutlineInputBorder(),
             labelText: S.of(context).password,
             errorText:
-            state.password.invalid ? S.of(context).invalidPassword : null,
+                state.password.invalid ? S.of(context).invalidPassword : null,
           ),
         );
       },
@@ -87,14 +86,14 @@ class _LoginButton extends StatelessWidget {
         return state.status.isSubmissionInProgress
             ? const CircularProgressIndicator()
             : ElevatedButton(
-          key: const Key('loginForm_continue_raisedButton'),
-          child: Text(S.of(context).logIn),
-          onPressed: state.status.isValidated
-              ? () {
-            context.read<LoginBloc>().add(const LoginSubmitted());
-          }
-              : null,
-        );
+                key: const Key('loginForm_continue_raisedButton'),
+                child: Text(S.of(context).logIn),
+                onPressed: state.status.isValidated
+                    ? () {
+                        context.read<LoginBloc>().add(const LoginSubmitted());
+                      }
+                    : null,
+              );
       },
     );
   }

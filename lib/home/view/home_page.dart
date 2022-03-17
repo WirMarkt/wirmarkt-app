@@ -41,10 +41,12 @@ class _HomePageState extends State<HomePage> {
             }
           },
         ),
-        actions: [IconButton(
-          icon: const Icon(Icons.settings),
-          onPressed: showPreferences,
-        )],
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: showPreferences,
+          )
+        ],
       ),
       body: Builder(builder: (context) {
         switch (_page) {

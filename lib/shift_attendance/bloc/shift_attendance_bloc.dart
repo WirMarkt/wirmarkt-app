@@ -12,7 +12,8 @@ part 'shift_attendance_event.dart';
 
 part 'shift_attendance_state.dart';
 
-class ShiftAttendanceBloc extends Bloc<ShiftAttendanceEvent, ShiftAttendanceState> {
+class ShiftAttendanceBloc
+    extends Bloc<ShiftAttendanceEvent, ShiftAttendanceState> {
   final ShiftAttendanceRepository _shiftAttendanceRepository;
 
   ShiftAttendanceBloc({

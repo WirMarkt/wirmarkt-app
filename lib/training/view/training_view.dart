@@ -113,8 +113,7 @@ class _TrainingViewState extends State<TrainingView> {
                         aspectRatio: 2,
                         icon: Icons.image,
                       ),
-                    if (introHtml != null)
-                      Html(data: introHtml),
+                    if (introHtml != null) Html(data: introHtml),
                     const SizedBox(height: 16),
                   ],
                 ),

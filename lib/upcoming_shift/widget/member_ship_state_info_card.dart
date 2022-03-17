@@ -16,26 +16,26 @@ class MemberShipStateInfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        ListTile(
+          leading: const Icon(Icons.info),
+          title: Text(memberShipStateMessage),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
-            ListTile(
-              leading: const Icon(Icons.info),
-              title: Text(memberShipStateMessage),
+            const Icon(Icons.report_problem),
+            TextButton(
+              child: Text(S.of(context).manage),
+              onPressed: _launchAccountInBrowser,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                const Icon(Icons.report_problem),
-                TextButton(
-                  child: Text(S.of(context).manage),
-                  onPressed: _launchAccountInBrowser,
-                ),
-                const SizedBox(width: 8),
-              ],
-            ),
-            const SizedBox(height: 8),
+            const SizedBox(width: 8),
           ],
-        ));
+        ),
+        const SizedBox(height: 8),
+      ],
+    ));
   }
 
   void _launchAccountInBrowser() {

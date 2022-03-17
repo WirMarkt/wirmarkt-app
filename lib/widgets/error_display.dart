@@ -5,7 +5,8 @@ class ErrorDisplay extends StatelessWidget {
   final String errorMessage;
   final void Function()? onRetryPressed;
 
-  const ErrorDisplay({Key? key, required this.errorMessage, this.onRetryPressed})
+  const ErrorDisplay(
+      {Key? key, required this.errorMessage, this.onRetryPressed})
       : super(key: key);
 
   @override
@@ -25,9 +26,7 @@ class ErrorDisplay extends StatelessWidget {
           const SizedBox(height: 8),
           ElevatedButton(
             child: Text(
-              S
-                  .of(context)
-                  .retry,
+              S.of(context).retry,
             ),
             onPressed: onRetryPressed,
           )

@@ -8,12 +8,10 @@ import '../repository/recipe_repository.dart';
 
 class RecipesView extends StatelessWidget {
   static Route<Object?> route() {
-    return MaterialPageRoute<void>(
-        builder: (_) => const RecipesView());
+    return MaterialPageRoute<void>(builder: (_) => const RecipesView());
   }
 
-  const RecipesView({Key? key})
-      : super(key: key);
+  const RecipesView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +21,14 @@ class RecipesView extends StatelessWidget {
       ),
       body: SafeArea(
         child: BlocProvider(
-            create: (context) {
-              return RecipeBloc(
-                recipeRepository:
-                RepositoryProvider.of<RecipeRepository>(context),
-              );
-            },
-            child: const RecipeListLoader(),
-          ),
+          create: (context) {
+            return RecipeBloc(
+              recipeRepository:
+                  RepositoryProvider.of<RecipeRepository>(context),
+            );
+          },
+          child: const RecipeListLoader(),
+        ),
       ),
     );
   }

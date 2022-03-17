@@ -68,4 +68,3 @@ class _AttendanceStateConverter extends JsonConverter<AttendanceState, int> {
         .key;
   }
 }
-

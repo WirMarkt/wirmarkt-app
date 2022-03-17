@@ -1,4 +1,3 @@
-
 import 'package:equatable/equatable.dart';
 
 class ApiException implements Exception, Equatable {
@@ -12,9 +11,12 @@ class ApiException implements Exception, Equatable {
 
   @override
   bool? get stringify => true;
-
 }
 
 enum ApiExceptionType {
-  none, connectionFailed, serverError, unauthenticated, badRequest
+  none,
+  connectionFailed,
+  serverError,
+  unauthenticated,
+  badRequest
 }

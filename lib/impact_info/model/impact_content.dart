@@ -15,7 +15,7 @@ class ImpactContent with HasTranslations<ImpactContentTranslation> {
   const ImpactContent(
       {required this.name,
       required this.coverImage,
-        this.backgroundColor,
+      this.backgroundColor,
       this.translations = const []});
 
   final String name;

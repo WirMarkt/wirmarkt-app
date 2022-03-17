@@ -1,4 +1,3 @@
-
 part of 'tapir_user_bloc.dart';
 
 class TapirUserEvent extends Equatable {
@@ -7,7 +6,6 @@ class TapirUserEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
-
 
 class RefreshTapirUser extends TapirUserEvent {
   final JwtToken jwtToken;
