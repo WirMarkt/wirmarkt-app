@@ -6,7 +6,7 @@ Some features:
 
 * Shopping: membership card, shopping list (planned), digital and anonymous receipt (planned).
 * Decision-making: product suggestions, decision-making processes (planned).
-* Collaboration: shift planning, training material (planned).
+* Collaboration: shift planning, training material.
 * Community: impact, events (planned), presentation of the suppliers (planned).
 
 # Requirements
@@ -22,7 +22,7 @@ flutter run
 
 ```
 
-# Seting up Android Studio
+# Setting up Android Studio
 
 * install Flutter and Flutter Intl plugins
 * restart
@@ -38,7 +38,6 @@ flutter pub run build_runner build --delete-conflicting-outputs
 ```
 
 You may as well run the code generator continuously using:
-
 
 ```bash
 flutter pub run build_runner watch
