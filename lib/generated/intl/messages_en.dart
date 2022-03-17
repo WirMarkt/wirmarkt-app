@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Apply for membership"),
         "authenticationFailure":
             MessageLookupByLibrary.simpleMessage("Authentication Failure"),
+        "badge": MessageLookupByLibrary.simpleMessage("Badge"),
         "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
         "changeAccount": MessageLookupByLibrary.simpleMessage("Change Account"),
         "connectionFailed":
@@ -47,8 +48,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "continueLabel": MessageLookupByLibrary.simpleMessage("Continue"),
         "cooperativeSharesHeadline":
             MessageLookupByLibrary.simpleMessage("Cooperative shares"),
-        "createProductSuggestionTitle":
-            MessageLookupByLibrary.simpleMessage("Suggest Product"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "failedToInitializeCamera":
@@ -90,12 +89,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "manageMembership":
             MessageLookupByLibrary.simpleMessage("Manage membership"),
         "memberLabel": MessageLookupByLibrary.simpleMessage("Member"),
+        "membership": MessageLookupByLibrary.simpleMessage("Membership"),
         "membershipCountExplanation": MessageLookupByLibrary.simpleMessage(
             "Help grow our community by inviting your friends"),
         "membershipCountTitle": m0,
         "membershipSectionTitle":
             MessageLookupByLibrary.simpleMessage("Membership"),
-        "membershipTitle": MessageLookupByLibrary.simpleMessage("Membership"),
         "missed": MessageLookupByLibrary.simpleMessage("Missed"),
         "missedExcused": MessageLookupByLibrary.simpleMessage("Excused"),
         "noAccountWasFoundMatchingThatEmailAndPassword":
@@ -139,6 +138,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "submitSuggestion":
             MessageLookupByLibrary.simpleMessage("Submit suggestion"),
+        "suggestProduct":
+            MessageLookupByLibrary.simpleMessage("Suggest Product"),
         "suggestProductInstructionText": MessageLookupByLibrary.simpleMessage(
             "Take a photo of the product you want to suggest."),
         "takeOverMoreSharesMessage": MessageLookupByLibrary.simpleMessage(

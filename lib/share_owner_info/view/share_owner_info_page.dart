@@ -13,7 +13,7 @@ class ShareOwnerInfoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(S.of(context).membershipTitle)),
+      appBar: AppBar(title: Text(S.of(context).membership)),
       body: const SafeArea(child: ShareOwnerInfoArea()),
     );
   }

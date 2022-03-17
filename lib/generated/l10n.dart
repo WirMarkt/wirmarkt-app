@@ -81,10 +81,10 @@ class S {
   }
 
   /// `Suggest Product`
-  String get createProductSuggestionTitle {
+  String get suggestProduct {
     return Intl.message(
       'Suggest Product',
-      name: 'createProductSuggestionTitle',
+      name: 'suggestProduct',
       desc: '',
       args: [],
     );
@@ -151,10 +151,10 @@ class S {
   }
 
   /// `Membership`
-  String get membershipTitle {
+  String get membership {
     return Intl.message(
       'Membership',
-      name: 'membershipTitle',
+      name: 'membership',
       desc: '',
       args: [],
     );
@@ -845,6 +845,16 @@ class S {
     return Intl.message(
       'Change Account',
       name: 'changeAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Badge`
+  String get badge {
+    return Intl.message(
+      'Badge',
+      name: 'badge',
       desc: '',
       args: [],
     );

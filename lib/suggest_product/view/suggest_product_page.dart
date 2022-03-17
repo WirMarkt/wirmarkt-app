@@ -81,8 +81,7 @@ class SuggestProductPageState extends State<SuggestProductPage> {
         }
 
         return Scaffold(
-          appBar:
-              AppBar(title: Text(S.of(context).createProductSuggestionTitle)),
+          appBar: AppBar(title: Text(S.of(context).suggestProduct)),
           body: body,
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerFloat,

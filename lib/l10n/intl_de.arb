@@ -2,14 +2,14 @@
   "introTitle": "Story",
   "memberLabel": "Mitgliedschaft",
   "showMembershipID": "Mitgliedsausweis",
-  "createProductSuggestionTitle": "Produkt vorschlagen",
+  "suggestProduct": "Produkt vorschlagen",
   "settingsTitle": "Settings",
   "scanResultTitle": "Scan Resultat",
   "resultLabel": "Resultat",
   "rawContentLabel": "Roher Inhalt",
   "scanBarCodeTitle": "Barcode scannen",
   "alignWithBarcodeExplanation": "Barcode so vor die Kamera halten, dass er komplett zu sehen ist.",
-  "membershipTitle": "Mitgliedschaft",
+  "membership": "Mitgliedschaft",
   "showBarcodeAtPOSLabel": "Zeige diesen Barcode an der Kasse im Laden.",
   "suggestProductInstructionText": "Mache ein Foto von dem Produkt, das du vorschlagen möchtest.",
   "scanMembershipBarcodeExplanation": "Halte die Kamera vor den Mitglieder-Barcode.",
@@ -78,5 +78,6 @@
   "failedToInitializeCamera": "Konnte Kamera nicht initialisieren",
   "viewLicenses": "Lizenzen ansehen",
   "licences": "Lizenzen",
-  "changeAccount": "Konto wechseln"
+  "changeAccount": "Konto wechseln",
+  "badge": "Ausweis"
 }

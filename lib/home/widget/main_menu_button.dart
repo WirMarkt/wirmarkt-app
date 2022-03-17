@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 
-class OnboardingCard extends StatelessWidget {
+class MainMenuButton extends StatelessWidget {
   final ImageProvider image;
 
-  /// callback when card is tapped
+  /// callback when button is tapped
   final GestureTapCallback? onTap;
 
-  /// title of onboarding task
   final String title;
 
   final Color? color;
 
-  const OnboardingCard(
+  const MainMenuButton(
       {Key? key,
       required this.image,
       this.onTap,
@@ -60,7 +59,6 @@ class OnboardingCard extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
-                overflow: TextOverflow.fade,
               ),
             ),
           ],

@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Als Mitglied bewerben"),
         "authenticationFailure": MessageLookupByLibrary.simpleMessage(
             "Nutzername oder Passwort falsch"),
+        "badge": MessageLookupByLibrary.simpleMessage("Ausweis"),
         "cancelled": MessageLookupByLibrary.simpleMessage("Abgesagt"),
         "changeAccount": MessageLookupByLibrary.simpleMessage("Konto wechseln"),
         "connectionFailed":
@@ -47,8 +48,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "continueLabel": MessageLookupByLibrary.simpleMessage("Continue"),
         "cooperativeSharesHeadline": MessageLookupByLibrary.simpleMessage(
             "Anteile an der Genossenschaft"),
-        "createProductSuggestionTitle":
-            MessageLookupByLibrary.simpleMessage("Produkt vorschlagen"),
         "done": MessageLookupByLibrary.simpleMessage("Erledigt"),
         "email": MessageLookupByLibrary.simpleMessage("E-Mail"),
         "failedToInitializeCamera": MessageLookupByLibrary.simpleMessage(
@@ -90,12 +89,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "manageMembership":
             MessageLookupByLibrary.simpleMessage("Mitgliedschaft verwalten"),
         "memberLabel": MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
+        "membership": MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
         "membershipCountExplanation": MessageLookupByLibrary.simpleMessage(
             "Hilf mit und lade deine Freunde ein"),
         "membershipCountTitle": m0,
         "membershipSectionTitle":
-            MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
-        "membershipTitle":
             MessageLookupByLibrary.simpleMessage("Mitgliedschaft"),
         "missed": MessageLookupByLibrary.simpleMessage("Nicht erschienen"),
         "missedExcused": MessageLookupByLibrary.simpleMessage("Entschuldigt"),
@@ -144,6 +142,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "submit": MessageLookupByLibrary.simpleMessage("Absenden"),
         "submitSuggestion":
             MessageLookupByLibrary.simpleMessage("Vorschlag absenden"),
+        "suggestProduct":
+            MessageLookupByLibrary.simpleMessage("Produkt vorschlagen"),
         "suggestProductInstructionText": MessageLookupByLibrary.simpleMessage(
             "Mache ein Foto von dem Produkt, das du vorschlagen möchtest."),
         "takeOverMoreSharesMessage": MessageLookupByLibrary.simpleMessage(
