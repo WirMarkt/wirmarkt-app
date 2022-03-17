@@ -72,5 +72,11 @@
   "sepaAccountMissing": "No bank account set up",
   "instructions": "Instructions",
   "notes": "Notes",
-  "ingredients": "Ingredients"
+  "ingredients": "Ingredients",
+  "submitSuggestion": "Submit suggestion",
+  "submit": "Submit",
+  "failedToInitializeCamera": "Failed to initialize camera",
+  "viewLicenses": "View licenses",
+  "licences": "Licences",
+  "changeAccount": "Change Account"
 }

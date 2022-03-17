@@ -60,6 +60,7 @@ class OnboardingCard extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
+                overflow: TextOverflow.fade,
               ),
             ),
           ],

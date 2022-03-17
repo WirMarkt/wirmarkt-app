@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "authenticationFailure": MessageLookupByLibrary.simpleMessage(
             "Nutzername oder Passwort falsch"),
         "cancelled": MessageLookupByLibrary.simpleMessage("Abgesagt"),
+        "changeAccount": MessageLookupByLibrary.simpleMessage("Konto wechseln"),
         "connectionFailed":
             MessageLookupByLibrary.simpleMessage("Verbindung fehlgeschlagen"),
         "continueLabel": MessageLookupByLibrary.simpleMessage("Continue"),
@@ -50,6 +51,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Produkt vorschlagen"),
         "done": MessageLookupByLibrary.simpleMessage("Erledigt"),
         "email": MessageLookupByLibrary.simpleMessage("E-Mail"),
+        "failedToInitializeCamera": MessageLookupByLibrary.simpleMessage(
+            "Konnte Kamera nicht initialisieren"),
         "failedToLoadImpactInfoMessage": MessageLookupByLibrary.simpleMessage(
             "Impact-Infos konnten nicht geladen werden"),
         "failedToLoadMembershipInfo": MessageLookupByLibrary.simpleMessage(
@@ -70,6 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ungültiges Passwort"),
         "invalidUsername":
             MessageLookupByLibrary.simpleMessage("Ungültiger Benutzername"),
+        "licences": MessageLookupByLibrary.simpleMessage("Lizenzen"),
         "loadingImpactMessage":
             MessageLookupByLibrary.simpleMessage("Lade Impact-Infos"),
         "loadingMembershipInfo":
@@ -137,6 +141,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "storeCountExplanation": MessageLookupByLibrary.simpleMessage(
             "Sagt der Welt, sie soll mehr genossenschaftliche Supermärkte eröffnen!"),
         "storeCountTitle": m2,
+        "submit": MessageLookupByLibrary.simpleMessage("Absenden"),
+        "submitSuggestion":
+            MessageLookupByLibrary.simpleMessage("Vorschlag absenden"),
         "suggestProductInstructionText": MessageLookupByLibrary.simpleMessage(
             "Mache ein Foto von dem Produkt, das du vorschlagen möchtest."),
         "takeOverMoreSharesMessage": MessageLookupByLibrary.simpleMessage(
@@ -148,6 +155,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "upcomingShift":
             MessageLookupByLibrary.simpleMessage("Nächste Schicht"),
         "username": MessageLookupByLibrary.simpleMessage("Benutzername"),
+        "viewLicenses":
+            MessageLookupByLibrary.simpleMessage("Lizenzen ansehen"),
         "yourAccountDetails":
             MessageLookupByLibrary.simpleMessage("Deine Kontodaten")
       };

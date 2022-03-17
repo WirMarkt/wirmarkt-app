@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "authenticationFailure":
             MessageLookupByLibrary.simpleMessage("Authentication Failure"),
         "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
+        "changeAccount": MessageLookupByLibrary.simpleMessage("Change Account"),
         "connectionFailed":
             MessageLookupByLibrary.simpleMessage("Connection failed"),
         "continueLabel": MessageLookupByLibrary.simpleMessage("Continue"),
@@ -50,6 +51,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Suggest Product"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "failedToInitializeCamera":
+            MessageLookupByLibrary.simpleMessage("Failed to initialize camera"),
         "failedToLoadImpactInfoMessage":
             MessageLookupByLibrary.simpleMessage("Failed to load impact info"),
         "failedToLoadMembershipInfo": MessageLookupByLibrary.simpleMessage(
@@ -70,6 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("invalid password"),
         "invalidUsername":
             MessageLookupByLibrary.simpleMessage("invalid username"),
+        "licences": MessageLookupByLibrary.simpleMessage("Licences"),
         "loadingImpactMessage":
             MessageLookupByLibrary.simpleMessage("Loading impact"),
         "loadingMembershipInfo":
@@ -132,6 +136,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "storeCountExplanation": MessageLookupByLibrary.simpleMessage(
             "Tell the world to open more cooperative supermarkets!"),
         "storeCountTitle": m2,
+        "submit": MessageLookupByLibrary.simpleMessage("Submit"),
+        "submitSuggestion":
+            MessageLookupByLibrary.simpleMessage("Submit suggestion"),
         "suggestProductInstructionText": MessageLookupByLibrary.simpleMessage(
             "Take a photo of the product you want to suggest."),
         "takeOverMoreSharesMessage": MessageLookupByLibrary.simpleMessage(
@@ -142,6 +149,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "training": MessageLookupByLibrary.simpleMessage("Training"),
         "upcomingShift": MessageLookupByLibrary.simpleMessage("Upcoming shift"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),
+        "viewLicenses": MessageLookupByLibrary.simpleMessage("View licenses"),
         "yourAccountDetails":
             MessageLookupByLibrary.simpleMessage("Your account details")
       };

@@ -789,6 +789,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Submit suggestion`
+  String get submitSuggestion {
+    return Intl.message(
+      'Submit suggestion',
+      name: 'submitSuggestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit`
+  String get submit {
+    return Intl.message(
+      'Submit',
+      name: 'submit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to initialize camera`
+  String get failedToInitializeCamera {
+    return Intl.message(
+      'Failed to initialize camera',
+      name: 'failedToInitializeCamera',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View licenses`
+  String get viewLicenses {
+    return Intl.message(
+      'View licenses',
+      name: 'viewLicenses',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Licences`
+  String get licences {
+    return Intl.message(
+      'Licences',
+      name: 'licences',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Account`
+  String get changeAccount {
+    return Intl.message(
+      'Change Account',
+      name: 'changeAccount',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -22,7 +22,7 @@ import 'wm_design.dart';
 
 void main({String? env = 'prod'}) async {
   LicenseRegistry.addLicense(() async* {
-    final license = await rootBundle.loadString('google_fonts/OFL.txt');
+    final license = await rootBundle.loadString('fonts/OFL.txt');
     yield LicenseEntryWithLineBreaks(['google_fonts'], license);
   });
   GoogleFonts.config.allowRuntimeFetching = false;

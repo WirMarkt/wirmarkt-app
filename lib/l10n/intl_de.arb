@@ -72,5 +72,11 @@
   "sepaAccountMissing": "Keine Kontodaten hinterlegt",
   "instructions": "Anleitung",
   "notes": "Notizen",
-  "ingredients": "Zutaten"
+  "ingredients": "Zutaten",
+  "submitSuggestion": "Vorschlag absenden",
+  "submit": "Absenden",
+  "failedToInitializeCamera": "Konnte Kamera nicht initialisieren",
+  "viewLicenses": "Lizenzen ansehen",
+  "licences": "Lizenzen",
+  "changeAccount": "Konto wechseln"
 }
