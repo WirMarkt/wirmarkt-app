@@ -1,7 +1,6 @@
 import 'dart:ui';
 
-/// WirMarkt colors and defaults from CI
-class WMDesign {
+class AppColors {
   static const Color turquoise = Color.fromRGBO(188, 223, 215, 1.0);
   static const Color orange = Color.fromRGBO(236, 120, 54, 1.0);
   static const Color darkGrey = Color.fromRGBO(95, 94, 94, 1.0);

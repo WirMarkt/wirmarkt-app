@@ -6,7 +6,7 @@ import 'package:wir_markt/authentication/widget/authenticated.dart';
 import 'package:wir_markt/generated/l10n.dart';
 import 'package:wir_markt/widgets/widgets.dart';
 
-import '../../tapir_user/bloc/tapir_user_bloc.dart';
+import '../../user/bloc/user_bloc.dart';
 import 'share_owner_info_column.dart';
 
 class ShareOwnerInfoArea extends StatefulWidget {
@@ -20,7 +20,7 @@ class _ShareOwnerInfoAreaState extends State<ShareOwnerInfoArea> {
   @override
   Widget build(BuildContext context) {
     return Authenticated(
-      child: BlocBuilder<TapirUserBloc, TapirUserState>(
+      child: BlocBuilder<UserBloc, UserState>(
         builder: (context, state) {
           switch (state.status) {
             case FetchStatus.uninitialized:
@@ -28,21 +28,21 @@ class _ShareOwnerInfoAreaState extends State<ShareOwnerInfoArea> {
               return Loading(
                   loadingMessage: S.of(context).loadingMembershipInfo);
             case FetchStatus.completed:
-              return ShareOwnerInfoColumn(tapirUser: state.tapirUser!);
+              return ShareOwnerInfoColumn(user: state.user!);
             case FetchStatus.error:
               return ErrorDisplay(
                 errorMessage: S.of(context).failedToLoadMembershipInfo,
                 onRetryPressed: () {
                   var jwtToken =
                       context.read<AuthenticationBloc>().state.jwtToken;
-                  context.read<TapirUserBloc>().add(RefreshTapirUser(jwtToken));
+                  context.read<UserBloc>().add(RefreshUser(jwtToken));
                 },
               );
           }
         },
       ),
       onAuthenticated: (state) =>
-          context.read<TapirUserBloc>().add(RefreshTapirUser(state.jwtToken)),
+          context.read<UserBloc>().add(RefreshUser(state.jwtToken)),
     );
   }
 

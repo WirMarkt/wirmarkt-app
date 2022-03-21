@@ -132,6 +132,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Keine Kontodaten hinterlegt"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "shareCountInfo": m1,
+        "shiftsThatNeedSupport": MessageLookupByLibrary.simpleMessage(
+            "Schichten die Unterstützung benötigen"),
         "showBarcodeAtPOSLabel": MessageLookupByLibrary.simpleMessage(
             "Zeige diesen Barcode an der Kasse im Laden."),
         "showMembershipID":
@@ -158,6 +160,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "viewLicenses":
             MessageLookupByLibrary.simpleMessage("Lizenzen ansehen"),
         "yourAccountDetails":
-            MessageLookupByLibrary.simpleMessage("Deine Kontodaten")
+            MessageLookupByLibrary.simpleMessage("Deine Kontodaten"),
+        "yourUpcomingShift":
+            MessageLookupByLibrary.simpleMessage("Deine nächste Schicht")
       };
 }

@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:wir_markt/data/data.dart';
-import 'package:wir_markt/generated/l10n.dart';
-import 'package:wir_markt/wm_design.dart';
+
+import '../../data/data.dart';
+import '../../generated/l10n.dart';
+import '../../wm_design.dart';
 
 class MemberInfoColumn extends StatelessWidget {
-  final TapirUser tapirUser;
+  final User user;
 
   const MemberInfoColumn({
     Key? key,
-    required this.tapirUser,
+    required this.user,
   }) : super(key: key);
 
   @override
@@ -17,7 +18,7 @@ class MemberInfoColumn extends StatelessWidget {
     return Center(
       child: OrientationBuilder(
         builder: (BuildContext context, Orientation orientation) {
-          var canShop = tapirUser.shareOwner?.canShop == true;
+          var canShop = user.shareOwner?.canShop == true;
 
           return Flex(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -28,7 +29,7 @@ class MemberInfoColumn extends StatelessWidget {
             children: [
               Expanded(
                 child: _MemberIDDetails(
-                    canShop: canShop, qrCode: tapirUser.shareOwner?.externalId),
+                    canShop: canShop, qrCode: user.shareOwner?.externalId),
               ),
               Expanded(
                 child: _AllowedToShopDetails(canShop: canShop),
@@ -105,13 +106,13 @@ class _AllowedToShopDetails extends StatelessWidget {
     if (canShop) {
       icon = const Icon(
         Icons.check_circle,
-        color: WMDesign.lightGreen,
+        color: AppColors.lightGreen,
       );
       canShopDetails = S.of(context).allowedToShopAsMember;
     } else {
       icon = const Icon(
         Icons.report_problem,
-        color: WMDesign.orange,
+        color: AppColors.orange,
       );
       canShopDetails = S.of(context).notAllowedToShop;
     }

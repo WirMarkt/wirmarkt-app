@@ -128,6 +128,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("No bank account set up"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "shareCountInfo": m1,
+        "shiftsThatNeedSupport":
+            MessageLookupByLibrary.simpleMessage("Shifts that need support"),
         "showBarcodeAtPOSLabel": MessageLookupByLibrary.simpleMessage(
             "Show this barcode at the checkout in the store."),
         "showMembershipID":
@@ -152,6 +154,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "viewLicenses": MessageLookupByLibrary.simpleMessage("View licenses"),
         "yourAccountDetails":
-            MessageLookupByLibrary.simpleMessage("Your account details")
+            MessageLookupByLibrary.simpleMessage("Your account details"),
+        "yourUpcomingShift":
+            MessageLookupByLibrary.simpleMessage("Your upcoming shift")
       };
 }

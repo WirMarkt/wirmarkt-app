@@ -11,7 +11,7 @@ class ApiRepository {
 
   ApiRepository(this.apiUrl);
 
-  Future<Map<String, dynamic>> get(String path, {JwtToken? jwtToken}) async {
+  Future<dynamic> get(String path, {JwtToken? jwtToken}) async {
     var uri = Uri.parse(apiUrl + path);
     Map<String, String> headers = await _prepareHeaders(jwtToken);
     try {

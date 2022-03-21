@@ -23,6 +23,9 @@ Recipe _$RecipeFromJson(Map<String, dynamic> json) => Recipe(
       tags:
           (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ??
               const [],
+      creditsUrl: json['credits_url'] as String?,
+      preparationTime: json['preparation_time'] as int?,
+      workingTime: json['working_time'] as int?,
     );
 
 Map<String, dynamic> _$RecipeToJson(Recipe instance) => <String, dynamic>{
@@ -38,6 +41,9 @@ Map<String, dynamic> _$RecipeToJson(Recipe instance) => <String, dynamic>{
       'instructions': instance.instructions,
       'notes': instance.notes,
       'tags': instance.tags,
+      'credits_url': instance.creditsUrl,
+      'preparation_time': instance.preparationTime,
+      'working_time': instance.workingTime,
     };
 
 RecipeIngredient _$RecipeIngredientFromJson(Map<String, dynamic> json) =>

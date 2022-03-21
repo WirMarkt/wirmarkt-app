@@ -13,11 +13,12 @@ import 'home/view/home_page.dart';
 import 'impact_info/repository/impact_content_repository.dart';
 import 'login/login.dart';
 import 'recipe/repository/recipe_repository.dart';
-import 'shift_attendance/repository/shift_attendance_repository.dart';
+import 'shifts_needing_help/repository/shifts_needing_help_repository.dart';
 import 'splash/splash.dart';
-import 'tapir_user/bloc/tapir_user_bloc.dart';
-import 'tapir_user/repository/tapir_user_repository.dart';
+import 'user/bloc/user_bloc.dart';
+import 'user/repository/user_repository.dart';
 import 'training/repository/training_repository.dart';
+import 'upcoming_shift/repository/upcoming_shift_repository.dart';
 import 'wm_design.dart';
 
 void main({String? env = 'prod'}) async {
@@ -47,9 +48,10 @@ class App extends StatelessWidget {
       ApiRepository(AppConfig.get().contentApiUrl);
   late final _authenticationRepository =
       AuthenticationRepository(_apiRepository);
-  late final _tapirUserRepository = TapirUserRepository(_apiRepository);
-  late final _shiftAttendanceRepository =
-      ShiftAttendanceRepository(_apiRepository);
+  late final _userRepository = UserRepository(_apiRepository);
+  late final _upcomingShiftRepository = UpcomingShiftRepository(_apiRepository);
+  late final _shiftsNeedingHelpRepository =
+      ShiftsNeedingHelpRepository(_apiRepository);
   late final _impactContentRepository =
       ImpactContentRepository(_contentApiRepository);
   late final _trainingRepository = TrainingRepository(_contentApiRepository);
@@ -61,8 +63,9 @@ class App extends StatelessWidget {
       providers: [
         RepositoryProvider.value(value: _authenticationRepository),
         RepositoryProvider.value(value: _impactContentRepository),
-        RepositoryProvider.value(value: _tapirUserRepository),
-        RepositoryProvider.value(value: _shiftAttendanceRepository),
+        RepositoryProvider.value(value: _userRepository),
+        RepositoryProvider.value(value: _upcomingShiftRepository),
+        RepositoryProvider.value(value: _shiftsNeedingHelpRepository),
         RepositoryProvider.value(value: _trainingRepository),
         RepositoryProvider.value(value: _recipeRepository),
       ],
@@ -73,9 +76,9 @@ class App extends StatelessWidget {
               authenticationRepository: _authenticationRepository,
             ),
           ),
-          BlocProvider<TapirUserBloc>(
-            create: (_) => TapirUserBloc(
-              tapirUserRepository: _tapirUserRepository,
+          BlocProvider<UserBloc>(
+            create: (_) => UserBloc(
+              userRepository: _userRepository,
             ),
           ),
         ],
@@ -150,7 +153,7 @@ class _AppViewState extends State<AppView> {
 
   ThemeData buildThemeData(Brightness brightness) {
     var colorScheme = ColorScheme.fromSeed(
-      seedColor: WMDesign.turquoise,
+      seedColor: AppColors.turquoise,
       brightness: brightness,
     );
     var theme = ThemeData.from(

@@ -859,6 +859,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Shifts that need support`
+  String get shiftsThatNeedSupport {
+    return Intl.message(
+      'Shifts that need support',
+      name: 'shiftsThatNeedSupport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your upcoming shift`
+  String get yourUpcomingShift {
+    return Intl.message(
+      'Your upcoming shift',
+      name: 'yourUpcomingShift',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

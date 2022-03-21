@@ -1,15 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import 'data.dart';
-
 part 'shift_attendance.g.dart';
 
 @JsonSerializable()
 @immutable
 class ShiftAttendance {
   final int id;
-  final Shift? shift;
 
   @JsonKey(name: "reminder_email_sent") //: false,
   final bool reminderEmailSent;
@@ -20,12 +17,15 @@ class ShiftAttendance {
   @JsonKey(name: "last_state_update") //: "2022-03-01T14:59:28.134355+01:00",
   final DateTime lastStateUpdate;
 
+  @JsonKey(name: "user_id")
+  final int userId;
+
   factory ShiftAttendance.fromJson(Map<String, dynamic> json) =>
       _$ShiftAttendanceFromJson(json);
 
   const ShiftAttendance({
     required this.id,
-    required this.shift,
+    required this.userId,
     required this.reminderEmailSent,
     required this.state,
     required this.excusedReason,

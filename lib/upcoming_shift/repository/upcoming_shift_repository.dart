@@ -5,19 +5,19 @@ import '../../authentication/models/jwt_token.dart';
 import '../../data/data.dart';
 
 @immutable
-class ShiftAttendanceRepository {
+class UpcomingShiftRepository {
   final ApiRepository _apiRepository;
 
-  const ShiftAttendanceRepository(this._apiRepository);
+  const UpcomingShiftRepository(this._apiRepository);
 
   /// @throws [ApiException]
-  Future<ShiftAttendance?> getUpcomingShiftAttendance(JwtToken jwtToken) async {
-    var jsonResponse = await _apiRepository.get("/upcoming_shift_attendance/",
-        jwtToken: jwtToken);
+  Future<Shift?> getUpcomingShift(JwtToken jwtToken) async {
+    var jsonResponse =
+        await _apiRepository.get("/shift/upcoming/", jwtToken: jwtToken);
     if (jsonResponse['id'] == null) {
       return null;
     } else {
-      return ShiftAttendance.fromJson(jsonResponse);
+      return Shift.fromJson(jsonResponse);
     }
   }
 }

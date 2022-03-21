@@ -19,7 +19,7 @@ class Loading extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           const CircularProgressIndicator(
-            valueColor: AlwaysStoppedAnimation<Color>(WMDesign.lightGreen),
+            valueColor: AlwaysStoppedAnimation<Color>(AppColors.lightGreen),
           ),
         ],
       ),

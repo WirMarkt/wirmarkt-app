@@ -5,15 +5,14 @@ import 'package:wir_markt/authentication/models/jwt_token.dart';
 import '../../data/data.dart';
 
 @immutable
-class TapirUserRepository {
+class UserRepository {
   final ApiRepository _apiRepository;
 
-  const TapirUserRepository(this._apiRepository);
+  const UserRepository(this._apiRepository);
 
   /// @throws [ApiException]
-  Future<TapirUser?> getTapirUser(JwtToken jwtToken) async {
-    var jsonResponse =
-        await _apiRepository.get("/tapir_user/", jwtToken: jwtToken);
-    return TapirUser.fromJson(jsonResponse);
+  Future<User?> getUser(JwtToken jwtToken) async {
+    var jsonResponse = await _apiRepository.get("/user/", jwtToken: jwtToken);
+    return User.fromJson(jsonResponse);
   }
 }

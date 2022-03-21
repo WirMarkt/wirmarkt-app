@@ -11,14 +11,14 @@ class ShiftCard extends StatelessWidget {
   final DateTime shiftEnd;
   final DateTime shiftStart;
   final String shiftUrl;
-  final AttendanceState shiftState;
+  final AttendanceState? shiftState;
 
   const ShiftCard({
     required this.shiftName,
     required this.shiftEnd,
     required this.shiftStart,
     required this.shiftUrl,
-    required this.shiftState,
+    this.shiftState,
     Key? key,
   }) : super(key: key);
 
@@ -48,8 +48,6 @@ class ShiftCard extends StatelessWidget {
       dateLabel = dateFormat.format(shiftStart);
     }
 
-    var shiftStateLabel = _getShiftLabel(S.of(context), shiftState);
-
     return Card(
         child: Column(
       mainAxisSize: MainAxisSize.min,
@@ -68,7 +66,8 @@ class ShiftCard extends StatelessWidget {
                   Text(dateLabel),
                 ],
               ),
-              Text(shiftStateLabel),
+              if (shiftState != null)
+                Text(_getShiftLabel(S.of(context), shiftState!)),
             ],
           ),
         ),

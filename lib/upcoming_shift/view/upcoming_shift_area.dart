@@ -6,9 +6,9 @@ import '../../authentication/authentication.dart';
 import '../../authentication/widget/authenticated.dart';
 import '../../data/data.dart';
 import '../../generated/l10n.dart';
-import '../../shift_attendance/bloc/shift_attendance_bloc.dart';
+import '../../shifts_needing_help/bloc/shifts_needing_help_bloc.dart';
 import '../../widgets/widgets.dart';
-import '../widget/member_ship_state_info_card.dart';
+import '../bloc/upcoming_shift_bloc.dart';
 import '../widget/shift_card.dart';
 
 class UpcomingShiftArea extends StatelessWidget {
@@ -17,43 +17,120 @@ class UpcomingShiftArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Authenticated(
-      child: BlocBuilder<ShiftAttendanceBloc, ShiftAttendanceState>(
-          builder: (context, state) {
-        switch (state.status) {
-          case FetchStatus.uninitialized:
-          case FetchStatus.loading:
+      child: Builder(
+        builder: (context) {
+          final shiftsNeedingHelpState =
+              context.watch<ShiftsNeedingHelpBloc>().state;
+          final upcomingShiftState = context.watch<UpcomingShiftBloc>().state;
+
+          var statusList = [
+            shiftsNeedingHelpState.status,
+            upcomingShiftState.status
+          ];
+
+          if (statusList.contains(FetchStatus.uninitialized) ||
+              statusList.contains(FetchStatus.loading)) {
             return Loading(loadingMessage: S.of(context).loadingMembershipInfo);
-          case FetchStatus.completed:
-            return _createUpcomingShiftInfo(state, context);
-          case FetchStatus.error:
+          } else if (statusList.contains(FetchStatus.error)) {
             return ErrorDisplay(
               errorMessage: S.of(context).failedToLoadMembershipInfo,
               onRetryPressed: () {
-                var jwtToken =
-                    context.read<AuthenticationBloc>().state.jwtToken;
-                context
-                    .read<ShiftAttendanceBloc>()
-                    .add(RefreshShiftAttendance(jwtToken));
+                _refreshBlocs(context);
               },
             );
-        }
-      }),
-      onAuthenticated: (state) => context
-          .read<ShiftAttendanceBloc>()
-          .add(RefreshShiftAttendance(state.jwtToken)),
+          } else {
+            return SingleChildScrollView(
+              child: _createUpcomingShiftInfo(
+                  upcomingShiftState, shiftsNeedingHelpState, context),
+            );
+          }
+        },
+      ),
+      onAuthenticated: (state) {
+        _refreshBlocs(context);
+      },
     );
   }
 
+  void _refreshBlocs(BuildContext context) {
+    var jwtToken = context.read<AuthenticationBloc>().state.jwtToken;
+    context.read<UpcomingShiftBloc>().add(RefreshUpcomingShift(jwtToken));
+    context
+        .read<ShiftsNeedingHelpBloc>()
+        .add(RefreshShiftsNeedingHelp(jwtToken));
+  }
+
   Widget _createUpcomingShiftInfo(
-      ShiftAttendanceState state, BuildContext context) {
-    if (state.shiftAttendance?.shift != null) {
+    UpcomingShiftState upcomingShiftState,
+    ShiftsNeedingHelpState shiftsNeedingHelpState,
+    BuildContext context,
+  ) {
+    var upcomingShiftPanel =
+        _createUpcomingShiftPanel(upcomingShiftState, context);
+    var shiftsNeedingHelpPanel =
+        _createShiftsNeedingHelpPanel(shiftsNeedingHelpState, context);
+
+    return Column(
+      children: [
+        if (upcomingShiftPanel != null) upcomingShiftPanel,
+        shiftsNeedingHelpPanel,
+      ],
+    );
+  }
+
+  _UpcomingShiftPanel? _createUpcomingShiftPanel(
+      UpcomingShiftState upcomingShiftState, BuildContext context) {
+    if (upcomingShiftState.shift != null) {
+      var shift = upcomingShiftState.shift;
+      var authState = context.read<AuthenticationBloc>().state;
+      var userId = authState.jwtToken.userInfo['user_id'];
+      var userState = AttendanceState.done;
+      shift?.attendances.where((e) => e.userId == userId).forEach((element) {
+        userState = element.state;
+      });
+
       return _UpcomingShiftPanel(
-        shift: state.shiftAttendance!.shift!,
-        state: state.shiftAttendance!.state,
+        shift: upcomingShiftState.shift!,
+        state: userState,
       );
     } else {
-      return _ManageMemberShipPanel(S.of(context).noUpcomingShift);
+      return null;
     }
+  }
+
+  Widget _createShiftsNeedingHelpPanel(
+      ShiftsNeedingHelpState shiftsNeedingHelpState, BuildContext context) {
+    var shifts = shiftsNeedingHelpState.shiftsNeedingHelp;
+    return Padding(
+      padding: const EdgeInsets.all(24.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            S.of(context).shiftsThatNeedSupport,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+          ),
+          ...shifts
+              .take(10)
+              .map((e) {
+                return [
+                  ShiftCard(
+                    shiftName: e.name,
+                    shiftEnd: e.endTime,
+                    shiftStart: e.startTime,
+                    shiftUrl: e.absoluteUrl,
+                  ),
+                  SizedBox(height: 16.0),
+                ];
+              })
+              .expand((element) => element)
+              .toList()
+        ],
+      ),
+    );
   }
 }
 
@@ -70,15 +147,14 @@ class _UpcomingShiftPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var textTheme = Theme.of(context).textTheme;
     return Padding(
       padding: const EdgeInsets.all(24.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            S.of(context).upcomingShift,
-            style: textTheme.titleMedium,
+            S.of(context).yourUpcomingShift,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           const Padding(
             padding: EdgeInsets.all(8.0),
@@ -90,36 +166,6 @@ class _UpcomingShiftPanel extends StatelessWidget {
             shiftUrl: shift.absoluteUrl,
             shiftState: state,
           ),
-        ],
-      ),
-    );
-  }
-}
-
-@immutable
-class _ManageMemberShipPanel extends StatelessWidget {
-  final String memberShipStateMessage;
-
-  const _ManageMemberShipPanel(
-    this.memberShipStateMessage, {
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(24.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            S.of(context).manageMembership,
-            style: Theme.of(context).textTheme.headline6,
-          ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-          ),
-          MemberShipStateInfoCard(memberShipStateMessage),
         ],
       ),
     );

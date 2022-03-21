@@ -9,9 +9,7 @@ part of 'shift_attendance.dart';
 ShiftAttendance _$ShiftAttendanceFromJson(Map<String, dynamic> json) =>
     ShiftAttendance(
       id: json['id'] as int,
-      shift: json['shift'] == null
-          ? null
-          : Shift.fromJson(json['shift'] as Map<String, dynamic>),
+      userId: json['user_id'] as int,
       reminderEmailSent: json['reminder_email_sent'] as bool,
       state: const _AttendanceStateConverter().fromJson(json['state'] as int),
       excusedReason: json['excused_reason'] as String,
@@ -21,9 +19,9 @@ ShiftAttendance _$ShiftAttendanceFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$ShiftAttendanceToJson(ShiftAttendance instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'shift': instance.shift,
       'reminder_email_sent': instance.reminderEmailSent,
       'state': const _AttendanceStateConverter().toJson(instance.state),
       'excused_reason': instance.excusedReason,
       'last_state_update': instance.lastStateUpdate.toIso8601String(),
+      'user_id': instance.userId,
     };

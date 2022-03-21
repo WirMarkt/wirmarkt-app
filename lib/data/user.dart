@@ -3,14 +3,14 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'data.dart';
 
-part 'tapir_user.g.dart';
+part 'user.g.dart';
 
 @JsonSerializable()
 @immutable
-class TapirUser {
+class User {
   final int id;
   @JsonKey(name: "last_login") //: "2022-03-06T16:34:58.870715+01:00",
-  final String lastLogin;
+  final String? lastLogin;
   @JsonKey(name: "is_superuser") //: false,
   final bool isSuperuser;
   @JsonKey(name: "first_name") //: "Elia",
@@ -42,7 +42,7 @@ class TapirUser {
   @JsonKey(name: "shift_user_data")
   final ShiftUserData? shiftUserData;
 
-  const TapirUser({
+  const User({
     required this.id,
     required this.lastLogin,
     required this.isSuperuser,
@@ -65,8 +65,7 @@ class TapirUser {
     required this.shiftUserData,
   });
 
-  factory TapirUser.fromJson(Map<String, dynamic> json) =>
-      _$TapirUserFromJson(json);
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
-  Map<String, dynamic> toJson() => _$TapirUserToJson(this);
+  Map<String, dynamic> toJson() => _$UserToJson(this);
 }

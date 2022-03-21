@@ -6,11 +6,11 @@ import '../widget/cooperative_share_info_card.dart';
 import '../widget/payment_info_card.dart';
 
 class ShareOwnerInfoColumn extends StatelessWidget {
-  final TapirUser tapirUser;
+  final User user;
 
   const ShareOwnerInfoColumn({
     Key? key,
-    required this.tapirUser,
+    required this.user,
   }) : super(key: key);
 
   @override
@@ -25,10 +25,10 @@ class ShareOwnerInfoColumn extends StatelessWidget {
                 ? Axis.vertical
                 : Axis.horizontal,
             children: [
-              if (tapirUser.shareOwner != null)
-                _ShareOwnershipInfo(tapirUser.shareOwner!.numShares),
-              if (tapirUser.shareOwner != null)
-                _BankAccountInfoPanel(tapirUser.shareOwner!),
+              if (user.shareOwner != null)
+                _ShareOwnershipInfo(user.shareOwner!.numShares),
+              if (user.shareOwner != null)
+                _BankAccountInfoPanel(user.shareOwner!),
             ],
           );
         },

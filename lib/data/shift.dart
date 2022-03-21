@@ -1,12 +1,16 @@
 import 'package:flutter/foundation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import 'shift_attendance.dart';
+
 part 'shift.g.dart';
 
 @JsonSerializable()
 @immutable
 class Shift {
   final int id;
+  final List<ShiftAttendance> attendances;
+
   @JsonKey(name: "absolute_url")
   final String absoluteUrl;
   final String name;
@@ -20,6 +24,7 @@ class Shift {
 
   const Shift({
     required this.id,
+    required this.attendances,
     required this.absoluteUrl,
     required this.name,
     required this.numRequiredAttendances,

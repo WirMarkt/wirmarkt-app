@@ -79,5 +79,7 @@
   "viewLicenses": "Lizenzen ansehen",
   "licences": "Lizenzen",
   "changeAccount": "Konto wechseln",
-  "badge": "Ausweis"
+  "badge": "Ausweis",
+  "shiftsThatNeedSupport": "Schichten die Unterstützung benötigen",
+  "yourUpcomingShift": "Deine nächste Schicht"
 }

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../generated/l10n.dart';
-import '../../shift_attendance/bloc/shift_attendance_bloc.dart';
-import '../../shift_attendance/repository/shift_attendance_repository.dart';
+import '../../shifts_needing_help/bloc/shifts_needing_help_bloc.dart';
+import '../../shifts_needing_help/repository/shifts_needing_help_repository.dart';
+import '../bloc/upcoming_shift_bloc.dart';
+import '../repository/upcoming_shift_repository.dart';
 import 'upcoming_shift_area.dart';
 
 class UpcomingShiftPage extends StatelessWidget {
@@ -18,13 +20,26 @@ class UpcomingShiftPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(S.of(context).upcomingShift)),
       body: SafeArea(
-        child: BlocProvider(
-          create: (BuildContext context) {
-            return ShiftAttendanceBloc(
-              shiftAttendanceRepository:
-                  RepositoryProvider.of<ShiftAttendanceRepository>(context),
-            );
-          },
+        child: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (BuildContext context) {
+                return UpcomingShiftBloc(
+                  upcomingShiftRepository:
+                      RepositoryProvider.of<UpcomingShiftRepository>(context),
+                );
+              },
+            ),
+            BlocProvider(
+              create: (BuildContext context) {
+                return ShiftsNeedingHelpBloc(
+                  shiftsNeedingHelpRepository:
+                      RepositoryProvider.of<ShiftsNeedingHelpRepository>(
+                          context),
+                );
+              },
+            ),
+          ],
           child: const UpcomingShiftArea(),
         ),
       ),

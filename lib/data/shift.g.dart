@@ -8,6 +8,9 @@ part of 'shift.dart';
 
 Shift _$ShiftFromJson(Map<String, dynamic> json) => Shift(
       id: json['id'] as int,
+      attendances: (json['attendances'] as List<dynamic>)
+          .map((e) => ShiftAttendance.fromJson(e as Map<String, dynamic>))
+          .toList(),
       absoluteUrl: json['absolute_url'] as String,
       name: json['name'] as String,
       numRequiredAttendances: json['num_required_attendances'] as int,
@@ -18,6 +21,7 @@ Shift _$ShiftFromJson(Map<String, dynamic> json) => Shift(
 
 Map<String, dynamic> _$ShiftToJson(Shift instance) => <String, dynamic>{
       'id': instance.id,
+      'attendances': instance.attendances,
       'absolute_url': instance.absoluteUrl,
       'name': instance.name,
       'num_required_attendances': instance.numRequiredAttendances,

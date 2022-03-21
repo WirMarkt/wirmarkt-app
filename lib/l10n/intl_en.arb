@@ -79,5 +79,7 @@
   "viewLicenses": "View licenses",
   "licences": "Licences",
   "changeAccount": "Change Account",
-  "badge": "Badge"
+  "badge": "Badge",
+  "shiftsThatNeedSupport": "Shifts that need support",
+  "yourUpcomingShift": "Your upcoming shift"
 }
