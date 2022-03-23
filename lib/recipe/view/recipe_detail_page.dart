@@ -27,7 +27,10 @@ class RecipeDetailPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              IconPlaceholderImage.network(imageUrl),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Card(child: IconPlaceholderImage.network(imageUrl)),
+              ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(

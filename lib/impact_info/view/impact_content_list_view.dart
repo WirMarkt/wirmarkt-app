@@ -34,16 +34,11 @@ class ImpactContentListView extends StatelessWidget {
     }).toList();
 
     return ResponsiveSizedWrap(
-      cards: cards,
+      children: cards,
       aspectRatio: 1.4,
       columnCount: {
+        LogicalWidth.xs: 1,
         LogicalWidth.sm: 2,
-        LogicalWidth.md: 3,
-      },
-      wrapWidth: {
-        LogicalWidth.sm: 0.8,
-        LogicalWidth.md: 0.7,
-        LogicalWidth.lg: 0.6,
       },
     );
   }

@@ -15,24 +15,14 @@ class ShareOwnerInfoColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: OrientationBuilder(
-        builder: (BuildContext context, Orientation orientation) {
-          return Flex(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            direction: orientation == Orientation.portrait
-                ? Axis.vertical
-                : Axis.horizontal,
-            children: [
-              if (user.shareOwner != null)
-                _ShareOwnershipInfo(user.shareOwner!.numShares),
-              if (user.shareOwner != null)
-                _BankAccountInfoPanel(user.shareOwner!),
-            ],
-          );
-        },
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (user.shareOwner != null)
+          _ShareOwnershipInfo(user.shareOwner!.numShares),
+        if (user.shareOwner != null) _BankAccountInfoPanel(user.shareOwner!),
+      ],
     );
   }
 }

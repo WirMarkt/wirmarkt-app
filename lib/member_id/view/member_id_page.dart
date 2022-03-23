@@ -14,7 +14,14 @@ class MemberInfoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(S.of(context).membership)),
-      body: const SafeArea(child: MemberInfoArea()),
+      body: SafeArea(
+          child: Center(
+              child: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxWidth: 800,
+        ),
+        child: MemberInfoArea(),
+      ))),
     );
   }
 }

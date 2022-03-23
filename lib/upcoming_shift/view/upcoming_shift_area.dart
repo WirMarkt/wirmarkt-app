@@ -39,10 +39,8 @@ class UpcomingShiftArea extends StatelessWidget {
               },
             );
           } else {
-            return SingleChildScrollView(
-              child: _createUpcomingShiftInfo(
-                  upcomingShiftState, shiftsNeedingHelpState, context),
-            );
+            return _createUpcomingShiftInfo(
+                upcomingShiftState, shiftsNeedingHelpState, context);
           }
         },
       ),

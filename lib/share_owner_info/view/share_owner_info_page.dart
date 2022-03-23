@@ -14,7 +14,18 @@ class ShareOwnerInfoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(S.of(context).membership)),
-      body: const SafeArea(child: ShareOwnerInfoArea()),
+      body: SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth: 500,
+              ),
+              child: ShareOwnerInfoArea(),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

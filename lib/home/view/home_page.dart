@@ -48,14 +48,25 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: Builder(builder: (context) {
-        switch (_page) {
-          case Pages.membership:
-            return const MembershipActionsView();
-          case Pages.impact:
-            return const ImpactContentView();
-        }
-      }),
+      body: SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth: 800,
+              ),
+              child: Builder(builder: (context) {
+                switch (_page) {
+                  case Pages.membership:
+                    return const MembershipActionsView();
+                  case Pages.impact:
+                    return const ImpactContentView();
+                }
+              }),
+            ),
+          ),
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _page.index,
         items: [

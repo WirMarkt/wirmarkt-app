@@ -61,9 +61,9 @@ class ShiftCard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Text(fromToLabel),
-                  const Spacer(),
                   Text(dateLabel),
+                  const Spacer(),
+                  Text(fromToLabel),
                 ],
               ),
               if (shiftState != null)
@@ -81,7 +81,7 @@ class ShiftCard extends StatelessWidget {
             const SizedBox(width: 8),
           ],
         ),
-        const SizedBox(height: 8),
+        // const SizedBox(height: 8),
       ],
     ));
   }

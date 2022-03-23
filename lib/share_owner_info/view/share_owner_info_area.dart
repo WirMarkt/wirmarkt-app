@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wir_markt/api/api.dart';
-import 'package:wir_markt/authentication/authentication.dart';
-import 'package:wir_markt/authentication/widget/authenticated.dart';
-import 'package:wir_markt/generated/l10n.dart';
-import 'package:wir_markt/widgets/widgets.dart';
 
+import '../../api/api.dart';
+import '../../authentication/authentication.dart';
+import '../../authentication/widget/authenticated.dart';
+import '../../generated/l10n.dart';
 import '../../user/bloc/user_bloc.dart';
+import '../../widgets/widgets.dart';
 import 'share_owner_info_column.dart';
 
 class ShareOwnerInfoArea extends StatefulWidget {

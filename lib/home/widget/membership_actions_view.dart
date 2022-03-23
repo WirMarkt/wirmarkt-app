@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
 import '../../member_id/view/member_id_page.dart';
-import '../../recipe/view/recipes_page.dart';
+import '../../recipe/view/recipes_view.dart';
 import '../../share_owner_info/view/share_owner_info_page.dart';
 import '../../suggest_product/view/suggest_product_page.dart';
 import '../../training/view/take_training_page.dart';
@@ -68,24 +68,12 @@ class MembershipActionsView extends StatelessWidget {
       ),
     ];
 
-    return SafeArea(
-      child: SingleChildScrollView(
-        child: Align(
-          alignment: Alignment.center,
-          child: ResponsiveSizedWrap(
-            cards: cards,
-            columnCount: {
-              LogicalWidth.xs: 2,
-              LogicalWidth.sm: 3,
-            },
-            wrapWidth: {
-              LogicalWidth.sm: 0.8,
-              LogicalWidth.md: 0.7,
-              LogicalWidth.lg: 0.6,
-            },
-          ),
-        ),
-      ),
+    return ResponsiveSizedWrap(
+      children: cards,
+      columnCount: {
+        LogicalWidth.xs: 2,
+        LogicalWidth.sm: 3,
+      },
     );
   }
 }

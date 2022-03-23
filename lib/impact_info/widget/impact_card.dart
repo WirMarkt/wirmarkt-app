@@ -22,47 +22,50 @@ class ImpactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var padding = 32.0;
-    return Card(
-      semanticContainer: true,
-      color: backgroundColor,
-      child: Stack(
-        children: [
-          Positioned(
-            top: padding / 2,
-            left: padding,
-            right: padding,
-            bottom: 64,
-            child: IconPlaceholderImage.network(imageUrl, fit: BoxFit.contain),
-          ),
-          Positioned(
-              bottom: padding,
-              height: padding,
-              left: padding,
-              right: padding,
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  title,
-                  textAlign: TextAlign.center,
-                  maxLines: 1,
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(),
-                ),
-              )),
-          if (explanation != null)
+    return AspectRatio(
+      aspectRatio: 1.4,
+      child: Card(
+        semanticContainer: true,
+        color: backgroundColor,
+        child: Stack(
+          children: [
             Positioned(
-              height: padding,
-              bottom: 0,
+              top: padding / 2,
               left: padding,
               right: padding,
-              child: Text(
-                explanation!,
-                textAlign: TextAlign.center,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(),
-              ),
+              bottom: 64,
+              child: IconPlaceholderImage.network(imageUrl, fit: BoxFit.contain),
             ),
-        ],
+            Positioned(
+                bottom: padding,
+                height: padding,
+                left: padding,
+                right: padding,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    title,
+                    textAlign: TextAlign.center,
+                    maxLines: 1,
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(),
+                  ),
+                )),
+            if (explanation != null)
+              Positioned(
+                height: padding,
+                bottom: 0,
+                left: padding,
+                right: padding,
+                child: Text(
+                  explanation!,
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(),
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }

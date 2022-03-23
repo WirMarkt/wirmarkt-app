@@ -20,14 +20,23 @@ class RecipesView extends StatelessWidget {
         title: Text(S.of(context).recipes),
       ),
       body: SafeArea(
-        child: BlocProvider(
-          create: (context) {
-            return RecipeBloc(
-              recipeRepository:
-                  RepositoryProvider.of<RecipeRepository>(context),
-            );
-          },
-          child: const RecipeListLoader(),
+        child: Center(
+          child: SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth: 800,
+              ),
+              child: BlocProvider(
+                create: (context) {
+                  return RecipeBloc(
+                    recipeRepository:
+                        RepositoryProvider.of<RecipeRepository>(context),
+                  );
+                },
+                child: const RecipeListLoader(),
+              ),
+            ),
+          ),
         ),
       ),
     );

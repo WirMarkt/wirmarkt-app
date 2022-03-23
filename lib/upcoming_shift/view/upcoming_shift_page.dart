@@ -20,27 +20,36 @@ class UpcomingShiftPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(S.of(context).upcomingShift)),
       body: SafeArea(
-        child: MultiBlocProvider(
-          providers: [
-            BlocProvider(
-              create: (BuildContext context) {
-                return UpcomingShiftBloc(
-                  upcomingShiftRepository:
-                      RepositoryProvider.of<UpcomingShiftRepository>(context),
-                );
-              },
+        child: Center(
+          child: SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth: 500,
+              ),
+              child: MultiBlocProvider(
+                providers: [
+                  BlocProvider(
+                    create: (BuildContext context) {
+                      return UpcomingShiftBloc(
+                        upcomingShiftRepository:
+                            RepositoryProvider.of<UpcomingShiftRepository>(context),
+                      );
+                    },
+                  ),
+                  BlocProvider(
+                    create: (BuildContext context) {
+                      return ShiftsNeedingHelpBloc(
+                        shiftsNeedingHelpRepository:
+                            RepositoryProvider.of<ShiftsNeedingHelpRepository>(
+                                context),
+                      );
+                    },
+                  ),
+                ],
+                child: const UpcomingShiftArea(),
+              ),
             ),
-            BlocProvider(
-              create: (BuildContext context) {
-                return ShiftsNeedingHelpBloc(
-                  shiftsNeedingHelpRepository:
-                      RepositoryProvider.of<ShiftsNeedingHelpRepository>(
-                          context),
-                );
-              },
-            ),
-          ],
-          child: const UpcomingShiftArea(),
+          ),
         ),
       ),
     );

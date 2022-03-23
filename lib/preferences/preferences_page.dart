@@ -19,38 +19,47 @@ class PreferencesPageState extends State<PreferencesPage> {
     var textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(title: Text(S.of(context).propertiesTitle)),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(S.of(context).changeAccount, style: textTheme.titleMedium),
-              OutlinedButton(
-                child: Text(S.of(context).logOut),
-                onPressed: () async {
-                  context
-                      .read<AuthenticationBloc>()
-                      .add(AuthenticationLogoutRequested());
-                },
-              ),
-              SizedBox(height: 16),
-              Text(S.of(context).licences, style: textTheme.titleMedium),
-              OutlinedButton(
-                child: Text(S.of(context).viewLicenses + "..."),
-                onPressed: () async {
-                  showLicensePage(
-                    context: context,
-                    applicationName: "",
-                    applicationIcon: Padding(
-                      padding: const EdgeInsets.all(32.0),
-                      child: Image.asset(
-                          "images/logo_${Theme.of(context).brightness.name}.png"),
+      body: SafeArea(
+        child: Center(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: 500,
+            ),
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(S.of(context).changeAccount, style: textTheme.titleMedium),
+                    OutlinedButton(
+                      child: Text(S.of(context).logOut),
+                      onPressed: () async {
+                        context
+                            .read<AuthenticationBloc>()
+                            .add(AuthenticationLogoutRequested());
+                      },
                     ),
-                  );
-                },
+                    SizedBox(height: 16),
+                    Text(S.of(context).licences, style: textTheme.titleMedium),
+                    OutlinedButton(
+                      child: Text(S.of(context).viewLicenses + "..."),
+                      onPressed: () async {
+                        showLicensePage(
+                          context: context,
+                          applicationName: "",
+                          applicationIcon: Padding(
+                            padding: const EdgeInsets.all(32.0),
+                            child: Image.asset(
+                                "images/logo_${Theme.of(context).brightness.name}.png"),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
               ),
-            ],
+            ),
           ),
         ),
       ),

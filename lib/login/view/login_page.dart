@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wir_markt/authentication/authentication.dart';
-import 'package:wir_markt/generated/l10n.dart';
-import 'package:wir_markt/login/login.dart';
+
+import '../../authentication/repository/authentication_repository.dart';
+import '../../generated/l10n.dart';
+import '../bloc/login_bloc.dart';
+import 'login_form.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -15,56 +17,44 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     const outerPadding = EdgeInsets.all(24.0);
 
-    var logoWidget = Image.asset(
-      "images/logo_${Theme.of(context).brightness.name}.png",
-    );
-    const formWidget = LoginForm();
-
     return Scaffold(
       appBar: AppBar(title: Text(S.of(context).logIn)),
-      body: BlocProvider(create: (context) {
-        return LoginBloc(
-          authenticationRepository:
-              RepositoryProvider.of<AuthenticationRepository>(context),
-        );
-      }, child: SafeArea(
-        child: LayoutBuilder(builder: (BuildContext context, _) {
-          if (MediaQuery.of(context).orientation == Orientation.portrait) {
-            return SingleChildScrollView(
-                clipBehavior: Clip.none,
-                child: Column(children: [
-                  Padding(
-                    padding: outerPadding,
-                    child: logoWidget,
-                  ),
-                  const Padding(
-                    padding: outerPadding,
-                    child: formWidget,
-                  ),
-                ]));
-          } else {
-            return Row(children: [
-              Flexible(
-                flex: 2,
-                child: Padding(
+      body: BlocProvider(
+        create: (context) {
+          return LoginBloc(
+            authenticationRepository:
+                RepositoryProvider.of<AuthenticationRepository>(context),
+          );
+        },
+        child: SafeArea(
+            child: Center(
+          child: SingleChildScrollView(
+            clipBehavior: Clip.none,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth: 350,
+              ),
+              child: Column(children: [
+                Padding(
                   padding: outerPadding,
-                  child: logoWidget,
-                ),
-              ),
-              const Expanded(
-                flex: 3,
-                child: SingleChildScrollView(
-                  clipBehavior: Clip.none,
-                  child: Padding(
-                    padding: outerPadding,
-                    child: formWidget,
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxWidth: 200,
+                    ),
+                    child: Image.asset(
+                      "images/logo_${Theme.of(context).brightness.name}.png",
+                    ),
                   ),
                 ),
-              ),
-            ]);
-          }
-        }),
-      )),
+                const Padding(
+                  padding: outerPadding,
+                  child: LoginForm(),
+                ),
+              ]),
+            ),
+          ),
+        )),
+      ),
     );
   }
 }
