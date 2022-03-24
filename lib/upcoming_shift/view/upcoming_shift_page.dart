@@ -32,7 +32,8 @@ class UpcomingShiftPage extends StatelessWidget {
                     create: (BuildContext context) {
                       return UpcomingShiftBloc(
                         upcomingShiftRepository:
-                            RepositoryProvider.of<UpcomingShiftRepository>(context),
+                            RepositoryProvider.of<UpcomingShiftRepository>(
+                                context),
                       );
                     },
                   ),

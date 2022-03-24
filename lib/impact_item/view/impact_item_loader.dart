@@ -5,34 +5,32 @@ import '../../api/utils/fetch_status.dart';
 import '../../generated/l10n.dart';
 import '../../widgets/colored_progress_indicator.dart';
 import '../../widgets/error_display.dart';
-import '../bloc/training_bloc.dart';
-import 'training_view.dart';
+import '../bloc/impact_item_bloc.dart';
+import 'impact_item_list_view.dart';
 
-class TrainingLoader extends StatefulWidget {
-  final String trainingName;
-
-  const TrainingLoader(this.trainingName, {Key? key}) : super(key: key);
+class ImpactItemLoader extends StatefulWidget {
+  const ImpactItemLoader({Key? key}) : super(key: key);
 
   @override
-  State<TrainingLoader> createState() => _TrainingLoaderState();
+  State<ImpactItemLoader> createState() => _ImpactItemLoaderState();
 }
 
-class _TrainingLoaderState extends State<TrainingLoader> {
+class _ImpactItemLoaderState extends State<ImpactItemLoader> {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<TrainingBloc, TrainingState>(
+    return BlocBuilder<ImpactItemBloc, ImpactItemState>(
       builder: (context, state) {
         switch (state.status) {
           case FetchStatus.uninitialized:
           case FetchStatus.loading:
             return ColoredProgressIndicator();
           case FetchStatus.completed:
-            return TrainingView(training: state.training);
+            return ImpactItemListView(impactItems: state.impactItems);
           case FetchStatus.error:
             return ErrorDisplay(
-              errorMessage: S.of(context).failedToLoadTrainingContentMessage,
+              errorMessage: S.of(context).failedToLoadImpactInfoMessage,
               onRetryPressed: () {
-                _refreshTraining();
+                _refreshImpactItem();
               },
             );
         }
@@ -40,14 +38,14 @@ class _TrainingLoaderState extends State<TrainingLoader> {
     );
   }
 
-  void _refreshTraining() {
-    context.read<TrainingBloc>().add(RefreshTraining(widget.trainingName));
+  void _refreshImpactItem() {
+    context.read<ImpactItemBloc>().add(const RefreshImpactItem());
   }
 
   @override
   void initState() {
     super.initState();
 
-    _refreshTraining();
+    _refreshImpactItem();
   }
 }

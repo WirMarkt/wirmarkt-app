@@ -4,8 +4,8 @@ import 'package:intl/intl.dart';
 
 import '../../api/utils/fetch_status.dart';
 import '../../generated/l10n.dart';
+import '../../widgets/colored_progress_indicator.dart';
 import '../../widgets/error_display.dart';
-import '../../widgets/loading.dart';
 import '../bloc/recipe_bloc.dart';
 import 'recipe_list_view.dart';
 
@@ -24,7 +24,7 @@ class _RecipeListLoaderState extends State<RecipeListLoader> {
         switch (state.status) {
           case FetchStatus.uninitialized:
           case FetchStatus.loading:
-            return Loading(loadingMessage: S.of(context).loadingRecipesMessage);
+            return ColoredProgressIndicator();
           case FetchStatus.completed:
             return RecipeListView(recipes: state.recipes);
           case FetchStatus.error:

@@ -30,10 +30,10 @@ class UpcomingShiftArea extends StatelessWidget {
 
           if (statusList.contains(FetchStatus.uninitialized) ||
               statusList.contains(FetchStatus.loading)) {
-            return Loading(loadingMessage: S.of(context).loadingMembershipInfo);
+            return ColoredProgressIndicator();
           } else if (statusList.contains(FetchStatus.error)) {
             return ErrorDisplay(
-              errorMessage: S.of(context).failedToLoadMembershipInfo,
+              errorMessage: S.of(context).failedToLoadData,
               onRetryPressed: () {
                 _refreshBlocs(context);
               },

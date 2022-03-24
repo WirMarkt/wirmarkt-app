@@ -8,7 +8,6 @@ import '../model/training.dart';
 import '../repository/training_repository.dart';
 
 part 'training_event.dart';
-
 part 'training_state.dart';
 
 class TrainingBloc extends Bloc<TrainingEvent, TrainingState> {

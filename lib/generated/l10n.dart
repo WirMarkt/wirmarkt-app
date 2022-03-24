@@ -230,6 +230,16 @@ class S {
     );
   }
 
+  /// `Community`
+  String get communitySectionTitle {
+    return Intl.message(
+      'Community',
+      name: 'communitySectionTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Impact`
   String get impactSectionTitle {
     return Intl.message(
@@ -370,16 +380,6 @@ class S {
     );
   }
 
-  /// `Loading membership...`
-  String get loadingMembershipInfo {
-    return Intl.message(
-      'Loading membership...',
-      name: 'loadingMembershipInfo',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Authentication Failure`
   String get authenticationFailure {
     return Intl.message(
@@ -390,11 +390,11 @@ class S {
     );
   }
 
-  /// `Failed to load membership info`
-  String get failedToLoadMembershipInfo {
+  /// `Failed to load data`
+  String get failedToLoadData {
     return Intl.message(
-      'Failed to load membership info',
-      name: 'failedToLoadMembershipInfo',
+      'Failed to load data',
+      name: 'failedToLoadData',
       desc: '',
       args: [],
     );
@@ -660,31 +660,11 @@ class S {
     );
   }
 
-  /// `Loading impact`
-  String get loadingImpactMessage {
-    return Intl.message(
-      'Loading impact',
-      name: 'loadingImpactMessage',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Failed to load impact info`
   String get failedToLoadImpactInfoMessage {
     return Intl.message(
       'Failed to load impact info',
       name: 'failedToLoadImpactInfoMessage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Loading recipes`
-  String get loadingRecipesMessage {
-    return Intl.message(
-      'Loading recipes',
-      name: 'loadingRecipesMessage',
       desc: '',
       args: [],
     );
@@ -705,16 +685,6 @@ class S {
     return Intl.message(
       'Failed to load training content',
       name: 'failedToLoadTrainingContentMessage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Loading training`
-  String get loadingTrainingMessage {
-    return Intl.message(
-      'Loading training',
-      name: 'loadingTrainingMessage',
       desc: '',
       args: [],
     );
@@ -875,6 +845,16 @@ class S {
     return Intl.message(
       'Your upcoming shift',
       name: 'yourUpcomingShift',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Partners`
+  String get partners {
+    return Intl.message(
+      'Partners',
+      name: 'partners',
       desc: '',
       args: [],
     );

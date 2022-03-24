@@ -7,7 +7,6 @@ import 'package:wir_markt/authentication/authentication.dart';
 import 'package:wir_markt/authentication/models/jwt_token.dart';
 
 part 'authentication_event.dart';
-
 part 'authentication_state.dart';
 
 class AuthenticationBloc

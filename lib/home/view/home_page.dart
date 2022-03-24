@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:wir_markt/generated/l10n.dart';
-import 'package:wir_markt/home/widget/membership_actions_view.dart';
-import 'package:wir_markt/preferences/preferences_page.dart';
 
-import '../../impact_info/view/impact_content_view.dart';
+import '../../community/view/community_actions_view.dart';
+import '../../generated/l10n.dart';
+import '../../impact_item/view/impact_item_view.dart';
+import '../../membership/view/membership_actions_view.dart';
+import '../../preferences/preferences_page.dart';
 
 /// Home page accessible if logged in
 class HomePage extends StatefulWidget {
@@ -17,7 +18,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-enum Pages { membership, impact }
+enum Pages { membership, community, impact }
 
 class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
@@ -36,6 +37,8 @@ class _HomePageState extends State<HomePage> {
             switch (_page) {
               case Pages.membership:
                 return Text(S.of(context).membershipSectionTitle);
+              case Pages.community:
+                return Text(S.of(context).communitySectionTitle);
               case Pages.impact:
                 return Text(S.of(context).impactSectionTitle);
             }
@@ -59,8 +62,10 @@ class _HomePageState extends State<HomePage> {
                 switch (_page) {
                   case Pages.membership:
                     return const MembershipActionsView();
+                  case Pages.community:
+                    return const CommunityActionsView();
                   case Pages.impact:
-                    return const ImpactContentView();
+                    return const ImpactItemView();
                 }
               }),
             ),
@@ -73,6 +78,10 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             label: S.of(context).membershipSectionTitle,
             icon: const Icon(Icons.shopping_cart),
+          ),
+          BottomNavigationBarItem(
+            label: S.of(context).communitySectionTitle,
+            icon: const Icon(Icons.people),
           ),
           BottomNavigationBarItem(
             label: S.of(context).impactSectionTitle,

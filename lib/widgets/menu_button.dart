@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MainMenuButton extends StatelessWidget {
+class MenuButton extends StatelessWidget {
   final ImageProvider image;
 
   /// callback when button is tapped
@@ -10,7 +10,7 @@ class MainMenuButton extends StatelessWidget {
 
   final Color? color;
 
-  const MainMenuButton(
+  const MenuButton(
       {Key? key,
       required this.image,
       this.onTap,

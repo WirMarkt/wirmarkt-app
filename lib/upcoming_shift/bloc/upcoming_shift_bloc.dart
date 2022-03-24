@@ -9,7 +9,6 @@ import '../../data/data.dart';
 import '../repository/upcoming_shift_repository.dart';
 
 part 'upcoming_shift_event.dart';
-
 part 'upcoming_shift_state.dart';
 
 class UpcomingShiftBloc extends Bloc<UpcomingShiftEvent, UpcomingShiftState> {

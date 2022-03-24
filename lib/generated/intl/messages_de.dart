@@ -43,6 +43,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "badge": MessageLookupByLibrary.simpleMessage("Ausweis"),
         "cancelled": MessageLookupByLibrary.simpleMessage("Abgesagt"),
         "changeAccount": MessageLookupByLibrary.simpleMessage("Konto wechseln"),
+        "communitySectionTitle":
+            MessageLookupByLibrary.simpleMessage("Community"),
         "connectionFailed":
             MessageLookupByLibrary.simpleMessage("Verbindung fehlgeschlagen"),
         "continueLabel": MessageLookupByLibrary.simpleMessage("Continue"),
@@ -52,10 +54,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("E-Mail"),
         "failedToInitializeCamera": MessageLookupByLibrary.simpleMessage(
             "Konnte Kamera nicht initialisieren"),
+        "failedToLoadData":
+            MessageLookupByLibrary.simpleMessage("Konnte Daten nicht laden"),
         "failedToLoadImpactInfoMessage": MessageLookupByLibrary.simpleMessage(
             "Impact-Infos konnten nicht geladen werden"),
-        "failedToLoadMembershipInfo": MessageLookupByLibrary.simpleMessage(
-            "Konnte Mitgliedschaft nicht laden"),
         "failedToLoadRecipesMessage": MessageLookupByLibrary.simpleMessage(
             "Rezepte konnten nicht geladen werden"),
         "failedToLoadTrainingContentMessage":
@@ -73,14 +75,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "invalidUsername":
             MessageLookupByLibrary.simpleMessage("Ungültiger Benutzername"),
         "licences": MessageLookupByLibrary.simpleMessage("Lizenzen"),
-        "loadingImpactMessage":
-            MessageLookupByLibrary.simpleMessage("Lade Impact-Infos"),
-        "loadingMembershipInfo":
-            MessageLookupByLibrary.simpleMessage("Lade Mitgliedschaft..."),
-        "loadingRecipesMessage":
-            MessageLookupByLibrary.simpleMessage("Lade Rezepte"),
-        "loadingTrainingMessage":
-            MessageLookupByLibrary.simpleMessage("Lade Schulung"),
         "logIn": MessageLookupByLibrary.simpleMessage("Anmelden"),
         "logOut": MessageLookupByLibrary.simpleMessage("Abmelden"),
         "lookingForStandIn":
@@ -109,6 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "notAllowedToShop": MessageLookupByLibrary.simpleMessage(
             "Derzeit kannst du nicht im Laden einkaufen."),
         "notes": MessageLookupByLibrary.simpleMessage("Notizen"),
+        "partners": MessageLookupByLibrary.simpleMessage("Partner:innen"),
         "password": MessageLookupByLibrary.simpleMessage("Passwort"),
         "pending": MessageLookupByLibrary.simpleMessage("Ausstehend"),
         "pleaseLogInToContinue": MessageLookupByLibrary.simpleMessage(

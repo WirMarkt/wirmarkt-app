@@ -2,23 +2,26 @@ import 'package:flutter/foundation.dart';
 import 'package:wir_markt/api/repository/api_repository.dart';
 import 'package:wir_markt/data/app_config.dart';
 
-import '../model/impact_content.dart';
+import '../model/partner.dart';
 
 @immutable
-class ImpactContentRepository {
+class PartnerRepository {
   final ApiRepository _apiRepository;
 
-  const ImpactContentRepository(this._apiRepository);
+  const PartnerRepository(this._apiRepository);
 
   /// @throws [ApiException]
-  Future<List<ImpactContent>?> getImpactContents() async {
-    var jsonResponse = await _apiRepository
-        .get("/items/impact_items/?fields=name,translations.*,cover_image,"
-            "background_color&filter[status]=published");
+  Future<List<Partner>?> getPartners() async {
+    var jsonResponse = await _apiRepository.get("/items/partners/"
+        "?fields="
+        "*,"
+        "translations.*,"
+        "photos.*"
+        "&filter[status]=published");
     var contentList =
         (jsonResponse['data'] as List).map((x) => x as Map<String, dynamic>);
 
-    return contentList.map(ImpactContent.fromJson).toList();
+    return contentList.map(Partner.fromJson).toList();
   }
 
   String getAssetUrl(String assetPath, {String? presetKey}) {

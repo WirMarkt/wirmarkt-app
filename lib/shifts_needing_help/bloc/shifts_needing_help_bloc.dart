@@ -9,7 +9,6 @@ import '../../data/data.dart';
 import '../repository/shifts_needing_help_repository.dart';
 
 part 'shifts_needing_help_event.dart';
-
 part 'shifts_needing_help_state.dart';
 
 class ShiftsNeedingHelpBloc

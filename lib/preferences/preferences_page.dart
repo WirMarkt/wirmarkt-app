@@ -31,7 +31,8 @@ class PreferencesPageState extends State<PreferencesPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(S.of(context).changeAccount, style: textTheme.titleMedium),
+                    Text(S.of(context).changeAccount,
+                        style: textTheme.titleMedium),
                     OutlinedButton(
                       child: Text(S.of(context).logOut),
                       onPressed: () async {

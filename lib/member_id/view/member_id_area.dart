@@ -25,8 +25,7 @@ class _MemberInfoAreaState extends State<MemberInfoArea> {
           switch (state.status) {
             case FetchStatus.uninitialized:
             case FetchStatus.loading:
-              return Loading(
-                  loadingMessage: S.of(context).loadingMembershipInfo);
+              return ColoredProgressIndicator();
             case FetchStatus.completed:
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -34,7 +33,7 @@ class _MemberInfoAreaState extends State<MemberInfoArea> {
               );
             case FetchStatus.error:
               return ErrorDisplay(
-                errorMessage: S.of(context).failedToLoadMembershipInfo,
+                errorMessage: S.of(context).failedToLoadData,
                 onRetryPressed: () {
                   var jwtToken =
                       context.read<AuthenticationBloc>().state.jwtToken;

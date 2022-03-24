@@ -43,6 +43,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "badge": MessageLookupByLibrary.simpleMessage("Badge"),
         "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
         "changeAccount": MessageLookupByLibrary.simpleMessage("Change Account"),
+        "communitySectionTitle":
+            MessageLookupByLibrary.simpleMessage("Community"),
         "connectionFailed":
             MessageLookupByLibrary.simpleMessage("Connection failed"),
         "continueLabel": MessageLookupByLibrary.simpleMessage("Continue"),
@@ -52,10 +54,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "failedToInitializeCamera":
             MessageLookupByLibrary.simpleMessage("Failed to initialize camera"),
+        "failedToLoadData":
+            MessageLookupByLibrary.simpleMessage("Failed to load data"),
         "failedToLoadImpactInfoMessage":
             MessageLookupByLibrary.simpleMessage("Failed to load impact info"),
-        "failedToLoadMembershipInfo": MessageLookupByLibrary.simpleMessage(
-            "Failed to load membership info"),
         "failedToLoadRecipesMessage":
             MessageLookupByLibrary.simpleMessage("Failed to load recipes"),
         "failedToLoadTrainingContentMessage":
@@ -73,14 +75,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "invalidUsername":
             MessageLookupByLibrary.simpleMessage("invalid username"),
         "licences": MessageLookupByLibrary.simpleMessage("Licences"),
-        "loadingImpactMessage":
-            MessageLookupByLibrary.simpleMessage("Loading impact"),
-        "loadingMembershipInfo":
-            MessageLookupByLibrary.simpleMessage("Loading membership..."),
-        "loadingRecipesMessage":
-            MessageLookupByLibrary.simpleMessage("Loading recipes"),
-        "loadingTrainingMessage":
-            MessageLookupByLibrary.simpleMessage("Loading training"),
         "logIn": MessageLookupByLibrary.simpleMessage("Log In"),
         "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
         "lookingForStandIn":
@@ -108,6 +102,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "notAllowedToShop": MessageLookupByLibrary.simpleMessage(
             "You aren\'t allowed to shop as a member."),
         "notes": MessageLookupByLibrary.simpleMessage("Notes"),
+        "partners": MessageLookupByLibrary.simpleMessage("Partners"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "pending": MessageLookupByLibrary.simpleMessage("Pending"),
         "pleaseLogInToContinue":

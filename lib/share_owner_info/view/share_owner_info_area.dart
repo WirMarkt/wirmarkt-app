@@ -25,13 +25,12 @@ class _ShareOwnerInfoAreaState extends State<ShareOwnerInfoArea> {
           switch (state.status) {
             case FetchStatus.uninitialized:
             case FetchStatus.loading:
-              return Loading(
-                  loadingMessage: S.of(context).loadingMembershipInfo);
+              return ColoredProgressIndicator();
             case FetchStatus.completed:
               return ShareOwnerInfoColumn(user: state.user!);
             case FetchStatus.error:
               return ErrorDisplay(
-                errorMessage: S.of(context).failedToLoadMembershipInfo,
+                errorMessage: S.of(context).failedToLoadData,
                 onRetryPressed: () {
                   var jwtToken =
                       context.read<AuthenticationBloc>().state.jwtToken;

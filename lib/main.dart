@@ -10,15 +10,16 @@ import 'authentication/authentication.dart';
 import 'data/app_config.dart';
 import 'generated/l10n.dart';
 import 'home/view/home_page.dart';
-import 'impact_info/repository/impact_content_repository.dart';
+import 'impact_item/repository/impact_item_repository.dart';
 import 'login/login.dart';
+import 'partner/repository/partner_repository.dart';
 import 'recipe/repository/recipe_repository.dart';
 import 'shifts_needing_help/repository/shifts_needing_help_repository.dart';
 import 'splash/splash.dart';
-import 'user/bloc/user_bloc.dart';
-import 'user/repository/user_repository.dart';
 import 'training/repository/training_repository.dart';
 import 'upcoming_shift/repository/upcoming_shift_repository.dart';
+import 'user/bloc/user_bloc.dart';
+import 'user/repository/user_repository.dart';
 import 'wm_design.dart';
 
 void main({String? env = 'prod'}) async {
@@ -53,7 +54,8 @@ class App extends StatelessWidget {
   late final _shiftsNeedingHelpRepository =
       ShiftsNeedingHelpRepository(_apiRepository);
   late final _impactContentRepository =
-      ImpactContentRepository(_contentApiRepository);
+      ImpactItemRepository(_contentApiRepository);
+  late final _partnerRepository = PartnerRepository(_contentApiRepository);
   late final _trainingRepository = TrainingRepository(_contentApiRepository);
   late final _recipeRepository = RecipeRepository(_contentApiRepository);
 
@@ -68,6 +70,7 @@ class App extends StatelessWidget {
         RepositoryProvider.value(value: _shiftsNeedingHelpRepository),
         RepositoryProvider.value(value: _trainingRepository),
         RepositoryProvider.value(value: _recipeRepository),
+        RepositoryProvider.value(value: _partnerRepository),
       ],
       child: MultiBlocProvider(
         providers: [
