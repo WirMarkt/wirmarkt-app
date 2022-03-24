@@ -33,11 +33,12 @@ class ImpactCard extends StatelessWidget {
               top: padding / 2,
               left: padding,
               right: padding,
-              bottom: 64,
-              child: IconPlaceholderImage.network(imageUrl, fit: BoxFit.contain),
+              bottom: padding * 3,
+              child:
+                  IconPlaceholderImage.network(imageUrl, fit: BoxFit.contain),
             ),
             Positioned(
-                bottom: padding,
+                bottom: padding * 2,
                 height: padding,
                 left: padding,
                 right: padding,
@@ -47,21 +48,24 @@ class ImpactCard extends StatelessWidget {
                     title,
                     textAlign: TextAlign.center,
                     maxLines: 1,
-                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(),
+                    style:
+                        Theme.of(context).textTheme.headlineSmall?.copyWith(),
                   ),
                 )),
             if (explanation != null)
               Positioned(
                 height: padding,
-                bottom: 0,
+                bottom: padding,
                 left: padding,
                 right: padding,
-                child: Text(
-                  explanation!,
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(),
+                child: Center(
+                  child: Text(
+                    explanation!,
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(),
+                  ),
                 ),
               ),
           ],
