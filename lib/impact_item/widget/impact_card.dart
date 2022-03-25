@@ -49,7 +49,7 @@ class ImpactCard extends StatelessWidget {
                     textAlign: TextAlign.center,
                     maxLines: 1,
                     style:
-                        Theme.of(context).textTheme.headlineSmall?.copyWith(),
+                        Theme.of(context).textTheme.titleLarge,
                   ),
                 )),
             if (explanation != null)
@@ -64,7 +64,7 @@ class ImpactCard extends StatelessWidget {
                     textAlign: TextAlign.center,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(),
+                    style: Theme.of(context).textTheme.bodySmall,
                   ),
                 ),
               ),

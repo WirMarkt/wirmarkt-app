@@ -35,7 +35,7 @@ class RecipeCard extends StatelessWidget {
               title,
               textAlign: TextAlign.left,
               maxLines: 1,
-              style: Theme.of(context).textTheme.headlineSmall,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
           if (explanation != null)

@@ -32,7 +32,6 @@ class ImpactItemListView extends StatelessWidget {
 
     return ResponsiveSizedWrap(
       children: cards,
-      aspectRatio: 1.4,
       columnCount: {
         LogicalWidth.xs: 1,
         LogicalWidth.sm: 2,

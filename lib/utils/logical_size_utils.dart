@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
 
 enum LogicalWidth {
-  xs, //(for phones - screens less than 768px wide)
-  sm, //(for tablets - screens equal to or greater than 768px wide)
-  md, //(for small laptops - screens equal to or greater than 992px wide)
-  lg, //(for laptops and desktops - screens equal to or greater than 1200px wide)
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
+  xxl,
 }
 
 extension MediaQueryLogicalWidth on MediaQueryData {
   LogicalWidth get logicalWidth {
-    if (size.width < 768) {
-      return LogicalWidth.xs;
-    } else if (size.width < 992) {
-      return LogicalWidth.sm;
-    } else if (size.width < 1200) {
-      return LogicalWidth.md;
-    } else {
-      return LogicalWidth.lg;
+    var logicalToMaxWidth = const {
+      LogicalWidth.xs: 576,
+      LogicalWidth.sm: 768,
+      LogicalWidth.md: 992,
+      LogicalWidth.lg: 1200,
+      LogicalWidth.xl: 1400,
+    };
+    for (var entry in logicalToMaxWidth.entries) {
+      if (size.width < entry.value) return entry.key;
     }
+    return LogicalWidth.xxl;
   }
 }
 

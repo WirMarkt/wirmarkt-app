@@ -8,12 +8,10 @@ class ResponsiveSizedWrap extends StatelessWidget {
     required this.children,
     this.padding = 8,
     this.columnCount = const {},
-    this.aspectRatio = 1.0,
   }) : super(key: key);
 
   final List<Widget> children;
   final double padding;
-  final double aspectRatio;
   final Map<LogicalWidth, int> columnCount;
 
   @override
