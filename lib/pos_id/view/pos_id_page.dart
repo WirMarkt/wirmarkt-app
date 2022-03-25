@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
-import 'member_id_area.dart';
+import 'pos_id_area.dart';
 
-class MemberInfoPage extends StatelessWidget {
-  const MemberInfoPage({Key? key}) : super(key: key);
+class PosIdPage extends StatelessWidget {
+  const PosIdPage({Key? key}) : super(key: key);
 
   static Route route() {
-    return MaterialPageRoute<void>(builder: (_) => const MemberInfoPage());
+    return MaterialPageRoute<void>(builder: (_) => const PosIdPage());
   }
 
   @override
@@ -20,7 +20,7 @@ class MemberInfoPage extends StatelessWidget {
         constraints: BoxConstraints(
           maxWidth: 800,
         ),
-        child: MemberInfoArea(),
+        child: PosIdArea(),
       ))),
     );
   }

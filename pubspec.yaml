@@ -31,7 +31,7 @@ dependencies:
   cupertino_icons:
 
   # Your other regular dependencies here
-  camera: ^0.9.4+16
+  camera: ^0.9.4+17
   path_provider: ^2.0.9
   path: ^1.8.0
   json_annotation: 4.4.0

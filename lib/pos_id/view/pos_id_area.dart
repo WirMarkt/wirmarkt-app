@@ -7,16 +7,16 @@ import 'package:wir_markt/generated/l10n.dart';
 import 'package:wir_markt/widgets/widgets.dart';
 
 import '../../user/bloc/user_bloc.dart';
-import 'member_id_column.dart';
+import 'pos_id_column.dart';
 
-class MemberInfoArea extends StatefulWidget {
-  const MemberInfoArea({Key? key}) : super(key: key);
+class PosIdArea extends StatefulWidget {
+  const PosIdArea({Key? key}) : super(key: key);
 
   @override
-  State<MemberInfoArea> createState() => _MemberInfoAreaState();
+  State<PosIdArea> createState() => _PosIdAreaState();
 }
 
-class _MemberInfoAreaState extends State<MemberInfoArea> {
+class _PosIdAreaState extends State<PosIdArea> {
   @override
   Widget build(BuildContext context) {
     return Authenticated(
@@ -29,7 +29,7 @@ class _MemberInfoAreaState extends State<MemberInfoArea> {
             case FetchStatus.completed:
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: MemberInfoColumn(user: state.user!),
+                child: PosIdColumn(user: state.user!),
               );
             case FetchStatus.error:
               return ErrorDisplay(

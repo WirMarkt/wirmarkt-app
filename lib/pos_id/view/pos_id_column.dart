@@ -5,10 +5,10 @@ import '../../data/data.dart';
 import '../../generated/l10n.dart';
 import '../../wm_design.dart';
 
-class MemberInfoColumn extends StatelessWidget {
+class PosIdColumn extends StatelessWidget {
   final User user;
 
-  const MemberInfoColumn({
+  const PosIdColumn({
     Key? key,
     required this.user,
   }) : super(key: key);
@@ -20,6 +20,8 @@ class MemberInfoColumn extends StatelessWidget {
         builder: (BuildContext context, Orientation orientation) {
           var canShop = user.shareOwner?.canShop == true;
 
+          var membershipQrCode = "membership-${user.shareOwner?.id}";
+
           return Flex(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -29,7 +31,7 @@ class MemberInfoColumn extends StatelessWidget {
             children: [
               Expanded(
                 child: _MemberIDDetails(
-                    canShop: canShop, qrCode: user.shareOwner?.externalId),
+                    canShop: canShop, qrCode: membershipQrCode),
               ),
               Expanded(
                 child: _AllowedToShopDetails(canShop: canShop),

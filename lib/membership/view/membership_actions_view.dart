@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
-import '../../member_id/view/member_id_page.dart';
+import '../../pos_id/view/pos_id_page.dart';
 import '../../share_owner_info/view/share_owner_info_page.dart';
 import '../../suggest_product/view/suggest_product_page.dart';
 import '../../training/view/take_training_page.dart';
@@ -20,7 +20,7 @@ class MembershipActionsView extends StatelessWidget {
         title: S.of(context).badge,
         color: const Color.fromARGB(60, 197, 241, 152),
         onTap: () {
-          Navigator.of(context).push(MemberInfoPage.route());
+          Navigator.of(context).push(PosIdPage.route());
         },
         image: const AssetImage("images/menu/005-contract.png"),
       ),
