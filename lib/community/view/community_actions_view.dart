@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wir_markt/wm_design.dart';
 
 import '../../generated/l10n.dart';
 import '../../partner/view/partners_view.dart';
@@ -15,7 +16,7 @@ class CommunityActionsView extends StatelessWidget {
     var cards = [
       MenuButton(
         title: S.of(context).recipes,
-        color: const Color.fromARGB(60, 128, 205, 194),
+        color: AppColors.lightGreen,
         onTap: () {
           Navigator.of(context).push(RecipesView.route());
         },
@@ -23,7 +24,7 @@ class CommunityActionsView extends StatelessWidget {
       ),
       MenuButton(
         title: S.of(context).partners,
-        color: const Color.fromARGB(60, 160, 111, 73),
+        color: AppColors.orange,
         onTap: () {
           Navigator.of(context).push(PartnersView.route());
         },

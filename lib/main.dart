@@ -171,10 +171,8 @@ class _AppViewState extends State<AppView> {
           foregroundColor: colorScheme.primary,
           elevation: 0, // This removes the shadow from all App Bars.
         ),
-        cardColor: theme.secondaryHeaderColor,
         cardTheme: theme.cardTheme.copyWith(
-          color: theme.secondaryHeaderColor,
-          elevation: 0,
+          elevation: 1,
           clipBehavior: Clip.antiAlias,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),

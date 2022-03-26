@@ -26,7 +26,7 @@ class ResponsiveSizedWrap extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(padding),
       child: Wrap(
-        alignment: WrapAlignment.center,
+        alignment: WrapAlignment.start,
         children: children.map((card) {
           return FractionallySizedBox(
             widthFactor: 1.0 / selectedColumnCount,

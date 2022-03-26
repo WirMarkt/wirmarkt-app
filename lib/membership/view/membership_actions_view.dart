@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wir_markt/wm_design.dart';
 
 import '../../generated/l10n.dart';
 import '../../pos_id/view/pos_id_page.dart';
@@ -18,7 +19,7 @@ class MembershipActionsView extends StatelessWidget {
     var cards = [
       MenuButton(
         title: S.of(context).badge,
-        color: const Color.fromARGB(60, 197, 241, 152),
+        color: AppColors.turquoise,
         onTap: () {
           Navigator.of(context).push(PosIdPage.route());
         },
@@ -26,7 +27,7 @@ class MembershipActionsView extends StatelessWidget {
       ),
       MenuButton(
         title: S.of(context).suggestProduct,
-        color: const Color.fromARGB(60, 255, 255, 100),
+        color: AppColors.yellow,
         onTap: () {
           Navigator.of(context).push(SuggestProductPage.route());
         },
@@ -34,7 +35,7 @@ class MembershipActionsView extends StatelessWidget {
       ),
       MenuButton(
         title: S.of(context).training,
-        color: const Color.fromARGB(60, 100, 100, 255),
+        color: AppColors.lightGreen,
         onTap: () {
           Navigator.of(context)
               .push(TakeTrainingPage.route(trainingName: "intro"));
@@ -43,7 +44,7 @@ class MembershipActionsView extends StatelessWidget {
       ),
       MenuButton(
         title: S.of(context).upcomingShift,
-        color: const Color.fromARGB(60, 255, 100, 100),
+        color: AppColors.darkBlue,
         onTap: () {
           Navigator.of(context).push(UpcomingShiftPage.route());
         },
@@ -51,7 +52,7 @@ class MembershipActionsView extends StatelessWidget {
       ),
       MenuButton(
         title: S.of(context).membership,
-        color: const Color.fromARGB(60, 212, 38, 164),
+        color: AppColors.orange,
         onTap: () {
           Navigator.of(context).push(ShareOwnerInfoPage.route());
         },
