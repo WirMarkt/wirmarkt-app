@@ -156,7 +156,7 @@ class _AppViewState extends State<AppView> {
 
   ThemeData buildThemeData(Brightness brightness) {
     var colorScheme = ColorScheme.fromSeed(
-      seedColor: AppColors.darkBlue,
+      seedColor: AppColors.turquoise,
       brightness: brightness,
     );
     var theme = ThemeData.from(
