@@ -10,6 +10,7 @@ ShiftAttendance _$ShiftAttendanceFromJson(Map<String, dynamic> json) =>
     ShiftAttendance(
       id: json['id'] as int,
       userId: json['user_id'] as int,
+      slotName: json['slot_name'] as String,
       reminderEmailSent: json['reminder_email_sent'] as bool,
       state: const _AttendanceStateConverter().fromJson(json['state'] as int),
       excusedReason: json['excused_reason'] as String,
@@ -20,6 +21,7 @@ Map<String, dynamic> _$ShiftAttendanceToJson(ShiftAttendance instance) =>
     <String, dynamic>{
       'id': instance.id,
       'reminder_email_sent': instance.reminderEmailSent,
+      'slot_name': instance.slotName,
       'state': const _AttendanceStateConverter().toJson(instance.state),
       'excused_reason': instance.excusedReason,
       'last_state_update': instance.lastStateUpdate.toIso8601String(),

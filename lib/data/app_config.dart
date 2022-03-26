@@ -11,6 +11,9 @@ part 'app_config.g.dart';
 class AppConfig {
   static late AppConfig _appConfig;
 
+  Duration get connectionTimeoutDuration =>
+      Duration(seconds: connectionTimeoutSeconds);
+
   static AppConfig get() => _appConfig;
 
   const AppConfig({
@@ -19,6 +22,7 @@ class AppConfig {
     this.contentApiUrl = "",
     this.passwordResetUrl = "",
     this.applyForMembershipUrl = "",
+    this.connectionTimeoutSeconds = 30,
     required this.memberManagementUri,
   });
 
@@ -29,6 +33,7 @@ class AppConfig {
   final String passwordResetUrl;
   final String applyForMembershipUrl;
   final String memberManagementUri;
+  final int connectionTimeoutSeconds;
 
   factory AppConfig.fromJson(Map<String, dynamic> json) =>
       _$AppConfigFromJson(json);

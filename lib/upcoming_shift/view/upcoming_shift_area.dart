@@ -81,15 +81,22 @@ class UpcomingShiftArea extends StatelessWidget {
     if (upcomingShiftState.shift != null) {
       var shift = upcomingShiftState.shift;
       var authState = context.read<AuthenticationBloc>().state;
-      var userId = authState.jwtToken.userInfo['user_id'];
-      var userState = AttendanceState.done;
-      shift?.attendances.where((e) => e.userId == userId).forEach((element) {
-        userState = element.state;
-      });
+      var userId = authState.jwtToken.userId;
+      AttendanceState? attendanceState;
+      String? slotName;
+      try {
+        ShiftAttendance shiftAttendance =
+            shift!.attendances.firstWhere((e) => e.userId == userId);
+        attendanceState = shiftAttendance.state;
+        slotName = shiftAttendance.slotName;
+      } on StateError {
+        //no shift attendance found
+      }
 
       return _UpcomingShiftPanel(
         shift: upcomingShiftState.shift!,
-        state: userState,
+        slotName: slotName,
+        state: attendanceState,
       );
     } else {
       return null;
@@ -134,11 +141,13 @@ class UpcomingShiftArea extends StatelessWidget {
 
 @immutable
 class _UpcomingShiftPanel extends StatelessWidget {
-  final AttendanceState state;
+  final AttendanceState? state;
+  final String? slotName;
   final Shift shift;
 
   const _UpcomingShiftPanel({
     required this.state,
+    required this.slotName,
     required this.shift,
     Key? key,
   }) : super(key: key);
@@ -158,7 +167,7 @@ class _UpcomingShiftPanel extends StatelessWidget {
             padding: EdgeInsets.all(8.0),
           ),
           ShiftCard(
-            shiftName: shift.name,
+            shiftName: slotName ?? S.of(context).supermarket,
             shiftStart: shift.startTime,
             shiftEnd: shift.endTime,
             shiftUrl: shift.absoluteUrl,

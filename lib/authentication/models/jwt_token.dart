@@ -22,6 +22,8 @@ class JwtToken extends Equatable {
 
   bool get isNotExpired => !isExpired;
 
+  int? get userId => userInfo['user_id'];
+
   Map<String, dynamic> toJson() => _$JwtTokenToJson(this);
 
   bool get isExpired => JwtDecoder.isExpired(accessToken);

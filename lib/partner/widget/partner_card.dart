@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/iterable_utils.dart';
 import '../../widgets/icon_placeholder_image.dart';
 
 class PartnerCard extends StatelessWidget {
@@ -53,7 +52,7 @@ class PartnerCard extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.bodySmall,
             ),
-          Spacer()
+          Spacer(),
         ],
       ),
     );

@@ -139,6 +139,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Suggest Product"),
         "suggestProductInstructionText": MessageLookupByLibrary.simpleMessage(
             "Take a photo of the product you want to suggest."),
+        "supermarket": MessageLookupByLibrary.simpleMessage("Supermarket"),
         "takeOverMoreSharesMessage": MessageLookupByLibrary.simpleMessage(
             "In order to support the cooperative, you may take over more shares or grant the cooperative a loan."),
         "takeTraining": MessageLookupByLibrary.simpleMessage("Take Training"),

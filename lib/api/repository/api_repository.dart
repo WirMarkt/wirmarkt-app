@@ -1,9 +1,11 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
 import 'package:wir_markt/authentication/models/jwt_token.dart';
 
+import '../../data/data.dart';
 import 'status_code_exception.dart';
 
 class ApiRepository {
@@ -15,9 +17,13 @@ class ApiRepository {
     var uri = Uri.parse(apiUrl + path);
     Map<String, String> headers = await _prepareHeaders(jwtToken);
     try {
-      var res = await http.get(uri, headers: headers);
+      var res = await http
+          .get(uri, headers: headers)
+          .timeout(AppConfig.get().connectionTimeoutDuration);
       return _handleResponse(res);
     } on SocketException {
+      throw ApiException(statusCode: ApiExceptionType.connectionFailed);
+    } on TimeoutException {
       throw ApiException(statusCode: ApiExceptionType.connectionFailed);
     }
   }
@@ -28,9 +34,14 @@ class ApiRepository {
     Map<String, String> headers = await _prepareHeaders(jwtToken);
     headers['Content-Type'] = "application/json";
     try {
-      var res = await http.post(uri, body: jsonEncode(body), headers: headers);
+      var res = await http
+          .post(uri, body: jsonEncode(body), headers: headers)
+          .timeout(AppConfig.get().connectionTimeoutDuration);
+
       return _handleResponse(res);
     } on SocketException {
+      throw ApiException(statusCode: ApiExceptionType.connectionFailed);
+    } on TimeoutException {
       throw ApiException(statusCode: ApiExceptionType.connectionFailed);
     }
   }

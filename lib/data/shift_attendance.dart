@@ -10,6 +10,8 @@ class ShiftAttendance {
 
   @JsonKey(name: "reminder_email_sent") //: false,
   final bool reminderEmailSent;
+  @JsonKey(name: "slot_name") //: false,
+  final String slotName;
   @_AttendanceStateConverter()
   final AttendanceState state;
   @JsonKey(name: "excused_reason") //: "",
@@ -26,6 +28,7 @@ class ShiftAttendance {
   const ShiftAttendance({
     required this.id,
     required this.userId,
+    required this.slotName,
     required this.reminderEmailSent,
     required this.state,
     required this.excusedReason,

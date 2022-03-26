@@ -4,5 +4,6 @@
   "contentApiUrl": "https://content.wirmarkt.de",
   "memberManagementUri": "http://localhost:8000",
   "passwordResetUrl": "http://localhost:8000/accounts/password_reset/",
-  "applyForMembershipUrl": "http://localhost:8000/coop/user/draft/register"
+  "applyForMembershipUrl": "http://localhost:8000/coop/user/draft/register",
+  "connectionTimeoutSeconds": 5
 }
