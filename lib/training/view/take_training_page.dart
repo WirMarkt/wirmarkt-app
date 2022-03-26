@@ -23,23 +23,14 @@ class TakeTrainingPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(S.of(context).takeTraining),
       ),
-      body: SafeArea(
-        child: Center(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: 800,
-            ),
-            child: BlocProvider(
-              create: (context) {
-                return TrainingBloc(
-                  trainingRepository:
-                      RepositoryProvider.of<TrainingRepository>(context),
-                );
-              },
-              child: TrainingLoader(trainingName),
-            ),
-          ),
-        ),
+      body: BlocProvider(
+        create: (context) {
+          return TrainingBloc(
+            trainingRepository:
+                RepositoryProvider.of<TrainingRepository>(context),
+          );
+        },
+        child: TrainingLoader(trainingName),
       ),
     );
   }

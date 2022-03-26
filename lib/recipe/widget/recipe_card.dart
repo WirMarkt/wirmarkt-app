@@ -27,7 +27,10 @@ class RecipeCard extends StatelessWidget {
         children: [
           Card(
             margin: edgeInsets,
-            child: IconPlaceholderImage.network(imageUrl),
+            child: IconPlaceholderImage.network(
+              imageUrl,
+              aspectRatio: 1.5,
+            ),
           ),
           Padding(
             padding: edgeInsets,

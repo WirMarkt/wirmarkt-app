@@ -25,11 +25,12 @@ class PartnerCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: 130,
             width: 300,
             child: Card(
-                child: IconPlaceholderImage.network(imageUrl,
-                    fit: BoxFit.fitWidth)),
+                child: IconPlaceholderImage.network(
+              imageUrl,
+              aspectRatio: 2.3,
+            )),
           ),
           SizedBox(height: 12.0),
           Wrap(
@@ -71,7 +72,6 @@ class _PartnerPhoto extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 66,
-      height: 66,
       child: ClipRRect(
           borderRadius: BorderRadius.circular(16.0),
           child: IconPlaceholderImage.network(photoUrl, fit: BoxFit.contain)),

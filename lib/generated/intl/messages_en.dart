@@ -146,6 +146,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "today": MessageLookupByLibrary.simpleMessage("Today"),
         "tomorrow": MessageLookupByLibrary.simpleMessage("Tomorrow"),
         "training": MessageLookupByLibrary.simpleMessage("Training"),
+        "untitled": MessageLookupByLibrary.simpleMessage("Untitled"),
         "upcomingShift": MessageLookupByLibrary.simpleMessage("Upcoming shift"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "viewLicenses": MessageLookupByLibrary.simpleMessage("View licenses"),

@@ -869,6 +869,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Untitled`
+  String get untitled {
+    return Intl.message(
+      'Untitled',
+      name: 'untitled',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -143,13 +143,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Produkt vorschlagen"),
         "suggestProductInstructionText": MessageLookupByLibrary.simpleMessage(
             "Mache ein Foto von dem Produkt, das du vorschlagen möchtest."),
-        "supermarket": MessageLookupByLibrary.simpleMessage("Supermarket"),
+        "supermarket": MessageLookupByLibrary.simpleMessage("Supermarkt"),
         "takeOverMoreSharesMessage": MessageLookupByLibrary.simpleMessage(
             "Um die Genossenschaft zu unterstützen, kannst du weitere Anteile zeichnen oder der Genossenschaft ein Darlehen geben."),
         "takeTraining": MessageLookupByLibrary.simpleMessage("Schulung machen"),
         "today": MessageLookupByLibrary.simpleMessage("Heute"),
         "tomorrow": MessageLookupByLibrary.simpleMessage("Morgen"),
         "training": MessageLookupByLibrary.simpleMessage("Schulung"),
+        "untitled": MessageLookupByLibrary.simpleMessage("Unbenannt"),
         "upcomingShift":
             MessageLookupByLibrary.simpleMessage("Nächste Schicht"),
         "username": MessageLookupByLibrary.simpleMessage("Benutzername"),

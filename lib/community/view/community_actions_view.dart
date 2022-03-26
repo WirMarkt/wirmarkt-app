@@ -24,7 +24,7 @@ class CommunityActionsView extends StatelessWidget {
       ),
       MenuButton(
         title: S.of(context).partners,
-        color: AppColors.orange,
+        color: AppColors.darkBlue,
         onTap: () {
           Navigator.of(context).push(PartnersView.route());
         },

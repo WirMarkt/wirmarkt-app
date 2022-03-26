@@ -24,7 +24,7 @@ class IconPlaceholderImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2,
+      aspectRatio: aspectRatio,
       child: Image.network(
         url,
         isAntiAlias: true,
