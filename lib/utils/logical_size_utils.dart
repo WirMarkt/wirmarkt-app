@@ -11,6 +11,8 @@ enum LogicalWidth {
 
 extension MediaQueryLogicalWidth on MediaQueryData {
   LogicalWidth get logicalWidth {
+    //reduce actual sizes by some padding (devices have some very odd sizes)
+    const pad = 8;
     var logicalToMaxWidth = const {
       LogicalWidth.xs: 576,
       LogicalWidth.sm: 768,
@@ -19,7 +21,7 @@ extension MediaQueryLogicalWidth on MediaQueryData {
       LogicalWidth.xl: 1400,
     };
     for (var entry in logicalToMaxWidth.entries) {
-      if (size.width < entry.value) return entry.key;
+      if (size.width < entry.value - pad) return entry.key;
     }
     return LogicalWidth.xxl;
   }
