@@ -21,7 +21,6 @@ ShareOwner _$ShareOwnerFromJson(Map<String, dynamic> json) => ShareOwner(
       attendedWelcomeSession: json['attended_welcome_session'] as bool,
       paidMembershipFee: json['paid_membership_fee'] as bool,
       willingToGiftAShare: json['willing_to_gift_a_share'] as String?,
-      externalId: json['external_id'] as String,
       status: $enumDecode(_$MemberStatusEnumMap, json['status']),
     );
 
@@ -41,7 +40,6 @@ Map<String, dynamic> _$ShareOwnerToJson(ShareOwner instance) =>
       'attended_welcome_session': instance.attendedWelcomeSession,
       'paid_membership_fee': instance.paidMembershipFee,
       'willing_to_gift_a_share': instance.willingToGiftAShare,
-      'external_id': instance.externalId,
       'status': _$MemberStatusEnumMap[instance.status],
     };
 

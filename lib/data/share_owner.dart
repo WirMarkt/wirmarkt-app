@@ -32,8 +32,6 @@ class ShareOwner {
   final bool paidMembershipFee;
   @JsonKey(name: "willing_to_gift_a_share") //: null,
   final String? willingToGiftAShare;
-  @JsonKey(name: "external_id")
-  final String externalId;
 
   final MemberStatus status;
 
@@ -52,7 +50,6 @@ class ShareOwner {
     required this.attendedWelcomeSession,
     required this.paidMembershipFee,
     required this.willingToGiftAShare,
-    required this.externalId,
     required this.status,
   });
 
