@@ -7,7 +7,7 @@ Some features:
 * Shopping: membership card, shopping list (planned), digital and anonymous receipt (planned).
 * Decision-making: product suggestions, decision-making processes (planned).
 * Collaboration: shift planning, training material.
-* Community: impact, events (planned), presentation of the suppliers (planned).
+* Community: impact, presentation of the suppliers, events (planned).
 
 # Requirements
 
