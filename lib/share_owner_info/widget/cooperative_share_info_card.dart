@@ -48,10 +48,6 @@ class CooperativeShareInfoCard extends StatelessWidget {
     ));
   }
 
-  void _launchAccountInBrowser() {
-    launch(
-      AppConfig.get().memberManagementUri,
-      forceSafariVC: false,
-    );
-  }
+  void _launchAccountInBrowser() =>
+      launchUrl(AppConfig.get().memberManagementUri);
 }

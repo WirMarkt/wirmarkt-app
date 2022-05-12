@@ -879,6 +879,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Open Chat`
+  String get openChat {
+    return Intl.message(
+      'Open Chat',
+      name: 'openChat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Username and password are the same as for this app.`
+  String get passwordAndUsernameAreSame {
+    return Intl.message(
+      'Username and password are the same as for this app.',
+      name: 'passwordAndUsernameAreSame',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We use a self-powered, secure and versatile chat software called Rocket.Chat, which works very similar to Slack or Mattermost. It allows you to interact with other members and stay up to date with news and announcements.`
+  String get rocketChatIntro {
+    return Intl.message(
+      'We use a self-powered, secure and versatile chat software called Rocket.Chat, which works very similar to Slack or Mattermost. It allows you to interact with other members and stay up to date with news and announcements.',
+      name: 'rocketChatIntro',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -103,8 +103,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "notAllowedToShop": MessageLookupByLibrary.simpleMessage(
             "Derzeit kannst du nicht im Laden einkaufen."),
         "notes": MessageLookupByLibrary.simpleMessage("Notizen"),
+        "openChat": MessageLookupByLibrary.simpleMessage("Chat öffnen"),
         "partners": MessageLookupByLibrary.simpleMessage("Partner:innen"),
         "password": MessageLookupByLibrary.simpleMessage("Passwort"),
+        "passwordAndUsernameAreSame": MessageLookupByLibrary.simpleMessage(
+            "Benutzername und Passwort sind dieselben wie bei dieser App."),
         "pending": MessageLookupByLibrary.simpleMessage("Ausstehend"),
         "pleaseLogInToContinue": MessageLookupByLibrary.simpleMessage(
             "Bitte melde dich an um fortzufahren"),
@@ -116,6 +119,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("App zurücksetzen"),
         "resultLabel": MessageLookupByLibrary.simpleMessage("Resultat"),
         "retry": MessageLookupByLibrary.simpleMessage("Erneut versuchen"),
+        "rocketChatIntro": MessageLookupByLibrary.simpleMessage(
+            "Wir nutzen eine selbst betriebene, sichere und vielseitige Chat Software namens Rocket.Chat, die sehr ähnlich wie Slack oder Mattermost funktioniert. Dort kannst du dich mit anderen Mitgliedern austauschen und bleibst bei Neuigkeiten und Ankündigungen am Ball."),
         "scanBarCodeTitle":
             MessageLookupByLibrary.simpleMessage("Barcode scannen"),
         "scanMembershipBarcodeExplanation":

@@ -11,9 +11,10 @@ AppConfig _$AppConfigFromJson(Map<String, dynamic> json) => AppConfig(
       apiUrl: json['apiUrl'] as String,
       contentApiUrl: json['contentApiUrl'] as String? ?? "",
       passwordResetUrl: json['passwordResetUrl'] as String? ?? "",
+      chatUrl: json['chatUrl'] as String? ?? "",
       applyForMembershipUrl: json['applyForMembershipUrl'] as String? ?? "",
       connectionTimeoutSeconds: json['connectionTimeoutSeconds'] as int? ?? 30,
-      memberManagementUri: json['memberManagementUri'] as String,
+      memberManagementUrl: json['memberManagementUrl'] as String,
     );
 
 Map<String, dynamic> _$AppConfigToJson(AppConfig instance) => <String, dynamic>{
@@ -21,7 +22,8 @@ Map<String, dynamic> _$AppConfigToJson(AppConfig instance) => <String, dynamic>{
       'apiUrl': instance.apiUrl,
       'contentApiUrl': instance.contentApiUrl,
       'passwordResetUrl': instance.passwordResetUrl,
+      'chatUrl': instance.chatUrl,
       'applyForMembershipUrl': instance.applyForMembershipUrl,
-      'memberManagementUri': instance.memberManagementUri,
+      'memberManagementUrl': instance.memberManagementUrl,
       'connectionTimeoutSeconds': instance.connectionTimeoutSeconds,
     };

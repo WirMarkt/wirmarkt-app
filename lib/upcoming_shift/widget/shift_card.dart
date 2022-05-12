@@ -86,12 +86,8 @@ class ShiftCard extends StatelessWidget {
     ));
   }
 
-  void _launchShiftEditorInBrowser() {
-    launch(
-      AppConfig.get().memberManagementUri + shiftUrl,
-      forceSafariVC: false,
-    );
-  }
+  void _launchShiftEditorInBrowser() =>
+      launchUrl(AppConfig.get().memberManagementUri.resolve(shiftUrl));
 
   String _getShiftLabel(S dict, AttendanceState shiftState) {
     switch (shiftState) {

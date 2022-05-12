@@ -14,6 +14,7 @@ class AppConfig {
   Duration get connectionTimeoutDuration =>
       Duration(seconds: connectionTimeoutSeconds);
 
+
   static AppConfig get() => _appConfig;
 
   const AppConfig({
@@ -21,9 +22,10 @@ class AppConfig {
     required this.apiUrl,
     this.contentApiUrl = "",
     this.passwordResetUrl = "",
+    this.chatUrl = "",
     this.applyForMembershipUrl = "",
     this.connectionTimeoutSeconds = 30,
-    required this.memberManagementUri,
+    required this.memberManagementUrl,
   });
 
   final String orgName;
@@ -31,14 +33,18 @@ class AppConfig {
   final String apiUrl;
   final String contentApiUrl;
   final String passwordResetUrl;
+  final String chatUrl;
   final String applyForMembershipUrl;
-  final String memberManagementUri;
+  final String memberManagementUrl;
   final int connectionTimeoutSeconds;
 
   factory AppConfig.fromJson(Map<String, dynamic> json) =>
       _$AppConfigFromJson(json);
 
-  Uri? get passwordResetUri => Uri.parse(passwordResetUrl);
+  Uri get passwordResetUri => Uri.parse(passwordResetUrl);
+  Uri get applyForMembershipUri => Uri.parse(applyForMembershipUrl);
+  Uri get memberManagementUri => Uri.parse(memberManagementUrl);
+  Uri get chatUri => Uri.parse(chatUrl);
 
   Map<String, dynamic> toJson() => _$AppConfigToJson(this);
 

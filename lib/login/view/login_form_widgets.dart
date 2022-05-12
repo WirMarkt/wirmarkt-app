@@ -117,15 +117,10 @@ class _ResetPasswordButton extends StatelessWidget {
     );
   }
 
-  void _launchResetPasswordInBrowser(String username) {
-    String _url = AppConfig.get()
-        .passwordResetUri!
-        .replace(queryParameters: {'email': username}).toString();
-    launch(
-      _url,
-      forceSafariVC: false,
-    );
-  }
+  void _launchResetPasswordInBrowser(String username) =>
+      launchUrl(AppConfig.get()
+          .passwordResetUri
+          .replace(queryParameters: {'email': username}));
 }
 
 class _ApplyForMembershipButton extends StatelessWidget {
@@ -138,11 +133,6 @@ class _ApplyForMembershipButton extends StatelessWidget {
     );
   }
 
-  void _launchApplyForMembershipInBrowser() {
-    String _url = AppConfig.get().applyForMembershipUrl.toString();
-    launch(
-      _url,
-      forceSafariVC: false,
-    );
-  }
+  void _launchApplyForMembershipInBrowser() =>
+      launchUrl(AppConfig.get().applyForMembershipUri);
 }

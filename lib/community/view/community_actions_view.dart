@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wir_markt/community/view/chat_info_page.dart';
 import 'package:wir_markt/wm_design.dart';
 
 import '../../generated/l10n.dart';
@@ -29,6 +30,14 @@ class CommunityActionsView extends StatelessWidget {
           Navigator.of(context).push(PartnersView.route());
         },
         image: const AssetImage("images/menu/008-rafting.png"),
+      ),
+      MenuButton(
+        title: "Chat",
+        color: AppColors.orange,
+        onTap: () {
+          Navigator.of(context).push(ChatInfoPage.route());
+        },
+        image: const AssetImage("images/menu/messages.png"),
       ),
     ];
 

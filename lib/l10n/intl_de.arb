@@ -81,5 +81,8 @@
   "yourUpcomingShift": "Deine nächste Schicht",
   "partners": "Partner:innen",
   "supermarket": "Supermarkt",
-  "untitled": "Unbenannt"
+  "untitled": "Unbenannt",
+  "openChat": "Chat öffnen",
+  "passwordAndUsernameAreSame": "Benutzername und Passwort sind dieselben wie bei dieser App.",
+  "rocketChatIntro": "Wir nutzen eine selbst betriebene, sichere und vielseitige Chat Software namens Rocket.Chat, die sehr ähnlich wie Slack oder Mattermost funktioniert. Dort kannst du dich mit anderen Mitgliedern austauschen und bleibst bei Neuigkeiten und Ankündigungen am Ball."
 }
