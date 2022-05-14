@@ -10,7 +10,7 @@ import '../../widgets/widgets.dart';
 import 'share_owner_info_column.dart';
 
 class ShareOwnerInfoArea extends StatefulWidget {
-  const ShareOwnerInfoArea({Key? key}) : super(key: key);
+  const ShareOwnerInfoArea({super.key});
 
   @override
   State<ShareOwnerInfoArea> createState() => _ShareOwnerInfoAreaState();

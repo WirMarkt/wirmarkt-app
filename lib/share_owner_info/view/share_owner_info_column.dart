@@ -9,9 +9,9 @@ class ShareOwnerInfoColumn extends StatelessWidget {
   final User user;
 
   const ShareOwnerInfoColumn({
-    Key? key,
+    super.key,
     required this.user,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +31,7 @@ class ShareOwnerInfoColumn extends StatelessWidget {
 class _BankAccountInfoPanel extends StatelessWidget {
   final ShareOwner shareOwner;
 
-  const _BankAccountInfoPanel(
-    this.shareOwner, {
-    Key? key,
-  }) : super(key: key);
+  const _BankAccountInfoPanel(this.shareOwner);
 
   @override
   Widget build(BuildContext context) {

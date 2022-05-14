@@ -6,8 +6,7 @@ class ErrorDisplay extends StatelessWidget {
   final void Function()? onRetryPressed;
 
   const ErrorDisplay(
-      {Key? key, required this.errorMessage, this.onRetryPressed})
-      : super(key: key);
+      {super.key, required this.errorMessage, this.onRetryPressed});
 
   @override
   Widget build(BuildContext context) {

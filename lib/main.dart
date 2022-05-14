@@ -41,8 +41,8 @@ void main({String? env = 'prod'}) async {
 
 class App extends StatelessWidget {
   App({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   late final _apiRepository = ApiRepository(AppConfig.get().apiUrl);
   late final _contentApiRepository =
@@ -92,7 +92,7 @@ class App extends StatelessWidget {
 }
 
 class AppView extends StatefulWidget {
-  const AppView({Key? key}) : super(key: key);
+  const AppView({super.key});
 
   @override
   State<AppView> createState() => _AppViewState();
@@ -167,6 +167,7 @@ class _AppViewState extends State<AppView> {
       colorScheme: colorScheme,
     );
     return theme.copyWith(
+        useMaterial3: true,
         appBarTheme: theme.appBarTheme.copyWith(
           backgroundColor: colorScheme.background,
           foregroundColor: colorScheme.primary,

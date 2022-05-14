@@ -9,9 +9,9 @@ class PosIdColumn extends StatelessWidget {
   final User user;
 
   const PosIdColumn({
-    Key? key,
+    super.key,
     required this.user,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -46,10 +46,9 @@ class PosIdColumn extends StatelessWidget {
 
 class _MemberIDDetails extends StatelessWidget {
   const _MemberIDDetails({
-    Key? key,
     required this.canShop,
     required this.qrCode,
-  }) : super(key: key);
+  });
 
   final bool canShop;
   final String? qrCode;
@@ -94,9 +93,8 @@ class _MemberIDDetails extends StatelessWidget {
 
 class _AllowedToShopDetails extends StatelessWidget {
   const _AllowedToShopDetails({
-    Key? key,
     required this.canShop,
-  }) : super(key: key);
+  });
 
   final bool canShop;
 

@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
     return MaterialPageRoute<void>(builder: (_) => const HomePage());
   }
 
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   _HomePageState createState() => _HomePageState();

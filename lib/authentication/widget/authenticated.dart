@@ -9,8 +9,7 @@ class Authenticated extends StatefulWidget {
   final void Function(AuthenticationState state) onAuthenticated;
 
   const Authenticated(
-      {required this.child, required this.onAuthenticated, Key? key})
-      : super(key: key);
+      {required this.child, required this.onAuthenticated, super.key});
 
   @override
   State<Authenticated> createState() => _AuthenticatedState();

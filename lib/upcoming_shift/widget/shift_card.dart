@@ -19,8 +19,8 @@ class ShiftCard extends StatelessWidget {
     required this.shiftStart,
     required this.shiftUrl,
     this.shiftState,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +87,8 @@ class ShiftCard extends StatelessWidget {
   }
 
   void _launchShiftEditorInBrowser() =>
-      launchUrl(AppConfig.get().memberManagementUri.resolve(shiftUrl));
+      launchUrl(AppConfig.get().memberManagementUri.resolve(shiftUrl),
+          mode: LaunchMode.externalApplication);
 
   String _getShiftLabel(S dict, AttendanceState shiftState) {
     switch (shiftState) {

@@ -48,5 +48,6 @@ class ChatInfoPage extends StatelessWidget {
     );
   }
 
-  void _launchChat() => launchUrl(AppConfig.get().chatUri);
+  void _launchChat() =>
+      launchUrl(AppConfig.get().chatUri, mode: LaunchMode.externalApplication);
 }

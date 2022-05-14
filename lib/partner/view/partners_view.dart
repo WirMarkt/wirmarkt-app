@@ -11,7 +11,7 @@ class PartnersView extends StatelessWidget {
     return MaterialPageRoute<void>(builder: (_) => const PartnersView());
   }
 
-  const PartnersView({Key? key}) : super(key: key);
+  const PartnersView({super.key});
 
   @override
   Widget build(BuildContext context) {

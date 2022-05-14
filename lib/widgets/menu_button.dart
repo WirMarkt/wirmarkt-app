@@ -11,16 +11,17 @@ class MenuButton extends StatelessWidget {
   final Color? color;
 
   const MenuButton(
-      {Key? key,
+      {super.key,
       required this.image,
       this.onTap,
       this.color,
-      required this.title})
-      : super(key: key);
+      required this.title});
 
   @override
   Widget build(BuildContext context) {
-    var cardColor = color ?? Theme.of(context).buttonTheme.colorScheme?.surface ?? Theme.of(context).cardColor;
+    var cardColor = color ??
+        Theme.of(context).buttonTheme.colorScheme?.surface ??
+        Theme.of(context).cardColor;
     var colorFilter = ColorFilter.matrix(<double>[
       cardColor.red / 255.0, 0.5, 0.5, 0, 0, //
       0.5, cardColor.green / 255.0, 0.5, 0, 0, //

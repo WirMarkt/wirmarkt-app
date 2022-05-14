@@ -8,7 +8,7 @@ import '../widget/partner_card.dart';
 class PartnerListView extends StatelessWidget {
   final List<Partner> partners;
 
-  const PartnerListView({Key? key, required this.partners}) : super(key: key);
+  const PartnerListView({super.key, required this.partners});
 
   @override
   Widget build(BuildContext context) {

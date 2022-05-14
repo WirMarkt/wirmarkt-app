@@ -10,7 +10,7 @@ import '../repository/recipe_repository.dart';
 class RecipeDetailPage extends StatelessWidget {
   final Recipe recipe;
 
-  const RecipeDetailPage({Key? key, required this.recipe}) : super(key: key);
+  const RecipeDetailPage({super.key, required this.recipe});
 
   @override
   Widget build(BuildContext context) {
@@ -77,9 +77,8 @@ class RecipeDetailPage extends StatelessWidget {
 
 class _IngredientsTable extends StatelessWidget {
   const _IngredientsTable({
-    Key? key,
     required this.recipe,
-  }) : super(key: key);
+  });
 
   final Recipe recipe;
 
@@ -120,9 +119,8 @@ class _IngredientsTable extends StatelessWidget {
 
 class _TagBar extends StatelessWidget {
   const _TagBar({
-    Key? key,
     required this.recipe,
-  }) : super(key: key);
+  });
 
   final Recipe recipe;
 

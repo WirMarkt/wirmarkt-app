@@ -4,7 +4,7 @@ import '../../generated/l10n.dart';
 import 'pos_id_area.dart';
 
 class PosIdPage extends StatelessWidget {
-  const PosIdPage({Key? key}) : super(key: key);
+  const PosIdPage({super.key});
 
   static Route route() {
     return MaterialPageRoute<void>(builder: (_) => const PosIdPage());

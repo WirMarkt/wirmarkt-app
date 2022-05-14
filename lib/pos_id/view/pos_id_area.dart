@@ -10,7 +10,7 @@ import '../../user/bloc/user_bloc.dart';
 import 'pos_id_column.dart';
 
 class PosIdArea extends StatefulWidget {
-  const PosIdArea({Key? key}) : super(key: key);
+  const PosIdArea({super.key});
 
   @override
   State<PosIdArea> createState() => _PosIdAreaState();

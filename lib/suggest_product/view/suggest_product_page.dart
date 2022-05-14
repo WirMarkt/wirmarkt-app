@@ -5,7 +5,7 @@ import '../../generated/l10n.dart';
 import 'review_product_suggestion_page.dart';
 
 class SuggestProductPage extends StatefulWidget {
-  const SuggestProductPage({Key? key}) : super(key: key);
+  const SuggestProductPage({super.key});
 
   static Route route() {
     return MaterialPageRoute<void>(builder: (_) => const SuggestProductPage());
@@ -119,9 +119,7 @@ class SuggestProductPageState extends State<SuggestProductPage> {
 }
 
 class _CameraPreviewInstructions extends StatelessWidget {
-  const _CameraPreviewInstructions({
-    Key? key,
-  }) : super(key: key);
+  const _CameraPreviewInstructions();
 
   @override
   Widget build(BuildContext context) {
@@ -137,9 +135,7 @@ class _CameraPreviewInstructions extends StatelessWidget {
 }
 
 class _CameraFailureNotice extends StatelessWidget {
-  const _CameraFailureNotice({
-    Key? key,
-  }) : super(key: key);
+  const _CameraFailureNotice();
 
   @override
   Widget build(BuildContext context) {

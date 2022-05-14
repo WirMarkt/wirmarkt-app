@@ -8,12 +8,11 @@ class IconPlaceholderImage extends StatelessWidget {
   final BoxFit? fit;
 
   const IconPlaceholderImage(
-      {Key? key,
+      {super.key,
       required this.url,
       required this.icon,
       this.aspectRatio = 1.0,
-      this.fit = BoxFit.fitWidth})
-      : super(key: key);
+      this.fit = BoxFit.fitWidth});
 
   factory IconPlaceholderImage.network(String src,
       {double aspectRatio = 1.0, IconData icon = Icons.image, BoxFit? fit}) {

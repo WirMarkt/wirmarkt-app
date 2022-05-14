@@ -10,7 +10,7 @@ import '../../widgets/menu_button.dart';
 import '../../widgets/responsive_sized_wrap.dart';
 
 class CommunityActionsView extends StatelessWidget {
-  const CommunityActionsView({Key? key}) : super(key: key);
+  const CommunityActionsView({super.key});
 
   @override
   Widget build(BuildContext context) {

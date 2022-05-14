@@ -4,7 +4,7 @@ import '../../generated/l10n.dart';
 import 'share_owner_info_area.dart';
 
 class ShareOwnerInfoPage extends StatelessWidget {
-  const ShareOwnerInfoPage({Key? key}) : super(key: key);
+  const ShareOwnerInfoPage({super.key});
 
   static Route route() {
     return MaterialPageRoute<void>(builder: (_) => const ShareOwnerInfoPage());

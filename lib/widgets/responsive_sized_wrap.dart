@@ -4,11 +4,11 @@ import '../utils/logical_size_utils.dart';
 
 class ResponsiveSizedWrap extends StatelessWidget {
   const ResponsiveSizedWrap({
-    Key? key,
+    super.key,
     required this.children,
     this.padding = 8,
     this.columnCount = const {},
-  }) : super(key: key);
+  });
 
   final List<Widget> children;
   final double padding;

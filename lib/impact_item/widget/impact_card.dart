@@ -11,13 +11,13 @@ class ImpactCard extends StatelessWidget {
   final BoxFit? fit;
 
   const ImpactCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.imageUrl,
     this.explanation,
     this.fit,
     this.backgroundColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -49,8 +49,7 @@ class ImpactCard extends StatelessWidget {
                       title,
                       textAlign: TextAlign.center,
                       maxLines: 1,
-                      style:
-                          Theme.of(context).textTheme.titleLarge,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                   )),
               if (explanation != null)

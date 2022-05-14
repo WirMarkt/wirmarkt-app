@@ -11,7 +11,7 @@ import 'training_view.dart';
 class TrainingLoader extends StatefulWidget {
   final String trainingName;
 
-  const TrainingLoader(this.trainingName, {Key? key}) : super(key: key);
+  const TrainingLoader(this.trainingName, {super.key});
 
   @override
   State<TrainingLoader> createState() => _TrainingLoaderState();

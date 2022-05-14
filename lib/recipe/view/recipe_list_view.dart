@@ -12,7 +12,7 @@ import 'recipe_detail_page.dart';
 class RecipeListView extends StatelessWidget {
   final List<Recipe> recipes;
 
-  const RecipeListView({Key? key, required this.recipes}) : super(key: key);
+  const RecipeListView({super.key, required this.recipes});
 
   @override
   Widget build(BuildContext context) {

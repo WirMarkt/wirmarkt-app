@@ -10,12 +10,12 @@ class RecipeCard extends StatelessWidget {
   final GestureTapCallback? onTap;
 
   const RecipeCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.imageUrl,
     this.explanation,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

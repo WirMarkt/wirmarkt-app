@@ -12,8 +12,8 @@ class PaymentInfoCard extends StatelessWidget {
     required this.sepaIban,
     required this.sepaAccountHolder,
     required this.signedSepaMandate,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -70,5 +70,6 @@ class PaymentInfoCard extends StatelessWidget {
   }
 
   void _launchAccountInBrowser() =>
-      launchUrl(AppConfig.get().memberManagementUri);
+      launchUrl(AppConfig.get().memberManagementUri,
+          mode: LaunchMode.externalApplication);
 }

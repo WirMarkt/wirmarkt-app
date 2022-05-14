@@ -16,7 +16,7 @@ class TrainingView extends StatefulWidget {
   final Training training;
   late final TrainingTranslation? translation;
 
-  TrainingView({Key? key, required this.training}) : super(key: key) {
+  TrainingView({super.key, required this.training}) {
     try {
       translation = training.getTranslationForLocale();
     } on StateError {
@@ -76,10 +76,7 @@ class _TrainingViewState extends State<TrainingView> {
 }
 
 class _QuestionView extends StatelessWidget {
-  const _QuestionView(
-    this.question, {
-    Key? key,
-  }) : super(key: key);
+  const _QuestionView(this.question);
 
   final Question question;
 
@@ -122,10 +119,7 @@ class _QuestionView extends StatelessWidget {
 }
 
 class _TrainingSectionView extends StatelessWidget {
-  const _TrainingSectionView(
-    this.trainingSection, {
-    Key? key,
-  }) : super(key: key);
+  const _TrainingSectionView(this.trainingSection);
 
   final TrainingSection trainingSection;
 
@@ -193,8 +187,7 @@ class _AnswerSelectionColumn extends StatefulWidget {
 
   const _AnswerSelectionColumn({
     required this.question,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   State<_AnswerSelectionColumn> createState() => _AnswerSelectionColumnState();
@@ -254,10 +247,9 @@ class _AnswerSelectionColumnState extends State<_AnswerSelectionColumn> {
 
 class _TrainingIntro extends StatelessWidget {
   const _TrainingIntro({
-    Key? key,
     required this.training,
     required this.translation,
-  }) : super(key: key);
+  });
 
   final Training training;
   final TrainingTranslation? translation;

@@ -6,7 +6,7 @@ import '../repository/impact_item_repository.dart';
 import 'impact_item_loader.dart';
 
 class ImpactItemView extends StatelessWidget {
-  const ImpactItemView({Key? key}) : super(key: key);
+  const ImpactItemView({super.key});
 
   @override
   Widget build(BuildContext context) {

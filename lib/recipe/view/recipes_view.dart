@@ -11,7 +11,7 @@ class RecipesView extends StatelessWidget {
     return MaterialPageRoute<void>(builder: (_) => const RecipesView());
   }
 
-  const RecipesView({Key? key}) : super(key: key);
+  const RecipesView({super.key});
 
   @override
   Widget build(BuildContext context) {

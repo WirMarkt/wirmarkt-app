@@ -10,7 +10,7 @@ import '../bloc/recipe_bloc.dart';
 import 'recipe_list_view.dart';
 
 class RecipeListLoader extends StatefulWidget {
-  const RecipeListLoader({Key? key}) : super(key: key);
+  const RecipeListLoader({super.key});
 
   @override
   State<RecipeListLoader> createState() => _RecipeListLoaderState();

@@ -12,7 +12,7 @@ import '../bloc/upcoming_shift_bloc.dart';
 import '../widget/shift_card.dart';
 
 class UpcomingShiftArea extends StatelessWidget {
-  const UpcomingShiftArea({Key? key}) : super(key: key);
+  const UpcomingShiftArea({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -149,8 +149,7 @@ class _UpcomingShiftPanel extends StatelessWidget {
     required this.state,
     required this.slotName,
     required this.shift,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

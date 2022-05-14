@@ -9,8 +9,8 @@ class MemberShipStateInfoCard extends StatelessWidget {
 
   const MemberShipStateInfoCard(
     this.memberShipStateMessage, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -39,5 +39,6 @@ class MemberShipStateInfoCard extends StatelessWidget {
   }
 
   void _launchAccountInBrowser() =>
-      launchUrl(AppConfig.get().memberManagementUri);
+      launchUrl(AppConfig.get().memberManagementUri,
+          mode: LaunchMode.externalApplication);
 }

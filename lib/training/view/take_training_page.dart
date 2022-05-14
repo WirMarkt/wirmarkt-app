@@ -14,8 +14,7 @@ class TakeTrainingPage extends StatelessWidget {
         builder: (_) => TakeTrainingPage(trainingName: trainingName));
   }
 
-  const TakeTrainingPage({Key? key, required this.trainingName})
-      : super(key: key);
+  const TakeTrainingPage({super.key, required this.trainingName});
 
   @override
   Widget build(BuildContext context) {

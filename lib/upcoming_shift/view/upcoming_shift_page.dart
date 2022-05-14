@@ -9,7 +9,7 @@ import '../repository/upcoming_shift_repository.dart';
 import 'upcoming_shift_area.dart';
 
 class UpcomingShiftPage extends StatelessWidget {
-  const UpcomingShiftPage({Key? key}) : super(key: key);
+  const UpcomingShiftPage({super.key});
 
   static Route route() {
     return MaterialPageRoute<void>(builder: (_) => const UpcomingShiftPage());

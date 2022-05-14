@@ -11,7 +11,7 @@ import 'package:video_player/video_player.dart';
 class RemoteVideo extends StatefulWidget {
   final String uri;
 
-  const RemoteVideo({Key? key, required this.uri}) : super(key: key);
+  const RemoteVideo({super.key, required this.uri});
 
   @override
   _RemoteVideoState createState() => _RemoteVideoState();
@@ -68,8 +68,7 @@ class _RemoteVideoState extends State<RemoteVideo> {
 }
 
 class _ControlsOverlay extends StatelessWidget {
-  const _ControlsOverlay({Key? key, required this.controller})
-      : super(key: key);
+  const _ControlsOverlay({required this.controller});
 
   static const _examplePlaybackRates = [
     0.25,

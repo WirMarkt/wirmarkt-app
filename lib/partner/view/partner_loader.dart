@@ -9,7 +9,7 @@ import '../bloc/partner_bloc.dart';
 import 'partner_list_view.dart';
 
 class PartnerLoader extends StatefulWidget {
-  const PartnerLoader({Key? key}) : super(key: key);
+  const PartnerLoader({super.key});
 
   @override
   State<PartnerLoader> createState() => _PartnerLoaderState();

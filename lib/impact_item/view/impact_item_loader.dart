@@ -9,7 +9,7 @@ import '../bloc/impact_item_bloc.dart';
 import 'impact_item_list_view.dart';
 
 class ImpactItemLoader extends StatefulWidget {
-  const ImpactItemLoader({Key? key}) : super(key: key);
+  const ImpactItemLoader({super.key});
 
   @override
   State<ImpactItemLoader> createState() => _ImpactItemLoaderState();

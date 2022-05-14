@@ -8,8 +8,7 @@ import '../../home/view/home_page.dart';
 class ReviewProductSuggestionPage extends StatelessWidget {
   final String imagePath;
 
-  const ReviewProductSuggestionPage({Key? key, required this.imagePath})
-      : super(key: key);
+  const ReviewProductSuggestionPage({super.key, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {

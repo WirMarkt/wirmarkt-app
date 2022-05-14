@@ -9,12 +9,12 @@ class PartnerCard extends StatelessWidget {
   final String? explanation;
 
   const PartnerCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.imageUrl,
     this.photoUrlList = const [],
     this.explanation,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -64,9 +64,8 @@ class _PartnerPhoto extends StatelessWidget {
   final String photoUrl;
 
   const _PartnerPhoto({
-    Key? key,
     required this.photoUrl,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

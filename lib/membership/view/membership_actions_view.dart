@@ -12,7 +12,7 @@ import '../../widgets/menu_button.dart';
 import '../../widgets/responsive_sized_wrap.dart';
 
 class MembershipActionsView extends StatelessWidget {
-  const MembershipActionsView({Key? key}) : super(key: key);
+  const MembershipActionsView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -10,8 +10,7 @@ import '../widget/impact_card.dart';
 class ImpactItemListView extends StatelessWidget {
   final List<ImpactItem> impactItems;
 
-  const ImpactItemListView({Key? key, required this.impactItems})
-      : super(key: key);
+  const ImpactItemListView({super.key, required this.impactItems});
 
   @override
   Widget build(BuildContext context) {

@@ -14,7 +14,6 @@ class AppConfig {
   Duration get connectionTimeoutDuration =>
       Duration(seconds: connectionTimeoutSeconds);
 
-
   static AppConfig get() => _appConfig;
 
   const AppConfig({
@@ -42,8 +41,11 @@ class AppConfig {
       _$AppConfigFromJson(json);
 
   Uri get passwordResetUri => Uri.parse(passwordResetUrl);
+
   Uri get applyForMembershipUri => Uri.parse(applyForMembershipUrl);
+
   Uri get memberManagementUri => Uri.parse(memberManagementUrl);
+
   Uri get chatUri => Uri.parse(chatUrl);
 
   Map<String, dynamic> toJson() => _$AppConfigToJson(this);
