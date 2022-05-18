@@ -46,6 +46,8 @@ class SuggestProductPageState extends State<SuggestProductPage> {
         firstCamera,
         // Define the resolution to use.
         ResolutionPreset.medium,
+        //disable audio
+        enableAudio: false,
       );
 
       // Next, initialize the controller. This returns a Future.
