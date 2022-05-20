@@ -909,6 +909,16 @@ class S {
       args: [],
     );
   }
+
+  /// `No shifts that require help`
+  String get noShiftsThatRequireHelp {
+    return Intl.message(
+      'No shifts that require help',
+      name: 'noShiftsThatRequireHelp',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

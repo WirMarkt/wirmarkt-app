@@ -98,6 +98,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Keine Mitgliedschaft"),
         "noRecipesInYourLanguageFound": MessageLookupByLibrary.simpleMessage(
             "Keine Rezepte in deiner Sprache gefunden."),
+        "noShiftsThatRequireHelp": MessageLookupByLibrary.simpleMessage(
+            "Keine Schicht benötigt Hilfe"),
         "noUpcomingShift":
             MessageLookupByLibrary.simpleMessage("Keine Schicht geplant"),
         "notAllowedToShop": MessageLookupByLibrary.simpleMessage(

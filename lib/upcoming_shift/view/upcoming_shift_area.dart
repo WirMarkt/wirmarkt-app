@@ -63,49 +63,54 @@ class UpcomingShiftArea extends StatelessWidget {
     ShiftsNeedingHelpState shiftsNeedingHelpState,
     BuildContext context,
   ) {
-    var upcomingShiftPanel =
-        _createUpcomingShiftPanel(upcomingShiftState, context);
-    var shiftsNeedingHelpPanel =
-        _createShiftsNeedingHelpPanel(shiftsNeedingHelpState, context);
+    var upcomingShift = upcomingShiftState.shift;
+    var shiftsNeedingHelp = shiftsNeedingHelpState.shiftsNeedingHelp;
 
+    const textPadding = const EdgeInsets.all(8.0);
     return Column(
       children: [
-        if (upcomingShiftPanel != null) upcomingShiftPanel,
-        shiftsNeedingHelpPanel,
+        if (upcomingShift != null)
+          _createUpcomingShiftPanel(upcomingShift, context),
+        if (upcomingShift == null)
+          Padding(
+            padding: textPadding,
+            child: Text(S.of(context).noUpcomingShift + "."),
+          ),
+        if (shiftsNeedingHelp.isNotEmpty)
+          _createShiftsNeedingHelpPanel(shiftsNeedingHelp, context),
+        if (shiftsNeedingHelp.isEmpty)
+          Padding(
+            padding: textPadding,
+            child: Text(S.of(context).noShiftsThatRequireHelp + "."),
+          ),
       ],
     );
   }
 
-  _UpcomingShiftPanel? _createUpcomingShiftPanel(
-      UpcomingShiftState upcomingShiftState, BuildContext context) {
-    if (upcomingShiftState.shift != null) {
-      var shift = upcomingShiftState.shift;
-      var authState = context.read<AuthenticationBloc>().state;
-      var userId = authState.jwtToken.userId;
-      AttendanceState? attendanceState;
-      String? slotName;
-      try {
-        ShiftAttendance shiftAttendance =
-            shift!.attendances.firstWhere((e) => e.userId == userId);
-        attendanceState = shiftAttendance.state;
-        slotName = shiftAttendance.slotName;
-      } on StateError {
-        //no shift attendance found
-      }
-
-      return _UpcomingShiftPanel(
-        shift: upcomingShiftState.shift!,
-        slotName: slotName,
-        state: attendanceState,
-      );
-    } else {
-      return null;
+  _UpcomingShiftPanel _createUpcomingShiftPanel(
+      Shift shift, BuildContext context) {
+    var authState = context.read<AuthenticationBloc>().state;
+    var userId = authState.jwtToken.userId;
+    AttendanceState? attendanceState;
+    String? slotName;
+    try {
+      ShiftAttendance shiftAttendance =
+          shift!.attendances.firstWhere((e) => e.userId == userId);
+      attendanceState = shiftAttendance.state;
+      slotName = shiftAttendance.slotName;
+    } on StateError {
+      //no shift attendance found
     }
+
+    return _UpcomingShiftPanel(
+      shift: shift,
+      slotName: slotName,
+      state: attendanceState,
+    );
   }
 
   Widget _createShiftsNeedingHelpPanel(
-      ShiftsNeedingHelpState shiftsNeedingHelpState, BuildContext context) {
-    var shifts = shiftsNeedingHelpState.shiftsNeedingHelp;
+      List<Shift> shiftsNeedingHelp, BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(24.0),
       child: Column(
@@ -118,7 +123,7 @@ class UpcomingShiftArea extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(8.0),
           ),
-          ...shifts
+          ...shiftsNeedingHelp
               .take(10)
               .map((e) {
                 return [

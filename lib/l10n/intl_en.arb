@@ -84,5 +84,6 @@
   "untitled": "Untitled",
   "openChat": "Open Chat",
   "passwordAndUsernameAreSame": "Username and password are the same as for this app.",
-  "rocketChatIntro": "We use a self-powered, secure and versatile chat software called Rocket.Chat, which works very similar to Slack or Mattermost. It allows you to interact with other members and stay up to date with news and announcements."
+  "rocketChatIntro": "We use a self-powered, secure and versatile chat software called Rocket.Chat, which works very similar to Slack or Mattermost. It allows you to interact with other members and stay up to date with news and announcements.",
+  "noShiftsThatRequireHelp": "No shifts that require help"
 }
