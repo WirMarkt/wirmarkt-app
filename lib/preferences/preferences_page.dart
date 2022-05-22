@@ -33,7 +33,7 @@ class PreferencesPageState extends State<PreferencesPage> {
                   children: [
                     Text(S.of(context).changeAccount,
                         style: textTheme.titleMedium),
-                    OutlinedButton(
+                    ElevatedButton(
                       child: Text(S.of(context).logOut),
                       onPressed: () async {
                         context
@@ -43,7 +43,7 @@ class PreferencesPageState extends State<PreferencesPage> {
                     ),
                     SizedBox(height: 16),
                     Text(S.of(context).licences, style: textTheme.titleMedium),
-                    OutlinedButton(
+                    ElevatedButton(
                       child: Text(S.of(context).viewLicenses + "..."),
                       onPressed: () async {
                         showLicensePage(

@@ -900,10 +900,10 @@ class S {
     );
   }
 
-  /// `We use a self-powered, secure and versatile chat software called Rocket.Chat, which works very similar to Slack or Mattermost. It allows you to interact with other members and stay up to date with news and announcements.`
+  /// `We use the self-powered, secure and versatile chat software Rocket.Chat, which works very similar to Slack or Mattermost. It allows you to interact with other members and stay up to date with news and announcements.`
   String get rocketChatIntro {
     return Intl.message(
-      'We use a self-powered, secure and versatile chat software called Rocket.Chat, which works very similar to Slack or Mattermost. It allows you to interact with other members and stay up to date with news and announcements.',
+      'We use the self-powered, secure and versatile chat software Rocket.Chat, which works very similar to Slack or Mattermost. It allows you to interact with other members and stay up to date with news and announcements.',
       name: 'rocketChatIntro',
       desc: '',
       args: [],

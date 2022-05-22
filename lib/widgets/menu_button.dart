@@ -19,9 +19,10 @@ class MenuButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var themeData = Theme.of(context);
     var cardColor = color ??
-        Theme.of(context).buttonTheme.colorScheme?.surface ??
-        Theme.of(context).cardColor;
+        themeData.buttonTheme.colorScheme?.surface ??
+        themeData.cardColor;
     var colorFilter = ColorFilter.matrix(<double>[
       cardColor.red / 255.0, 0.5, 0.5, 0, 0, //
       0.5, cardColor.green / 255.0, 0.5, 0, 0, //
@@ -70,9 +71,7 @@ class MenuButton extends StatelessWidget {
                   right: 16,
                   child: Text(
                     title,
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                    style: themeData.textTheme.bodyMedium,
                   ),
                 ),
               ],

@@ -25,13 +25,6 @@ class RecipeCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Card(
-            margin: edgeInsets,
-            child: IconPlaceholderImage.network(
-              imageUrl,
-              aspectRatio: 1.5,
-            ),
-          ),
           Padding(
             padding: edgeInsets,
             child: Text(
@@ -39,6 +32,13 @@ class RecipeCard extends StatelessWidget {
               textAlign: TextAlign.left,
               maxLines: 1,
               style: Theme.of(context).textTheme.titleLarge,
+            ),
+          ),
+          Card(
+            margin: edgeInsets,
+            child: IconPlaceholderImage.network(
+              imageUrl,
+              aspectRatio: 1.5,
             ),
           ),
           if (explanation != null)

@@ -24,6 +24,12 @@ class PartnerCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Text(
+            title,
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+          SizedBox(height: 16.0),
+
           SizedBox(
             width: 300,
             child: Card(
@@ -40,19 +46,16 @@ class PartnerCard extends StatelessWidget {
                 .map((e) => _PartnerPhoto(photoUrl: e))
                 .toList(),
           ),
-          SizedBox(height: 16.0),
-          Text(
-            title,
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-          SizedBox(height: 16.0),
-          if (explanation != null)
+
+          if (explanation != null) ...[
+            SizedBox(height: 16.0),
             Text(
               explanation!,
               maxLines: 4,
               overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.bodySmall,
             ),
+          ],
           Spacer(),
         ],
       ),
