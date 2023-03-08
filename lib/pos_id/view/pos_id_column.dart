@@ -18,9 +18,11 @@ class PosIdColumn extends StatelessWidget {
     return Center(
       child: OrientationBuilder(
         builder: (BuildContext context, Orientation orientation) {
-          var canShop = user.shareOwner?.canShop == true;
+          final canShop = user.shareOwner?.canShop == true;
 
           var membershipQrCode = "membership-${user.shareOwner?.id}";
+          // pad with flour-specific prefix / suffix
+          membershipQrCode = ".F.029.F.$membershipQrCode.F.";
 
           return Flex(
             mainAxisAlignment: MainAxisAlignment.center,
