@@ -4,6 +4,6 @@
   "contentApiUrl": "https://content.wirmarkt.de",
   "memberManagementUrl": "https://members.wirmarkt.de",
   "passwordResetUrl": "https://members.wirmarkt.de/accounts/password_reset/",
-  "chatUrl": "https://rocketchat.wirmarkt.de",
+  "chatUrl": "https://go.rocket.chat/auth?host=rocketchat.wirmarkt.de",
   "applyForMembershipUrl": "https://members.wirmarkt.de/coop/user/draft/register"
 }
