@@ -42,14 +42,15 @@ class MembershipActionsView extends StatelessWidget {
         },
         image: const AssetImage("images/menu/002-wisdom.png"),
       ),
-      MenuButton(
-        title: S.of(context).upcomingShift,
-        color: AppColors.darkBlue,
-        onTap: () {
-          Navigator.of(context).push(UpcomingShiftPage.route());
-        },
-        image: const AssetImage("images/menu/004-wristwatch.png"),
-      ),
+      //TODO re-enable once WirMarkt uses Tapir shift scheduling again
+      // MenuButton(
+      //   title: S.of(context).upcomingShift,
+      //   color: AppColors.darkBlue,
+      //   onTap: () {
+      //     Navigator.of(context).push(UpcomingShiftPage.route());
+      //   },
+      //   image: const AssetImage("images/menu/004-wristwatch.png"),
+      // ),
       MenuButton(
         title: S.of(context).membership,
         color: AppColors.orange,
