@@ -18,7 +18,7 @@ class LoginForm extends StatelessWidget {
 
     return BlocListener<LoginBloc, LoginState>(
       listener: (context, state) {
-        if (state.status.isSubmissionFailure) {
+        if (state.submissionStatus == FormzSubmissionStatus.failure) {
           String reasonFailed;
           if (state.apiExceptionType == ApiExceptionType.connectionFailed) {
             reasonFailed = S.of(context).connectionFailed;

@@ -6,6 +6,7 @@ import 'package:wir_markt/authentication/authentication.dart';
 import 'package:wir_markt/login/model/models.dart';
 
 part 'login_event.dart';
+
 part 'login_state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
@@ -27,7 +28,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     final username = Username.dirty(event.username);
     emit(state.copyWith(
       username: username,
-      status: Formz.validate([state.password, username]),
+      validated: Formz.validate([state.password, username]),
     ));
   }
 
@@ -38,7 +39,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     final password = Password.dirty(event.password);
     emit(state.copyWith(
       password: password,
-      status: Formz.validate([password, state.username]),
+      validated: Formz.validate([password, state.username]),
     ));
   }
 
@@ -46,8 +47,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     LoginSubmitted event,
     Emitter<LoginState> emit,
   ) async {
-    if (state.status.isValidated) {
-      emit(state.copyWith(status: FormzStatus.submissionInProgress));
+    if (state.validated) {
+      emit(state.copyWith(submissionStatus: FormzSubmissionStatus.inProgress));
       try {
         //login using authentication repository, will notify
         //authentication bloc which will take care of navigation
@@ -55,13 +56,13 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           username: state.username.value,
           password: state.password.value,
         );
-        emit(state.copyWith(status: FormzStatus.submissionSuccess));
+        emit(state.copyWith(submissionStatus: FormzSubmissionStatus.success));
       } on ApiException catch (e) {
         emit(state.copyWith(
-            status: FormzStatus.submissionFailure,
+            submissionStatus: FormzSubmissionStatus.failure,
             apiExceptionType: e.statusCode));
       } catch (_) {
-        emit(state.copyWith(status: FormzStatus.submissionFailure));
+        emit(state.copyWith(submissionStatus: FormzSubmissionStatus.failure));
       }
     }
   }

@@ -22,8 +22,9 @@ class _UsernameInputState extends State<_UsernameInput> {
           decoration: InputDecoration(
             //border: const OutlineInputBorder(),
             labelText: S.of(context).username,
-            errorText:
-                state.username.invalid ? S.of(context).invalidUsername : null,
+            errorText: state.username.isNotValid && !state.username.isPure
+                ? S.of(context).invalidUsername
+                : null,
           ),
         );
       },
@@ -61,8 +62,9 @@ class _PasswordInputState extends State<_PasswordInput> {
           decoration: InputDecoration(
             //border: const OutlineInputBorder(),
             labelText: S.of(context).password,
-            errorText:
-                state.password.invalid ? S.of(context).invalidPassword : null,
+            errorText: state.password.isNotValid && !state.password.isPure
+                ? S.of(context).invalidPassword
+                : null,
           ),
         );
       },
@@ -81,14 +83,16 @@ class _LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<LoginBloc, LoginState>(
-      buildWhen: (previous, current) => previous.status != current.status,
+      buildWhen: (previous, current) =>
+          previous.validated != current.validated ||
+          previous.submissionStatus != current.submissionStatus,
       builder: (context, state) {
-        return state.status.isSubmissionInProgress
+        return state.submissionStatus == FormzSubmissionStatus.inProgress
             ? const CircularProgressIndicator()
             : ElevatedButton(
                 key: const Key('loginForm_continue_raisedButton'),
                 child: Text(S.of(context).logIn),
-                onPressed: state.status.isValidated
+                onPressed: state.validated
                     ? () {
                         context.read<LoginBloc>().add(const LoginSubmitted());
                       }
@@ -109,7 +113,7 @@ class _ResetPasswordButton extends StatelessWidget {
         return TextButton(
           key: const Key('loginForm_forgot_password_raisedButton'),
           child: Text(S.of(context).forgotPasswordLabel),
-          onPressed: username.valid
+          onPressed: username.isValid
               ? () => _launchResetPasswordInBrowser(username.value)
               : null,
         );
