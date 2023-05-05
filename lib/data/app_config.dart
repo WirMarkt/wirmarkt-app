@@ -24,6 +24,7 @@ class AppConfig {
     this.chatUrl = "",
     this.applyForMembershipUrl = "",
     this.connectionTimeoutSeconds = 30,
+    this.ignoreCanShop = false,
     required this.memberManagementUrl,
   });
 
@@ -35,6 +36,7 @@ class AppConfig {
   final String chatUrl;
   final String applyForMembershipUrl;
   final String memberManagementUrl;
+  final bool ignoreCanShop;
   final int connectionTimeoutSeconds;
 
   factory AppConfig.fromJson(Map<String, dynamic> json) =>

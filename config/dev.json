@@ -6,5 +6,6 @@
   "passwordResetUrl": "http://localhost:8000/accounts/password_reset/",
   "chatUrl": "https://go.rocket.chat/auth?host=rocketchat.wirmarkt.de",
   "applyForMembershipUrl": "http://localhost:8000/coop/user/draft/register",
-  "connectionTimeoutSeconds": 5
+  "connectionTimeoutSeconds": 5,
+  "ignoreCanShop": true
 }

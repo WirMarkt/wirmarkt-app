@@ -18,7 +18,8 @@ class PosIdColumn extends StatelessWidget {
     return Center(
       child: OrientationBuilder(
         builder: (BuildContext context, Orientation orientation) {
-          final canShop = user.shareOwner?.canShop == true;
+          final canShop =
+              user.shareOwner?.canShop == true || AppConfig.get().ignoreCanShop;
 
           var membershipQrCode = "membership-${user.shareOwner?.id}";
           // pad with flour-specific prefix / suffix
