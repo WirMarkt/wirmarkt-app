@@ -114,18 +114,18 @@ class _ResetPasswordButton extends StatelessWidget {
           key: const Key('loginForm_forgot_password_raisedButton'),
           child: Text(S.of(context).forgotPasswordLabel),
           onPressed: username.isValid
-              ? () => _launchResetPasswordInBrowser(username.value)
+              ? () => _launchResetPasswordInBrowser()
               : null,
         );
       },
     );
   }
 
-  void _launchResetPasswordInBrowser(String username) => launchUrl(
+  void _launchResetPasswordInBrowser([String email = ""]) => launchUrl(
       AppConfig.get()
           .passwordResetUri
-          .replace(queryParameters: {'email': username}),
-      mode: LaunchMode.externalApplication);
+          .replace(queryParameters: {'email': email}),
+      mode: LaunchMode.inAppWebView);
 }
 
 class _ApplyForMembershipButton extends StatelessWidget {
@@ -140,5 +140,5 @@ class _ApplyForMembershipButton extends StatelessWidget {
 
   void _launchApplyForMembershipInBrowser() =>
       launchUrl(AppConfig.get().applyForMembershipUri,
-          mode: LaunchMode.externalApplication);
+          mode: LaunchMode.inAppWebView);
 }
