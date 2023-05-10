@@ -161,6 +161,7 @@ class _AppViewState extends State<AppView> {
       brightness: brightness,
     );
     var theme = ThemeData.from(
+      useMaterial3: true,
       textTheme: GoogleFonts.interTextTheme(
         ThemeData(brightness: brightness).textTheme,
       ),

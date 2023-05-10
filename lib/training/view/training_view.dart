@@ -136,13 +136,14 @@ class _TrainingSectionView extends StatelessWidget {
       'h1,h2,h3': Style(
         fontFamily: textTheme.titleLarge!.fontFamily!,
         fontWeight: FontWeight.normal,
-        fontSize: FontSize(textTheme.titleLarge!.fontSize!, units: "px"),
-        margin: const EdgeInsets.only(top: 32, bottom: 16, left: 8, right: 8),
+        fontSize: FontSize(textTheme.titleLarge!.fontSize!),
+        margin: Margins.only(top: 32, bottom: 16, left: 8, right: 8),
       ),
       'li,p': Style(
         fontFamily: "Inter",
-        fontSize: FontSize(textTheme.bodyLarge!.fontSize!, units: "px"),
-        margin: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+        fontSize: FontSize(textTheme.bodyLarge!.fontSize!),
+        margin: Margins.only(bottom: 0, left: 8, right: 8,),
+        padding: EdgeInsets.all(4),
       ),
     };
     return Column(
