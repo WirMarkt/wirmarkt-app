@@ -6,5 +6,8 @@
   "passwordResetUrl": "https://members.wirmarkt.de/accounts/password_reset/",
   "chatUrl": "https://go.rocket.chat/auth?host=rocketchat.wirmarkt.de",
   "applyForMembershipUrl": "https://members.wirmarkt.de/coop/user/draft/register",
-  "ignoreCanShop": true
+  "ignoreCanShop": true,
+  "showResetPassword": false,
+  "showApplyForMembership": false,
+  "showSuggestProduct": false
 }

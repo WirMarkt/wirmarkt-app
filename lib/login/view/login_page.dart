@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wir_markt/data/app_config.dart';
 
 import '../../authentication/repository/authentication_repository.dart';
 import '../../generated/l10n.dart';
@@ -46,9 +47,12 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: outerPadding,
-                  child: LoginForm(),
+                  child: LoginForm(
+                    showApplyForMembership: AppConfig.get().showApplyForMembership,
+                    showResetPassword: AppConfig.get().showResetPassword,
+                  ),
                 ),
               ]),
             ),

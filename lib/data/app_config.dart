@@ -11,6 +11,7 @@ part 'app_config.g.dart';
 class AppConfig {
   static late AppConfig _appConfig;
 
+
   Duration get connectionTimeoutDuration =>
       Duration(seconds: connectionTimeoutSeconds);
 
@@ -25,18 +26,24 @@ class AppConfig {
     this.applyForMembershipUrl = "",
     this.connectionTimeoutSeconds = 30,
     this.ignoreCanShop = false,
+    this.showResetPassword = true,
+    this.showApplyForMembership = true,
+    this.showSuggestProduct = true,
     required this.memberManagementUrl,
   });
 
   final String orgName;
-
   final String apiUrl;
+
   final String contentApiUrl;
   final String passwordResetUrl;
   final String chatUrl;
   final String applyForMembershipUrl;
   final String memberManagementUrl;
   final bool ignoreCanShop;
+  final bool showApplyForMembership;
+  final bool showResetPassword;
+  final bool showSuggestProduct;
   final int connectionTimeoutSeconds;
 
   factory AppConfig.fromJson(Map<String, dynamic> json) =>

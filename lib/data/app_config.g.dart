@@ -14,6 +14,10 @@ AppConfig _$AppConfigFromJson(Map<String, dynamic> json) => AppConfig(
       chatUrl: json['chatUrl'] as String? ?? "",
       applyForMembershipUrl: json['applyForMembershipUrl'] as String? ?? "",
       connectionTimeoutSeconds: json['connectionTimeoutSeconds'] as int? ?? 30,
+      ignoreCanShop: json['ignoreCanShop'] as bool? ?? false,
+      showResetPassword: json['showResetPassword'] as bool? ?? true,
+      showApplyForMembership: json['showApplyForMembership'] as bool? ?? true,
+      showSuggestProduct: json['showSuggestProduct'] as bool? ?? true,
       memberManagementUrl: json['memberManagementUrl'] as String,
     );
 
@@ -25,5 +29,9 @@ Map<String, dynamic> _$AppConfigToJson(AppConfig instance) => <String, dynamic>{
       'chatUrl': instance.chatUrl,
       'applyForMembershipUrl': instance.applyForMembershipUrl,
       'memberManagementUrl': instance.memberManagementUrl,
+      'ignoreCanShop': instance.ignoreCanShop,
+      'showApplyForMembership': instance.showApplyForMembership,
+      'showResetPassword': instance.showResetPassword,
+      'showSuggestProduct': instance.showSuggestProduct,
       'connectionTimeoutSeconds': instance.connectionTimeoutSeconds,
     };

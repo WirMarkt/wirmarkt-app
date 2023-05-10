@@ -84,7 +84,7 @@ class _IngredientsTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var oddColor = Theme.of(context).backgroundColor;
+    var oddColor = Theme.of(context).colorScheme.background;
     var evenColor = Theme.of(context).primaryColor.withAlpha(30);
     return Table(
       columnWidths: const {
@@ -135,7 +135,7 @@ class _TagBar extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .bodySmall!
-                        .copyWith(color: Theme.of(context).backgroundColor)),
+                        .copyWith(color: Theme.of(context).colorScheme.background)),
                 padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                 decoration: BoxDecoration(
                     color: Theme.of(context).colorScheme.primary,

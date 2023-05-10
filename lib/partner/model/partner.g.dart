@@ -23,7 +23,7 @@ Partner _$PartnerFromJson(Map<String, dynamic> json) => Partner(
 
 Map<String, dynamic> _$PartnerToJson(Partner instance) => <String, dynamic>{
       'organization_name': instance.organizationName,
-      'partner_type': _$PartnerTypeEnumMap[instance.partnerType],
+      'partner_type': _$PartnerTypeEnumMap[instance.partnerType]!,
       'cover_image': instance.coverImage,
       'translations': instance.translations,
       'photos': instance.photos,

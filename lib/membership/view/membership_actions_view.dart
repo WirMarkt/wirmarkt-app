@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:wir_markt/wm_design.dart';
 
+import '../../data/app_config.dart';
 import '../../generated/l10n.dart';
 import '../../pos_id/view/pos_id_page.dart';
 import '../../share_owner_info/view/share_owner_info_page.dart';
 import '../../suggest_product/view/suggest_product_page.dart';
 import '../../training/view/take_training_page.dart';
-import '../../upcoming_shift/view/upcoming_shift_page.dart';
 import '../../utils/logical_size_utils.dart';
 import '../../widgets/menu_button.dart';
 import '../../widgets/responsive_sized_wrap.dart';
@@ -25,14 +25,15 @@ class MembershipActionsView extends StatelessWidget {
         },
         image: const AssetImage("images/menu/005-contract.png"),
       ),
-      MenuButton(
-        title: S.of(context).suggestProduct,
-        color: AppColors.yellow,
-        onTap: () {
-          Navigator.of(context).push(SuggestProductPage.route());
-        },
-        image: const AssetImage("images/menu/001-banana-milk.png"),
-      ),
+      if (AppConfig.get().showSuggestProduct)
+        MenuButton(
+          title: S.of(context).suggestProduct,
+          color: AppColors.yellow,
+          onTap: () {
+            Navigator.of(context).push(SuggestProductPage.route());
+          },
+          image: const AssetImage("images/menu/001-banana-milk.png"),
+        ),
       MenuButton(
         title: S.of(context).training,
         color: AppColors.lightGreen,

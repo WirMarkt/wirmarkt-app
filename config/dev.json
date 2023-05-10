@@ -7,5 +7,8 @@
   "chatUrl": "https://go.rocket.chat/auth?host=rocketchat.wirmarkt.de",
   "applyForMembershipUrl": "http://localhost:8000/coop/user/draft/register",
   "connectionTimeoutSeconds": 5,
-  "ignoreCanShop": true
+  "ignoreCanShop": true,
+  "showResetPassword": false,
+  "showApplyForMembership": false,
+  "showSuggestProduct": false
 }

@@ -40,7 +40,7 @@ Map<String, dynamic> _$ShareOwnerToJson(ShareOwner instance) =>
       'attended_welcome_session': instance.attendedWelcomeSession,
       'paid_membership_fee': instance.paidMembershipFee,
       'willing_to_gift_a_share': instance.willingToGiftAShare,
-      'status': _$MemberStatusEnumMap[instance.status],
+      'status': _$MemberStatusEnumMap[instance.status]!,
     };
 
 const _$MemberStatusEnumMap = {

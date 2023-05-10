@@ -87,7 +87,7 @@ class _MemberIDDetails extends StatelessWidget {
         Expanded(
           child: Text(S.of(context).showBarcodeAtPOSLabel,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyText2),
+              style: Theme.of(context).textTheme.bodyMedium),
         ),
       ],
     );
@@ -133,7 +133,7 @@ class _AllowedToShopDetails extends StatelessWidget {
         Expanded(
           child: Text(canShopDetails,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyText2),
+              style: Theme.of(context).textTheme.bodyMedium),
         ),
       ],
     );

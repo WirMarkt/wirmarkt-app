@@ -10,7 +10,10 @@ import 'package:wir_markt/login/login.dart';
 part 'login_form_widgets.dart';
 
 class LoginForm extends StatelessWidget {
-  const LoginForm({super.key});
+  final bool showApplyForMembership;
+  final bool showResetPassword;
+
+  const LoginForm({super.key, required this.showApplyForMembership, required this.showResetPassword});
 
   @override
   Widget build(BuildContext context) {
@@ -49,11 +52,13 @@ class LoginForm extends StatelessWidget {
               children: [
                 _LoginButton(),
                 const Padding(padding: formPadding),
-                _ResetPasswordButton(),
+                if (showResetPassword)
+                  _ResetPasswordButton(),
               ],
             ),
           ),
-          _ApplyForMembershipButton(),
+          if (showApplyForMembership)
+            _ApplyForMembershipButton(),
         ],
       ),
     );
