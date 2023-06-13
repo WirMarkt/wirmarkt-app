@@ -75,7 +75,9 @@ class _MemberIDDetails extends StatelessWidget {
                     size: const Size(1000, 1000),
                     painter: QrPainter(
                       data: qrCode ?? "-",
-                      color: Colors.black,
+                      dataModuleStyle: QrDataModuleStyle(
+                          color: Colors.black,
+                          dataModuleShape: QrDataModuleShape.circle),
                       version: QrVersions.auto,
                     ),
                   ),

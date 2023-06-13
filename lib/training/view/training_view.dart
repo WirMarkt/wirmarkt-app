@@ -143,7 +143,7 @@ class _TrainingSectionView extends StatelessWidget {
         fontFamily: "Inter",
         fontSize: FontSize(textTheme.bodyLarge!.fontSize!),
         margin: Margins.only(bottom: 0, left: 8, right: 8,),
-        padding: EdgeInsets.all(4),
+        padding: HtmlPaddings.all(4),
       ),
     };
     return Column(
