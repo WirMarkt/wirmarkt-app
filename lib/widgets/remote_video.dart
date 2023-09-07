@@ -23,8 +23,8 @@ class _RemoteVideoState extends State<RemoteVideo> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network(
-      widget.uri,
+    _controller = VideoPlayerController.networkUrl(
+      Uri.parse(widget.uri),
       videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true),
     );
 
