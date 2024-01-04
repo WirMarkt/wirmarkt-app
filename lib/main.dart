@@ -168,7 +168,6 @@ class _AppViewState extends State<AppView> {
       colorScheme: colorScheme,
     );
     return theme.copyWith(
-        useMaterial3: true,
         appBarTheme: theme.appBarTheme.copyWith(
           backgroundColor: colorScheme.background,
           foregroundColor: colorScheme.primary,
