@@ -31,7 +31,7 @@ dependencies:
   cupertino_icons:
 
   # Your other regular dependencies here
-  camera: ^0.10.5+8
+  camera: ^0.11.0
   json_annotation: ^4.8.1
   intl: ^0.18.1
   qr_flutter: ^4.1.0
